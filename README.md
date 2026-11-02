@@ -210,6 +210,8 @@ e como comparar pela primeira entrega.
 | 18:53:16 | 51 | test: tamanho do conjunto de ataques conta guardrail + hard bloqueados (21 semânticos foram para o hard); lint do flow |
 | 18:55:25 | 53 | fix: exemplo k-NN coincidia por acaso com 1 frase do held-out (teste de contaminação); trocado por paráfrase própria, gate offline mantido |
 | 18:56:16 | 54 | docs: ENTREGA (placar bom e ruim + procedência) e vídeo walkthrough (174 s, gerado do demo.json real) |
+| 18:56:17 | 54 | readme: números e linha do tempo (fill_readme, último passo) |
+| 18:56:28 | 54 | docs: RESULTS e PROCEDENCIA regenerados pelo fill_readme |
 
 Do primeiro ao último commit: **54 min**.
 <!-- timeline:end -->
