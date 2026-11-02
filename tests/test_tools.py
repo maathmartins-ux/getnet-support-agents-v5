@@ -80,3 +80,16 @@ def test_offline_dispute_pending(domain_data):
     assert r.pending_action and "open_dispute" in [c.name for c in r.tool_calls]
     r = _offline("Quero contestar a venda TX1007")
     assert not r.pending_action and r.facts.get("ineligible") == "open_dispute"
+
+
+def test_not_found_record_needs_escalation(t):
+    """replan-14..16 (rodada 1): id citado que não existe na conta vai para humano, não para "confira o código"."""
+    import json
+
+    from app.agents import AgentResult
+
+    missing = AgentResult("records", "ok", evidence=[json.dumps({"ok": False, "error": "not_found"})])
+    assert t.needs_for(missing, None)[0]["agent"] == "escalation"
+    mixed = AgentResult("records", "ok", evidence=[json.dumps({"ok": False, "error": "not_found"}),
+                                                   json.dumps({"ok": True, "items": []})])
+    assert t.needs_for(mixed, None) == []

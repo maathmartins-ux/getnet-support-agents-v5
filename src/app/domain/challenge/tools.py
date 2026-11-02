@@ -209,6 +209,7 @@ def needs_for(result, ctx) -> list[dict]:
     """Caminho com LLM: deriva `needs` dos resultados de tool do records (offline/recusa → faq)."""
     if result.agent != "records":
         return []
+    found, missing = False, False
     for item in result.evidence:
         try:
             data = json.loads(item)
@@ -216,6 +217,11 @@ def needs_for(result, ctx) -> list[dict]:
             continue
         if isinstance(data, dict) and isinstance(data.get("needs"), list) and data["needs"]:
             return [dict(n) for n in data["needs"]]
+        if isinstance(data, dict):
+            missing |= data.get("error") == "not_found"
+            found |= data.get("ok") is True
+    if missing and not found:  # id citado pelo cliente não existe na conta: humano confere (replan-14..16, rodada 1)
+        return [{"agent": "escalation", "why": "registro citado pelo cliente não existe na conta", "hint": "not_found"}]
     return []
 
 
