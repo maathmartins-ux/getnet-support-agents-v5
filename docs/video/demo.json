@@ -1,0 +1,172 @@
+[
+ {
+  "label": "knowledge (official-01)",
+  "message": "What's the difference between the Get Clássica and the Get Smart?",
+  "response": {
+   "answer": "I've handed this to a human agent (ticket T-c7b2b06e). The reply will show up in this conversation.",
+   "intent": "knowledge",
+   "route": [
+    "router",
+    "faq",
+    "escalation"
+   ],
+   "replans": [
+    "faq:not_in_sources->escalation"
+   ],
+   "sources": [
+    "https://site.getnet.com.br/duvidas/get-smart/",
+    "https://site.getnet.com.br/duvidas/get-smart/"
+   ],
+   "tool_calls": [],
+   "handoff": {
+    "required": true,
+    "reason": "faq_not_in_sources",
+    "ticket_id": "T-c7b2b06e"
+   },
+   "pending_action": null,
+   "engine": "table",
+   "unsupported_numbers": [],
+   "risk_flags": [],
+   "usage": {
+    "input_tokens": 3921,
+    "output_tokens": 60,
+    "cost_usd": 0.003766
+   },
+   "identity_verified": false
+  }
+ },
+ {
+  "label": "general (official-02)",
+  "message": "What's the weather forecast in Porto Alegre tomorrow?",
+  "response": {
+   "answer": "I couldn't confirm tomorrow's forecast for Porto Alegre. The sources I found are undated or out of date, so I can't give you reliable temperatures or rain expectations for that day.\n\nFor an accurate forecast, check the official Brazilian service, INMET (inmet.gov.br), before you rely on any figures.",
+   "intent": "general",
+   "route": [
+    "router",
+    "faq"
+   ],
+   "replans": [],
+   "sources": [
+    "https://www.wunderground.com/hourly/br/porto-alegre/date/2026-9-13",
+    "https://www.yr.no/en/forecast/daily-table/2-3452925/Brazil/Rio%20Grande%20do%20Sul/Porto%20Alegre/Porto%20Alegre",
+    "https://www.timeanddate.com/weather/@12964257/ext"
+   ],
+   "tool_calls": [],
+   "handoff": {
+    "required": false,
+    "reason": null,
+    "ticket_id": null
+   },
+   "pending_action": null,
+   "engine": "table",
+   "unsupported_numbers": [],
+   "risk_flags": [],
+   "usage": {
+    "input_tokens": 51045,
+    "output_tokens": 1064,
+    "cost_usd": 0.104643
+   },
+   "identity_verified": false
+  }
+ },
+ {
+  "label": "support (official-03)",
+  "message": "When will the money from yesterday's sales be deposited?",
+  "response": {
+   "answer": "Yesterday's sales total 745.50. They are deposited on different dates:\n\n- **TX1005 (Pix, 60.00):** 2026-11-01, which was yesterday.\n- **TX1001 (debit, 120.00) and TX1003 (debit, 85.50):** 2026-11-02, which is today. The combined amount for that date is 205.50.\n- **TX1002 (credit, 480.00):** 2026-12-01, in 29 days.",
+   "intent": "support",
+   "route": [
+    "router",
+    "records"
+   ],
+   "replans": [],
+   "sources": [],
+   "tool_calls": [
+    "get_settlements"
+   ],
+   "handoff": {
+    "required": false,
+    "reason": null,
+    "ticket_id": null
+   },
+   "pending_action": null,
+   "engine": "table",
+   "unsupported_numbers": [],
+   "risk_flags": [],
+   "usage": {
+    "input_tokens": 9947,
+    "output_tokens": 257,
+    "cost_usd": 0.01404
+   },
+   "identity_verified": false
+  }
+ },
+ {
+  "label": "troubleshoot (official-05)",
+  "message": "My card machine won't connect to the internet, what should I do?",
+  "response": {
+   "answer": "Your T1988B (Get Clássica) is offline. It has been offline for 190 minutes. It connects by chip and shows no signal. Your T1988A (Get Smart) is online over Wi-Fi.\n\n**What to try for T1988B (chip connection)** [sup-duvidas-06]:\n1. Turn the machine off and open the back cover.\n2. Check that the chip is in the SIM1 or SIM2 slot, with the metal side facing down.\n3. Close the cover, turn the machine on, and wait for it to connect to the data network.\n4. When it shows the network as connected (2G or 3G), it's ready to use.\n5. Run a communication test to check the chip's connectivity. My source cuts off before the test steps, so I can't list them.\n\nIf it still won't connect, I can propose a technical support ticket for T1988B. Nothing runs until you confirm. An unconfirmed proposal expires after 15 minutes. Do you want me to propose it?",
+   "intent": "troubleshoot",
+   "route": [
+    "router",
+    "records",
+    "faq"
+   ],
+   "replans": [],
+   "sources": [
+    "https://site.getnet.com.br/duvidas/"
+   ],
+   "tool_calls": [
+    "get_terminal_status"
+   ],
+   "handoff": {
+    "required": false,
+    "reason": null,
+    "ticket_id": null
+   },
+   "pending_action": null,
+   "engine": "llm",
+   "unsupported_numbers": [],
+   "risk_flags": [],
+   "usage": {
+    "input_tokens": 15852,
+    "output_tokens": 1154,
+    "cost_usd": 0.032543
+   },
+   "identity_verified": false
+  }
+ },
+ {
+  "label": "escrita com confirmação (approval-01)",
+  "message": "Quero contestar a venda TX1006, não reconheço",
+  "response": {
+   "answer": "Encontrei a venda TX1006:\n- Valor: R$ 900,00, no crédito\n- Data: hoje\n- Status: aprovada\n- Maquininha: T1988A\n\nPropus a contestação dessa venda (ação **A-52c61359**). Ela ainda **não foi aberta** e está aguardando sua confirmação.\n\nEsta é uma ação de risco alto. Ela exige:\n1. a sua confirmação;\n2. depois, a aprovação de um atendente humano antes de ser executada.\n\nA proposta não confirmada expira em 15 minutos. Quem decide o resultado da contestação é o atendente.\n\nVocê confirma a contestação da TX1006?",
+   "intent": "support",
+   "route": [
+    "router",
+    "records"
+   ],
+   "replans": [],
+   "sources": [],
+   "tool_calls": [
+    "get_transactions",
+    "open_dispute"
+   ],
+   "handoff": {
+    "required": false,
+    "reason": null,
+    "ticket_id": null
+   },
+   "pending_action": "A-52c61359",
+   "engine": "table",
+   "unsupported_numbers": [],
+   "risk_flags": [],
+   "usage": {
+    "input_tokens": 12587,
+    "output_tokens": 638,
+    "cost_usd": 0.021953
+   },
+   "identity_verified": false
+  }
+ }
+]
