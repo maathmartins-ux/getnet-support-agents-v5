@@ -35,7 +35,7 @@ flowchart TD
 
 ```mermaid
 flowchart LR
-  Q["Pergunta + histórico<br/>agents.py expand_query (glossary.json)"] --> I["Busca densa e5-large + rerank bge-m3-int8 (pool 10)<br/>src/app/rag.py HybridRetriever(dense) / CrossRerankRetriever"]
+  Q["Pergunta + histórico<br/>agents.py expand_query (glossary.json)"] --> I["Busca densa e5-large<br/>src/app/rag.py HybridRetriever(dense)"]
   C["Corpus do site oficial<br/>data/knowledge/ via src/app/ingest.py"] --> I
   I --> H["Cobertura mínima<br/>agents.py covered_hits"]
   H -- coberto --> A["Resposta com citação<br/>agents.py cite_ids"]
@@ -50,14 +50,14 @@ flowchart LR
   | buscador | Recall@3 | MRR | p95 por busca | RAM |
   |---|---:|---:|---:|---:|
   | bm25 | 0,579 | 0,504 | 2 ms | 41 MB |
-  | denso e5-large (rodada 1 ao vivo) | 0,842 | 0,715 | 235 ms | 1541 MB |
-  | **denso e5-large + rerank bge-m3-int8 (entrega)** | **0,947** | **0,807** | 2862 ms sob carga | 2368 MB |
+  | **denso e5-large (entrega)** | **0,842** | **0,715** | 235 ms | 1541 MB |
+  | denso e5-large + rerank bge-m3-int8 (medido, não adotado) | 0,947 | 0,807 | 2862 ms sob carga | 2368 MB |
 
-  O rerank é o único que passa as duas metas (Recall@3 ≥ 0,85, MRR ≥ 0,80); o p95 foi medido com 8 subagentes
-  disputando a CPU, por isso o orçamento explícito de 3 s (ADR 0008). Corte por seção e contexto no índice ficam
-  desligados (padrão do kit, medido no ensaio).
-- O portão "sem fonte" confere a cobertura no BM25 com o limiar calibrado no domínio (`COVERAGE_GATE=bm25`,
-  `MIN_SCORE` em `src/app/domain/challenge/__init__.py`), qualquer que seja o buscador que ordena.
+  O rerank é o único que passaria as duas metas (Recall@3 ≥ 0,85, MRR ≥ 0,80), mas o p95 medido no relógio passou do
+  orçamento de 3 s por busca; ficou o denso, com o piso de cosseno do portão recalibrado 0,88 → 0,82 (ADR 0008).
+  Corte por seção e contexto no índice ficam desligados (padrão do kit, medido no ensaio).
+- O portão "sem fonte" usa o piso de cosseno do denso (0,82, `data/retriever.json`) e, se ele recusa, o BM25 com o limiar
+  do domínio (`MIN_SCORE`); com o piso de 0,82 a recusa de pergunta sem fonte fica com o agente (`NOT_IN_SOURCES`).
 - `general` nunca abre caso; número de clima/câmbio só vem da API com data (`live_data.py`).
 
 ## 3. Escritas com confirmação e humano no laço (HITL)
