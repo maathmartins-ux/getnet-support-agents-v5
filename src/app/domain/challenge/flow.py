@@ -55,7 +55,8 @@ _GENERAL = re.compile(r"\b(weather|forecast|clima|previs[ãa]o do tempo|temperat
 # Desempate 3: "preciso de / posso / funciona" sobre produto ou regra.
 _NEED = re.compile(r"\b(do i need|preciso (de|ter)|é preciso|is it necessary)\b", re.IGNORECASE)
 _KNOWLEDGE = re.compile(r"\b(como funciona|how does|how do\w*|what is|what's|o que é|quantas parcelas|how many"
-                        r"|posso|can i|difference|diferença|qual a taxa|tem maquininha|quanto custa|how much does \w+ cost)\b", re.IGNORECASE)
+                        r"|posso|can i|difference|diferença|qual a taxa|tem maquininha|quanto custa"
+                        r"|how much does \w+ cost)\b", re.IGNORECASE)
 _FOLLOWUP = re.compile(r"\b(ele|ela|isso|esse|essa|dela|dele|it|that|this one|a outra|the other|what about"
                        r"|e a de|e quando|and when|por qu[eê]|why)\b", re.IGNORECASE)
 _DECLINE_CTX = re.compile(r"recusad\w*|declin\w*|negad\w*", re.IGNORECASE)
