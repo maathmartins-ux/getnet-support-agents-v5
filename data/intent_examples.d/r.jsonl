@@ -1,0 +1,12 @@
+{"text": "Como funciona a maquininha Get Smart?", "intent": "knowledge"}
+{"text": "Which card machines does Getnet offer?", "intent": "knowledge"}
+{"text": "Qual a taxa da antecipação de recebíveis?", "intent": "knowledge"}
+{"text": "Quanto eu vendi esta semana?", "intent": "support"}
+{"text": "Show me my approved sales", "intent": "support"}
+{"text": "Qual o saldo da minha agenda de recebíveis?", "intent": "support"}
+{"text": "A maquininha travou e não liga", "intent": "troubleshoot"}
+{"text": "The terminal keeps rejecting cards", "intent": "troubleshoot"}
+{"text": "Vai chover em São Paulo amanhã?", "intent": "general"}
+{"text": "How much is the US dollar today?", "intent": "general"}
+{"text": "Quero falar com um atendente", "intent": "human_request"}
+{"text": "I want to talk to a real person", "intent": "human_request"}
