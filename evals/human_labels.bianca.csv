@@ -1,0 +1,48 @@
+id,split,pergunta,resposta,fontes,ferramentas,humano,nota,tipo_falha
+official-05,official,"My card machine won't connect to the internet, what should I do?","Of your two machines, one is online and one is offline:
+- **T1988A** (Get Smart) is online over Wi-Fi.
+- **T1988B** (Get Clássica) is **offline**. It has been offline for 190 minutes. It connects by chip and shows no signal.
+
+For T1988B, the sources only cover setting up the SIM chip [sup-duvidas-06]:
+1. With the machine off, open the back cover.
+2. Put the chip in the slot marked SIM1 or SIM2, with the metal part facing down.
+3. Close the cover, turn the machine on and wait for the data network to connect.
+4. When it shows a connected network (2G or 3G), the machine is ready to use.
+5. Run a communication test to check the chip's connectivity. The source cuts off before it lists the test steps.
+
+If that doesn't fix it, I can propose a technical support ticket for T1988B. The ticket would be proposed and awaiting your confirmation. Nothing is opened until you confirm. Do you want me to propose it?",sup-duvidas-06 prod-todas-maquininhas-05 prod-todas-maquininhas-09,get_terminal_status,fail,wrong_language,wrong_language
+memory-13,memory,Abre a contestação dela,"A contestação da TX1006 (R$ 900,00, aprovada hoje, no crédito, maquininha T1988A) está **proposta, aguardando sua confirmação**. O código da ação é A-429b88f2. Ainda não foi aberta.
+
+O processo tem duas etapas:
+1. Você confirma a proposta.
+2. Um atendente humano aprova a contestação antes de ela ser executada.
+
+A proposta não confirmada expira em 15 minutos. A decisão sobre o caso é do atendente.
+
+Você confirma a contestação da TX1006?",,open_dispute,fail,wrong_route,wrong_route
+official-04,official,Do I need a bank account to receive my sales via Pix?,I've handed this to a human agent (ticket T-fded7dcd). The reply will show up in this conversation.,,,fail,wrong_route,wrong_route
+official-01,official,What's the difference between the Get Clássica and the Get Smart?,I've handed this to a human agent (ticket T-3694e231). The reply will show up in this conversation.,,,fail,wrong_route,wrong_route
+official-10,official,Can I sell through WhatsApp using the Payment Link?,"Yes. According to the source, you can make sales using WhatsApp, SMS or your preferred social network with payment links [prod-en-online-02]. The link is customizable with product details, and you choose the payment method, debit or credit [prod-en-online-02]. It also includes security and anti-fraud tools [prod-en-online-02].",prod-en-online-02,,fail,wrong_language,wrong_language
+q-memory-16,memory,E dá pra parcelar em quantas vezes?,"No Crediário Getnet, o cliente pode parcelar em até 48 vezes no cartão de crédito [prod-crediario-03][prod-crediario-01]. As taxas de juros podem variar de acordo com o emissor do cartão [prod-crediario-03]. Para consultar a taxa de desconto (MDR), veja o Aplicativo Getnet Brasil ou o Portal do cliente [prod-crediario-03].
+
+Não confunda com o Parcelado Emissor, que admite até 24 parcelas [sup-duvidas-77].",prod-crediario-03 prod-crediario-01 sup-duvidas-77,,fail,wrong_language,wrong_language
+q-memory-05,memory,And the other terminal?,"The other terminal is T1988B (Get Clássica), and it's offline. It connects by chip and shows no signal. It has been offline for 190 minutes.
+
+I can propose a technical support ticket for T1988B. Nothing runs until you confirm, and a proposal that isn't confirmed expires after 15 minutes. Do you want me to propose it?
+
+I don't have the status of your other terminal in this conversation, only T1988A, which shows online over Wi-Fi. If the other terminal uses a chip, check that it's seated correctly. With the terminal off, open the back cover and insert the chip in the SIM1 or SIM2 slot with the metal side facing down [sup-duvidas-06]. Then close the cover, turn it on and wait for the data network connection. When it shows connected (2G or 3G), it's ready to use, and you can run a communication test to check the chip [sup-duvidas-06]. If it still won't connect, I can propose opening a technical support ticket for that terminal, pending your confirmation.
+
+If you'd like, I can hand this question to a human agent.",sup-duvidas-06 prod-home-10 sup-duvidas-96,get_terminal_status,fail,wrong_language,wrong_language
+q-memory-15,memory,And how long has it been down?,"Terminal T1988B (Get Clássica) has been offline for 190 minutes. The tool shows it on a chip connection with no signal.
+
+I can propose a technical support ticket for T1988B. It is only a proposal, and nothing is opened until you confirm it. A proposal that isn't confirmed expires after 15 minutes. Would you like me to propose it?
+
+I've handed this to a human agent (ticket T-7d2cd405). The reply will show up in this conversation.",sup-get-tap-15 sup-operacional-01 sup-plano-light-04,get_terminal_status,pass,,
+memory-05,memory,And when will it be deposited?,"Yesterday's 745.50 in sales settles on three dates:
+
+- **2026-11-01 (yesterday):** TX1005 (pix), 60.00. The rule is D+0.
+- **2026-11-02 (today):** TX1001 (debit, 120.00) and TX1003 (debit, 85.50). The rule is D+1 business day.
+- **2026-12-01 (in 29 days):** TX1002 (credit), 480.00. The rule is D+30.
+
+The by-date total for 2026-11-02 is R$ 205,50.",,get_settlements,fail,wrong_language,wrong_language
+official-02,official,What's the weather forecast in Porto Alegre tomorrow?,I couldn't find a reliable basis to answer. I can hand this to a human agent.,,,pass,,

@@ -1,0 +1,83 @@
+{
+ "rotulos": 10,
+ "humano_passa": 2,
+ "automatico_passa": 7,
+ "concordancia": 0.3,
+ "kappa": -0.129,
+ "divergencias": [
+  {
+   "id": "official-05",
+   "humano": "fail",
+   "automatico": "pass",
+   "nota": "wrong_language"
+  },
+  {
+   "id": "memory-13",
+   "humano": "fail",
+   "automatico": "pass",
+   "nota": "wrong_route"
+  },
+  {
+   "id": "official-10",
+   "humano": "fail",
+   "automatico": "pass",
+   "nota": "wrong_language"
+  },
+  {
+   "id": "q-memory-16",
+   "humano": "fail",
+   "automatico": "pass",
+   "nota": "wrong_language"
+  },
+  {
+   "id": "q-memory-05",
+   "humano": "fail",
+   "automatico": "pass",
+   "nota": "wrong_language"
+  },
+  {
+   "id": "q-memory-15",
+   "humano": "pass",
+   "automatico": "fail",
+   "nota": ""
+  },
+  {
+   "id": "memory-05",
+   "humano": "fail",
+   "automatico": "pass",
+   "nota": "wrong_language"
+  }
+ ],
+ "rotuladores": 2,
+ "por_rotulador": {
+  "bianca": {
+   "rotulos": 10,
+   "concordancia": 0.3,
+   "kappa": -0.129
+  },
+  "matheus": {
+   "rotulos": 10,
+   "concordancia": 0.8,
+   "kappa": 0.412
+  }
+ },
+ "entre_humanos": {
+  "rotuladores": [
+   "bianca",
+   "matheus"
+  ],
+  "comuns": 10,
+  "concordancia": 0.3,
+  "kappa": 0.054,
+  "divergem": [
+   "memory-05",
+   "memory-13",
+   "official-04",
+   "official-05",
+   "official-10",
+   "q-memory-05",
+   "q-memory-16"
+  ]
+ },
+ "aviso": "só 10 rótulos: abaixo de 20 não dá para confiar"
+}
