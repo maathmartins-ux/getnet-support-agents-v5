@@ -1,3 +1,24 @@
 {
-  "_doc": "Glossário pt -> en do DESAFIO (agents.expand_query): chave = termo do corpus em português; valor = como o cliente pergunta em inglês. Preenchido pela frente K."
+ "_doc": "Glossário pt -> en do DESAFIO (agents.expand_query): chave = termo do corpus em português; valor = como o cliente pergunta em inglês. Preenchido pela frente K.",
+ "maquininha": "card machine",
+ "antecipação": "receivables advance",
+ "antecipação de vendas": "advance",
+ "parcelamento": "installments",
+ "parcelar": "split installments",
+ "crediário": "crediario store credit",
+ "Link de Pagamento": "Payment Link",
+ "conta corrente": "bank account",
+ "conta de pagamento": "payment account",
+ "taxas": "fees rates",
+ "bandeiras": "card brands",
+ "aluguel": "rental",
+ "cancelamento": "cancel",
+ "nota fiscal": "invoice",
+ "pré-autorização": "pre-authorization",
+ "venda parcelada": "installment sale",
+ "Get Clássica": "Get Clássica classic",
+ "Get Smart": "Get Smart",
+ "conta digital": "digital account",
+ "receber": "receive",
+ "vendas": "sales"
 }

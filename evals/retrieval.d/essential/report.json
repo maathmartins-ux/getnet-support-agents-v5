@@ -1,0 +1,20 @@
+{
+  "raters": [
+    "labels_A",
+    "labels_B"
+  ],
+  "agreement": {
+    "labels_A×labels_B": {
+      "questions": 40,
+      "jaccard_mean": 1.0,
+      "identical": 40
+    }
+  },
+  "questions_labelled": 38,
+  "no_essential": [
+    "O que é pré-autorização no cartão?",
+    "What is card pre-authorization?"
+  ],
+  "unmatched_rules": [],
+  "gold": "/home/user/getnet-support-agents-v5-k/evals/retrieval.jsonl"
+}

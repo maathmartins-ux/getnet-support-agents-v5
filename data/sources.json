@@ -1,8 +1,49 @@
 {
-  "_doc": "Páginas do site oficial da empresa para `python -m app.ingest` (frente K). allowed_hosts = só o domínio do país do enunciado.",
-  "allowed_hosts": [],
-  "groups": {
-    "produtos": {"prefix": "prod", "pages": {}},
-    "suporte": {"prefix": "sup", "pages": {}}
+ "_doc": "Páginas do site oficial da empresa para `python -m app.ingest` (frente K). allowed_hosts = só o domínio do país do enunciado.",
+ "allowed_hosts": [
+  "site.getnet.com.br",
+  "www.getnet.net"
+ ],
+ "groups": {
+  "produtos": {
+   "prefix": "prod",
+   "pages": {
+    "home": "https://site.getnet.com.br/",
+    "todas-maquininhas": "https://site.getnet.com.br/todas-as-maquininhas/",
+    "crediario": "https://site.getnet.com.br/crediario/",
+    "link-pagamento": "https://site.getnet.com.br/link-de-pagamento/",
+    "pix": "https://site.getnet.com.br/pix/",
+    "get-ajuda": "https://site.getnet.com.br/get-ajuda/",
+    "en-online": "https://www.getnet.net/en/our-solutions/online-payments"
+   }
+  },
+  "suporte": {
+   "prefix": "sup",
+   "pages": {
+    "antecipacao-de-vendas": "https://site.getnet.com.br/duvidas/antecipacao-de-vendas/",
+    "crediario": "https://site.getnet.com.br/duvidas/crediario/",
+    "get-smart": "https://site.getnet.com.br/duvidas/get-smart/",
+    "link-de-pagamento": "https://site.getnet.com.br/duvidas/link-de-pagamento/",
+    "pix-mais-respostas": "https://site.getnet.com.br/duvidas/pix-mais-respostas/",
+    "pix": "https://site.getnet.com.br/duvidas/pix/",
+    "taxas": "https://site.getnet.com.br/duvidas/taxas/",
+    "get-conta": "https://site.getnet.com.br/duvidas/get-conta/",
+    "operacional": "https://site.getnet.com.br/duvidas/operacional/",
+    "aluguel": "https://site.getnet.com.br/duvidas/aluguel/",
+    "aluguel-zero": "https://site.getnet.com.br/duvidas/aluguel-zero/",
+    "app-getnet": "https://site.getnet.com.br/duvidas/app-getnet/",
+    "bandeiras": "https://site.getnet.com.br/duvidas/bandeiras/",
+    "cancelamento-descredenciamento": "https://site.getnet.com.br/duvidas/cancelamento-descredenciamento/",
+    "parcelado": "https://site.getnet.com.br/duvidas/parcelado/",
+    "pre-autorizacao": "https://site.getnet.com.br/duvidas/pre-autorizacao/",
+    "get-tap": "https://site.getnet.com.br/duvidas/get-tap/",
+    "plano-light": "https://site.getnet.com.br/duvidas/plano-light/",
+    "tef-captura-pinpad": "https://site.getnet.com.br/duvidas/tef-captura-pinpad/",
+    "split-de-pagamento": "https://site.getnet.com.br/duvidas/split-de-pagamento/",
+    "loja-digital": "https://site.getnet.com.br/duvidas/loja-digital/",
+    "pagamento-carne": "https://site.getnet.com.br/duvidas/pagamento-carne/",
+    "duvidas": "https://site.getnet.com.br/duvidas/"
+   }
   }
+ }
 }
