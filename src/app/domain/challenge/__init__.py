@@ -13,7 +13,8 @@ from .tools import *  # noqa: F403
 # --- portão "sem fonte, sem afirmação" ----------------------------------------------------------------------
 # BM25 bruto abaixo disso = sem fonte. O valor do desafio sai de `run_evals --calibrate-gate` e vai para o
 # challenge.py (ou COVERAGE_MIN_SCORE no compose). Getnet v3: trocar o padrão do KIT quebrou 14 testes.
-MIN_SCORE = 0.5
+# run_evals --calibrate-gate (02/11/2026): responde 16% dos com fonte, recusa 94% dos sem fonte (n=38/17)
+MIN_SCORE = 12.433
 
 # --- prompts ------------------------------------------------------------------------------------------------
 # None = prompts do kit (src/app/prompts). O pré-voo aponta o challenge para src/app/domain/challenge_prompts.

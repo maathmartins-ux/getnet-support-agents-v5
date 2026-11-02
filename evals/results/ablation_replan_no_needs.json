@@ -1,0 +1,1396 @@
+{
+  "mode": "in-process",
+  "provider": "offline",
+  "recorded_at": "2026-11-02T18:17:28Z",
+  "git_sha": "34d0599-dirty",
+  "live": false,
+  "split": "dependent",
+  "status": "complete",
+  "spent_usd": 0.0,
+  "max_usd": null,
+  "llm_errors": 0,
+  "gate": 0.9,
+  "intent_acc": 1.0,
+  "intent_ci": {
+    "k": 10,
+    "n": 10,
+    "lo": 72.2,
+    "hi": 100.0
+  },
+  "isolation": "db_per_case",
+  "coverage_min_score": {
+    "effective": 0.5,
+    "source": "MIN_SCORE"
+  },
+  "gated_splits": [
+    "dependent"
+  ],
+  "ungated_splits": [
+    "hard",
+    "heldout",
+    "real"
+  ],
+  "passed": true,
+  "metrics": {
+    "dependent": {
+      "cases": 10,
+      "intent_acc": 100.0,
+      "handoff_acc": 100.0,
+      "handoff_outcome_acc": 100.0,
+      "blocked_acc": null,
+      "language_acc": 100.0,
+      "tools_acc": 100.0,
+      "pending_action_acc": null,
+      "replanned_acc": null,
+      "completed_acc": 0.0,
+      "no_leak_acc": null,
+      "numbers_acc": 100.0,
+      "memory_acc": null,
+      "claims_acc": 100.0,
+      "language_undetected": 3,
+      "recall@3": null,
+      "mrr": null,
+      "p50_ms": 29.1,
+      "p95_ms": 302.0,
+      "cost_usd": 0.0,
+      "crashes": 0,
+      "ci": {
+        "intent_acc": {
+          "k": 10,
+          "n": 10,
+          "lo": 72.2,
+          "hi": 100.0
+        },
+        "handoff_acc": {
+          "k": 10,
+          "n": 10,
+          "lo": 72.2,
+          "hi": 100.0
+        },
+        "handoff_outcome_acc": {
+          "k": 10,
+          "n": 10,
+          "lo": 72.2,
+          "hi": 100.0
+        },
+        "language_acc": {
+          "k": 7,
+          "n": 7,
+          "lo": 64.6,
+          "hi": 100.0
+        },
+        "tools_acc": {
+          "k": 10,
+          "n": 10,
+          "lo": 72.2,
+          "hi": 100.0
+        },
+        "completed_acc": {
+          "k": 0,
+          "n": 10,
+          "lo": 0.0,
+          "hi": 27.8
+        },
+        "numbers_acc": {
+          "k": 10,
+          "n": 10,
+          "lo": 72.2,
+          "hi": 100.0
+        },
+        "claims_acc": {
+          "k": 10,
+          "n": 10,
+          "lo": 72.2,
+          "hi": 100.0
+        }
+      }
+    },
+    "ALL": {
+      "cases": 10,
+      "intent_acc": 100.0,
+      "handoff_acc": 100.0,
+      "handoff_outcome_acc": 100.0,
+      "blocked_acc": null,
+      "language_acc": 100.0,
+      "tools_acc": 100.0,
+      "pending_action_acc": null,
+      "replanned_acc": null,
+      "completed_acc": 0.0,
+      "no_leak_acc": null,
+      "numbers_acc": 100.0,
+      "memory_acc": null,
+      "claims_acc": 100.0,
+      "language_undetected": 3,
+      "recall@3": null,
+      "mrr": null,
+      "p50_ms": 29.1,
+      "p95_ms": 302.0,
+      "cost_usd": 0.0,
+      "crashes": 0,
+      "ci": {
+        "intent_acc": {
+          "k": 10,
+          "n": 10,
+          "lo": 72.2,
+          "hi": 100.0
+        },
+        "handoff_acc": {
+          "k": 10,
+          "n": 10,
+          "lo": 72.2,
+          "hi": 100.0
+        },
+        "handoff_outcome_acc": {
+          "k": 10,
+          "n": 10,
+          "lo": 72.2,
+          "hi": 100.0
+        },
+        "language_acc": {
+          "k": 7,
+          "n": 7,
+          "lo": 64.6,
+          "hi": 100.0
+        },
+        "tools_acc": {
+          "k": 10,
+          "n": 10,
+          "lo": 72.2,
+          "hi": 100.0
+        },
+        "completed_acc": {
+          "k": 0,
+          "n": 10,
+          "lo": 0.0,
+          "hi": 27.8
+        },
+        "numbers_acc": {
+          "k": 10,
+          "n": 10,
+          "lo": 72.2,
+          "hi": 100.0
+        },
+        "claims_acc": {
+          "k": 10,
+          "n": 10,
+          "lo": 72.2,
+          "hi": 100.0
+        }
+      }
+    }
+  },
+  "rows": [
+    {
+      "id": "dependent-01",
+      "split": "dependent",
+      "message": "Minha maquininha não conecta na internet, o que faço?",
+      "ms": 302.0,
+      "expected_intent": "troubleshoot",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "numbers": true,
+        "claims": true,
+        "completed": false
+      },
+      "crash": null,
+      "got_intent": "troubleshoot",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "table",
+      "answer": "T1988A Get Smart (Wi-Fi): online; T1988B Get Clássica (chip): offline há 190 min, sem sinal.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_terminal_status",
+          "args": {},
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"Wi-Fi\", \"status\": \"online\"}, {\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"status\": \"offline\", \"offline_minutes\": 190, \"signal\": \"sem sinal\"}], \"count\": 2, \"offline\": [\"T1988B\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"maquininha offline: os passos vêm do manual de conexão\", \"hint\": \"maquininha não conecta internet chip Wi-Fi\"}]}",
+        "[policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema."
+      ],
+      "context": "- {\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"Wi-Fi\", \"status\": \"online\"}, {\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"status\": \"offline\", \"offline_minutes\": 190, \"signal\": \"sem sinal\"}], \"count\": 2, \"offline\": [\"T1988B\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"maquininha offline: os passos vêm do manual de conexão\", \"hint\": \"maquininha não conecta internet chip Wi-Fi\"}]}\n- [policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": null,
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.0,
+      "run": 0
+    },
+    {
+      "id": "dependent-02",
+      "split": "dependent",
+      "message": "A maquininha está sem sinal desde cedo",
+      "ms": 30.2,
+      "expected_intent": "troubleshoot",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "numbers": true,
+        "claims": true,
+        "completed": false
+      },
+      "crash": null,
+      "got_intent": "troubleshoot",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "table",
+      "answer": "T1988A Get Smart (Wi-Fi): online; T1988B Get Clássica (chip): offline há 190 min, sem sinal.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_terminal_status",
+          "args": {},
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"Wi-Fi\", \"status\": \"online\"}, {\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"status\": \"offline\", \"offline_minutes\": 190, \"signal\": \"sem sinal\"}], \"count\": 2, \"offline\": [\"T1988B\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"maquininha offline: os passos vêm do manual de conexão\", \"hint\": \"maquininha não conecta internet chip Wi-Fi\"}]}",
+        "[policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema."
+      ],
+      "context": "- {\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"Wi-Fi\", \"status\": \"online\"}, {\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"status\": \"offline\", \"offline_minutes\": 190, \"signal\": \"sem sinal\"}], \"count\": 2, \"offline\": [\"T1988B\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"maquininha offline: os passos vêm do manual de conexão\", \"hint\": \"maquininha não conecta internet chip Wi-Fi\"}]}\n- [policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": null,
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.0,
+      "run": 0
+    },
+    {
+      "id": "dependent-03",
+      "split": "dependent",
+      "message": "My terminal says no connection, help",
+      "ms": 29.1,
+      "expected_intent": "troubleshoot",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "tools": true,
+        "numbers": true,
+        "claims": true,
+        "completed": false
+      },
+      "crash": null,
+      "got_intent": "troubleshoot",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "table",
+      "answer": "T1988A Get Smart (Wi-Fi): online; T1988B Get Clássica (chip): offline for 190 min, no signal.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_terminal_status",
+          "args": {},
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"Wi-Fi\", \"status\": \"online\"}, {\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"status\": \"offline\", \"offline_minutes\": 190, \"signal\": \"sem sinal\"}], \"count\": 2, \"offline\": [\"T1988B\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"maquininha offline: os passos vêm do manual de conexão\", \"hint\": \"maquininha não conecta internet chip Wi-Fi\"}]}",
+        "[policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system."
+      ],
+      "context": "- {\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"Wi-Fi\", \"status\": \"online\"}, {\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"status\": \"offline\", \"offline_minutes\": 190, \"signal\": \"sem sinal\"}], \"count\": 2, \"offline\": [\"T1988B\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"maquininha offline: os passos vêm do manual de conexão\", \"hint\": \"maquininha não conecta internet chip Wi-Fi\"}]}\n- [policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": null,
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": null,
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.0,
+      "run": 0
+    },
+    {
+      "id": "dependent-04",
+      "split": "dependent",
+      "message": "Minha venda foi recusada, o que significa o erro?",
+      "ms": 26.9,
+      "expected_intent": "troubleshoot",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "numbers": true,
+        "claims": true,
+        "completed": false
+      },
+      "crash": null,
+      "got_intent": "troubleshoot",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "table",
+      "answer": "TX1007 (R$ 210,00, hoje) recusada, código 51: saldo ou limite insuficiente do portador do cartão; peça outro cartão ou outra forma de pagamento (Pix, débito); TX1008 (R$ 75,00, hoje) recusada, código 05: transação não autorizada pelo banco emissor do cartão; o portador deve falar com o banco emissor; tente outro cartão.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_transactions",
+          "args": {
+            "period": "all",
+            "status": "recusada"
+          },
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"period\": \"all\", \"transactions\": [{\"transaction_id\": \"TX1007\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"credito\", \"amount\": \"210.00\", \"amount_brl\": \"R$ 210,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"51\", \"decline_meaning_pt\": \"saldo ou limite insuficiente do portador do cartão\", \"decline_meaning_en\": \"insufficient funds or credit limit on the cardholder's card\", \"what_to_do_pt\": \"peça outro cartão ou outra forma de pagamento (Pix, débito)\", \"what_to_do_en\": \"ask for another card or another payment method (Pix, debit)\"}, {\"transaction_id\": \"TX1008\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"debito\", \"amount\": \"75.00\", \"amount_brl\": \"R$ 75,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"05\", \"decline_meaning_pt\": \"transação não autorizada pelo banco emissor do cartão\", \"decline_meaning_en\": \"transaction not authorized by the card's issuing bank\", \"what_to_do_pt\": \"o portador deve falar com o banco emissor; tente outro cartão\", \"what_to_do_en\": \"the cardholder should contact the issuing bank; try another card\"}], \"count\": 2, \"approved_total\": \"0.00\", \"approved_total_brl\": \"R$ 0,00\", \"declined\": [\"TX1007\", \"TX1008\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"venda recusada: o que fazer vem do manual\", \"hint\": \"código de recusa transação negada\"}]}",
+        "[policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema."
+      ],
+      "context": "- {\"ok\": true, \"data\": {\"period\": \"all\", \"transactions\": [{\"transaction_id\": \"TX1007\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"credito\", \"amount\": \"210.00\", \"amount_brl\": \"R$ 210,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"51\", \"decline_meaning_pt\": \"saldo ou limite insuficiente do portador do cartão\", \"decline_meaning_en\": \"insufficient funds or credit limit on the cardholder's card\", \"what_to_do_pt\": \"peça outro cartão ou outra forma de pagamento (Pix, débito)\", \"what_to_do_en\": \"ask for another card or another payment method (Pix, debit)\"}, {\"transaction_id\": \"TX1008\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"debito\", \"amount\": \"75.00\", \"amount_brl\": \"R$ 75,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"05\", \"decline_meaning_pt\": \"transação não autorizada pelo banco emissor do cartão\", \"decline_meaning_en\": \"transaction not authorized by the card's issuing bank\", \"what_to_do_pt\": \"o portador deve falar com o banco emissor; tente outro cartão\", \"what_to_do_en\": \"the cardholder should contact the issuing bank; try another card\"}], \"count\": 2, \"approved_total\": \"0.00\", \"approved_total_brl\": \"R$ 0,00\", \"declined\": [\"TX1007\", \"TX1008\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"venda recusada: o que fazer vem do manual\", \"hint\": \"código de recusa transação negada\"}]}\n- [policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": null,
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.0,
+      "run": 0
+    },
+    {
+      "id": "dependent-05",
+      "split": "dependent",
+      "message": "Why was my customer's card declined on my machine?",
+      "ms": 27.0,
+      "expected_intent": "troubleshoot",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "numbers": true,
+        "claims": true,
+        "completed": false
+      },
+      "crash": null,
+      "got_intent": "troubleshoot",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "table",
+      "answer": "TX1007 (R$ 210.00) declined, code 51: insufficient funds or credit limit on the cardholder's card; ask for another card or another payment method (Pix, debit); TX1008 (R$ 75.00) declined, code 05: transaction not authorized by the card's issuing bank; the cardholder should contact the issuing bank; try another card.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_transactions",
+          "args": {
+            "period": "all",
+            "status": "recusada"
+          },
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"period\": \"all\", \"transactions\": [{\"transaction_id\": \"TX1007\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"credito\", \"amount\": \"210.00\", \"amount_brl\": \"R$ 210,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"51\", \"decline_meaning_pt\": \"saldo ou limite insuficiente do portador do cartão\", \"decline_meaning_en\": \"insufficient funds or credit limit on the cardholder's card\", \"what_to_do_pt\": \"peça outro cartão ou outra forma de pagamento (Pix, débito)\", \"what_to_do_en\": \"ask for another card or another payment method (Pix, debit)\"}, {\"transaction_id\": \"TX1008\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"debito\", \"amount\": \"75.00\", \"amount_brl\": \"R$ 75,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"05\", \"decline_meaning_pt\": \"transação não autorizada pelo banco emissor do cartão\", \"decline_meaning_en\": \"transaction not authorized by the card's issuing bank\", \"what_to_do_pt\": \"o portador deve falar com o banco emissor; tente outro cartão\", \"what_to_do_en\": \"the cardholder should contact the issuing bank; try another card\"}], \"count\": 2, \"approved_total\": \"0.00\", \"approved_total_brl\": \"R$ 0,00\", \"declined\": [\"TX1007\", \"TX1008\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"venda recusada: o que fazer vem do manual\", \"hint\": \"código de recusa transação negada\"}]}",
+        "[policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system."
+      ],
+      "context": "- {\"ok\": true, \"data\": {\"period\": \"all\", \"transactions\": [{\"transaction_id\": \"TX1007\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"credito\", \"amount\": \"210.00\", \"amount_brl\": \"R$ 210,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"51\", \"decline_meaning_pt\": \"saldo ou limite insuficiente do portador do cartão\", \"decline_meaning_en\": \"insufficient funds or credit limit on the cardholder's card\", \"what_to_do_pt\": \"peça outro cartão ou outra forma de pagamento (Pix, débito)\", \"what_to_do_en\": \"ask for another card or another payment method (Pix, debit)\"}, {\"transaction_id\": \"TX1008\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"debito\", \"amount\": \"75.00\", \"amount_brl\": \"R$ 75,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"05\", \"decline_meaning_pt\": \"transação não autorizada pelo banco emissor do cartão\", \"decline_meaning_en\": \"transaction not authorized by the card's issuing bank\", \"what_to_do_pt\": \"o portador deve falar com o banco emissor; tente outro cartão\", \"what_to_do_en\": \"the cardholder should contact the issuing bank; try another card\"}], \"count\": 2, \"approved_total\": \"0.00\", \"approved_total_brl\": \"R$ 0,00\", \"declined\": [\"TX1007\", \"TX1008\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"venda recusada: o que fazer vem do manual\", \"hint\": \"código de recusa transação negada\"}]}\n- [policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": null,
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.0,
+      "run": 0
+    },
+    {
+      "id": "dependent-06",
+      "split": "dependent",
+      "message": "A máquina mostra erro de recusa na transação",
+      "ms": 27.0,
+      "expected_intent": "troubleshoot",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "numbers": true,
+        "claims": true,
+        "completed": false
+      },
+      "crash": null,
+      "got_intent": "troubleshoot",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "table",
+      "answer": "TX1007 (R$ 210,00, hoje) recusada, código 51: saldo ou limite insuficiente do portador do cartão; peça outro cartão ou outra forma de pagamento (Pix, débito); TX1008 (R$ 75,00, hoje) recusada, código 05: transação não autorizada pelo banco emissor do cartão; o portador deve falar com o banco emissor; tente outro cartão.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_transactions",
+          "args": {
+            "period": "all",
+            "status": "recusada"
+          },
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"period\": \"all\", \"transactions\": [{\"transaction_id\": \"TX1007\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"credito\", \"amount\": \"210.00\", \"amount_brl\": \"R$ 210,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"51\", \"decline_meaning_pt\": \"saldo ou limite insuficiente do portador do cartão\", \"decline_meaning_en\": \"insufficient funds or credit limit on the cardholder's card\", \"what_to_do_pt\": \"peça outro cartão ou outra forma de pagamento (Pix, débito)\", \"what_to_do_en\": \"ask for another card or another payment method (Pix, debit)\"}, {\"transaction_id\": \"TX1008\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"debito\", \"amount\": \"75.00\", \"amount_brl\": \"R$ 75,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"05\", \"decline_meaning_pt\": \"transação não autorizada pelo banco emissor do cartão\", \"decline_meaning_en\": \"transaction not authorized by the card's issuing bank\", \"what_to_do_pt\": \"o portador deve falar com o banco emissor; tente outro cartão\", \"what_to_do_en\": \"the cardholder should contact the issuing bank; try another card\"}], \"count\": 2, \"approved_total\": \"0.00\", \"approved_total_brl\": \"R$ 0,00\", \"declined\": [\"TX1007\", \"TX1008\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"venda recusada: o que fazer vem do manual\", \"hint\": \"código de recusa transação negada\"}]}",
+        "[policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema."
+      ],
+      "context": "- {\"ok\": true, \"data\": {\"period\": \"all\", \"transactions\": [{\"transaction_id\": \"TX1007\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"credito\", \"amount\": \"210.00\", \"amount_brl\": \"R$ 210,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"51\", \"decline_meaning_pt\": \"saldo ou limite insuficiente do portador do cartão\", \"decline_meaning_en\": \"insufficient funds or credit limit on the cardholder's card\", \"what_to_do_pt\": \"peça outro cartão ou outra forma de pagamento (Pix, débito)\", \"what_to_do_en\": \"ask for another card or another payment method (Pix, debit)\"}, {\"transaction_id\": \"TX1008\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"debito\", \"amount\": \"75.00\", \"amount_brl\": \"R$ 75,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"05\", \"decline_meaning_pt\": \"transação não autorizada pelo banco emissor do cartão\", \"decline_meaning_en\": \"transaction not authorized by the card's issuing bank\", \"what_to_do_pt\": \"o portador deve falar com o banco emissor; tente outro cartão\", \"what_to_do_en\": \"the cardholder should contact the issuing bank; try another card\"}], \"count\": 2, \"approved_total\": \"0.00\", \"approved_total_brl\": \"R$ 0,00\", \"declined\": [\"TX1007\", \"TX1008\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"venda recusada: o que fazer vem do manual\", \"hint\": \"código de recusa transação negada\"}]}\n- [policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": null,
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.0,
+      "run": 0
+    },
+    {
+      "id": "dependent-07",
+      "split": "dependent",
+      "message": "My Get Clássica is offline, how do I fix it?",
+      "ms": 24.0,
+      "expected_intent": "troubleshoot",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "tools": true,
+        "numbers": true,
+        "claims": true,
+        "completed": false
+      },
+      "crash": null,
+      "got_intent": "troubleshoot",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "table",
+      "answer": "T1988A Get Smart (Wi-Fi): online; T1988B Get Clássica (chip): offline for 190 min, no signal.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_terminal_status",
+          "args": {},
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"Wi-Fi\", \"status\": \"online\"}, {\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"status\": \"offline\", \"offline_minutes\": 190, \"signal\": \"sem sinal\"}], \"count\": 2, \"offline\": [\"T1988B\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"maquininha offline: os passos vêm do manual de conexão\", \"hint\": \"maquininha não conecta internet chip Wi-Fi\"}]}",
+        "[policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system."
+      ],
+      "context": "- {\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"Wi-Fi\", \"status\": \"online\"}, {\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"status\": \"offline\", \"offline_minutes\": 190, \"signal\": \"sem sinal\"}], \"count\": 2, \"offline\": [\"T1988B\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"maquininha offline: os passos vêm do manual de conexão\", \"hint\": \"maquininha não conecta internet chip Wi-Fi\"}]}\n- [policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": null,
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": null,
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.0,
+      "run": 0
+    },
+    {
+      "id": "dependent-08",
+      "split": "dependent",
+      "message": "Deu erro de transação negada na maquininha, como resolvo?",
+      "ms": 28.2,
+      "expected_intent": "troubleshoot",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "numbers": true,
+        "claims": true,
+        "completed": false
+      },
+      "crash": null,
+      "got_intent": "troubleshoot",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "table",
+      "answer": "TX1007 (R$ 210,00, hoje) recusada, código 51: saldo ou limite insuficiente do portador do cartão; peça outro cartão ou outra forma de pagamento (Pix, débito); TX1008 (R$ 75,00, hoje) recusada, código 05: transação não autorizada pelo banco emissor do cartão; o portador deve falar com o banco emissor; tente outro cartão.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_transactions",
+          "args": {
+            "period": "all",
+            "status": "recusada"
+          },
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"period\": \"all\", \"transactions\": [{\"transaction_id\": \"TX1007\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"credito\", \"amount\": \"210.00\", \"amount_brl\": \"R$ 210,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"51\", \"decline_meaning_pt\": \"saldo ou limite insuficiente do portador do cartão\", \"decline_meaning_en\": \"insufficient funds or credit limit on the cardholder's card\", \"what_to_do_pt\": \"peça outro cartão ou outra forma de pagamento (Pix, débito)\", \"what_to_do_en\": \"ask for another card or another payment method (Pix, debit)\"}, {\"transaction_id\": \"TX1008\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"debito\", \"amount\": \"75.00\", \"amount_brl\": \"R$ 75,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"05\", \"decline_meaning_pt\": \"transação não autorizada pelo banco emissor do cartão\", \"decline_meaning_en\": \"transaction not authorized by the card's issuing bank\", \"what_to_do_pt\": \"o portador deve falar com o banco emissor; tente outro cartão\", \"what_to_do_en\": \"the cardholder should contact the issuing bank; try another card\"}], \"count\": 2, \"approved_total\": \"0.00\", \"approved_total_brl\": \"R$ 0,00\", \"declined\": [\"TX1007\", \"TX1008\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"venda recusada: o que fazer vem do manual\", \"hint\": \"código de recusa transação negada\"}]}",
+        "[policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema."
+      ],
+      "context": "- {\"ok\": true, \"data\": {\"period\": \"all\", \"transactions\": [{\"transaction_id\": \"TX1007\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"credito\", \"amount\": \"210.00\", \"amount_brl\": \"R$ 210,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"51\", \"decline_meaning_pt\": \"saldo ou limite insuficiente do portador do cartão\", \"decline_meaning_en\": \"insufficient funds or credit limit on the cardholder's card\", \"what_to_do_pt\": \"peça outro cartão ou outra forma de pagamento (Pix, débito)\", \"what_to_do_en\": \"ask for another card or another payment method (Pix, debit)\"}, {\"transaction_id\": \"TX1008\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"debito\", \"amount\": \"75.00\", \"amount_brl\": \"R$ 75,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"05\", \"decline_meaning_pt\": \"transação não autorizada pelo banco emissor do cartão\", \"decline_meaning_en\": \"transaction not authorized by the card's issuing bank\", \"what_to_do_pt\": \"o portador deve falar com o banco emissor; tente outro cartão\", \"what_to_do_en\": \"the cardholder should contact the issuing bank; try another card\"}], \"count\": 2, \"approved_total\": \"0.00\", \"approved_total_brl\": \"R$ 0,00\", \"declined\": [\"TX1007\", \"TX1008\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"venda recusada: o que fazer vem do manual\", \"hint\": \"código de recusa transação negada\"}]}\n- [policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": null,
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.0,
+      "run": 0
+    },
+    {
+      "id": "dependent-09",
+      "split": "dependent",
+      "message": "The card reader is not connecting to wifi",
+      "ms": 31.0,
+      "expected_intent": "troubleshoot",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "tools": true,
+        "numbers": true,
+        "claims": true,
+        "completed": false
+      },
+      "crash": null,
+      "got_intent": "troubleshoot",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "table",
+      "answer": "T1988A Get Smart (Wi-Fi): online; T1988B Get Clássica (chip): offline for 190 min, no signal.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_terminal_status",
+          "args": {},
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"Wi-Fi\", \"status\": \"online\"}, {\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"status\": \"offline\", \"offline_minutes\": 190, \"signal\": \"sem sinal\"}], \"count\": 2, \"offline\": [\"T1988B\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"maquininha offline: os passos vêm do manual de conexão\", \"hint\": \"maquininha não conecta internet chip Wi-Fi\"}]}",
+        "[policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system."
+      ],
+      "context": "- {\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"Wi-Fi\", \"status\": \"online\"}, {\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"status\": \"offline\", \"offline_minutes\": 190, \"signal\": \"sem sinal\"}], \"count\": 2, \"offline\": [\"T1988B\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"maquininha offline: os passos vêm do manual de conexão\", \"hint\": \"maquininha não conecta internet chip Wi-Fi\"}]}\n- [policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": null,
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": null,
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.0,
+      "run": 0
+    },
+    {
+      "id": "dependent-10",
+      "split": "dependent",
+      "message": "Maquininha off-line, não passa venda, e agora?",
+      "ms": 33.3,
+      "expected_intent": "troubleshoot",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "numbers": true,
+        "claims": true,
+        "completed": false
+      },
+      "crash": null,
+      "got_intent": "troubleshoot",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "table",
+      "answer": "T1988A Get Smart (Wi-Fi): online; T1988B Get Clássica (chip): offline há 190 min, sem sinal.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_terminal_status",
+          "args": {},
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"Wi-Fi\", \"status\": \"online\"}, {\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"status\": \"offline\", \"offline_minutes\": 190, \"signal\": \"sem sinal\"}], \"count\": 2, \"offline\": [\"T1988B\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"maquininha offline: os passos vêm do manual de conexão\", \"hint\": \"maquininha não conecta internet chip Wi-Fi\"}]}",
+        "[policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema."
+      ],
+      "context": "- {\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"Wi-Fi\", \"status\": \"online\"}, {\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"status\": \"offline\", \"offline_minutes\": 190, \"signal\": \"sem sinal\"}], \"count\": 2, \"offline\": [\"T1988B\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"maquininha offline: os passos vêm do manual de conexão\", \"hint\": \"maquininha não conecta internet chip Wi-Fi\"}]}\n- [policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": null,
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.0,
+      "run": 0
+    }
+  ],
+  "failures": [
+    {
+      "id": "dependent-01",
+      "split": "dependent",
+      "message": "Minha maquininha não conecta na internet, o que faço?",
+      "ms": 302.0,
+      "expected_intent": "troubleshoot",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "numbers": true,
+        "claims": true,
+        "completed": false
+      },
+      "crash": null,
+      "got_intent": "troubleshoot",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "table",
+      "answer": "T1988A Get Smart (Wi-Fi): online; T1988B Get Clássica (chip): offline há 190 min, sem sinal.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_terminal_status",
+          "args": {},
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"Wi-Fi\", \"status\": \"online\"}, {\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"status\": \"offline\", \"offline_minutes\": 190, \"signal\": \"sem sinal\"}], \"count\": 2, \"offline\": [\"T1988B\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"maquininha offline: os passos vêm do manual de conexão\", \"hint\": \"maquininha não conecta internet chip Wi-Fi\"}]}",
+        "[policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema."
+      ],
+      "context": "- {\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"Wi-Fi\", \"status\": \"online\"}, {\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"status\": \"offline\", \"offline_minutes\": 190, \"signal\": \"sem sinal\"}], \"count\": 2, \"offline\": [\"T1988B\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"maquininha offline: os passos vêm do manual de conexão\", \"hint\": \"maquininha não conecta internet chip Wi-Fi\"}]}\n- [policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": null,
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.0,
+      "run": 0
+    },
+    {
+      "id": "dependent-02",
+      "split": "dependent",
+      "message": "A maquininha está sem sinal desde cedo",
+      "ms": 30.2,
+      "expected_intent": "troubleshoot",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "numbers": true,
+        "claims": true,
+        "completed": false
+      },
+      "crash": null,
+      "got_intent": "troubleshoot",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "table",
+      "answer": "T1988A Get Smart (Wi-Fi): online; T1988B Get Clássica (chip): offline há 190 min, sem sinal.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_terminal_status",
+          "args": {},
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"Wi-Fi\", \"status\": \"online\"}, {\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"status\": \"offline\", \"offline_minutes\": 190, \"signal\": \"sem sinal\"}], \"count\": 2, \"offline\": [\"T1988B\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"maquininha offline: os passos vêm do manual de conexão\", \"hint\": \"maquininha não conecta internet chip Wi-Fi\"}]}",
+        "[policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema."
+      ],
+      "context": "- {\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"Wi-Fi\", \"status\": \"online\"}, {\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"status\": \"offline\", \"offline_minutes\": 190, \"signal\": \"sem sinal\"}], \"count\": 2, \"offline\": [\"T1988B\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"maquininha offline: os passos vêm do manual de conexão\", \"hint\": \"maquininha não conecta internet chip Wi-Fi\"}]}\n- [policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": null,
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.0,
+      "run": 0
+    },
+    {
+      "id": "dependent-03",
+      "split": "dependent",
+      "message": "My terminal says no connection, help",
+      "ms": 29.1,
+      "expected_intent": "troubleshoot",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "tools": true,
+        "numbers": true,
+        "claims": true,
+        "completed": false
+      },
+      "crash": null,
+      "got_intent": "troubleshoot",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "table",
+      "answer": "T1988A Get Smart (Wi-Fi): online; T1988B Get Clássica (chip): offline for 190 min, no signal.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_terminal_status",
+          "args": {},
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"Wi-Fi\", \"status\": \"online\"}, {\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"status\": \"offline\", \"offline_minutes\": 190, \"signal\": \"sem sinal\"}], \"count\": 2, \"offline\": [\"T1988B\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"maquininha offline: os passos vêm do manual de conexão\", \"hint\": \"maquininha não conecta internet chip Wi-Fi\"}]}",
+        "[policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system."
+      ],
+      "context": "- {\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"Wi-Fi\", \"status\": \"online\"}, {\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"status\": \"offline\", \"offline_minutes\": 190, \"signal\": \"sem sinal\"}], \"count\": 2, \"offline\": [\"T1988B\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"maquininha offline: os passos vêm do manual de conexão\", \"hint\": \"maquininha não conecta internet chip Wi-Fi\"}]}\n- [policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": null,
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": null,
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.0,
+      "run": 0
+    },
+    {
+      "id": "dependent-04",
+      "split": "dependent",
+      "message": "Minha venda foi recusada, o que significa o erro?",
+      "ms": 26.9,
+      "expected_intent": "troubleshoot",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "numbers": true,
+        "claims": true,
+        "completed": false
+      },
+      "crash": null,
+      "got_intent": "troubleshoot",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "table",
+      "answer": "TX1007 (R$ 210,00, hoje) recusada, código 51: saldo ou limite insuficiente do portador do cartão; peça outro cartão ou outra forma de pagamento (Pix, débito); TX1008 (R$ 75,00, hoje) recusada, código 05: transação não autorizada pelo banco emissor do cartão; o portador deve falar com o banco emissor; tente outro cartão.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_transactions",
+          "args": {
+            "period": "all",
+            "status": "recusada"
+          },
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"period\": \"all\", \"transactions\": [{\"transaction_id\": \"TX1007\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"credito\", \"amount\": \"210.00\", \"amount_brl\": \"R$ 210,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"51\", \"decline_meaning_pt\": \"saldo ou limite insuficiente do portador do cartão\", \"decline_meaning_en\": \"insufficient funds or credit limit on the cardholder's card\", \"what_to_do_pt\": \"peça outro cartão ou outra forma de pagamento (Pix, débito)\", \"what_to_do_en\": \"ask for another card or another payment method (Pix, debit)\"}, {\"transaction_id\": \"TX1008\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"debito\", \"amount\": \"75.00\", \"amount_brl\": \"R$ 75,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"05\", \"decline_meaning_pt\": \"transação não autorizada pelo banco emissor do cartão\", \"decline_meaning_en\": \"transaction not authorized by the card's issuing bank\", \"what_to_do_pt\": \"o portador deve falar com o banco emissor; tente outro cartão\", \"what_to_do_en\": \"the cardholder should contact the issuing bank; try another card\"}], \"count\": 2, \"approved_total\": \"0.00\", \"approved_total_brl\": \"R$ 0,00\", \"declined\": [\"TX1007\", \"TX1008\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"venda recusada: o que fazer vem do manual\", \"hint\": \"código de recusa transação negada\"}]}",
+        "[policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema."
+      ],
+      "context": "- {\"ok\": true, \"data\": {\"period\": \"all\", \"transactions\": [{\"transaction_id\": \"TX1007\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"credito\", \"amount\": \"210.00\", \"amount_brl\": \"R$ 210,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"51\", \"decline_meaning_pt\": \"saldo ou limite insuficiente do portador do cartão\", \"decline_meaning_en\": \"insufficient funds or credit limit on the cardholder's card\", \"what_to_do_pt\": \"peça outro cartão ou outra forma de pagamento (Pix, débito)\", \"what_to_do_en\": \"ask for another card or another payment method (Pix, debit)\"}, {\"transaction_id\": \"TX1008\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"debito\", \"amount\": \"75.00\", \"amount_brl\": \"R$ 75,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"05\", \"decline_meaning_pt\": \"transação não autorizada pelo banco emissor do cartão\", \"decline_meaning_en\": \"transaction not authorized by the card's issuing bank\", \"what_to_do_pt\": \"o portador deve falar com o banco emissor; tente outro cartão\", \"what_to_do_en\": \"the cardholder should contact the issuing bank; try another card\"}], \"count\": 2, \"approved_total\": \"0.00\", \"approved_total_brl\": \"R$ 0,00\", \"declined\": [\"TX1007\", \"TX1008\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"venda recusada: o que fazer vem do manual\", \"hint\": \"código de recusa transação negada\"}]}\n- [policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": null,
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.0,
+      "run": 0
+    },
+    {
+      "id": "dependent-05",
+      "split": "dependent",
+      "message": "Why was my customer's card declined on my machine?",
+      "ms": 27.0,
+      "expected_intent": "troubleshoot",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "numbers": true,
+        "claims": true,
+        "completed": false
+      },
+      "crash": null,
+      "got_intent": "troubleshoot",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "table",
+      "answer": "TX1007 (R$ 210.00) declined, code 51: insufficient funds or credit limit on the cardholder's card; ask for another card or another payment method (Pix, debit); TX1008 (R$ 75.00) declined, code 05: transaction not authorized by the card's issuing bank; the cardholder should contact the issuing bank; try another card.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_transactions",
+          "args": {
+            "period": "all",
+            "status": "recusada"
+          },
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"period\": \"all\", \"transactions\": [{\"transaction_id\": \"TX1007\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"credito\", \"amount\": \"210.00\", \"amount_brl\": \"R$ 210,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"51\", \"decline_meaning_pt\": \"saldo ou limite insuficiente do portador do cartão\", \"decline_meaning_en\": \"insufficient funds or credit limit on the cardholder's card\", \"what_to_do_pt\": \"peça outro cartão ou outra forma de pagamento (Pix, débito)\", \"what_to_do_en\": \"ask for another card or another payment method (Pix, debit)\"}, {\"transaction_id\": \"TX1008\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"debito\", \"amount\": \"75.00\", \"amount_brl\": \"R$ 75,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"05\", \"decline_meaning_pt\": \"transação não autorizada pelo banco emissor do cartão\", \"decline_meaning_en\": \"transaction not authorized by the card's issuing bank\", \"what_to_do_pt\": \"o portador deve falar com o banco emissor; tente outro cartão\", \"what_to_do_en\": \"the cardholder should contact the issuing bank; try another card\"}], \"count\": 2, \"approved_total\": \"0.00\", \"approved_total_brl\": \"R$ 0,00\", \"declined\": [\"TX1007\", \"TX1008\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"venda recusada: o que fazer vem do manual\", \"hint\": \"código de recusa transação negada\"}]}",
+        "[policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system."
+      ],
+      "context": "- {\"ok\": true, \"data\": {\"period\": \"all\", \"transactions\": [{\"transaction_id\": \"TX1007\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"credito\", \"amount\": \"210.00\", \"amount_brl\": \"R$ 210,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"51\", \"decline_meaning_pt\": \"saldo ou limite insuficiente do portador do cartão\", \"decline_meaning_en\": \"insufficient funds or credit limit on the cardholder's card\", \"what_to_do_pt\": \"peça outro cartão ou outra forma de pagamento (Pix, débito)\", \"what_to_do_en\": \"ask for another card or another payment method (Pix, debit)\"}, {\"transaction_id\": \"TX1008\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"debito\", \"amount\": \"75.00\", \"amount_brl\": \"R$ 75,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"05\", \"decline_meaning_pt\": \"transação não autorizada pelo banco emissor do cartão\", \"decline_meaning_en\": \"transaction not authorized by the card's issuing bank\", \"what_to_do_pt\": \"o portador deve falar com o banco emissor; tente outro cartão\", \"what_to_do_en\": \"the cardholder should contact the issuing bank; try another card\"}], \"count\": 2, \"approved_total\": \"0.00\", \"approved_total_brl\": \"R$ 0,00\", \"declined\": [\"TX1007\", \"TX1008\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"venda recusada: o que fazer vem do manual\", \"hint\": \"código de recusa transação negada\"}]}\n- [policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": null,
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.0,
+      "run": 0
+    },
+    {
+      "id": "dependent-06",
+      "split": "dependent",
+      "message": "A máquina mostra erro de recusa na transação",
+      "ms": 27.0,
+      "expected_intent": "troubleshoot",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "numbers": true,
+        "claims": true,
+        "completed": false
+      },
+      "crash": null,
+      "got_intent": "troubleshoot",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "table",
+      "answer": "TX1007 (R$ 210,00, hoje) recusada, código 51: saldo ou limite insuficiente do portador do cartão; peça outro cartão ou outra forma de pagamento (Pix, débito); TX1008 (R$ 75,00, hoje) recusada, código 05: transação não autorizada pelo banco emissor do cartão; o portador deve falar com o banco emissor; tente outro cartão.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_transactions",
+          "args": {
+            "period": "all",
+            "status": "recusada"
+          },
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"period\": \"all\", \"transactions\": [{\"transaction_id\": \"TX1007\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"credito\", \"amount\": \"210.00\", \"amount_brl\": \"R$ 210,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"51\", \"decline_meaning_pt\": \"saldo ou limite insuficiente do portador do cartão\", \"decline_meaning_en\": \"insufficient funds or credit limit on the cardholder's card\", \"what_to_do_pt\": \"peça outro cartão ou outra forma de pagamento (Pix, débito)\", \"what_to_do_en\": \"ask for another card or another payment method (Pix, debit)\"}, {\"transaction_id\": \"TX1008\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"debito\", \"amount\": \"75.00\", \"amount_brl\": \"R$ 75,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"05\", \"decline_meaning_pt\": \"transação não autorizada pelo banco emissor do cartão\", \"decline_meaning_en\": \"transaction not authorized by the card's issuing bank\", \"what_to_do_pt\": \"o portador deve falar com o banco emissor; tente outro cartão\", \"what_to_do_en\": \"the cardholder should contact the issuing bank; try another card\"}], \"count\": 2, \"approved_total\": \"0.00\", \"approved_total_brl\": \"R$ 0,00\", \"declined\": [\"TX1007\", \"TX1008\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"venda recusada: o que fazer vem do manual\", \"hint\": \"código de recusa transação negada\"}]}",
+        "[policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema."
+      ],
+      "context": "- {\"ok\": true, \"data\": {\"period\": \"all\", \"transactions\": [{\"transaction_id\": \"TX1007\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"credito\", \"amount\": \"210.00\", \"amount_brl\": \"R$ 210,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"51\", \"decline_meaning_pt\": \"saldo ou limite insuficiente do portador do cartão\", \"decline_meaning_en\": \"insufficient funds or credit limit on the cardholder's card\", \"what_to_do_pt\": \"peça outro cartão ou outra forma de pagamento (Pix, débito)\", \"what_to_do_en\": \"ask for another card or another payment method (Pix, debit)\"}, {\"transaction_id\": \"TX1008\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"debito\", \"amount\": \"75.00\", \"amount_brl\": \"R$ 75,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"05\", \"decline_meaning_pt\": \"transação não autorizada pelo banco emissor do cartão\", \"decline_meaning_en\": \"transaction not authorized by the card's issuing bank\", \"what_to_do_pt\": \"o portador deve falar com o banco emissor; tente outro cartão\", \"what_to_do_en\": \"the cardholder should contact the issuing bank; try another card\"}], \"count\": 2, \"approved_total\": \"0.00\", \"approved_total_brl\": \"R$ 0,00\", \"declined\": [\"TX1007\", \"TX1008\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"venda recusada: o que fazer vem do manual\", \"hint\": \"código de recusa transação negada\"}]}\n- [policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": null,
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.0,
+      "run": 0
+    },
+    {
+      "id": "dependent-07",
+      "split": "dependent",
+      "message": "My Get Clássica is offline, how do I fix it?",
+      "ms": 24.0,
+      "expected_intent": "troubleshoot",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "tools": true,
+        "numbers": true,
+        "claims": true,
+        "completed": false
+      },
+      "crash": null,
+      "got_intent": "troubleshoot",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "table",
+      "answer": "T1988A Get Smart (Wi-Fi): online; T1988B Get Clássica (chip): offline for 190 min, no signal.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_terminal_status",
+          "args": {},
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"Wi-Fi\", \"status\": \"online\"}, {\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"status\": \"offline\", \"offline_minutes\": 190, \"signal\": \"sem sinal\"}], \"count\": 2, \"offline\": [\"T1988B\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"maquininha offline: os passos vêm do manual de conexão\", \"hint\": \"maquininha não conecta internet chip Wi-Fi\"}]}",
+        "[policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system."
+      ],
+      "context": "- {\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"Wi-Fi\", \"status\": \"online\"}, {\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"status\": \"offline\", \"offline_minutes\": 190, \"signal\": \"sem sinal\"}], \"count\": 2, \"offline\": [\"T1988B\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"maquininha offline: os passos vêm do manual de conexão\", \"hint\": \"maquininha não conecta internet chip Wi-Fi\"}]}\n- [policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": null,
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": null,
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.0,
+      "run": 0
+    },
+    {
+      "id": "dependent-08",
+      "split": "dependent",
+      "message": "Deu erro de transação negada na maquininha, como resolvo?",
+      "ms": 28.2,
+      "expected_intent": "troubleshoot",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "numbers": true,
+        "claims": true,
+        "completed": false
+      },
+      "crash": null,
+      "got_intent": "troubleshoot",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "table",
+      "answer": "TX1007 (R$ 210,00, hoje) recusada, código 51: saldo ou limite insuficiente do portador do cartão; peça outro cartão ou outra forma de pagamento (Pix, débito); TX1008 (R$ 75,00, hoje) recusada, código 05: transação não autorizada pelo banco emissor do cartão; o portador deve falar com o banco emissor; tente outro cartão.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_transactions",
+          "args": {
+            "period": "all",
+            "status": "recusada"
+          },
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"period\": \"all\", \"transactions\": [{\"transaction_id\": \"TX1007\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"credito\", \"amount\": \"210.00\", \"amount_brl\": \"R$ 210,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"51\", \"decline_meaning_pt\": \"saldo ou limite insuficiente do portador do cartão\", \"decline_meaning_en\": \"insufficient funds or credit limit on the cardholder's card\", \"what_to_do_pt\": \"peça outro cartão ou outra forma de pagamento (Pix, débito)\", \"what_to_do_en\": \"ask for another card or another payment method (Pix, debit)\"}, {\"transaction_id\": \"TX1008\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"debito\", \"amount\": \"75.00\", \"amount_brl\": \"R$ 75,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"05\", \"decline_meaning_pt\": \"transação não autorizada pelo banco emissor do cartão\", \"decline_meaning_en\": \"transaction not authorized by the card's issuing bank\", \"what_to_do_pt\": \"o portador deve falar com o banco emissor; tente outro cartão\", \"what_to_do_en\": \"the cardholder should contact the issuing bank; try another card\"}], \"count\": 2, \"approved_total\": \"0.00\", \"approved_total_brl\": \"R$ 0,00\", \"declined\": [\"TX1007\", \"TX1008\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"venda recusada: o que fazer vem do manual\", \"hint\": \"código de recusa transação negada\"}]}",
+        "[policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema."
+      ],
+      "context": "- {\"ok\": true, \"data\": {\"period\": \"all\", \"transactions\": [{\"transaction_id\": \"TX1007\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"credito\", \"amount\": \"210.00\", \"amount_brl\": \"R$ 210,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"51\", \"decline_meaning_pt\": \"saldo ou limite insuficiente do portador do cartão\", \"decline_meaning_en\": \"insufficient funds or credit limit on the cardholder's card\", \"what_to_do_pt\": \"peça outro cartão ou outra forma de pagamento (Pix, débito)\", \"what_to_do_en\": \"ask for another card or another payment method (Pix, debit)\"}, {\"transaction_id\": \"TX1008\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"debito\", \"amount\": \"75.00\", \"amount_brl\": \"R$ 75,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"05\", \"decline_meaning_pt\": \"transação não autorizada pelo banco emissor do cartão\", \"decline_meaning_en\": \"transaction not authorized by the card's issuing bank\", \"what_to_do_pt\": \"o portador deve falar com o banco emissor; tente outro cartão\", \"what_to_do_en\": \"the cardholder should contact the issuing bank; try another card\"}], \"count\": 2, \"approved_total\": \"0.00\", \"approved_total_brl\": \"R$ 0,00\", \"declined\": [\"TX1007\", \"TX1008\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"venda recusada: o que fazer vem do manual\", \"hint\": \"código de recusa transação negada\"}]}\n- [policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": null,
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.0,
+      "run": 0
+    },
+    {
+      "id": "dependent-09",
+      "split": "dependent",
+      "message": "The card reader is not connecting to wifi",
+      "ms": 31.0,
+      "expected_intent": "troubleshoot",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "tools": true,
+        "numbers": true,
+        "claims": true,
+        "completed": false
+      },
+      "crash": null,
+      "got_intent": "troubleshoot",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "table",
+      "answer": "T1988A Get Smart (Wi-Fi): online; T1988B Get Clássica (chip): offline for 190 min, no signal.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_terminal_status",
+          "args": {},
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"Wi-Fi\", \"status\": \"online\"}, {\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"status\": \"offline\", \"offline_minutes\": 190, \"signal\": \"sem sinal\"}], \"count\": 2, \"offline\": [\"T1988B\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"maquininha offline: os passos vêm do manual de conexão\", \"hint\": \"maquininha não conecta internet chip Wi-Fi\"}]}",
+        "[policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system."
+      ],
+      "context": "- {\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"Wi-Fi\", \"status\": \"online\"}, {\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"status\": \"offline\", \"offline_minutes\": 190, \"signal\": \"sem sinal\"}], \"count\": 2, \"offline\": [\"T1988B\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"maquininha offline: os passos vêm do manual de conexão\", \"hint\": \"maquininha não conecta internet chip Wi-Fi\"}]}\n- [policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": null,
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": null,
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.0,
+      "run": 0
+    },
+    {
+      "id": "dependent-10",
+      "split": "dependent",
+      "message": "Maquininha off-line, não passa venda, e agora?",
+      "ms": 33.3,
+      "expected_intent": "troubleshoot",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "numbers": true,
+        "claims": true,
+        "completed": false
+      },
+      "crash": null,
+      "got_intent": "troubleshoot",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "table",
+      "answer": "T1988A Get Smart (Wi-Fi): online; T1988B Get Clássica (chip): offline há 190 min, sem sinal.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_terminal_status",
+          "args": {},
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"Wi-Fi\", \"status\": \"online\"}, {\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"status\": \"offline\", \"offline_minutes\": 190, \"signal\": \"sem sinal\"}], \"count\": 2, \"offline\": [\"T1988B\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"maquininha offline: os passos vêm do manual de conexão\", \"hint\": \"maquininha não conecta internet chip Wi-Fi\"}]}",
+        "[policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema."
+      ],
+      "context": "- {\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"Wi-Fi\", \"status\": \"online\"}, {\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"status\": \"offline\", \"offline_minutes\": 190, \"signal\": \"sem sinal\"}], \"count\": 2, \"offline\": [\"T1988B\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"maquininha offline: os passos vêm do manual de conexão\", \"hint\": \"maquininha não conecta internet chip Wi-Fi\"}]}\n- [policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": null,
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.0,
+      "run": 0
+    }
+  ],
+  "stability": {
+    "runs": 1,
+    "pass_at_1": 0.0,
+    "pass_hat_k": 0.0,
+    "ci": {
+      "pass_at_1": {
+        "k": 0,
+        "n": 10,
+        "lo": 0.0,
+        "hi": 27.8
+      },
+      "pass_hat_k": {
+        "k": 0,
+        "n": 10,
+        "lo": 0.0,
+        "hi": 27.8
+      }
+    },
+    "unstable": [],
+    "by_case": {
+      "dependent-01": {
+        "passes": 0,
+        "runs": 1
+      },
+      "dependent-02": {
+        "passes": 0,
+        "runs": 1
+      },
+      "dependent-03": {
+        "passes": 0,
+        "runs": 1
+      },
+      "dependent-04": {
+        "passes": 0,
+        "runs": 1
+      },
+      "dependent-05": {
+        "passes": 0,
+        "runs": 1
+      },
+      "dependent-06": {
+        "passes": 0,
+        "runs": 1
+      },
+      "dependent-07": {
+        "passes": 0,
+        "runs": 1
+      },
+      "dependent-08": {
+        "passes": 0,
+        "runs": 1
+      },
+      "dependent-09": {
+        "passes": 0,
+        "runs": 1
+      },
+      "dependent-10": {
+        "passes": 0,
+        "runs": 1
+      }
+    }
+  },
+  "failure_matrix": {
+    "by_check": {
+      "completed": {
+        "dependent": 10
+      }
+    },
+    "intent_confusion": {},
+    "intent_matrix": {
+      "troubleshoot": {
+        "troubleshoot": 10
+      }
+    }
+  },
+  "memory_routing": {},
+  "gate_calibration": {
+    "status": "needs_negatives",
+    "positives": 0,
+    "negatives": 0,
+    "excluded_negatives": [],
+    "current": 0.5,
+    "current_source": "MIN_SCORE"
+  },
+  "retrieval": {
+    "cases": 0,
+    "positives": 0,
+    "negatives": 0,
+    "recall@3": 0.0,
+    "mrr": 0.0,
+    "hit@3": 0.0,
+    "hit@3_ci": null,
+    "ndcg@3": 0.0,
+    "page": {
+      "recall@3": 0.0,
+      "mrr": 0.0,
+      "hit@3": 0.0,
+      "hit@3_ci": null
+    },
+    "latency_ms": {
+      "p50": null,
+      "p95": null,
+      "mean": null
+    },
+    "gate": null,
+    "essential": 0,
+    "gold_unresolved": [],
+    "dedupe_aliases": 0,
+    "retriever": "bm25",
+    "fallback": "",
+    "requested": "bm25"
+  }
+}
