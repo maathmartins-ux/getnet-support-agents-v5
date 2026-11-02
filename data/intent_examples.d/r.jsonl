@@ -8,5 +8,5 @@
 {"text": "The terminal keeps rejecting cards", "intent": "troubleshoot"}
 {"text": "Vai chover em São Paulo amanhã?", "intent": "general"}
 {"text": "How much is the US dollar today?", "intent": "general"}
-{"text": "Quero falar com um atendente", "intent": "human_request"}
+{"text": "Me passa para uma pessoa da central, por favor", "intent": "human_request"}
 {"text": "I want to talk to a real person", "intent": "human_request"}
