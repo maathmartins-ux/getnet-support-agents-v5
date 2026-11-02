@@ -25,6 +25,9 @@ flowchart TD
   `run_batch`; `multi` roda faq ∥ records), aceita `needs` pedidos por um agente (`collect_needs`, `accept_need`),
   e numa falha adia os dependentes e replaneja (`_defer_dependents`, `next_step`). Ablação por `SUPERVISOR_REPLAN`
   (`on`, `no_needs`, `off`).
+- `troubleshoot` (sintoma de maquininha ou transação) começa no Support: a tool lê o dado do cliente (terminal offline,
+  código de recusa) e devolve `needs` pedindo o Knowledge só quando o achado precisa do manual. Sem o `needs`
+  (ablação `no_needs`), dependent-07..10 não completam: o plano fixo não sabe que o manual é preciso.
 - Condição de parada por turno: `MAX_MODEL_CALLS`, `MAX_TURN_USD`, `NODE_TIMEOUT_S` (`budget_exceeded`,
   `_invoke_timed`). Estourou → entrega o já respondido e abre caso humano (`_exhaust`).
 
@@ -32,7 +35,7 @@ flowchart TD
 
 ```mermaid
 flowchart LR
-  Q["Pergunta + histórico<br/>agents.py expand_query (glossary.json)"] --> I["Índice híbrido BM25 + denso<br/>src/app/rag.py Index / FastEmbedEmbedder"]
+  Q["Pergunta + histórico<br/>agents.py expand_query (glossary.json)"] --> I["Busca densa e5-large + rerank bge-m3-int8 (pool 10)<br/>src/app/rag.py HybridRetriever(dense) / CrossRerankRetriever"]
   C["Corpus do site oficial<br/>data/knowledge/ via src/app/ingest.py"] --> I
   I --> H["Cobertura mínima<br/>agents.py covered_hits"]
   H -- coberto --> A["Resposta com citação<br/>agents.py cite_ids"]
@@ -41,7 +44,20 @@ flowchart LR
   A --> N["Número só com evidência<br/>src/app/grounding.py unsupported_numbers"]
 ```
 
-- O buscador é escolhido por medida (`run_evals --choose-retriever`, `data/retriever.json`; ADR 0004).
+- O buscador é escolhido por medida (`run_evals --choose-retriever`, `data/retriever.json`; ADR 0004 e ADR 0008).
+  Medida deste corpus (341 trechos de 29 URLs; 38 perguntas com fonte, gold de passagens essenciais):
+
+  | buscador | Recall@3 | MRR | p95 por busca | RAM |
+  |---|---:|---:|---:|---:|
+  | bm25 | 0,579 | 0,504 | 2 ms | 41 MB |
+  | denso e5-large (rodada 1 ao vivo) | 0,842 | 0,715 | 235 ms | 1541 MB |
+  | **denso e5-large + rerank bge-m3-int8 (entrega)** | **0,947** | **0,807** | 2862 ms sob carga | 2368 MB |
+
+  O rerank é o único que passa as duas metas (Recall@3 ≥ 0,85, MRR ≥ 0,80); o p95 foi medido com 8 subagentes
+  disputando a CPU, por isso o orçamento explícito de 3 s (ADR 0008). Corte por seção e contexto no índice ficam
+  desligados (padrão do kit, medido no ensaio).
+- O portão "sem fonte" confere a cobertura no BM25 com o limiar calibrado no domínio (`COVERAGE_GATE=bm25`,
+  `MIN_SCORE` em `src/app/domain/challenge/__init__.py`), qualquer que seja o buscador que ordena.
 - `general` nunca abre caso; número de clima/câmbio só vem da API com data (`live_data.py`).
 
 ## 3. Escritas com confirmação e humano no laço (HITL)
