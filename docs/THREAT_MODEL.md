@@ -21,7 +21,7 @@ schema); (4) RAG/web ↔ agente (conteúdo externo pode carregar instrução). "
 |---|---|---|---|---|
 | LLM01 | prompt injection direta/indireta/ofuscada | deobfuscate + regex + camada LLM; conteúdo de RAG/web tratado como dado | src/app/guardrails.py | tests/test_domain_guardrails.py (32 casos; 11/32 antes do merge) |
 | LLM02 | divulgação de informação sensível | mask_output, isolamento de tools | src/app/guardrails.py, src/app/tools.py | tests/test_privacy.py |
-| LLM03 | cadeia de suprimentos | dependências fixadas, ações pinadas | requirements, scripts/pin_actions.sh | tests/test_supply_chain.py |
+| LLM03 | cadeia de suprimentos | dependências fixadas, ações pinadas | requirements.lock, scripts/pin_actions.sh | tests/test_supply_chain.py |
 | LLM04 | envenenamento de dados/corpus | allowlist de fontes na ingestão | src/app/ingest.py, data/sources.json | tests/test_ingest.py, tests/test_domain_corpus.py |
 | LLM05 | saída imprópria | grounding e política de números | src/app/grounding.py | tests/test_grounding.py, tests/test_numbers_policy.py |
 | LLM06 | agência excessiva | tools com nomes congelados, escrita com confirmação | src/app/actions.py | tests/test_hitl.py |
