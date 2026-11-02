@@ -262,6 +262,10 @@ def records_offline(ctx, a):
     """Atendimento determinístico do records. `a` = módulo app.agents (AgentResult, run_tool, _t)."""
     AgentResult, run_tool, t = a.AgentResult, a.run_tool, a._t
     uid, text = ctx.user_id, ctx.text
+    subjects = (_DISPUTE, _ANTICIP, _TICKET, _SETTLE, _TERMINAL, _DECLINE, _TXID, _TERMID)
+    # seguimento curto sem assunto ("And how do I fix it?") herda o assunto da fala anterior do cliente
+    prev = next((m["content"] for m in reversed(ctx.history) if m.get("role") == "user"), "")
+    s = text if any(rx.search(text) for rx in subjects) else f"{text} {prev}"
     calls: list = []
     ev: list[str] = []
 
@@ -299,10 +303,10 @@ def records_offline(ctx, a):
                         facts={"transaction_id": tx, "ineligible": "open_dispute"})
         return pending(call("open_dispute", {"transaction_id": tx}), f"contestar a venda {tx}",
                        f"dispute sale {tx}", {"transaction_id": tx})
-    if _ANTICIP.search(text) and not _EXPLAIN.search(text):
+    if _ANTICIP.search(s) and not _EXPLAIN.search(text):
         return pending(call("request_anticipation", {"method": "credito"}),
                        "antecipar seus recebíveis do crédito", "advance your credit receivables", {})
-    if _TICKET.search(text):
+    if _TICKET.search(s):
         term = _find(_TERMID, ctx) or (call("get_terminal_status", {})["data"]["offline"] or [None])[0]
         if not term:
             return done("Para qual maquininha?", "For which terminal?")
@@ -322,7 +326,7 @@ def records_offline(ctx, a):
         return done(f"Total das vendas aprovadas: {d['total_brl']}. {pt}.",
                     f"Total of approved sales: R$ {d['total']}. {en}.", facts={"total": d["total_brl"]})
     tx = _here(_TXID, text) or _tx_by_amount(text, uid)
-    if _DECLINE.search(text) or tx:
+    if _DECLINE.search(s) or tx:
         r = call("get_transactions", {"transaction_id": tx} if tx else {"period": "all", "status": "recusada"})
         if not r.get("ok"):
             return done("Não encontrei essa venda na sua conta.", "I couldn't find that sale in your account.")
@@ -335,7 +339,7 @@ def records_offline(ctx, a):
             if i.get("decline_code") else i["status"]) for i in items)
         return done(pt + ".", en + ".", needs=r.get("needs", []),
                     facts={"transactions": [i["transaction_id"] for i in items]})
-    if _TERMINAL.search(text) or _OTHER.search(text):
+    if _TERMINAL.search(s) or _OTHER.search(text):
         term = _here(_TERMID, text)
         if not term and _OTHER.search(text) and (prev := _find(_TERMID, ctx)):
             mine = call("get_terminal_status", {})["data"]["terminals"]

@@ -59,3 +59,24 @@ def test_settlement_rules(t):
 
 def test_dispute_only_approved(t):
     assert t.ELIGIBLE_STATUS == {"open_dispute": {"aprovada"}}
+
+
+def _offline(text, history=(), lang="pt"):
+    from app import agents
+    ctx = agents.Context(text=text, language=lang, user_id="cliente1988", conversation_id="t-test",
+                         history=[{"role": "user", "content": h} for h in history])
+    return agents.domain.active().records_offline(ctx, agents)
+
+
+def test_offline_settlement_and_followup(domain_data):
+    r = _offline("When will the money from yesterday's sales be deposited?", lang="en")
+    assert "745.50" in r.text and [c.name for c in r.tool_calls] == ["get_settlements"]
+    r = _offline("And how do I fix it?", ["What's the status of my card machines?"], "en")
+    assert "T1988B" in r.text and r.needs and r.needs[0]["agent"] == "faq"
+
+
+def test_offline_dispute_pending(domain_data):
+    r = _offline("Quero contestar a venda TX1006, não reconheço")
+    assert r.pending_action and "open_dispute" in [c.name for c in r.tool_calls]
+    r = _offline("Quero contestar a venda TX1007")
+    assert not r.pending_action and r.facts.get("ineligible") == "open_dispute"
