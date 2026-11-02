@@ -1,11 +1,11 @@
 # Procedência: o que veio do kit e o que foi feito no relógio
 
 Este documento existe para que a comparação com quem entregou uma vez só seja justa. Ele diz o que já estava
-pronto antes do relógio, de onde veio e o que os {{MINUTOS}} minutos medem.
+pronto antes do relógio, de onde veio e o que os ≤ 58 minutos medem.
 
 ## 1. O kit e a sua história
 
-O primeiro commit (`chore: scaffold from entregar-desafio-cronometrado kit {{VERSAO}}`) traz um kit próprio, mantido
+O primeiro commit (`chore: scaffold from entregar-desafio-cronometrado kit v5.1.0`) traz um kit próprio, mantido
 entre as tentativas deste mesmo desafio. **O kit evoluiu a partir das correções das entregas anteriores.** Cada
 versão absorveu os gaps apontados na correção da tentativa anterior:
 
@@ -13,8 +13,8 @@ versão absorveu os gaps apontados na correção da tentativa anterior:
 |---|---|---:|---|
 | v1 | sem kit | 7,1 | — |
 | v2 | v2.0.0 | 8,2 | token sem expiração, operador com token compartilhado, HITL sem retomada (→ v3.7.0) |
-| v4 | v3.7.0 | 8,5 | groundedness 60%, busca fraca, memória 54%, humano sem continuar o plano, avaliação de um rotulador só (→ {{VERSAO}}) |
-| **v5 (esta)** | **{{VERSAO}}** | — | — |
+| v4 | v3.7.0 | 8,5 | groundedness 60%, busca fraca, memória 54%, humano sem continuar o plano, avaliação de um rotulador só (→ v5.1.0) |
+| **v5 (esta)** | **v5.1.0** | — | — |
 
 O registro completo do que mudou em cada versão, com a causa medida, está em
 [KIT_CHANGELOG.md](KIT_CHANGELOG.md), copiado do kit sem edição.
@@ -44,7 +44,7 @@ correspondente no kit e se ela foi feita **antes** do relógio (kit) ou **no** r
 para medir as correções antes de usá-las; o resultado está no histórico do kit (`KIT_CHANGELOG.md`). Os números
 deste repositório vêm só das medidas feitas aqui, no relógio, sobre o corpus e os casos deste enunciado.
 
-## 2. O que os {{MINUTOS}} minutos medem, e o que não medem
+## 2. O que os ≤ 58 minutos medem, e o que não medem
 
 - **Medem:** a especialização do kit para este enunciado, no relógio: spec, base de conhecimento, ferramentas do
   domínio, casos de avaliação (incluindo o held-out cego e as perguntas reais), prompts, regras do router e do
