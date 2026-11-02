@@ -14,7 +14,7 @@ import re
 PLANS = {
     "knowledge": ["faq"],
     "support": ["records"],
-    "troubleshoot": ["records", "faq"],
+    "troubleshoot": ["records"],  # faq entra pelo `needs` da tool (offline, recusa)
     "general": ["faq"],
     "multi": ["faq", "records"],
     "human_request": ["escalation"],
