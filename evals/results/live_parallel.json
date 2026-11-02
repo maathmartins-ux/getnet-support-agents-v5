@@ -1,0 +1,3751 @@
+{
+  "mode": "in-process",
+  "provider": "anthropic",
+  "recorded_at": "2026-11-02T18:31:51Z",
+  "git_sha": "2895856",
+  "live": true,
+  "split": "parallel",
+  "status": "complete",
+  "spent_usd": 0.40005,
+  "max_usd": 0.872727,
+  "llm_errors": 0.0,
+  "gate": 0.9,
+  "intent_acc": 1.0,
+  "intent_ci": {
+    "k": 12,
+    "n": 12,
+    "lo": 75.8,
+    "hi": 100.0
+  },
+  "isolation": "db_per_case",
+  "coverage_min_score": {
+    "effective": 12.433,
+    "source": "MIN_SCORE"
+  },
+  "gated_splits": [
+    "parallel"
+  ],
+  "ungated_splits": [
+    "hard",
+    "heldout",
+    "real"
+  ],
+  "passed": true,
+  "metrics": {
+    "parallel": {
+      "cases": 12,
+      "intent_acc": 100.0,
+      "handoff_acc": 75.0,
+      "handoff_outcome_acc": 75.0,
+      "blocked_acc": null,
+      "language_acc": 100.0,
+      "tools_acc": null,
+      "pending_action_acc": null,
+      "replanned_acc": null,
+      "completed_acc": null,
+      "no_leak_acc": null,
+      "numbers_acc": 100.0,
+      "memory_acc": null,
+      "claims_acc": 100.0,
+      "language_undetected": 0,
+      "recall@3": null,
+      "mrr": null,
+      "p50_ms": 10706.2,
+      "p95_ms": 16367.2,
+      "cost_usd": 0.40005,
+      "crashes": 0,
+      "ci": {
+        "intent_acc": {
+          "k": 12,
+          "n": 12,
+          "lo": 75.8,
+          "hi": 100.0
+        },
+        "handoff_acc": {
+          "k": 9,
+          "n": 12,
+          "lo": 46.8,
+          "hi": 91.1
+        },
+        "handoff_outcome_acc": {
+          "k": 9,
+          "n": 12,
+          "lo": 46.8,
+          "hi": 91.1
+        },
+        "language_acc": {
+          "k": 12,
+          "n": 12,
+          "lo": 75.8,
+          "hi": 100.0
+        },
+        "numbers_acc": {
+          "k": 12,
+          "n": 12,
+          "lo": 75.8,
+          "hi": 100.0
+        },
+        "claims_acc": {
+          "k": 12,
+          "n": 12,
+          "lo": 75.8,
+          "hi": 100.0
+        }
+      }
+    },
+    "ALL": {
+      "cases": 12,
+      "intent_acc": 100.0,
+      "handoff_acc": 75.0,
+      "handoff_outcome_acc": 75.0,
+      "blocked_acc": null,
+      "language_acc": 100.0,
+      "tools_acc": null,
+      "pending_action_acc": null,
+      "replanned_acc": null,
+      "completed_acc": null,
+      "no_leak_acc": null,
+      "numbers_acc": 100.0,
+      "memory_acc": null,
+      "claims_acc": 100.0,
+      "language_undetected": 0,
+      "recall@3": null,
+      "mrr": null,
+      "p50_ms": 10706.2,
+      "p95_ms": 16367.2,
+      "cost_usd": 0.40005,
+      "crashes": 0,
+      "ci": {
+        "intent_acc": {
+          "k": 12,
+          "n": 12,
+          "lo": 75.8,
+          "hi": 100.0
+        },
+        "handoff_acc": {
+          "k": 9,
+          "n": 12,
+          "lo": 46.8,
+          "hi": 91.1
+        },
+        "handoff_outcome_acc": {
+          "k": 9,
+          "n": 12,
+          "lo": 46.8,
+          "hi": 91.1
+        },
+        "language_acc": {
+          "k": 12,
+          "n": 12,
+          "lo": 75.8,
+          "hi": 100.0
+        },
+        "numbers_acc": {
+          "k": 12,
+          "n": 12,
+          "lo": 75.8,
+          "hi": 100.0
+        },
+        "claims_acc": {
+          "k": 12,
+          "n": 12,
+          "lo": 75.8,
+          "hi": 100.0
+        }
+      }
+    }
+  },
+  "rows": [
+    {
+      "id": "parallel-01",
+      "split": "parallel",
+      "message": "Como funciona o link de pagamento? E quanto vendi ontem?",
+      "ms": 11763.2,
+      "expected_intent": "multi",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "numbers": true,
+        "claims": true
+      },
+      "crash": null,
+      "got_intent": "multi",
+      "route": [
+        "router",
+        "faq",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "**Link de pagamento**\n- Você envia o link aos clientes por redes sociais, WhatsApp, e-mail ou SMS. O cliente clica, escolhe a forma de pagamento e finaliza a compra [sup-link-de-pagamento-12].\n- O comprador pode pagar com débito, crédito, Pix, Wallet ou boleto [prod-link-pagamento-02].\n- O custo é o plano assinado mais a taxa do cartão. A taxa depende do número de parcelas e de em quantos dias você quer receber [sup-link-de-pagamento-12].\n- A antecipação das vendas de e-Commerce fica bloqueada por 6 meses. As vendas do mundo físico podem ser antecipadas normalmente [sup-link-de-pagamento-12].\n\n**Vendas de ontem**\n\nVocê teve 4 vendas aprovadas, num total de **R$ 745,50**:\n- TX1001, débito: R$ 120,00\n- TX1002, crédito: R$ 480,00\n- TX1003, débito: R$ 85,50\n- TX1005, Pix: R$ 60,00",
+      "source_ids": [
+        "sup-link-de-pagamento-12",
+        "prod-link-pagamento-02",
+        "prod-link-pagamento-01"
+      ],
+      "sources": [
+        {
+          "id": "sup-link-de-pagamento-12",
+          "title": "Arquivos Link de pagamento - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/link-de-pagamento/"
+        },
+        {
+          "id": "prod-link-pagamento-02",
+          "title": "Getnet | Link de Pagamento: venda mais online | GetnetLink de Pagamento: venda mais online | Getnet",
+          "url": "https://site.getnet.com.br/link-de-pagamento/"
+        },
+        {
+          "id": "prod-link-pagamento-01",
+          "title": "Getnet | Link de Pagamento: venda mais online | GetnetLink de Pagamento: venda mais online | Getnet",
+          "url": "https://site.getnet.com.br/link-de-pagamento/"
+        }
+      ],
+      "tool_calls": [
+        {
+          "name": "get_transactions",
+          "args": {
+            "period": "yesterday",
+            "status": "aprovada"
+          },
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "Arquivos Link de pagamento - Getnet: O vendedor pode enviar o Link de Pagamento para seus clientes por redes sociais, WhatsApp, email e SMS. O cliente clica no link, escolhe o método de pagamento e finaliza a compra. Quais os custos pra ter um Link de Pagamento? Quais os custos pra ter um Link de Pagamento? Você paga pelo plano assinado, mais a taxa do cartão que depende do número de parcelas e em quantos dias você quer o dinheiro na conta. Por quanto tempo a antecipação do cliente fica bloqueada? Por quanto tempo a antecipação do cliente fica bloqueada? A antecipação das vendas e-Commerce fica bloqueada por 6 meses. Caso o cliente tenha produtos no mundo físico, ele conseguirá antecipar as do mundo físico normalmente",
+        "Getnet | Link de Pagamento: venda mais online | GetnetLink de Pagamento: venda mais online | Getnet: Você pode optar por deixar seu comprador escolher entre débito, crédito, Pix, Wallet e boleto Mais opções de venda Com o Link de Pagamento inicial você pode vender também através do aplicativo com o antifraude da Getnet Opção de inclusão do valor de frete de cobrança Quero contratar Venda online de forma prática e segura com Link de Pagamento Recomendado · Leve agora Link de pagamento Inicial R$1,00 por link pago.",
+        "Getnet | Link de Pagamento: venda mais online | GetnetLink de Pagamento: venda mais online | Getnet: Getnet - A solução ideal para o seu negócio Nosso sistema de contratação está em manutenção no momento. Deixe seus dados e um especialista da Getnet entrará em contato para ajudar você a concluir seu pedido. Prepare-se com Link de Pagamento para Black Friday Link personalizável Segurança antifraude Aceite débito, crédito, Pix, Wallet e boleto Quero contratar Benefícios para você vender mais com Link de Pagamento na Black Friday Expanda seu negócio Venda para estrangeiros com documento de identificação (RNE) no pagamento Venda de onde estiver Faça vendas usando o WhatsApp ou sua rede social Novo · Link completo Insira diversos produtos no mesmo carrinho Novo · Personalizável Personalize o link com a imagem do produto Conte com a segurança do Antifraude da Getnet",
+        "{\"ok\": true, \"data\": {\"period\": \"yesterday\", \"transactions\": [{\"transaction_id\": \"TX1001\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"debito\", \"amount\": \"120.00\", \"amount_brl\": \"R$ 120,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}, {\"transaction_id\": \"TX1002\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"credito\", \"amount\": \"480.00\", \"amount_brl\": \"R$ 480,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}, {\"transaction_id\": \"TX1003\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"debito\", \"amount\": \"85.50\", \"amount_brl\": \"R$ 85,50\", \"status\": \"aprovada\", \"terminal\": \"T1988B\"}, {\"transaction_id\": \"TX1005\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"pix\", \"amount\": \"60.00\", \"amount_brl\": \"R$ 60,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}], \"count\": 4, \"approved_total\": \"745.50\", \"approved_total_brl\": \"R$ 745,50\", \"declined\": []}, \"calculado_em_codigo\": [{\"lista\": \"transactions\", \"itens\": 4, \"por_method\": {\"credito\": {\"itens\": 1}, \"debito\": {\"itens\": 2}, \"pix\": {\"itens\": 1}}}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}",
+        "[policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema."
+      ],
+      "context": "- Arquivos Link de pagamento - Getnet: O vendedor pode enviar o Link de Pagamento para seus clientes por redes sociais, WhatsApp, email e SMS. O cliente clica no link, escolhe o método de pagamento e finaliza a compra. Quais os custos pra ter um Link de Pagamento? Quais os custos pra ter um Link de Pagamento? Você paga pelo plano assinado, mais a taxa do cartão que depende do número de parcelas e em quantos dias você quer o dinheiro na conta. Por quanto tempo a antecipação do cliente fica bloqueada? Por quanto tempo a antecipação do cliente fica bloqueada? A antecipação das vendas e-Commerce fica bloqueada por 6 meses. Caso o cliente tenha produtos no mundo físico, ele conseguirá antecipar as do mundo físico normalmente\n- Getnet | Link de Pagamento: venda mais online | GetnetLink de Pagamento: venda mais online | Getnet: Você pode optar por deixar seu comprador escolher entre débito, crédito, Pix, Wallet e boleto Mais opções de venda Com o Link de Pagamento inicial você pode vender também através do aplicativo com o antifraude da Getnet Opção de inclusão do valor de frete de cobrança Quero contratar Venda online de forma prática e segura com Link de Pagamento Recomendado · Leve agora Link de pagamento Inicial R$1,00 por link pago.\n- Getnet | Link de Pagamento: venda mais online | GetnetLink de Pagamento: venda mais online | Getnet: Getnet - A solução ideal para o seu negócio Nosso sistema de contratação está em manutenção no momento. Deixe seus dados e um especialista da Getnet entrará em contato para ajudar você a concluir seu pedido. Prepare-se com Link de Pagamento para Black Friday Link personalizável Segurança antifraude Aceite débito, crédito, Pix, Wallet e boleto Quero contratar Benefícios para você vender mais com Link de Pagamento na Black Friday Expanda seu negócio Venda para estrangeiros com documento de identificação (RNE) no pagamento Venda de onde estiver Faça vendas usando o WhatsApp ou sua rede social Novo · Link completo Insira diversos produtos no mesmo carrinho Novo · Personalizável Personalize o link com a imagem do produto Conte com a segurança do Antifraude da Getnet\n- {\"ok\": true, \"data\": {\"period\": \"yesterday\", \"transactions\": [{\"transaction_id\": \"TX1001\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"debito\", \"amount\": \"120.00\", \"amount_brl\": \"R$ 120,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}, {\"transaction_id\": \"TX1002\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"credito\", \"amount\": \"480.00\", \"amount_brl\": \"R$ 480,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}, {\"transaction_id\": \"TX1003\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"debito\", \"amount\": \"85.50\", \"amount_brl\": \"R$ 85,50\", \"status\": \"aprovada\", \"terminal\": \"T1988B\"}, {\"transaction_id\": \"TX1005\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"pix\", \"amount\": \"60.00\", \"amount_brl\": \"R$ 60,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}], \"count\": 4, \"approved_total\": \"745.50\", \"approved_total_brl\": \"R$ 745,50\", \"declined\": []}, \"calculado_em_codigo\": [{\"lista\": \"transactions\", \"itens\": 4, \"por_method\": {\"credito\": {\"itens\": 1}, \"debito\": {\"itens\": 2}, \"pix\": {\"itens\": 1}}}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}\n- [policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": null,
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.035851,
+      "run": 0
+    },
+    {
+      "id": "parallel-02",
+      "split": "parallel",
+      "message": "What is Get Smart? And when will yesterday's money arrive?",
+      "ms": 16367.2,
+      "expected_intent": "multi",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "numbers": true,
+        "claims": true
+      },
+      "crash": null,
+      "got_intent": "multi",
+      "route": [
+        "router",
+        "faq",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "**What Get Smart is:** It's a smart card machine. You can manage inventory, place orders, close tabs, load your menu and issue invoices on the machine. You can also integrate it with your business's system [sup-get-smart-10].\n\n**When yesterday's money arrives:** Yesterday's approved sales total 745.50. The money arrives on different dates depending on the payment method:\n- **2026-11-01 (yesterday):** 60.00. This is TX1005, paid by Pix (D+0).\n- **2026-11-02 (today):** 205.50. This is TX1001 (120.00) and TX1003 (85.50), both debit (D+1 business day).\n- **2026-12-01:** 480.00. This is TX1002, paid by credit (D+30).",
+      "source_ids": [
+        "sup-get-smart-10"
+      ],
+      "sources": [
+        {
+          "id": "sup-get-smart-10",
+          "title": "Arquivos Get Smart - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/get-smart/"
+        }
+      ],
+      "tool_calls": [
+        {
+          "name": "get_settlements",
+          "args": {
+            "period": "yesterday"
+          },
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "Arquivos Get Smart - Getnet: O que é a Get Smart? O que é a Get Smart? A Get Smart é uma máquina de cartões inteligente. Com ela, seu dia a dia fica mais simples, fácil e muito mais digital. Você pode controlar o estoque, fazer pedidos, fechar conta, embarcar cardápio, emitir nota fiscal, tudo diretamente na máquina. A Get Smart permite que você integre o terminal com o sistema de seu estabelecimento e assim terá todos os aparelhos que seu negócio precisa em um único lugar.",
+        "{\"ok\": true, \"data\": {\"period\": \"yesterday\", \"settlements\": [{\"transaction_id\": \"TX1001\", \"method\": \"debito\", \"amount\": \"120.00\", \"amount_brl\": \"R$ 120,00\", \"rule\": \"D+1 útil\", \"settlement_date\": \"2026-11-02\", \"settlement_when\": \"hoje\"}, {\"transaction_id\": \"TX1002\", \"method\": \"credito\", \"amount\": \"480.00\", \"amount_brl\": \"R$ 480,00\", \"rule\": \"D+30\", \"settlement_date\": \"2026-12-01\", \"settlement_when\": \"em 29 dias\"}, {\"transaction_id\": \"TX1003\", \"method\": \"debito\", \"amount\": \"85.50\", \"amount_brl\": \"R$ 85,50\", \"rule\": \"D+1 útil\", \"settlement_date\": \"2026-11-02\", \"settlement_when\": \"hoje\"}, {\"transaction_id\": \"TX1005\", \"method\": \"pix\", \"amount\": \"60.00\", \"amount_brl\": \"R$ 60,00\", \"rule\": \"D+0\", \"settlement_date\": \"2026-11-01\", \"settlement_when\": \"ontem\"}], \"count\": 4, \"total\": \"745.50\", \"total_brl\": \"R$ 745,50\", \"by_date\": {\"2026-11-01\": \"R$ 60,00\", \"2026-11-02\": \"R$ 205,50\", \"2026-12-01\": \"R$ 480,00\"}}, \"calculado_em_codigo\": [{\"lista\": \"settlements\", \"itens\": 4, \"por_method\": {\"credito\": {\"itens\": 1}, \"debito\": {\"itens\": 2}, \"pix\": {\"itens\": 1}}, \"por_settlement_date\": {\"2026-11-01\": {\"itens\": 1}, \"2026-11-02\": {\"itens\": 2}, \"2026-12-01\": {\"itens\": 1}}}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}",
+        "[policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system."
+      ],
+      "context": "- Arquivos Get Smart - Getnet: O que é a Get Smart? O que é a Get Smart? A Get Smart é uma máquina de cartões inteligente. Com ela, seu dia a dia fica mais simples, fácil e muito mais digital. Você pode controlar o estoque, fazer pedidos, fechar conta, embarcar cardápio, emitir nota fiscal, tudo diretamente na máquina. A Get Smart permite que você integre o terminal com o sistema de seu estabelecimento e assim terá todos os aparelhos que seu negócio precisa em um único lugar.\n- {\"ok\": true, \"data\": {\"period\": \"yesterday\", \"settlements\": [{\"transaction_id\": \"TX1001\", \"method\": \"debito\", \"amount\": \"120.00\", \"amount_brl\": \"R$ 120,00\", \"rule\": \"D+1 útil\", \"settlement_date\": \"2026-11-02\", \"settlement_when\": \"hoje\"}, {\"transaction_id\": \"TX1002\", \"method\": \"credito\", \"amount\": \"480.00\", \"amount_brl\": \"R$ 480,00\", \"rule\": \"D+30\", \"settlement_date\": \"2026-12-01\", \"settlement_when\": \"em 29 dias\"}, {\"transaction_id\": \"TX1003\", \"method\": \"debito\", \"amount\": \"85.50\", \"amount_brl\": \"R$ 85,50\", \"rule\": \"D+1 útil\", \"settlement_date\": \"2026-11-02\", \"settlement_when\": \"hoje\"}, {\"transaction_id\": \"TX1005\", \"method\": \"pix\", \"amount\": \"60.00\", \"amount_brl\": \"R$ 60,00\", \"rule\": \"D+0\", \"settlement_date\": \"2026-11-01\", \"settlement_when\": \"ontem\"}], \"count\": 4, \"total\": \"745.50\", \"total_brl\": \"R$ 745,50\", \"by_date\": {\"2026-11-01\": \"R$ 60,00\", \"2026-11-02\": \"R$ 205,50\", \"2026-12-01\": \"R$ 480,00\"}}, \"calculado_em_codigo\": [{\"lista\": \"settlements\", \"itens\": 4, \"por_method\": {\"credito\": {\"itens\": 1}, \"debito\": {\"itens\": 2}, \"pix\": {\"itens\": 1}}, \"por_settlement_date\": {\"2026-11-01\": {\"itens\": 1}, \"2026-11-02\": {\"itens\": 2}, \"2026-12-01\": {\"itens\": 1}}}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}\n- [policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": null,
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.030917,
+      "run": 0
+    },
+    {
+      "id": "parallel-03",
+      "split": "parallel",
+      "message": "Quantas parcelas no crediário? E quais vendas foram recusadas hoje?",
+      "ms": 9128.1,
+      "expected_intent": "multi",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "numbers": true,
+        "claims": true
+      },
+      "crash": null,
+      "got_intent": "multi",
+      "route": [
+        "router",
+        "faq",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "**Parcelas no crediário:** não há um número fixo. Cada emissor do cartão define o limite conforme suas políticas de crédito [sup-crediario-03]. Para ver os juros e o valor final, simule na maquininha: insira o cartão, informe o valor e escolha crédito > crediário. Com bobina, você pode imprimir o comprovante da simulação. A simulação serve só para consulta, depende da análise de crédito, e quem aprova a contratação é o emissor [sup-crediario-03].\n\n**Vendas recusadas hoje:** foram 2, as duas na maquininha T1988A.\n- **TX1007:** crédito, R$ 210,00. Código 51: saldo ou limite insuficiente do portador do cartão.\n- **TX1008:** débito, R$ 75,00. Código 05: transação não autorizada pelo banco emissor.",
+      "source_ids": [
+        "sup-crediario-03"
+      ],
+      "sources": [
+        {
+          "id": "sup-crediario-03",
+          "title": "Arquivos crediário - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/crediario/"
+        }
+      ],
+      "tool_calls": [
+        {
+          "name": "get_transactions",
+          "args": {
+            "period": "today",
+            "status": "recusada"
+          },
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "Arquivos crediário - Getnet: Até quantas parcelas posso fazer e como sei os juros para informar ao meu cliente (portador do cartão)? Cada emissor de cartão estabelece o limite de parcelas conforme as suas políticas de crédito. Os juros ao cliente (portador do cartão) serão visualizados por meio da simulação realizada diretamente na maquininha: Inserindo o cartão, incluindo o valor e a opção de pagamento na opção crédito > crediário. É possível também a impressão do comprovante da simulação na maquininha com bobina, assim o cliente conseguirá avaliar os juros e o valor final da compra. Lembrando que a simulação é apenas para consulta, sendo sujeita a análise de crédito, portanto, cabe ao emissor do cartão aprovar a transação no momento da contratação.",
+        "{\"ok\": true, \"data\": {\"period\": \"today\", \"transactions\": [{\"transaction_id\": \"TX1007\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"credito\", \"amount\": \"210.00\", \"amount_brl\": \"R$ 210,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"51\", \"decline_meaning_pt\": \"saldo ou limite insuficiente do portador do cartão\", \"decline_meaning_en\": \"insufficient funds or credit limit on the cardholder's card\", \"what_to_do_pt\": \"peça outro cartão ou outra forma de pagamento (Pix, débito)\", \"what_to_do_en\": \"ask for another card or another payment method (Pix, debit)\"}, {\"transaction_id\": \"TX1008\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"debito\", \"amount\": \"75.00\", \"amount_brl\": \"R$ 75,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"05\", \"decline_meaning_pt\": \"transação não autorizada pelo banco emissor do cartão\", \"decline_meaning_en\": \"transaction not authorized by the card's issuing bank\", \"what_to_do_pt\": \"o portador deve falar com o banco emissor; tente outro cartão\", \"what_to_do_en\": \"the cardholder should contact the issuing bank; try another card\"}], \"count\": 2, \"approved_total\": \"0.00\", \"approved_total_brl\": \"R$ 0,00\", \"declined\": [\"TX1007\", \"TX1008\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"venda recusada: o que fazer vem do manual\", \"hint\": \"código de recusa transação negada\"}], \"calculado_em_codigo\": [{\"lista\": \"transactions\", \"itens\": 2, \"por_method\": {\"credito\": {\"itens\": 1}, \"debito\": {\"itens\": 1}}}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}",
+        "[policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema."
+      ],
+      "context": "- Arquivos crediário - Getnet: Até quantas parcelas posso fazer e como sei os juros para informar ao meu cliente (portador do cartão)? Cada emissor de cartão estabelece o limite de parcelas conforme as suas políticas de crédito. Os juros ao cliente (portador do cartão) serão visualizados por meio da simulação realizada diretamente na maquininha: Inserindo o cartão, incluindo o valor e a opção de pagamento na opção crédito > crediário. É possível também a impressão do comprovante da simulação na maquininha com bobina, assim o cliente conseguirá avaliar os juros e o valor final da compra. Lembrando que a simulação é apenas para consulta, sendo sujeita a análise de crédito, portanto, cabe ao emissor do cartão aprovar a transação no momento da contratação.\n- {\"ok\": true, \"data\": {\"period\": \"today\", \"transactions\": [{\"transaction_id\": \"TX1007\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"credito\", \"amount\": \"210.00\", \"amount_brl\": \"R$ 210,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"51\", \"decline_meaning_pt\": \"saldo ou limite insuficiente do portador do cartão\", \"decline_meaning_en\": \"insufficient funds or credit limit on the cardholder's card\", \"what_to_do_pt\": \"peça outro cartão ou outra forma de pagamento (Pix, débito)\", \"what_to_do_en\": \"ask for another card or another payment method (Pix, debit)\"}, {\"transaction_id\": \"TX1008\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"debito\", \"amount\": \"75.00\", \"amount_brl\": \"R$ 75,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"05\", \"decline_meaning_pt\": \"transação não autorizada pelo banco emissor do cartão\", \"decline_meaning_en\": \"transaction not authorized by the card's issuing bank\", \"what_to_do_pt\": \"o portador deve falar com o banco emissor; tente outro cartão\", \"what_to_do_en\": \"the cardholder should contact the issuing bank; try another card\"}], \"count\": 2, \"approved_total\": \"0.00\", \"approved_total_brl\": \"R$ 0,00\", \"declined\": [\"TX1007\", \"TX1008\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"venda recusada: o que fazer vem do manual\", \"hint\": \"código de recusa transação negada\"}], \"calculado_em_codigo\": [{\"lista\": \"transactions\", \"itens\": 2, \"por_method\": {\"credito\": {\"itens\": 1}, \"debito\": {\"itens\": 1}}}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}\n- [policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": null,
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.033146,
+      "run": 0
+    },
+    {
+      "id": "parallel-04",
+      "split": "parallel",
+      "message": "How does anticipation work, and what did I sell yesterday?",
+      "ms": 12135.4,
+      "expected_intent": "multi",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "numbers": true,
+        "claims": true
+      },
+      "crash": null,
+      "got_intent": "multi",
+      "route": [
+        "router",
+        "faq",
+        "records",
+        "escalation"
+      ],
+      "replans": [
+        "records->escalation (plano: [])"
+      ],
+      "engine": "llm",
+      "answer": "**Your sales yesterday:** you had 4 approved sales, totaling 745.50 BRL. None were declined.\n- TX1001: debit, 120.00, terminal T1988A\n- TX1002: credit, 480.00, terminal T1988A\n- TX1003: debit, 85.50, terminal T1988B\n- TX1005: Pix, 60.00, terminal T1988A\n\n**How anticipation works:** I couldn't find a source that explains it, so I won't guess. I've handed this question to a human agent under ticket T-fcd36ab0. Their reply will show up in this conversation.\n\nAn anticipation request needs your confirmation and then approval from a human agent before it runs.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_transactions",
+          "args": {
+            "period": "yesterday"
+          },
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"period\": \"yesterday\", \"transactions\": [{\"transaction_id\": \"TX1001\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"debito\", \"amount\": \"120.00\", \"amount_brl\": \"R$ 120,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}, {\"transaction_id\": \"TX1002\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"credito\", \"amount\": \"480.00\", \"amount_brl\": \"R$ 480,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}, {\"transaction_id\": \"TX1003\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"debito\", \"amount\": \"85.50\", \"amount_brl\": \"R$ 85,50\", \"status\": \"aprovada\", \"terminal\": \"T1988B\"}, {\"transaction_id\": \"TX1005\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"pix\", \"amount\": \"60.00\", \"amount_brl\": \"R$ 60,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}], \"count\": 4, \"approved_total\": \"745.50\", \"approved_total_brl\": \"R$ 745,50\", \"declined\": []}, \"calculado_em_codigo\": [{\"lista\": \"transactions\", \"itens\": 4, \"por_method\": {\"credito\": {\"itens\": 1}, \"debito\": {\"itens\": 2}, \"pix\": {\"itens\": 1}}}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}",
+        "I've handed this to a human agent (ticket T-fcd36ab0). The reply will show up in this conversation.",
+        "[policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system."
+      ],
+      "context": "- {\"ok\": true, \"data\": {\"period\": \"yesterday\", \"transactions\": [{\"transaction_id\": \"TX1001\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"debito\", \"amount\": \"120.00\", \"amount_brl\": \"R$ 120,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}, {\"transaction_id\": \"TX1002\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"credito\", \"amount\": \"480.00\", \"amount_brl\": \"R$ 480,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}, {\"transaction_id\": \"TX1003\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"debito\", \"amount\": \"85.50\", \"amount_brl\": \"R$ 85,50\", \"status\": \"aprovada\", \"terminal\": \"T1988B\"}, {\"transaction_id\": \"TX1005\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"pix\", \"amount\": \"60.00\", \"amount_brl\": \"R$ 60,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}], \"count\": 4, \"approved_total\": \"745.50\", \"approved_total_brl\": \"R$ 745,50\", \"declined\": []}, \"calculado_em_codigo\": [{\"lista\": \"transactions\", \"itens\": 4, \"por_method\": {\"credito\": {\"itens\": 1}, \"debito\": {\"itens\": 2}, \"pix\": {\"itens\": 1}}}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}\n- I've handed this to a human agent (ticket T-fcd36ab0). The reply will show up in this conversation.\n- [policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": true,
+      "handoff_reason": "faq_no_source",
+      "pending_action": null,
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.032357,
+      "run": 0
+    },
+    {
+      "id": "parallel-01",
+      "split": "parallel",
+      "message": "Como funciona o link de pagamento? E quanto vendi ontem?",
+      "ms": 8761.5,
+      "expected_intent": "multi",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "numbers": true,
+        "claims": true
+      },
+      "crash": null,
+      "got_intent": "multi",
+      "route": [
+        "router",
+        "faq",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "**Link de pagamento**\n- Você envia o link aos clientes por redes sociais, WhatsApp, e-mail e SMS. O cliente clica, escolhe a forma de pagamento e finaliza a compra [sup-link-de-pagamento-12].\n- O comprador pode pagar com débito, crédito, Pix, Wallet ou boleto [prod-link-pagamento-02].\n- Você paga o plano assinado mais a taxa do cartão. A taxa depende do número de parcelas e de em quantos dias você quer receber [sup-link-de-pagamento-12].\n- O plano Inicial custa R$ 1,00 por link pago [prod-link-pagamento-02].\n- A antecipação das vendas e-Commerce fica bloqueada por 6 meses. As vendas do mundo físico podem ser antecipadas normalmente [sup-link-de-pagamento-12].\n\n**Suas vendas de ontem**\nVocê teve 4 vendas aprovadas, num total de **R$ 745,50**:\n- TX1001, débito: R$ 120,00\n- TX1002, crédito: R$ 480,00\n- TX1003, débito: R$ 85,50\n- TX1005, Pix: R$ 60,00",
+      "source_ids": [
+        "sup-link-de-pagamento-12",
+        "prod-link-pagamento-02",
+        "prod-link-pagamento-01"
+      ],
+      "sources": [
+        {
+          "id": "sup-link-de-pagamento-12",
+          "title": "Arquivos Link de pagamento - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/link-de-pagamento/"
+        },
+        {
+          "id": "prod-link-pagamento-02",
+          "title": "Getnet | Link de Pagamento: venda mais online | GetnetLink de Pagamento: venda mais online | Getnet",
+          "url": "https://site.getnet.com.br/link-de-pagamento/"
+        },
+        {
+          "id": "prod-link-pagamento-01",
+          "title": "Getnet | Link de Pagamento: venda mais online | GetnetLink de Pagamento: venda mais online | Getnet",
+          "url": "https://site.getnet.com.br/link-de-pagamento/"
+        }
+      ],
+      "tool_calls": [
+        {
+          "name": "get_transactions",
+          "args": {
+            "period": "yesterday",
+            "status": "aprovada"
+          },
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "Arquivos Link de pagamento - Getnet: O vendedor pode enviar o Link de Pagamento para seus clientes por redes sociais, WhatsApp, email e SMS. O cliente clica no link, escolhe o método de pagamento e finaliza a compra. Quais os custos pra ter um Link de Pagamento? Quais os custos pra ter um Link de Pagamento? Você paga pelo plano assinado, mais a taxa do cartão que depende do número de parcelas e em quantos dias você quer o dinheiro na conta. Por quanto tempo a antecipação do cliente fica bloqueada? Por quanto tempo a antecipação do cliente fica bloqueada? A antecipação das vendas e-Commerce fica bloqueada por 6 meses. Caso o cliente tenha produtos no mundo físico, ele conseguirá antecipar as do mundo físico normalmente",
+        "Getnet | Link de Pagamento: venda mais online | GetnetLink de Pagamento: venda mais online | Getnet: Você pode optar por deixar seu comprador escolher entre débito, crédito, Pix, Wallet e boleto Mais opções de venda Com o Link de Pagamento inicial você pode vender também através do aplicativo com o antifraude da Getnet Opção de inclusão do valor de frete de cobrança Quero contratar Venda online de forma prática e segura com Link de Pagamento Recomendado · Leve agora Link de pagamento Inicial R$1,00 por link pago.",
+        "Getnet | Link de Pagamento: venda mais online | GetnetLink de Pagamento: venda mais online | Getnet: Getnet - A solução ideal para o seu negócio Nosso sistema de contratação está em manutenção no momento. Deixe seus dados e um especialista da Getnet entrará em contato para ajudar você a concluir seu pedido. Prepare-se com Link de Pagamento para Black Friday Link personalizável Segurança antifraude Aceite débito, crédito, Pix, Wallet e boleto Quero contratar Benefícios para você vender mais com Link de Pagamento na Black Friday Expanda seu negócio Venda para estrangeiros com documento de identificação (RNE) no pagamento Venda de onde estiver Faça vendas usando o WhatsApp ou sua rede social Novo · Link completo Insira diversos produtos no mesmo carrinho Novo · Personalizável Personalize o link com a imagem do produto Conte com a segurança do Antifraude da Getnet",
+        "{\"ok\": true, \"data\": {\"period\": \"yesterday\", \"transactions\": [{\"transaction_id\": \"TX1001\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"debito\", \"amount\": \"120.00\", \"amount_brl\": \"R$ 120,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}, {\"transaction_id\": \"TX1002\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"credito\", \"amount\": \"480.00\", \"amount_brl\": \"R$ 480,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}, {\"transaction_id\": \"TX1003\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"debito\", \"amount\": \"85.50\", \"amount_brl\": \"R$ 85,50\", \"status\": \"aprovada\", \"terminal\": \"T1988B\"}, {\"transaction_id\": \"TX1005\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"pix\", \"amount\": \"60.00\", \"amount_brl\": \"R$ 60,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}], \"count\": 4, \"approved_total\": \"745.50\", \"approved_total_brl\": \"R$ 745,50\", \"declined\": []}, \"calculado_em_codigo\": [{\"lista\": \"transactions\", \"itens\": 4, \"por_method\": {\"credito\": {\"itens\": 1}, \"debito\": {\"itens\": 2}, \"pix\": {\"itens\": 1}}}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}",
+        "[policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema."
+      ],
+      "context": "- Arquivos Link de pagamento - Getnet: O vendedor pode enviar o Link de Pagamento para seus clientes por redes sociais, WhatsApp, email e SMS. O cliente clica no link, escolhe o método de pagamento e finaliza a compra. Quais os custos pra ter um Link de Pagamento? Quais os custos pra ter um Link de Pagamento? Você paga pelo plano assinado, mais a taxa do cartão que depende do número de parcelas e em quantos dias você quer o dinheiro na conta. Por quanto tempo a antecipação do cliente fica bloqueada? Por quanto tempo a antecipação do cliente fica bloqueada? A antecipação das vendas e-Commerce fica bloqueada por 6 meses. Caso o cliente tenha produtos no mundo físico, ele conseguirá antecipar as do mundo físico normalmente\n- Getnet | Link de Pagamento: venda mais online | GetnetLink de Pagamento: venda mais online | Getnet: Você pode optar por deixar seu comprador escolher entre débito, crédito, Pix, Wallet e boleto Mais opções de venda Com o Link de Pagamento inicial você pode vender também através do aplicativo com o antifraude da Getnet Opção de inclusão do valor de frete de cobrança Quero contratar Venda online de forma prática e segura com Link de Pagamento Recomendado · Leve agora Link de pagamento Inicial R$1,00 por link pago.\n- Getnet | Link de Pagamento: venda mais online | GetnetLink de Pagamento: venda mais online | Getnet: Getnet - A solução ideal para o seu negócio Nosso sistema de contratação está em manutenção no momento. Deixe seus dados e um especialista da Getnet entrará em contato para ajudar você a concluir seu pedido. Prepare-se com Link de Pagamento para Black Friday Link personalizável Segurança antifraude Aceite débito, crédito, Pix, Wallet e boleto Quero contratar Benefícios para você vender mais com Link de Pagamento na Black Friday Expanda seu negócio Venda para estrangeiros com documento de identificação (RNE) no pagamento Venda de onde estiver Faça vendas usando o WhatsApp ou sua rede social Novo · Link completo Insira diversos produtos no mesmo carrinho Novo · Personalizável Personalize o link com a imagem do produto Conte com a segurança do Antifraude da Getnet\n- {\"ok\": true, \"data\": {\"period\": \"yesterday\", \"transactions\": [{\"transaction_id\": \"TX1001\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"debito\", \"amount\": \"120.00\", \"amount_brl\": \"R$ 120,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}, {\"transaction_id\": \"TX1002\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"credito\", \"amount\": \"480.00\", \"amount_brl\": \"R$ 480,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}, {\"transaction_id\": \"TX1003\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"debito\", \"amount\": \"85.50\", \"amount_brl\": \"R$ 85,50\", \"status\": \"aprovada\", \"terminal\": \"T1988B\"}, {\"transaction_id\": \"TX1005\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"pix\", \"amount\": \"60.00\", \"amount_brl\": \"R$ 60,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}], \"count\": 4, \"approved_total\": \"745.50\", \"approved_total_brl\": \"R$ 745,50\", \"declined\": []}, \"calculado_em_codigo\": [{\"lista\": \"transactions\", \"itens\": 4, \"por_method\": {\"credito\": {\"itens\": 1}, \"debito\": {\"itens\": 2}, \"pix\": {\"itens\": 1}}}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}\n- [policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": null,
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.036474,
+      "run": 1
+    },
+    {
+      "id": "parallel-02",
+      "split": "parallel",
+      "message": "What is Get Smart? And when will yesterday's money arrive?",
+      "ms": 10793.2,
+      "expected_intent": "multi",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "numbers": true,
+        "claims": true
+      },
+      "crash": null,
+      "got_intent": "multi",
+      "route": [
+        "router",
+        "faq",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "**Get Smart** is a smart card machine. You can use it to control stock, place orders, close tabs, upload your menu and issue invoices, all on the machine. You can also integrate it with your establishment's system [sup-get-smart-10].\n\n**Yesterday's sales:** the approved sales total 745.50, and they settle on different dates:\n- TX1005 (Pix): 60.00 was settled on 2026-11-01 (yesterday).\n- TX1001 (debit): 120.00 is due on 2026-11-02 (today).\n- TX1003 (debit): 85.50 is due on 2026-11-02 (today).\n- TX1002 (credit): 480.00 is due on 2026-12-01.\n\nBy date, that is 60.00 on 11-01, 205.50 on 11-02 and 480.00 on 12-01.",
+      "source_ids": [
+        "sup-get-smart-10"
+      ],
+      "sources": [
+        {
+          "id": "sup-get-smart-10",
+          "title": "Arquivos Get Smart - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/get-smart/"
+        }
+      ],
+      "tool_calls": [
+        {
+          "name": "get_settlements",
+          "args": {
+            "period": "yesterday"
+          },
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "Arquivos Get Smart - Getnet: O que é a Get Smart? O que é a Get Smart? A Get Smart é uma máquina de cartões inteligente. Com ela, seu dia a dia fica mais simples, fácil e muito mais digital. Você pode controlar o estoque, fazer pedidos, fechar conta, embarcar cardápio, emitir nota fiscal, tudo diretamente na máquina. A Get Smart permite que você integre o terminal com o sistema de seu estabelecimento e assim terá todos os aparelhos que seu negócio precisa em um único lugar.",
+        "{\"ok\": true, \"data\": {\"period\": \"yesterday\", \"settlements\": [{\"transaction_id\": \"TX1001\", \"method\": \"debito\", \"amount\": \"120.00\", \"amount_brl\": \"R$ 120,00\", \"rule\": \"D+1 útil\", \"settlement_date\": \"2026-11-02\", \"settlement_when\": \"hoje\"}, {\"transaction_id\": \"TX1002\", \"method\": \"credito\", \"amount\": \"480.00\", \"amount_brl\": \"R$ 480,00\", \"rule\": \"D+30\", \"settlement_date\": \"2026-12-01\", \"settlement_when\": \"em 29 dias\"}, {\"transaction_id\": \"TX1003\", \"method\": \"debito\", \"amount\": \"85.50\", \"amount_brl\": \"R$ 85,50\", \"rule\": \"D+1 útil\", \"settlement_date\": \"2026-11-02\", \"settlement_when\": \"hoje\"}, {\"transaction_id\": \"TX1005\", \"method\": \"pix\", \"amount\": \"60.00\", \"amount_brl\": \"R$ 60,00\", \"rule\": \"D+0\", \"settlement_date\": \"2026-11-01\", \"settlement_when\": \"ontem\"}], \"count\": 4, \"total\": \"745.50\", \"total_brl\": \"R$ 745,50\", \"by_date\": {\"2026-11-01\": \"R$ 60,00\", \"2026-11-02\": \"R$ 205,50\", \"2026-12-01\": \"R$ 480,00\"}}, \"calculado_em_codigo\": [{\"lista\": \"settlements\", \"itens\": 4, \"por_method\": {\"credito\": {\"itens\": 1}, \"debito\": {\"itens\": 2}, \"pix\": {\"itens\": 1}}, \"por_settlement_date\": {\"2026-11-01\": {\"itens\": 1}, \"2026-11-02\": {\"itens\": 2}, \"2026-12-01\": {\"itens\": 1}}}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}",
+        "[policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system."
+      ],
+      "context": "- Arquivos Get Smart - Getnet: O que é a Get Smart? O que é a Get Smart? A Get Smart é uma máquina de cartões inteligente. Com ela, seu dia a dia fica mais simples, fácil e muito mais digital. Você pode controlar o estoque, fazer pedidos, fechar conta, embarcar cardápio, emitir nota fiscal, tudo diretamente na máquina. A Get Smart permite que você integre o terminal com o sistema de seu estabelecimento e assim terá todos os aparelhos que seu negócio precisa em um único lugar.\n- {\"ok\": true, \"data\": {\"period\": \"yesterday\", \"settlements\": [{\"transaction_id\": \"TX1001\", \"method\": \"debito\", \"amount\": \"120.00\", \"amount_brl\": \"R$ 120,00\", \"rule\": \"D+1 útil\", \"settlement_date\": \"2026-11-02\", \"settlement_when\": \"hoje\"}, {\"transaction_id\": \"TX1002\", \"method\": \"credito\", \"amount\": \"480.00\", \"amount_brl\": \"R$ 480,00\", \"rule\": \"D+30\", \"settlement_date\": \"2026-12-01\", \"settlement_when\": \"em 29 dias\"}, {\"transaction_id\": \"TX1003\", \"method\": \"debito\", \"amount\": \"85.50\", \"amount_brl\": \"R$ 85,50\", \"rule\": \"D+1 útil\", \"settlement_date\": \"2026-11-02\", \"settlement_when\": \"hoje\"}, {\"transaction_id\": \"TX1005\", \"method\": \"pix\", \"amount\": \"60.00\", \"amount_brl\": \"R$ 60,00\", \"rule\": \"D+0\", \"settlement_date\": \"2026-11-01\", \"settlement_when\": \"ontem\"}], \"count\": 4, \"total\": \"745.50\", \"total_brl\": \"R$ 745,50\", \"by_date\": {\"2026-11-01\": \"R$ 60,00\", \"2026-11-02\": \"R$ 205,50\", \"2026-12-01\": \"R$ 480,00\"}}, \"calculado_em_codigo\": [{\"lista\": \"settlements\", \"itens\": 4, \"por_method\": {\"credito\": {\"itens\": 1}, \"debito\": {\"itens\": 2}, \"pix\": {\"itens\": 1}}, \"por_settlement_date\": {\"2026-11-01\": {\"itens\": 1}, \"2026-11-02\": {\"itens\": 2}, \"2026-12-01\": {\"itens\": 1}}}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}\n- [policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": null,
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.031579,
+      "run": 1
+    },
+    {
+      "id": "parallel-03",
+      "split": "parallel",
+      "message": "Quantas parcelas no crediário? E quais vendas foram recusadas hoje?",
+      "ms": 7673.3,
+      "expected_intent": "multi",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "numbers": true,
+        "claims": true
+      },
+      "crash": null,
+      "got_intent": "multi",
+      "route": [
+        "router",
+        "faq",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "**Parcelas no crediário:** não há um número fixo. Cada emissor do cartão define o limite conforme suas políticas de crédito. Para ver juros e valor final, faça a simulação na maquininha: insira o cartão, informe o valor e escolha crédito > crediário. Se tiver bobina, dá para imprimir o comprovante da simulação. A simulação serve só para consulta e depende de análise de crédito. O emissor decide aprovar a transação na contratação. [sup-crediario-03]\n\n**Vendas recusadas hoje:** são 2, as duas na maquininha T1988A.\n- **TX1007**, crédito, R$ 210,00. Código 51: saldo ou limite insuficiente do portador do cartão.\n- **TX1008**, débito, R$ 75,00. Código 05: transação não autorizada pelo banco emissor do cartão.\n\nO total aprovado hoje é R$ 0,00.\n\nSe quiser, posso encaminhar você a um atendente humano.",
+      "source_ids": [
+        "sup-crediario-03"
+      ],
+      "sources": [
+        {
+          "id": "sup-crediario-03",
+          "title": "Arquivos crediário - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/crediario/"
+        }
+      ],
+      "tool_calls": [
+        {
+          "name": "get_transactions",
+          "args": {
+            "period": "today",
+            "status": "recusada"
+          },
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "Arquivos crediário - Getnet: Até quantas parcelas posso fazer e como sei os juros para informar ao meu cliente (portador do cartão)? Cada emissor de cartão estabelece o limite de parcelas conforme as suas políticas de crédito. Os juros ao cliente (portador do cartão) serão visualizados por meio da simulação realizada diretamente na maquininha: Inserindo o cartão, incluindo o valor e a opção de pagamento na opção crédito > crediário. É possível também a impressão do comprovante da simulação na maquininha com bobina, assim o cliente conseguirá avaliar os juros e o valor final da compra. Lembrando que a simulação é apenas para consulta, sendo sujeita a análise de crédito, portanto, cabe ao emissor do cartão aprovar a transação no momento da contratação.",
+        "{\"ok\": true, \"data\": {\"period\": \"today\", \"transactions\": [{\"transaction_id\": \"TX1007\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"credito\", \"amount\": \"210.00\", \"amount_brl\": \"R$ 210,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"51\", \"decline_meaning_pt\": \"saldo ou limite insuficiente do portador do cartão\", \"decline_meaning_en\": \"insufficient funds or credit limit on the cardholder's card\", \"what_to_do_pt\": \"peça outro cartão ou outra forma de pagamento (Pix, débito)\", \"what_to_do_en\": \"ask for another card or another payment method (Pix, debit)\"}, {\"transaction_id\": \"TX1008\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"debito\", \"amount\": \"75.00\", \"amount_brl\": \"R$ 75,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"05\", \"decline_meaning_pt\": \"transação não autorizada pelo banco emissor do cartão\", \"decline_meaning_en\": \"transaction not authorized by the card's issuing bank\", \"what_to_do_pt\": \"o portador deve falar com o banco emissor; tente outro cartão\", \"what_to_do_en\": \"the cardholder should contact the issuing bank; try another card\"}], \"count\": 2, \"approved_total\": \"0.00\", \"approved_total_brl\": \"R$ 0,00\", \"declined\": [\"TX1007\", \"TX1008\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"venda recusada: o que fazer vem do manual\", \"hint\": \"código de recusa transação negada\"}], \"calculado_em_codigo\": [{\"lista\": \"transactions\", \"itens\": 2, \"por_method\": {\"credito\": {\"itens\": 1}, \"debito\": {\"itens\": 1}}}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}",
+        "[policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema."
+      ],
+      "context": "- Arquivos crediário - Getnet: Até quantas parcelas posso fazer e como sei os juros para informar ao meu cliente (portador do cartão)? Cada emissor de cartão estabelece o limite de parcelas conforme as suas políticas de crédito. Os juros ao cliente (portador do cartão) serão visualizados por meio da simulação realizada diretamente na maquininha: Inserindo o cartão, incluindo o valor e a opção de pagamento na opção crédito > crediário. É possível também a impressão do comprovante da simulação na maquininha com bobina, assim o cliente conseguirá avaliar os juros e o valor final da compra. Lembrando que a simulação é apenas para consulta, sendo sujeita a análise de crédito, portanto, cabe ao emissor do cartão aprovar a transação no momento da contratação.\n- {\"ok\": true, \"data\": {\"period\": \"today\", \"transactions\": [{\"transaction_id\": \"TX1007\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"credito\", \"amount\": \"210.00\", \"amount_brl\": \"R$ 210,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"51\", \"decline_meaning_pt\": \"saldo ou limite insuficiente do portador do cartão\", \"decline_meaning_en\": \"insufficient funds or credit limit on the cardholder's card\", \"what_to_do_pt\": \"peça outro cartão ou outra forma de pagamento (Pix, débito)\", \"what_to_do_en\": \"ask for another card or another payment method (Pix, debit)\"}, {\"transaction_id\": \"TX1008\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"debito\", \"amount\": \"75.00\", \"amount_brl\": \"R$ 75,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"05\", \"decline_meaning_pt\": \"transação não autorizada pelo banco emissor do cartão\", \"decline_meaning_en\": \"transaction not authorized by the card's issuing bank\", \"what_to_do_pt\": \"o portador deve falar com o banco emissor; tente outro cartão\", \"what_to_do_en\": \"the cardholder should contact the issuing bank; try another card\"}], \"count\": 2, \"approved_total\": \"0.00\", \"approved_total_brl\": \"R$ 0,00\", \"declined\": [\"TX1007\", \"TX1008\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"venda recusada: o que fazer vem do manual\", \"hint\": \"código de recusa transação negada\"}], \"calculado_em_codigo\": [{\"lista\": \"transactions\", \"itens\": 2, \"por_method\": {\"credito\": {\"itens\": 1}, \"debito\": {\"itens\": 1}}}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}\n- [policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": null,
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.0337,
+      "run": 1
+    },
+    {
+      "id": "parallel-04",
+      "split": "parallel",
+      "message": "How does anticipation work, and what did I sell yesterday?",
+      "ms": 12158.9,
+      "expected_intent": "multi",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "numbers": true,
+        "claims": true
+      },
+      "crash": null,
+      "got_intent": "multi",
+      "route": [
+        "router",
+        "faq",
+        "records",
+        "escalation"
+      ],
+      "replans": [
+        "records->escalation (plano: [])"
+      ],
+      "engine": "llm",
+      "answer": "**Yesterday's sales:** you had 4 approved sales, totaling 745.50 BRL. You had no declined sales.\n\n| ID | Method | Amount (BRL) | Terminal |\n|---|---|---|---|\n| TX1001 | Debit | 120.00 | T1988A |\n| TX1002 | Credit | 480.00 | T1988A |\n| TX1003 | Debit | 85.50 | T1988B |\n| TX1005 | Pix | 60.00 | T1988A |\n\n**How anticipation works:** I couldn't find a documented source that explains it, so I won't guess. I opened a case with a human agent (ticket T-1bba328b). Their reply will show up in this conversation.\n\nIf you want to request an anticipation, I can propose it. A human agent then has to approve it before it runs.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_transactions",
+          "args": {
+            "period": "yesterday"
+          },
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"period\": \"yesterday\", \"transactions\": [{\"transaction_id\": \"TX1001\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"debito\", \"amount\": \"120.00\", \"amount_brl\": \"R$ 120,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}, {\"transaction_id\": \"TX1002\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"credito\", \"amount\": \"480.00\", \"amount_brl\": \"R$ 480,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}, {\"transaction_id\": \"TX1003\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"debito\", \"amount\": \"85.50\", \"amount_brl\": \"R$ 85,50\", \"status\": \"aprovada\", \"terminal\": \"T1988B\"}, {\"transaction_id\": \"TX1005\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"pix\", \"amount\": \"60.00\", \"amount_brl\": \"R$ 60,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}], \"count\": 4, \"approved_total\": \"745.50\", \"approved_total_brl\": \"R$ 745,50\", \"declined\": []}, \"calculado_em_codigo\": [{\"lista\": \"transactions\", \"itens\": 4, \"por_method\": {\"credito\": {\"itens\": 1}, \"debito\": {\"itens\": 2}, \"pix\": {\"itens\": 1}}}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}",
+        "I've handed this to a human agent (ticket T-1bba328b). The reply will show up in this conversation.",
+        "[policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system."
+      ],
+      "context": "- {\"ok\": true, \"data\": {\"period\": \"yesterday\", \"transactions\": [{\"transaction_id\": \"TX1001\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"debito\", \"amount\": \"120.00\", \"amount_brl\": \"R$ 120,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}, {\"transaction_id\": \"TX1002\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"credito\", \"amount\": \"480.00\", \"amount_brl\": \"R$ 480,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}, {\"transaction_id\": \"TX1003\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"debito\", \"amount\": \"85.50\", \"amount_brl\": \"R$ 85,50\", \"status\": \"aprovada\", \"terminal\": \"T1988B\"}, {\"transaction_id\": \"TX1005\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"pix\", \"amount\": \"60.00\", \"amount_brl\": \"R$ 60,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}], \"count\": 4, \"approved_total\": \"745.50\", \"approved_total_brl\": \"R$ 745,50\", \"declined\": []}, \"calculado_em_codigo\": [{\"lista\": \"transactions\", \"itens\": 4, \"por_method\": {\"credito\": {\"itens\": 1}, \"debito\": {\"itens\": 2}, \"pix\": {\"itens\": 1}}}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}\n- I've handed this to a human agent (ticket T-1bba328b). The reply will show up in this conversation.\n- [policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system.",
+      "unsupported_claims": [
+        {
+          "index": 12,
+          "sentence": "Under, you would need to confirm the request first.",
+          "reason": "not_in_evidence",
+          "source": "llm",
+          "action": "removed"
+        }
+      ],
+      "claims_action": "removed",
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": true,
+      "handoff_reason": "faq_no_source",
+      "pending_action": null,
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.033877,
+      "run": 1
+    },
+    {
+      "id": "parallel-01",
+      "split": "parallel",
+      "message": "Como funciona o link de pagamento? E quanto vendi ontem?",
+      "ms": 8734.0,
+      "expected_intent": "multi",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "numbers": true,
+        "claims": true
+      },
+      "crash": null,
+      "got_intent": "multi",
+      "route": [
+        "router",
+        "faq",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "**Link de pagamento**\n- Você envia o link aos clientes por redes sociais, WhatsApp, e-mail ou SMS. O cliente clica, escolhe a forma de pagamento e finaliza a compra [sup-link-de-pagamento-12].\n- O comprador pode escolher entre débito, crédito, Pix, Wallet e boleto [prod-link-pagamento-02].\n- O custo é o plano assinado mais a taxa do cartão. A taxa depende do número de parcelas e de em quantos dias você quer receber [sup-link-de-pagamento-12].\n- A antecipação das vendas e-Commerce fica bloqueada por 6 meses. As vendas do mundo físico podem ser antecipadas normalmente [sup-link-de-pagamento-12].\n\n**Vendas de ontem**\nVocê teve 4 vendas aprovadas, num total de **R$ 745,50**:\n- TX1001, débito: R$ 120,00\n- TX1002, crédito: R$ 480,00\n- TX1003, débito: R$ 85,50\n- TX1005, Pix: R$ 60,00",
+      "source_ids": [
+        "sup-link-de-pagamento-12",
+        "prod-link-pagamento-02",
+        "prod-link-pagamento-01"
+      ],
+      "sources": [
+        {
+          "id": "sup-link-de-pagamento-12",
+          "title": "Arquivos Link de pagamento - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/link-de-pagamento/"
+        },
+        {
+          "id": "prod-link-pagamento-02",
+          "title": "Getnet | Link de Pagamento: venda mais online | GetnetLink de Pagamento: venda mais online | Getnet",
+          "url": "https://site.getnet.com.br/link-de-pagamento/"
+        },
+        {
+          "id": "prod-link-pagamento-01",
+          "title": "Getnet | Link de Pagamento: venda mais online | GetnetLink de Pagamento: venda mais online | Getnet",
+          "url": "https://site.getnet.com.br/link-de-pagamento/"
+        }
+      ],
+      "tool_calls": [
+        {
+          "name": "get_transactions",
+          "args": {
+            "period": "yesterday",
+            "status": "aprovada"
+          },
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "Arquivos Link de pagamento - Getnet: O vendedor pode enviar o Link de Pagamento para seus clientes por redes sociais, WhatsApp, email e SMS. O cliente clica no link, escolhe o método de pagamento e finaliza a compra. Quais os custos pra ter um Link de Pagamento? Quais os custos pra ter um Link de Pagamento? Você paga pelo plano assinado, mais a taxa do cartão que depende do número de parcelas e em quantos dias você quer o dinheiro na conta. Por quanto tempo a antecipação do cliente fica bloqueada? Por quanto tempo a antecipação do cliente fica bloqueada? A antecipação das vendas e-Commerce fica bloqueada por 6 meses. Caso o cliente tenha produtos no mundo físico, ele conseguirá antecipar as do mundo físico normalmente",
+        "Getnet | Link de Pagamento: venda mais online | GetnetLink de Pagamento: venda mais online | Getnet: Você pode optar por deixar seu comprador escolher entre débito, crédito, Pix, Wallet e boleto Mais opções de venda Com o Link de Pagamento inicial você pode vender também através do aplicativo com o antifraude da Getnet Opção de inclusão do valor de frete de cobrança Quero contratar Venda online de forma prática e segura com Link de Pagamento Recomendado · Leve agora Link de pagamento Inicial R$1,00 por link pago.",
+        "Getnet | Link de Pagamento: venda mais online | GetnetLink de Pagamento: venda mais online | Getnet: Getnet - A solução ideal para o seu negócio Nosso sistema de contratação está em manutenção no momento. Deixe seus dados e um especialista da Getnet entrará em contato para ajudar você a concluir seu pedido. Prepare-se com Link de Pagamento para Black Friday Link personalizável Segurança antifraude Aceite débito, crédito, Pix, Wallet e boleto Quero contratar Benefícios para você vender mais com Link de Pagamento na Black Friday Expanda seu negócio Venda para estrangeiros com documento de identificação (RNE) no pagamento Venda de onde estiver Faça vendas usando o WhatsApp ou sua rede social Novo · Link completo Insira diversos produtos no mesmo carrinho Novo · Personalizável Personalize o link com a imagem do produto Conte com a segurança do Antifraude da Getnet",
+        "{\"ok\": true, \"data\": {\"period\": \"yesterday\", \"transactions\": [{\"transaction_id\": \"TX1001\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"debito\", \"amount\": \"120.00\", \"amount_brl\": \"R$ 120,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}, {\"transaction_id\": \"TX1002\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"credito\", \"amount\": \"480.00\", \"amount_brl\": \"R$ 480,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}, {\"transaction_id\": \"TX1003\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"debito\", \"amount\": \"85.50\", \"amount_brl\": \"R$ 85,50\", \"status\": \"aprovada\", \"terminal\": \"T1988B\"}, {\"transaction_id\": \"TX1005\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"pix\", \"amount\": \"60.00\", \"amount_brl\": \"R$ 60,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}], \"count\": 4, \"approved_total\": \"745.50\", \"approved_total_brl\": \"R$ 745,50\", \"declined\": []}, \"calculado_em_codigo\": [{\"lista\": \"transactions\", \"itens\": 4, \"por_method\": {\"credito\": {\"itens\": 1}, \"debito\": {\"itens\": 2}, \"pix\": {\"itens\": 1}}}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}",
+        "[policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema."
+      ],
+      "context": "- Arquivos Link de pagamento - Getnet: O vendedor pode enviar o Link de Pagamento para seus clientes por redes sociais, WhatsApp, email e SMS. O cliente clica no link, escolhe o método de pagamento e finaliza a compra. Quais os custos pra ter um Link de Pagamento? Quais os custos pra ter um Link de Pagamento? Você paga pelo plano assinado, mais a taxa do cartão que depende do número de parcelas e em quantos dias você quer o dinheiro na conta. Por quanto tempo a antecipação do cliente fica bloqueada? Por quanto tempo a antecipação do cliente fica bloqueada? A antecipação das vendas e-Commerce fica bloqueada por 6 meses. Caso o cliente tenha produtos no mundo físico, ele conseguirá antecipar as do mundo físico normalmente\n- Getnet | Link de Pagamento: venda mais online | GetnetLink de Pagamento: venda mais online | Getnet: Você pode optar por deixar seu comprador escolher entre débito, crédito, Pix, Wallet e boleto Mais opções de venda Com o Link de Pagamento inicial você pode vender também através do aplicativo com o antifraude da Getnet Opção de inclusão do valor de frete de cobrança Quero contratar Venda online de forma prática e segura com Link de Pagamento Recomendado · Leve agora Link de pagamento Inicial R$1,00 por link pago.\n- Getnet | Link de Pagamento: venda mais online | GetnetLink de Pagamento: venda mais online | Getnet: Getnet - A solução ideal para o seu negócio Nosso sistema de contratação está em manutenção no momento. Deixe seus dados e um especialista da Getnet entrará em contato para ajudar você a concluir seu pedido. Prepare-se com Link de Pagamento para Black Friday Link personalizável Segurança antifraude Aceite débito, crédito, Pix, Wallet e boleto Quero contratar Benefícios para você vender mais com Link de Pagamento na Black Friday Expanda seu negócio Venda para estrangeiros com documento de identificação (RNE) no pagamento Venda de onde estiver Faça vendas usando o WhatsApp ou sua rede social Novo · Link completo Insira diversos produtos no mesmo carrinho Novo · Personalizável Personalize o link com a imagem do produto Conte com a segurança do Antifraude da Getnet\n- {\"ok\": true, \"data\": {\"period\": \"yesterday\", \"transactions\": [{\"transaction_id\": \"TX1001\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"debito\", \"amount\": \"120.00\", \"amount_brl\": \"R$ 120,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}, {\"transaction_id\": \"TX1002\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"credito\", \"amount\": \"480.00\", \"amount_brl\": \"R$ 480,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}, {\"transaction_id\": \"TX1003\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"debito\", \"amount\": \"85.50\", \"amount_brl\": \"R$ 85,50\", \"status\": \"aprovada\", \"terminal\": \"T1988B\"}, {\"transaction_id\": \"TX1005\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"pix\", \"amount\": \"60.00\", \"amount_brl\": \"R$ 60,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}], \"count\": 4, \"approved_total\": \"745.50\", \"approved_total_brl\": \"R$ 745,50\", \"declined\": []}, \"calculado_em_codigo\": [{\"lista\": \"transactions\", \"itens\": 4, \"por_method\": {\"credito\": {\"itens\": 1}, \"debito\": {\"itens\": 2}, \"pix\": {\"itens\": 1}}}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}\n- [policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": null,
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.035502,
+      "run": 2
+    },
+    {
+      "id": "parallel-02",
+      "split": "parallel",
+      "message": "What is Get Smart? And when will yesterday's money arrive?",
+      "ms": 9490.2,
+      "expected_intent": "multi",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "numbers": true,
+        "claims": true
+      },
+      "crash": null,
+      "got_intent": "multi",
+      "route": [
+        "router",
+        "faq",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "**What is Get Smart?**\nGet Smart is a smart card machine. On the machine you can control inventory, place orders, close tabs, load menus and issue invoices. You can also integrate it with your business's system [sup-get-smart-10].\n\n**When will yesterday's money arrive?**\nYesterday's approved sales total 745.50. They settle on different dates:\n- **TX1005 (Pix):** 60.00 settled on 2026-11-01, which was yesterday.\n- **TX1001 (debit):** 120.00 settles on 2026-11-02, which is today.\n- **TX1003 (debit):** 85.50 settles on 2026-11-02, which is today.\n- **TX1002 (credit):** 480.00 settles on 2026-12-01.\n\nThe two debit sales settling today add up to 205.50.",
+      "source_ids": [
+        "sup-get-smart-10"
+      ],
+      "sources": [
+        {
+          "id": "sup-get-smart-10",
+          "title": "Arquivos Get Smart - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/get-smart/"
+        }
+      ],
+      "tool_calls": [
+        {
+          "name": "get_settlements",
+          "args": {
+            "period": "yesterday"
+          },
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "Arquivos Get Smart - Getnet: O que é a Get Smart? O que é a Get Smart? A Get Smart é uma máquina de cartões inteligente. Com ela, seu dia a dia fica mais simples, fácil e muito mais digital. Você pode controlar o estoque, fazer pedidos, fechar conta, embarcar cardápio, emitir nota fiscal, tudo diretamente na máquina. A Get Smart permite que você integre o terminal com o sistema de seu estabelecimento e assim terá todos os aparelhos que seu negócio precisa em um único lugar.",
+        "{\"ok\": true, \"data\": {\"period\": \"yesterday\", \"settlements\": [{\"transaction_id\": \"TX1001\", \"method\": \"debito\", \"amount\": \"120.00\", \"amount_brl\": \"R$ 120,00\", \"rule\": \"D+1 útil\", \"settlement_date\": \"2026-11-02\", \"settlement_when\": \"hoje\"}, {\"transaction_id\": \"TX1002\", \"method\": \"credito\", \"amount\": \"480.00\", \"amount_brl\": \"R$ 480,00\", \"rule\": \"D+30\", \"settlement_date\": \"2026-12-01\", \"settlement_when\": \"em 29 dias\"}, {\"transaction_id\": \"TX1003\", \"method\": \"debito\", \"amount\": \"85.50\", \"amount_brl\": \"R$ 85,50\", \"rule\": \"D+1 útil\", \"settlement_date\": \"2026-11-02\", \"settlement_when\": \"hoje\"}, {\"transaction_id\": \"TX1005\", \"method\": \"pix\", \"amount\": \"60.00\", \"amount_brl\": \"R$ 60,00\", \"rule\": \"D+0\", \"settlement_date\": \"2026-11-01\", \"settlement_when\": \"ontem\"}], \"count\": 4, \"total\": \"745.50\", \"total_brl\": \"R$ 745,50\", \"by_date\": {\"2026-11-01\": \"R$ 60,00\", \"2026-11-02\": \"R$ 205,50\", \"2026-12-01\": \"R$ 480,00\"}}, \"calculado_em_codigo\": [{\"lista\": \"settlements\", \"itens\": 4, \"por_method\": {\"credito\": {\"itens\": 1}, \"debito\": {\"itens\": 2}, \"pix\": {\"itens\": 1}}, \"por_settlement_date\": {\"2026-11-01\": {\"itens\": 1}, \"2026-11-02\": {\"itens\": 2}, \"2026-12-01\": {\"itens\": 1}}}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}",
+        "[policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system."
+      ],
+      "context": "- Arquivos Get Smart - Getnet: O que é a Get Smart? O que é a Get Smart? A Get Smart é uma máquina de cartões inteligente. Com ela, seu dia a dia fica mais simples, fácil e muito mais digital. Você pode controlar o estoque, fazer pedidos, fechar conta, embarcar cardápio, emitir nota fiscal, tudo diretamente na máquina. A Get Smart permite que você integre o terminal com o sistema de seu estabelecimento e assim terá todos os aparelhos que seu negócio precisa em um único lugar.\n- {\"ok\": true, \"data\": {\"period\": \"yesterday\", \"settlements\": [{\"transaction_id\": \"TX1001\", \"method\": \"debito\", \"amount\": \"120.00\", \"amount_brl\": \"R$ 120,00\", \"rule\": \"D+1 útil\", \"settlement_date\": \"2026-11-02\", \"settlement_when\": \"hoje\"}, {\"transaction_id\": \"TX1002\", \"method\": \"credito\", \"amount\": \"480.00\", \"amount_brl\": \"R$ 480,00\", \"rule\": \"D+30\", \"settlement_date\": \"2026-12-01\", \"settlement_when\": \"em 29 dias\"}, {\"transaction_id\": \"TX1003\", \"method\": \"debito\", \"amount\": \"85.50\", \"amount_brl\": \"R$ 85,50\", \"rule\": \"D+1 útil\", \"settlement_date\": \"2026-11-02\", \"settlement_when\": \"hoje\"}, {\"transaction_id\": \"TX1005\", \"method\": \"pix\", \"amount\": \"60.00\", \"amount_brl\": \"R$ 60,00\", \"rule\": \"D+0\", \"settlement_date\": \"2026-11-01\", \"settlement_when\": \"ontem\"}], \"count\": 4, \"total\": \"745.50\", \"total_brl\": \"R$ 745,50\", \"by_date\": {\"2026-11-01\": \"R$ 60,00\", \"2026-11-02\": \"R$ 205,50\", \"2026-12-01\": \"R$ 480,00\"}}, \"calculado_em_codigo\": [{\"lista\": \"settlements\", \"itens\": 4, \"por_method\": {\"credito\": {\"itens\": 1}, \"debito\": {\"itens\": 2}, \"pix\": {\"itens\": 1}}, \"por_settlement_date\": {\"2026-11-01\": {\"itens\": 1}, \"2026-11-02\": {\"itens\": 2}, \"2026-12-01\": {\"itens\": 1}}}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}\n- [policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": null,
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.031311,
+      "run": 2
+    },
+    {
+      "id": "parallel-03",
+      "split": "parallel",
+      "message": "Quantas parcelas no crediário? E quais vendas foram recusadas hoje?",
+      "ms": 8201.3,
+      "expected_intent": "multi",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "numbers": true,
+        "claims": true
+      },
+      "crash": null,
+      "got_intent": "multi",
+      "route": [
+        "router",
+        "faq",
+        "records"
+      ],
+      "replans": [],
+      "engine": "llm",
+      "answer": "**Parcelas no crediário:** o número máximo de parcelas não é fixo. Cada emissor do cartão define o limite conforme suas políticas de crédito [sup-crediario-03]. Para ver juros e valor final, faça a simulação na maquininha: insira o cartão, informe o valor e escolha crédito > crediário. A simulação é só consulta e está sujeita à análise de crédito. Quem aprova a transação na contratação é o emissor [sup-crediario-03].\n\n**Vendas recusadas hoje:** foram 2, as duas na maquininha T1988A.\n- **TX1007:** crédito, R$ 210,00. Código 51, saldo ou limite insuficiente do portador do cartão.\n- **TX1008:** débito, R$ 75,00. Código 05, transação não autorizada pelo banco emissor.",
+      "source_ids": [
+        "sup-crediario-03"
+      ],
+      "sources": [
+        {
+          "id": "sup-crediario-03",
+          "title": "Arquivos crediário - Getnet",
+          "url": "https://site.getnet.com.br/duvidas/crediario/"
+        }
+      ],
+      "tool_calls": [
+        {
+          "name": "get_transactions",
+          "args": {
+            "period": "today",
+            "status": "recusada"
+          },
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "Arquivos crediário - Getnet: Até quantas parcelas posso fazer e como sei os juros para informar ao meu cliente (portador do cartão)? Cada emissor de cartão estabelece o limite de parcelas conforme as suas políticas de crédito. Os juros ao cliente (portador do cartão) serão visualizados por meio da simulação realizada diretamente na maquininha: Inserindo o cartão, incluindo o valor e a opção de pagamento na opção crédito > crediário. É possível também a impressão do comprovante da simulação na maquininha com bobina, assim o cliente conseguirá avaliar os juros e o valor final da compra. Lembrando que a simulação é apenas para consulta, sendo sujeita a análise de crédito, portanto, cabe ao emissor do cartão aprovar a transação no momento da contratação.",
+        "{\"ok\": true, \"data\": {\"period\": \"today\", \"transactions\": [{\"transaction_id\": \"TX1007\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"credito\", \"amount\": \"210.00\", \"amount_brl\": \"R$ 210,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"51\", \"decline_meaning_pt\": \"saldo ou limite insuficiente do portador do cartão\", \"decline_meaning_en\": \"insufficient funds or credit limit on the cardholder's card\", \"what_to_do_pt\": \"peça outro cartão ou outra forma de pagamento (Pix, débito)\", \"what_to_do_en\": \"ask for another card or another payment method (Pix, debit)\"}, {\"transaction_id\": \"TX1008\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"debito\", \"amount\": \"75.00\", \"amount_brl\": \"R$ 75,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"05\", \"decline_meaning_pt\": \"transação não autorizada pelo banco emissor do cartão\", \"decline_meaning_en\": \"transaction not authorized by the card's issuing bank\", \"what_to_do_pt\": \"o portador deve falar com o banco emissor; tente outro cartão\", \"what_to_do_en\": \"the cardholder should contact the issuing bank; try another card\"}], \"count\": 2, \"approved_total\": \"0.00\", \"approved_total_brl\": \"R$ 0,00\", \"declined\": [\"TX1007\", \"TX1008\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"venda recusada: o que fazer vem do manual\", \"hint\": \"código de recusa transação negada\"}], \"calculado_em_codigo\": [{\"lista\": \"transactions\", \"itens\": 2, \"por_method\": {\"credito\": {\"itens\": 1}, \"debito\": {\"itens\": 1}}}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}",
+        "[policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema."
+      ],
+      "context": "- Arquivos crediário - Getnet: Até quantas parcelas posso fazer e como sei os juros para informar ao meu cliente (portador do cartão)? Cada emissor de cartão estabelece o limite de parcelas conforme as suas políticas de crédito. Os juros ao cliente (portador do cartão) serão visualizados por meio da simulação realizada diretamente na maquininha: Inserindo o cartão, incluindo o valor e a opção de pagamento na opção crédito > crediário. É possível também a impressão do comprovante da simulação na maquininha com bobina, assim o cliente conseguirá avaliar os juros e o valor final da compra. Lembrando que a simulação é apenas para consulta, sendo sujeita a análise de crédito, portanto, cabe ao emissor do cartão aprovar a transação no momento da contratação.\n- {\"ok\": true, \"data\": {\"period\": \"today\", \"transactions\": [{\"transaction_id\": \"TX1007\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"credito\", \"amount\": \"210.00\", \"amount_brl\": \"R$ 210,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"51\", \"decline_meaning_pt\": \"saldo ou limite insuficiente do portador do cartão\", \"decline_meaning_en\": \"insufficient funds or credit limit on the cardholder's card\", \"what_to_do_pt\": \"peça outro cartão ou outra forma de pagamento (Pix, débito)\", \"what_to_do_en\": \"ask for another card or another payment method (Pix, debit)\"}, {\"transaction_id\": \"TX1008\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"debito\", \"amount\": \"75.00\", \"amount_brl\": \"R$ 75,00\", \"status\": \"recusada\", \"terminal\": \"T1988A\", \"decline_code\": \"05\", \"decline_meaning_pt\": \"transação não autorizada pelo banco emissor do cartão\", \"decline_meaning_en\": \"transaction not authorized by the card's issuing bank\", \"what_to_do_pt\": \"o portador deve falar com o banco emissor; tente outro cartão\", \"what_to_do_en\": \"the cardholder should contact the issuing bank; try another card\"}], \"count\": 2, \"approved_total\": \"0.00\", \"approved_total_brl\": \"R$ 0,00\", \"declined\": [\"TX1007\", \"TX1008\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"venda recusada: o que fazer vem do manual\", \"hint\": \"código de recusa transação negada\"}], \"calculado_em_codigo\": [{\"lista\": \"transactions\", \"itens\": 2, \"por_method\": {\"credito\": {\"itens\": 1}, \"debito\": {\"itens\": 1}}}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}\n- [policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": null,
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.033123,
+      "run": 2
+    },
+    {
+      "id": "parallel-04",
+      "split": "parallel",
+      "message": "How does anticipation work, and what did I sell yesterday?",
+      "ms": 10706.2,
+      "expected_intent": "multi",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "numbers": true,
+        "claims": true
+      },
+      "crash": null,
+      "got_intent": "multi",
+      "route": [
+        "router",
+        "faq",
+        "records",
+        "escalation"
+      ],
+      "replans": [
+        "records->escalation (plano: [])"
+      ],
+      "engine": "llm",
+      "answer": "**Yesterday's sales:** You had 4 sales, all approved, totaling 745.50 BRL.\n- TX1001: debit, 120.00, terminal T1988A\n- TX1002: credit, 480.00, terminal T1988A\n- TX1003: debit, 85.50, terminal T1988B\n- TX1005: pix, 60.00, terminal T1988A\n\nNone were declined.\n\n**How anticipation works:** I couldn't find a source that explains it, so I won't guess. I opened a case with a human agent (ticket T-d5d588ba). The reply will show up in this conversation.\n\nAn anticipation request needs your confirmation and then approval from a human agent before it runs.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_transactions",
+          "args": {
+            "period": "yesterday"
+          },
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"period\": \"yesterday\", \"transactions\": [{\"transaction_id\": \"TX1001\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"debito\", \"amount\": \"120.00\", \"amount_brl\": \"R$ 120,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}, {\"transaction_id\": \"TX1002\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"credito\", \"amount\": \"480.00\", \"amount_brl\": \"R$ 480,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}, {\"transaction_id\": \"TX1003\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"debito\", \"amount\": \"85.50\", \"amount_brl\": \"R$ 85,50\", \"status\": \"aprovada\", \"terminal\": \"T1988B\"}, {\"transaction_id\": \"TX1005\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"pix\", \"amount\": \"60.00\", \"amount_brl\": \"R$ 60,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}], \"count\": 4, \"approved_total\": \"745.50\", \"approved_total_brl\": \"R$ 745,50\", \"declined\": []}, \"calculado_em_codigo\": [{\"lista\": \"transactions\", \"itens\": 4, \"por_method\": {\"credito\": {\"itens\": 1}, \"debito\": {\"itens\": 2}, \"pix\": {\"itens\": 1}}}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}",
+        "I've handed this to a human agent (ticket T-d5d588ba). The reply will show up in this conversation.",
+        "[policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system."
+      ],
+      "context": "- {\"ok\": true, \"data\": {\"period\": \"yesterday\", \"transactions\": [{\"transaction_id\": \"TX1001\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"debito\", \"amount\": \"120.00\", \"amount_brl\": \"R$ 120,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}, {\"transaction_id\": \"TX1002\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"credito\", \"amount\": \"480.00\", \"amount_brl\": \"R$ 480,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}, {\"transaction_id\": \"TX1003\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"debito\", \"amount\": \"85.50\", \"amount_brl\": \"R$ 85,50\", \"status\": \"aprovada\", \"terminal\": \"T1988B\"}, {\"transaction_id\": \"TX1005\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"pix\", \"amount\": \"60.00\", \"amount_brl\": \"R$ 60,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}], \"count\": 4, \"approved_total\": \"745.50\", \"approved_total_brl\": \"R$ 745,50\", \"declined\": []}, \"calculado_em_codigo\": [{\"lista\": \"transactions\", \"itens\": 4, \"por_method\": {\"credito\": {\"itens\": 1}, \"debito\": {\"itens\": 2}, \"pix\": {\"itens\": 1}}}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}\n- I've handed this to a human agent (ticket T-d5d588ba). The reply will show up in this conversation.\n- [policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": true,
+      "handoff_reason": "faq_no_source",
+      "pending_action": null,
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.032213,
+      "run": 2
+    }
+  ],
+  "failures": [
+    {
+      "id": "parallel-04",
+      "split": "parallel",
+      "message": "How does anticipation work, and what did I sell yesterday?",
+      "ms": 12135.4,
+      "expected_intent": "multi",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "numbers": true,
+        "claims": true
+      },
+      "crash": null,
+      "got_intent": "multi",
+      "route": [
+        "router",
+        "faq",
+        "records",
+        "escalation"
+      ],
+      "replans": [
+        "records->escalation (plano: [])"
+      ],
+      "engine": "llm",
+      "answer": "**Your sales yesterday:** you had 4 approved sales, totaling 745.50 BRL. None were declined.\n- TX1001: debit, 120.00, terminal T1988A\n- TX1002: credit, 480.00, terminal T1988A\n- TX1003: debit, 85.50, terminal T1988B\n- TX1005: Pix, 60.00, terminal T1988A\n\n**How anticipation works:** I couldn't find a source that explains it, so I won't guess. I've handed this question to a human agent under ticket T-fcd36ab0. Their reply will show up in this conversation.\n\nAn anticipation request needs your confirmation and then approval from a human agent before it runs.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_transactions",
+          "args": {
+            "period": "yesterday"
+          },
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"period\": \"yesterday\", \"transactions\": [{\"transaction_id\": \"TX1001\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"debito\", \"amount\": \"120.00\", \"amount_brl\": \"R$ 120,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}, {\"transaction_id\": \"TX1002\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"credito\", \"amount\": \"480.00\", \"amount_brl\": \"R$ 480,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}, {\"transaction_id\": \"TX1003\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"debito\", \"amount\": \"85.50\", \"amount_brl\": \"R$ 85,50\", \"status\": \"aprovada\", \"terminal\": \"T1988B\"}, {\"transaction_id\": \"TX1005\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"pix\", \"amount\": \"60.00\", \"amount_brl\": \"R$ 60,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}], \"count\": 4, \"approved_total\": \"745.50\", \"approved_total_brl\": \"R$ 745,50\", \"declined\": []}, \"calculado_em_codigo\": [{\"lista\": \"transactions\", \"itens\": 4, \"por_method\": {\"credito\": {\"itens\": 1}, \"debito\": {\"itens\": 2}, \"pix\": {\"itens\": 1}}}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}",
+        "I've handed this to a human agent (ticket T-fcd36ab0). The reply will show up in this conversation.",
+        "[policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system."
+      ],
+      "context": "- {\"ok\": true, \"data\": {\"period\": \"yesterday\", \"transactions\": [{\"transaction_id\": \"TX1001\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"debito\", \"amount\": \"120.00\", \"amount_brl\": \"R$ 120,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}, {\"transaction_id\": \"TX1002\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"credito\", \"amount\": \"480.00\", \"amount_brl\": \"R$ 480,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}, {\"transaction_id\": \"TX1003\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"debito\", \"amount\": \"85.50\", \"amount_brl\": \"R$ 85,50\", \"status\": \"aprovada\", \"terminal\": \"T1988B\"}, {\"transaction_id\": \"TX1005\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"pix\", \"amount\": \"60.00\", \"amount_brl\": \"R$ 60,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}], \"count\": 4, \"approved_total\": \"745.50\", \"approved_total_brl\": \"R$ 745,50\", \"declined\": []}, \"calculado_em_codigo\": [{\"lista\": \"transactions\", \"itens\": 4, \"por_method\": {\"credito\": {\"itens\": 1}, \"debito\": {\"itens\": 2}, \"pix\": {\"itens\": 1}}}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}\n- I've handed this to a human agent (ticket T-fcd36ab0). The reply will show up in this conversation.\n- [policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": true,
+      "handoff_reason": "faq_no_source",
+      "pending_action": null,
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.032357,
+      "run": 0
+    },
+    {
+      "id": "parallel-04",
+      "split": "parallel",
+      "message": "How does anticipation work, and what did I sell yesterday?",
+      "ms": 12158.9,
+      "expected_intent": "multi",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "numbers": true,
+        "claims": true
+      },
+      "crash": null,
+      "got_intent": "multi",
+      "route": [
+        "router",
+        "faq",
+        "records",
+        "escalation"
+      ],
+      "replans": [
+        "records->escalation (plano: [])"
+      ],
+      "engine": "llm",
+      "answer": "**Yesterday's sales:** you had 4 approved sales, totaling 745.50 BRL. You had no declined sales.\n\n| ID | Method | Amount (BRL) | Terminal |\n|---|---|---|---|\n| TX1001 | Debit | 120.00 | T1988A |\n| TX1002 | Credit | 480.00 | T1988A |\n| TX1003 | Debit | 85.50 | T1988B |\n| TX1005 | Pix | 60.00 | T1988A |\n\n**How anticipation works:** I couldn't find a documented source that explains it, so I won't guess. I opened a case with a human agent (ticket T-1bba328b). Their reply will show up in this conversation.\n\nIf you want to request an anticipation, I can propose it. A human agent then has to approve it before it runs.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_transactions",
+          "args": {
+            "period": "yesterday"
+          },
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"period\": \"yesterday\", \"transactions\": [{\"transaction_id\": \"TX1001\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"debito\", \"amount\": \"120.00\", \"amount_brl\": \"R$ 120,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}, {\"transaction_id\": \"TX1002\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"credito\", \"amount\": \"480.00\", \"amount_brl\": \"R$ 480,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}, {\"transaction_id\": \"TX1003\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"debito\", \"amount\": \"85.50\", \"amount_brl\": \"R$ 85,50\", \"status\": \"aprovada\", \"terminal\": \"T1988B\"}, {\"transaction_id\": \"TX1005\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"pix\", \"amount\": \"60.00\", \"amount_brl\": \"R$ 60,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}], \"count\": 4, \"approved_total\": \"745.50\", \"approved_total_brl\": \"R$ 745,50\", \"declined\": []}, \"calculado_em_codigo\": [{\"lista\": \"transactions\", \"itens\": 4, \"por_method\": {\"credito\": {\"itens\": 1}, \"debito\": {\"itens\": 2}, \"pix\": {\"itens\": 1}}}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}",
+        "I've handed this to a human agent (ticket T-1bba328b). The reply will show up in this conversation.",
+        "[policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system."
+      ],
+      "context": "- {\"ok\": true, \"data\": {\"period\": \"yesterday\", \"transactions\": [{\"transaction_id\": \"TX1001\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"debito\", \"amount\": \"120.00\", \"amount_brl\": \"R$ 120,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}, {\"transaction_id\": \"TX1002\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"credito\", \"amount\": \"480.00\", \"amount_brl\": \"R$ 480,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}, {\"transaction_id\": \"TX1003\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"debito\", \"amount\": \"85.50\", \"amount_brl\": \"R$ 85,50\", \"status\": \"aprovada\", \"terminal\": \"T1988B\"}, {\"transaction_id\": \"TX1005\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"pix\", \"amount\": \"60.00\", \"amount_brl\": \"R$ 60,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}], \"count\": 4, \"approved_total\": \"745.50\", \"approved_total_brl\": \"R$ 745,50\", \"declined\": []}, \"calculado_em_codigo\": [{\"lista\": \"transactions\", \"itens\": 4, \"por_method\": {\"credito\": {\"itens\": 1}, \"debito\": {\"itens\": 2}, \"pix\": {\"itens\": 1}}}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}\n- I've handed this to a human agent (ticket T-1bba328b). The reply will show up in this conversation.\n- [policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system.",
+      "unsupported_claims": [
+        {
+          "index": 12,
+          "sentence": "Under, you would need to confirm the request first.",
+          "reason": "not_in_evidence",
+          "source": "llm",
+          "action": "removed"
+        }
+      ],
+      "claims_action": "removed",
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": true,
+      "handoff_reason": "faq_no_source",
+      "pending_action": null,
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.033877,
+      "run": 1
+    },
+    {
+      "id": "parallel-04",
+      "split": "parallel",
+      "message": "How does anticipation work, and what did I sell yesterday?",
+      "ms": 10706.2,
+      "expected_intent": "multi",
+      "checks": {
+        "intent": true,
+        "handoff": false,
+        "handoff_outcome": false,
+        "language": true,
+        "numbers": true,
+        "claims": true
+      },
+      "crash": null,
+      "got_intent": "multi",
+      "route": [
+        "router",
+        "faq",
+        "records",
+        "escalation"
+      ],
+      "replans": [
+        "records->escalation (plano: [])"
+      ],
+      "engine": "llm",
+      "answer": "**Yesterday's sales:** You had 4 sales, all approved, totaling 745.50 BRL.\n- TX1001: debit, 120.00, terminal T1988A\n- TX1002: credit, 480.00, terminal T1988A\n- TX1003: debit, 85.50, terminal T1988B\n- TX1005: pix, 60.00, terminal T1988A\n\nNone were declined.\n\n**How anticipation works:** I couldn't find a source that explains it, so I won't guess. I opened a case with a human agent (ticket T-d5d588ba). The reply will show up in this conversation.\n\nAn anticipation request needs your confirmation and then approval from a human agent before it runs.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_transactions",
+          "args": {
+            "period": "yesterday"
+          },
+          "ok": true
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"period\": \"yesterday\", \"transactions\": [{\"transaction_id\": \"TX1001\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"debito\", \"amount\": \"120.00\", \"amount_brl\": \"R$ 120,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}, {\"transaction_id\": \"TX1002\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"credito\", \"amount\": \"480.00\", \"amount_brl\": \"R$ 480,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}, {\"transaction_id\": \"TX1003\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"debito\", \"amount\": \"85.50\", \"amount_brl\": \"R$ 85,50\", \"status\": \"aprovada\", \"terminal\": \"T1988B\"}, {\"transaction_id\": \"TX1005\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"pix\", \"amount\": \"60.00\", \"amount_brl\": \"R$ 60,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}], \"count\": 4, \"approved_total\": \"745.50\", \"approved_total_brl\": \"R$ 745,50\", \"declined\": []}, \"calculado_em_codigo\": [{\"lista\": \"transactions\", \"itens\": 4, \"por_method\": {\"credito\": {\"itens\": 1}, \"debito\": {\"itens\": 2}, \"pix\": {\"itens\": 1}}}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}",
+        "I've handed this to a human agent (ticket T-d5d588ba). The reply will show up in this conversation.",
+        "[policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system."
+      ],
+      "context": "- {\"ok\": true, \"data\": {\"period\": \"yesterday\", \"transactions\": [{\"transaction_id\": \"TX1001\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"debito\", \"amount\": \"120.00\", \"amount_brl\": \"R$ 120,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}, {\"transaction_id\": \"TX1002\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"credito\", \"amount\": \"480.00\", \"amount_brl\": \"R$ 480,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}, {\"transaction_id\": \"TX1003\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"debito\", \"amount\": \"85.50\", \"amount_brl\": \"R$ 85,50\", \"status\": \"aprovada\", \"terminal\": \"T1988B\"}, {\"transaction_id\": \"TX1005\", \"date\": \"2026-11-01\", \"when\": \"ontem\", \"method\": \"pix\", \"amount\": \"60.00\", \"amount_brl\": \"R$ 60,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}], \"count\": 4, \"approved_total\": \"745.50\", \"approved_total_brl\": \"R$ 745,50\", \"declined\": []}, \"calculado_em_codigo\": [{\"lista\": \"transactions\", \"itens\": 4, \"por_method\": {\"credito\": {\"itens\": 1}, \"debito\": {\"itens\": 2}, \"pix\": {\"itens\": 1}}}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}\n- I've handed this to a human agent (ticket T-d5d588ba). The reply will show up in this conversation.\n- [policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": true,
+      "handoff_reason": "faq_no_source",
+      "pending_action": null,
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.032213,
+      "run": 2
+    }
+  ],
+  "stability": {
+    "runs": 3,
+    "pass_at_1": 0.75,
+    "pass_hat_k": 0.75,
+    "ci": {
+      "pass_at_1": {
+        "k": 9,
+        "n": 12,
+        "lo": 46.8,
+        "hi": 91.1
+      },
+      "pass_hat_k": {
+        "k": 3,
+        "n": 4,
+        "lo": 30.1,
+        "hi": 95.4
+      }
+    },
+    "unstable": [],
+    "by_case": {
+      "parallel-01": {
+        "passes": 3,
+        "runs": 3
+      },
+      "parallel-02": {
+        "passes": 3,
+        "runs": 3
+      },
+      "parallel-03": {
+        "passes": 3,
+        "runs": 3
+      },
+      "parallel-04": {
+        "passes": 0,
+        "runs": 3
+      }
+    }
+  },
+  "failure_matrix": {
+    "by_check": {
+      "handoff": {
+        "parallel": 3
+      },
+      "handoff_outcome": {
+        "parallel": 3
+      }
+    },
+    "intent_confusion": {},
+    "intent_matrix": {
+      "multi": {
+        "multi": 12
+      }
+    }
+  },
+  "memory_routing": {},
+  "gate_calibration": {
+    "positives": 38,
+    "negatives": 17,
+    "excluded_negatives": [
+      "Qual o horário de abertura da agência mais próxima?"
+    ],
+    "criterion": "max pos_answered com neg_refused >= 0.85; empate → menor limiar",
+    "neg_refusal_min": 0.85,
+    "current": 12.433,
+    "current_source": "MIN_SCORE",
+    "at_current": {
+      "threshold": 12.433,
+      "pos_answered": 0.158,
+      "neg_refused": 0.941,
+      "balanced_acc": 0.55,
+      "meets_floor": true,
+      "pos_ci": {
+        "k": 6,
+        "n": 38,
+        "lo": 7.4,
+        "hi": 30.4
+      },
+      "neg_ci": {
+        "k": 16,
+        "n": 17,
+        "lo": 73.0,
+        "hi": 99.0
+      }
+    },
+    "best": {
+      "threshold": 12.433,
+      "pos_answered": 0.158,
+      "neg_refused": 0.941,
+      "balanced_acc": 0.55,
+      "meets_floor": true,
+      "pos_ci": {
+        "k": 6,
+        "n": 38,
+        "lo": 7.4,
+        "hi": 30.4
+      },
+      "neg_ci": {
+        "k": 16,
+        "n": 17,
+        "lo": 73.0,
+        "hi": 99.0
+      }
+    },
+    "table": [
+      {
+        "threshold": 0.0,
+        "pos_answered": 0.579,
+        "neg_refused": 0.118,
+        "balanced_acc": 0.348,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 2,
+          "n": 17,
+          "lo": 3.3,
+          "hi": 34.3
+        }
+      },
+      {
+        "threshold": 0.003,
+        "pos_answered": 0.579,
+        "neg_refused": 0.118,
+        "balanced_acc": 0.348,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 2,
+          "n": 17,
+          "lo": 3.3,
+          "hi": 34.3
+        }
+      },
+      {
+        "threshold": 0.004,
+        "pos_answered": 0.579,
+        "neg_refused": 0.176,
+        "balanced_acc": 0.378,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 3,
+          "n": 17,
+          "lo": 6.2,
+          "hi": 41.0
+        }
+      },
+      {
+        "threshold": 1.852,
+        "pos_answered": 0.579,
+        "neg_refused": 0.176,
+        "balanced_acc": 0.378,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 3,
+          "n": 17,
+          "lo": 6.2,
+          "hi": 41.0
+        }
+      },
+      {
+        "threshold": 1.87,
+        "pos_answered": 0.579,
+        "neg_refused": 0.176,
+        "balanced_acc": 0.378,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 3,
+          "n": 17,
+          "lo": 6.2,
+          "hi": 41.0
+        }
+      },
+      {
+        "threshold": 1.967,
+        "pos_answered": 0.579,
+        "neg_refused": 0.176,
+        "balanced_acc": 0.378,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 3,
+          "n": 17,
+          "lo": 6.2,
+          "hi": 41.0
+        }
+      },
+      {
+        "threshold": 3.655,
+        "pos_answered": 0.579,
+        "neg_refused": 0.235,
+        "balanced_acc": 0.407,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 4,
+          "n": 17,
+          "lo": 9.6,
+          "hi": 47.3
+        }
+      },
+      {
+        "threshold": 3.698,
+        "pos_answered": 0.579,
+        "neg_refused": 0.235,
+        "balanced_acc": 0.407,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 4,
+          "n": 17,
+          "lo": 9.6,
+          "hi": 47.3
+        }
+      },
+      {
+        "threshold": 3.763,
+        "pos_answered": 0.579,
+        "neg_refused": 0.235,
+        "balanced_acc": 0.407,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 4,
+          "n": 17,
+          "lo": 9.6,
+          "hi": 47.3
+        }
+      },
+      {
+        "threshold": 3.774,
+        "pos_answered": 0.579,
+        "neg_refused": 0.294,
+        "balanced_acc": 0.437,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 5,
+          "n": 17,
+          "lo": 13.3,
+          "hi": 53.1
+        }
+      },
+      {
+        "threshold": 3.777,
+        "pos_answered": 0.579,
+        "neg_refused": 0.294,
+        "balanced_acc": 0.437,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 5,
+          "n": 17,
+          "lo": 13.3,
+          "hi": 53.1
+        }
+      },
+      {
+        "threshold": 3.932,
+        "pos_answered": 0.579,
+        "neg_refused": 0.294,
+        "balanced_acc": 0.437,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 5,
+          "n": 17,
+          "lo": 13.3,
+          "hi": 53.1
+        }
+      },
+      {
+        "threshold": 4.062,
+        "pos_answered": 0.579,
+        "neg_refused": 0.294,
+        "balanced_acc": 0.437,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 5,
+          "n": 17,
+          "lo": 13.3,
+          "hi": 53.1
+        }
+      },
+      {
+        "threshold": 4.072,
+        "pos_answered": 0.579,
+        "neg_refused": 0.294,
+        "balanced_acc": 0.437,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 5,
+          "n": 17,
+          "lo": 13.3,
+          "hi": 53.1
+        }
+      },
+      {
+        "threshold": 4.107,
+        "pos_answered": 0.579,
+        "neg_refused": 0.294,
+        "balanced_acc": 0.437,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 5,
+          "n": 17,
+          "lo": 13.3,
+          "hi": 53.1
+        }
+      },
+      {
+        "threshold": 4.161,
+        "pos_answered": 0.579,
+        "neg_refused": 0.294,
+        "balanced_acc": 0.437,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 5,
+          "n": 17,
+          "lo": 13.3,
+          "hi": 53.1
+        }
+      },
+      {
+        "threshold": 4.172,
+        "pos_answered": 0.579,
+        "neg_refused": 0.294,
+        "balanced_acc": 0.437,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 5,
+          "n": 17,
+          "lo": 13.3,
+          "hi": 53.1
+        }
+      },
+      {
+        "threshold": 4.174,
+        "pos_answered": 0.579,
+        "neg_refused": 0.294,
+        "balanced_acc": 0.437,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 5,
+          "n": 17,
+          "lo": 13.3,
+          "hi": 53.1
+        }
+      },
+      {
+        "threshold": 4.286,
+        "pos_answered": 0.579,
+        "neg_refused": 0.294,
+        "balanced_acc": 0.437,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 5,
+          "n": 17,
+          "lo": 13.3,
+          "hi": 53.1
+        }
+      },
+      {
+        "threshold": 4.292,
+        "pos_answered": 0.579,
+        "neg_refused": 0.294,
+        "balanced_acc": 0.437,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 5,
+          "n": 17,
+          "lo": 13.3,
+          "hi": 53.1
+        }
+      },
+      {
+        "threshold": 4.381,
+        "pos_answered": 0.579,
+        "neg_refused": 0.412,
+        "balanced_acc": 0.495,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 7,
+          "n": 17,
+          "lo": 21.6,
+          "hi": 64.0
+        }
+      },
+      {
+        "threshold": 4.632,
+        "pos_answered": 0.579,
+        "neg_refused": 0.412,
+        "balanced_acc": 0.495,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 7,
+          "n": 17,
+          "lo": 21.6,
+          "hi": 64.0
+        }
+      },
+      {
+        "threshold": 4.672,
+        "pos_answered": 0.579,
+        "neg_refused": 0.471,
+        "balanced_acc": 0.525,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 8,
+          "n": 17,
+          "lo": 26.2,
+          "hi": 69.0
+        }
+      },
+      {
+        "threshold": 4.748,
+        "pos_answered": 0.579,
+        "neg_refused": 0.471,
+        "balanced_acc": 0.525,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 8,
+          "n": 17,
+          "lo": 26.2,
+          "hi": 69.0
+        }
+      },
+      {
+        "threshold": 4.869,
+        "pos_answered": 0.579,
+        "neg_refused": 0.471,
+        "balanced_acc": 0.525,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 8,
+          "n": 17,
+          "lo": 26.2,
+          "hi": 69.0
+        }
+      },
+      {
+        "threshold": 4.902,
+        "pos_answered": 0.579,
+        "neg_refused": 0.471,
+        "balanced_acc": 0.525,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 8,
+          "n": 17,
+          "lo": 26.2,
+          "hi": 69.0
+        }
+      },
+      {
+        "threshold": 4.963,
+        "pos_answered": 0.579,
+        "neg_refused": 0.471,
+        "balanced_acc": 0.525,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 8,
+          "n": 17,
+          "lo": 26.2,
+          "hi": 69.0
+        }
+      },
+      {
+        "threshold": 5.108,
+        "pos_answered": 0.579,
+        "neg_refused": 0.471,
+        "balanced_acc": 0.525,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 8,
+          "n": 17,
+          "lo": 26.2,
+          "hi": 69.0
+        }
+      },
+      {
+        "threshold": 5.131,
+        "pos_answered": 0.579,
+        "neg_refused": 0.471,
+        "balanced_acc": 0.525,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 8,
+          "n": 17,
+          "lo": 26.2,
+          "hi": 69.0
+        }
+      },
+      {
+        "threshold": 5.167,
+        "pos_answered": 0.579,
+        "neg_refused": 0.471,
+        "balanced_acc": 0.525,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 8,
+          "n": 17,
+          "lo": 26.2,
+          "hi": 69.0
+        }
+      },
+      {
+        "threshold": 5.206,
+        "pos_answered": 0.579,
+        "neg_refused": 0.471,
+        "balanced_acc": 0.525,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 8,
+          "n": 17,
+          "lo": 26.2,
+          "hi": 69.0
+        }
+      },
+      {
+        "threshold": 5.219,
+        "pos_answered": 0.579,
+        "neg_refused": 0.471,
+        "balanced_acc": 0.525,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 8,
+          "n": 17,
+          "lo": 26.2,
+          "hi": 69.0
+        }
+      },
+      {
+        "threshold": 5.226,
+        "pos_answered": 0.579,
+        "neg_refused": 0.471,
+        "balanced_acc": 0.525,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 8,
+          "n": 17,
+          "lo": 26.2,
+          "hi": 69.0
+        }
+      },
+      {
+        "threshold": 5.236,
+        "pos_answered": 0.579,
+        "neg_refused": 0.529,
+        "balanced_acc": 0.554,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 9,
+          "n": 17,
+          "lo": 31.0,
+          "hi": 73.8
+        }
+      },
+      {
+        "threshold": 5.239,
+        "pos_answered": 0.579,
+        "neg_refused": 0.529,
+        "balanced_acc": 0.554,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 9,
+          "n": 17,
+          "lo": 31.0,
+          "hi": 73.8
+        }
+      },
+      {
+        "threshold": 5.243,
+        "pos_answered": 0.579,
+        "neg_refused": 0.529,
+        "balanced_acc": 0.554,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 9,
+          "n": 17,
+          "lo": 31.0,
+          "hi": 73.8
+        }
+      },
+      {
+        "threshold": 5.266,
+        "pos_answered": 0.579,
+        "neg_refused": 0.529,
+        "balanced_acc": 0.554,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 9,
+          "n": 17,
+          "lo": 31.0,
+          "hi": 73.8
+        }
+      },
+      {
+        "threshold": 5.303,
+        "pos_answered": 0.526,
+        "neg_refused": 0.529,
+        "balanced_acc": 0.528,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 20,
+          "n": 38,
+          "lo": 37.3,
+          "hi": 67.5
+        },
+        "neg_ci": {
+          "k": 9,
+          "n": 17,
+          "lo": 31.0,
+          "hi": 73.8
+        }
+      },
+      {
+        "threshold": 5.376,
+        "pos_answered": 0.526,
+        "neg_refused": 0.529,
+        "balanced_acc": 0.528,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 20,
+          "n": 38,
+          "lo": 37.3,
+          "hi": 67.5
+        },
+        "neg_ci": {
+          "k": 9,
+          "n": 17,
+          "lo": 31.0,
+          "hi": 73.8
+        }
+      },
+      {
+        "threshold": 5.521,
+        "pos_answered": 0.526,
+        "neg_refused": 0.588,
+        "balanced_acc": 0.557,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 20,
+          "n": 38,
+          "lo": 37.3,
+          "hi": 67.5
+        },
+        "neg_ci": {
+          "k": 10,
+          "n": 17,
+          "lo": 36.0,
+          "hi": 78.4
+        }
+      },
+      {
+        "threshold": 5.576,
+        "pos_answered": 0.526,
+        "neg_refused": 0.588,
+        "balanced_acc": 0.557,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 20,
+          "n": 38,
+          "lo": 37.3,
+          "hi": 67.5
+        },
+        "neg_ci": {
+          "k": 10,
+          "n": 17,
+          "lo": 36.0,
+          "hi": 78.4
+        }
+      },
+      {
+        "threshold": 5.598,
+        "pos_answered": 0.5,
+        "neg_refused": 0.588,
+        "balanced_acc": 0.544,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 19,
+          "n": 38,
+          "lo": 34.8,
+          "hi": 65.2
+        },
+        "neg_ci": {
+          "k": 10,
+          "n": 17,
+          "lo": 36.0,
+          "hi": 78.4
+        }
+      },
+      {
+        "threshold": 5.69,
+        "pos_answered": 0.5,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.574,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 19,
+          "n": 38,
+          "lo": 34.8,
+          "hi": 65.2
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 5.742,
+        "pos_answered": 0.5,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.574,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 19,
+          "n": 38,
+          "lo": 34.8,
+          "hi": 65.2
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 5.863,
+        "pos_answered": 0.5,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.574,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 19,
+          "n": 38,
+          "lo": 34.8,
+          "hi": 65.2
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 5.954,
+        "pos_answered": 0.5,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.574,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 19,
+          "n": 38,
+          "lo": 34.8,
+          "hi": 65.2
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 6.002,
+        "pos_answered": 0.5,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.574,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 19,
+          "n": 38,
+          "lo": 34.8,
+          "hi": 65.2
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 6.048,
+        "pos_answered": 0.5,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.574,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 19,
+          "n": 38,
+          "lo": 34.8,
+          "hi": 65.2
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 6.053,
+        "pos_answered": 0.5,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.574,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 19,
+          "n": 38,
+          "lo": 34.8,
+          "hi": 65.2
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 6.092,
+        "pos_answered": 0.5,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.574,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 19,
+          "n": 38,
+          "lo": 34.8,
+          "hi": 65.2
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 6.095,
+        "pos_answered": 0.5,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.574,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 19,
+          "n": 38,
+          "lo": 34.8,
+          "hi": 65.2
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 6.215,
+        "pos_answered": 0.5,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.574,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 19,
+          "n": 38,
+          "lo": 34.8,
+          "hi": 65.2
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 6.288,
+        "pos_answered": 0.5,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.574,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 19,
+          "n": 38,
+          "lo": 34.8,
+          "hi": 65.2
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 6.312,
+        "pos_answered": 0.5,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.574,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 19,
+          "n": 38,
+          "lo": 34.8,
+          "hi": 65.2
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 6.405,
+        "pos_answered": 0.474,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.56,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 18,
+          "n": 38,
+          "lo": 32.5,
+          "hi": 62.7
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 6.495,
+        "pos_answered": 0.474,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.56,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 18,
+          "n": 38,
+          "lo": 32.5,
+          "hi": 62.7
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 6.518,
+        "pos_answered": 0.474,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.56,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 18,
+          "n": 38,
+          "lo": 32.5,
+          "hi": 62.7
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 6.663,
+        "pos_answered": 0.474,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.56,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 18,
+          "n": 38,
+          "lo": 32.5,
+          "hi": 62.7
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 6.726,
+        "pos_answered": 0.474,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.56,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 18,
+          "n": 38,
+          "lo": 32.5,
+          "hi": 62.7
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 6.774,
+        "pos_answered": 0.474,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.56,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 18,
+          "n": 38,
+          "lo": 32.5,
+          "hi": 62.7
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 6.865,
+        "pos_answered": 0.474,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.56,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 18,
+          "n": 38,
+          "lo": 32.5,
+          "hi": 62.7
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 6.923,
+        "pos_answered": 0.474,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.56,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 18,
+          "n": 38,
+          "lo": 32.5,
+          "hi": 62.7
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 6.947,
+        "pos_answered": 0.447,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.547,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 17,
+          "n": 38,
+          "lo": 30.1,
+          "hi": 60.3
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 6.972,
+        "pos_answered": 0.421,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.534,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 16,
+          "n": 38,
+          "lo": 27.9,
+          "hi": 57.8
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 7.009,
+        "pos_answered": 0.421,
+        "neg_refused": 0.706,
+        "balanced_acc": 0.563,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 16,
+          "n": 38,
+          "lo": 27.9,
+          "hi": 57.8
+        },
+        "neg_ci": {
+          "k": 12,
+          "n": 17,
+          "lo": 46.9,
+          "hi": 86.7
+        }
+      },
+      {
+        "threshold": 7.195,
+        "pos_answered": 0.421,
+        "neg_refused": 0.706,
+        "balanced_acc": 0.563,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 16,
+          "n": 38,
+          "lo": 27.9,
+          "hi": 57.8
+        },
+        "neg_ci": {
+          "k": 12,
+          "n": 17,
+          "lo": 46.9,
+          "hi": 86.7
+        }
+      },
+      {
+        "threshold": 7.198,
+        "pos_answered": 0.421,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.622,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 16,
+          "n": 38,
+          "lo": 27.9,
+          "hi": 57.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 7.237,
+        "pos_answered": 0.421,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.622,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 16,
+          "n": 38,
+          "lo": 27.9,
+          "hi": 57.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 7.414,
+        "pos_answered": 0.421,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.622,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 16,
+          "n": 38,
+          "lo": 27.9,
+          "hi": 57.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 7.497,
+        "pos_answered": 0.421,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.622,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 16,
+          "n": 38,
+          "lo": 27.9,
+          "hi": 57.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 7.505,
+        "pos_answered": 0.421,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.622,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 16,
+          "n": 38,
+          "lo": 27.9,
+          "hi": 57.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 7.885,
+        "pos_answered": 0.395,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.609,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 15,
+          "n": 38,
+          "lo": 25.6,
+          "hi": 55.3
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 7.887,
+        "pos_answered": 0.395,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.609,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 15,
+          "n": 38,
+          "lo": 25.6,
+          "hi": 55.3
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 7.905,
+        "pos_answered": 0.395,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.609,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 15,
+          "n": 38,
+          "lo": 25.6,
+          "hi": 55.3
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 7.925,
+        "pos_answered": 0.395,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.609,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 15,
+          "n": 38,
+          "lo": 25.6,
+          "hi": 55.3
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 8.033,
+        "pos_answered": 0.395,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.609,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 15,
+          "n": 38,
+          "lo": 25.6,
+          "hi": 55.3
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 8.116,
+        "pos_answered": 0.368,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.596,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 14,
+          "n": 38,
+          "lo": 23.4,
+          "hi": 52.7
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 8.137,
+        "pos_answered": 0.368,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.596,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 14,
+          "n": 38,
+          "lo": 23.4,
+          "hi": 52.7
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 8.149,
+        "pos_answered": 0.368,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.596,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 14,
+          "n": 38,
+          "lo": 23.4,
+          "hi": 52.7
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 8.172,
+        "pos_answered": 0.342,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.583,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 13,
+          "n": 38,
+          "lo": 21.2,
+          "hi": 50.1
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 8.206,
+        "pos_answered": 0.342,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.583,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 13,
+          "n": 38,
+          "lo": 21.2,
+          "hi": 50.1
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 8.248,
+        "pos_answered": 0.289,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.557,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 11,
+          "n": 38,
+          "lo": 17.0,
+          "hi": 44.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 8.25,
+        "pos_answered": 0.289,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.557,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 11,
+          "n": 38,
+          "lo": 17.0,
+          "hi": 44.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 8.314,
+        "pos_answered": 0.289,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.557,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 11,
+          "n": 38,
+          "lo": 17.0,
+          "hi": 44.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 8.418,
+        "pos_answered": 0.289,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.557,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 11,
+          "n": 38,
+          "lo": 17.0,
+          "hi": 44.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 8.571,
+        "pos_answered": 0.289,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.557,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 11,
+          "n": 38,
+          "lo": 17.0,
+          "hi": 44.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 8.658,
+        "pos_answered": 0.289,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.557,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 11,
+          "n": 38,
+          "lo": 17.0,
+          "hi": 44.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 8.817,
+        "pos_answered": 0.289,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.557,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 11,
+          "n": 38,
+          "lo": 17.0,
+          "hi": 44.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 9.044,
+        "pos_answered": 0.289,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.557,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 11,
+          "n": 38,
+          "lo": 17.0,
+          "hi": 44.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 9.552,
+        "pos_answered": 0.289,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.557,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 11,
+          "n": 38,
+          "lo": 17.0,
+          "hi": 44.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 9.809,
+        "pos_answered": 0.289,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.557,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 11,
+          "n": 38,
+          "lo": 17.0,
+          "hi": 44.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 9.978,
+        "pos_answered": 0.289,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.557,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 11,
+          "n": 38,
+          "lo": 17.0,
+          "hi": 44.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 9.987,
+        "pos_answered": 0.289,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.557,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 11,
+          "n": 38,
+          "lo": 17.0,
+          "hi": 44.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 10.055,
+        "pos_answered": 0.289,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.557,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 11,
+          "n": 38,
+          "lo": 17.0,
+          "hi": 44.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 10.097,
+        "pos_answered": 0.289,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.557,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 11,
+          "n": 38,
+          "lo": 17.0,
+          "hi": 44.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 10.378,
+        "pos_answered": 0.289,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.557,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 11,
+          "n": 38,
+          "lo": 17.0,
+          "hi": 44.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 10.421,
+        "pos_answered": 0.289,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.557,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 11,
+          "n": 38,
+          "lo": 17.0,
+          "hi": 44.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 10.443,
+        "pos_answered": 0.263,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.543,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 10,
+          "n": 38,
+          "lo": 15.0,
+          "hi": 42.0
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 10.462,
+        "pos_answered": 0.237,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.53,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 9,
+          "n": 38,
+          "lo": 13.0,
+          "hi": 39.2
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 10.531,
+        "pos_answered": 0.237,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.53,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 9,
+          "n": 38,
+          "lo": 13.0,
+          "hi": 39.2
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 10.608,
+        "pos_answered": 0.237,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.53,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 9,
+          "n": 38,
+          "lo": 13.0,
+          "hi": 39.2
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 10.643,
+        "pos_answered": 0.237,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.53,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 9,
+          "n": 38,
+          "lo": 13.0,
+          "hi": 39.2
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 10.648,
+        "pos_answered": 0.237,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.53,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 9,
+          "n": 38,
+          "lo": 13.0,
+          "hi": 39.2
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 10.66,
+        "pos_answered": 0.237,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.53,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 9,
+          "n": 38,
+          "lo": 13.0,
+          "hi": 39.2
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 10.735,
+        "pos_answered": 0.184,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.504,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 7,
+          "n": 38,
+          "lo": 9.2,
+          "hi": 33.4
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 10.753,
+        "pos_answered": 0.158,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.491,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 6,
+          "n": 38,
+          "lo": 7.4,
+          "hi": 30.4
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 11.032,
+        "pos_answered": 0.158,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.491,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 6,
+          "n": 38,
+          "lo": 7.4,
+          "hi": 30.4
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 11.099,
+        "pos_answered": 0.158,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.491,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 6,
+          "n": 38,
+          "lo": 7.4,
+          "hi": 30.4
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 11.119,
+        "pos_answered": 0.158,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.491,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 6,
+          "n": 38,
+          "lo": 7.4,
+          "hi": 30.4
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 11.385,
+        "pos_answered": 0.158,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.491,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 6,
+          "n": 38,
+          "lo": 7.4,
+          "hi": 30.4
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 11.74,
+        "pos_answered": 0.158,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.491,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 6,
+          "n": 38,
+          "lo": 7.4,
+          "hi": 30.4
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 12.0,
+        "pos_answered": 0.158,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.491,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 6,
+          "n": 38,
+          "lo": 7.4,
+          "hi": 30.4
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 12.248,
+        "pos_answered": 0.158,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.491,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 6,
+          "n": 38,
+          "lo": 7.4,
+          "hi": 30.4
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 12.433,
+        "pos_answered": 0.158,
+        "neg_refused": 0.941,
+        "balanced_acc": 0.55,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 6,
+          "n": 38,
+          "lo": 7.4,
+          "hi": 30.4
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 17,
+          "lo": 73.0,
+          "hi": 99.0
+        }
+      },
+      {
+        "threshold": 12.457,
+        "pos_answered": 0.158,
+        "neg_refused": 0.941,
+        "balanced_acc": 0.55,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 6,
+          "n": 38,
+          "lo": 7.4,
+          "hi": 30.4
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 17,
+          "lo": 73.0,
+          "hi": 99.0
+        }
+      },
+      {
+        "threshold": 12.835,
+        "pos_answered": 0.158,
+        "neg_refused": 0.941,
+        "balanced_acc": 0.55,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 6,
+          "n": 38,
+          "lo": 7.4,
+          "hi": 30.4
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 17,
+          "lo": 73.0,
+          "hi": 99.0
+        }
+      },
+      {
+        "threshold": 13.441,
+        "pos_answered": 0.158,
+        "neg_refused": 0.941,
+        "balanced_acc": 0.55,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 6,
+          "n": 38,
+          "lo": 7.4,
+          "hi": 30.4
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 17,
+          "lo": 73.0,
+          "hi": 99.0
+        }
+      },
+      {
+        "threshold": 13.836,
+        "pos_answered": 0.158,
+        "neg_refused": 0.941,
+        "balanced_acc": 0.55,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 6,
+          "n": 38,
+          "lo": 7.4,
+          "hi": 30.4
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 17,
+          "lo": 73.0,
+          "hi": 99.0
+        }
+      },
+      {
+        "threshold": 13.904,
+        "pos_answered": 0.105,
+        "neg_refused": 0.941,
+        "balanced_acc": 0.523,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 4,
+          "n": 38,
+          "lo": 4.2,
+          "hi": 24.1
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 17,
+          "lo": 73.0,
+          "hi": 99.0
+        }
+      },
+      {
+        "threshold": 14.31,
+        "pos_answered": 0.079,
+        "neg_refused": 0.941,
+        "balanced_acc": 0.51,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 3,
+          "n": 38,
+          "lo": 2.7,
+          "hi": 20.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 17,
+          "lo": 73.0,
+          "hi": 99.0
+        }
+      },
+      {
+        "threshold": 15.136,
+        "pos_answered": 0.053,
+        "neg_refused": 0.941,
+        "balanced_acc": 0.497,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 2,
+          "n": 38,
+          "lo": 1.5,
+          "hi": 17.3
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 17,
+          "lo": 73.0,
+          "hi": 99.0
+        }
+      },
+      {
+        "threshold": 15.478,
+        "pos_answered": 0.053,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.526,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 2,
+          "n": 38,
+          "lo": 1.5,
+          "hi": 17.3
+        },
+        "neg_ci": {
+          "k": 17,
+          "n": 17,
+          "lo": 81.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 16.27,
+        "pos_answered": 0.053,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.526,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 2,
+          "n": 38,
+          "lo": 1.5,
+          "hi": 17.3
+        },
+        "neg_ci": {
+          "k": 17,
+          "n": 17,
+          "lo": 81.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 19.223,
+        "pos_answered": 0.053,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.526,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 2,
+          "n": 38,
+          "lo": 1.5,
+          "hi": 17.3
+        },
+        "neg_ci": {
+          "k": 17,
+          "n": 17,
+          "lo": 81.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 19.392,
+        "pos_answered": 0.026,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.513,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 1,
+          "n": 38,
+          "lo": 0.5,
+          "hi": 13.5
+        },
+        "neg_ci": {
+          "k": 17,
+          "n": 17,
+          "lo": 81.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 20.794,
+        "pos_answered": 0.026,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.513,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 1,
+          "n": 38,
+          "lo": 0.5,
+          "hi": 13.5
+        },
+        "neg_ci": {
+          "k": 17,
+          "n": 17,
+          "lo": 81.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 26.606,
+        "pos_answered": 0.026,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.513,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 1,
+          "n": 38,
+          "lo": 0.5,
+          "hi": 13.5
+        },
+        "neg_ci": {
+          "k": 17,
+          "n": 17,
+          "lo": 81.6,
+          "hi": 100.0
+        }
+      }
+    ],
+    "retriever": "bm25"
+  },
+  "retrieval": {
+    "cases": 38,
+    "positives": 38,
+    "negatives": 18,
+    "recall@3": 0.842,
+    "mrr": 0.715,
+    "hit@3": 0.842,
+    "hit@3_ci": {
+      "k": 32,
+      "n": 38,
+      "lo": 69.6,
+      "hi": 92.6
+    },
+    "ndcg@3": 0.748,
+    "page": {
+      "recall@3": 0.726,
+      "mrr": 0.86,
+      "hit@3": 0.921,
+      "hit@3_ci": {
+        "k": 35,
+        "n": 38,
+        "lo": 79.2,
+        "hi": 97.3
+      }
+    },
+    "latency_ms": {
+      "p50": 87.1,
+      "p95": 289.0,
+      "mean": 101.8
+    },
+    "gate": {
+      "min_score": 12.433,
+      "min_cosine": 0.88,
+      "pos_answered": 0.421,
+      "neg_refused": 0.941,
+      "meets_floor": true,
+      "pos_ci": {
+        "k": 16,
+        "n": 38,
+        "lo": 27.9,
+        "hi": 57.8
+      },
+      "neg_ci": {
+        "k": 16,
+        "n": 17,
+        "lo": 73.0,
+        "hi": 99.0
+      },
+      "positives": 38,
+      "negatives": 17,
+      "neg_refusal_min": 0.85
+    },
+    "essential": 38,
+    "gold_unresolved": [],
+    "dedupe_aliases": 39,
+    "retriever": "dense",
+    "fallback": "",
+    "requested": "dense"
+  },
+  "cassette": {
+    "file": "evals/cassettes/parallel.jsonl",
+    "requests": 96,
+    "errors": 0,
+    "repeat": 3,
+    "floors": {
+      "intent_acc": 100.0,
+      "handoff_acc": 75.0,
+      "handoff_outcome_acc": 75.0,
+      "language_acc": 100.0,
+      "numbers_acc": 100.0,
+      "claims_acc": 100.0,
+      "pass_at_1": 75.0,
+      "max_crashes": 0
+    }
+  }
+}

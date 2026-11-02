@@ -1,0 +1,3839 @@
+{
+  "mode": "in-process",
+  "provider": "anthropic",
+  "recorded_at": "2026-11-02T18:31:52Z",
+  "git_sha": "2895856",
+  "live": true,
+  "split": "approval",
+  "status": "complete",
+  "spent_usd": 0.27375,
+  "max_usd": 0.872727,
+  "llm_errors": 0.0,
+  "gate": 0.9,
+  "intent_acc": 1.0,
+  "intent_ci": {
+    "k": 18,
+    "n": 18,
+    "lo": 82.4,
+    "hi": 100.0
+  },
+  "isolation": "db_per_case",
+  "coverage_min_score": {
+    "effective": 12.433,
+    "source": "MIN_SCORE"
+  },
+  "gated_splits": [
+    "approval"
+  ],
+  "ungated_splits": [
+    "hard",
+    "heldout",
+    "real"
+  ],
+  "passed": true,
+  "metrics": {
+    "approval": {
+      "cases": 18,
+      "intent_acc": 100.0,
+      "handoff_acc": 100.0,
+      "handoff_outcome_acc": 100.0,
+      "blocked_acc": null,
+      "language_acc": 100.0,
+      "tools_acc": 100.0,
+      "pending_action_acc": 100.0,
+      "replanned_acc": null,
+      "completed_acc": null,
+      "no_leak_acc": null,
+      "numbers_acc": 100.0,
+      "memory_acc": null,
+      "claims_acc": 100.0,
+      "language_undetected": 0,
+      "recall@3": null,
+      "mrr": null,
+      "p50_ms": 6157.5,
+      "p95_ms": 11655.0,
+      "cost_usd": 0.27375,
+      "crashes": 0,
+      "ci": {
+        "intent_acc": {
+          "k": 18,
+          "n": 18,
+          "lo": 82.4,
+          "hi": 100.0
+        },
+        "handoff_acc": {
+          "k": 18,
+          "n": 18,
+          "lo": 82.4,
+          "hi": 100.0
+        },
+        "handoff_outcome_acc": {
+          "k": 18,
+          "n": 18,
+          "lo": 82.4,
+          "hi": 100.0
+        },
+        "language_acc": {
+          "k": 18,
+          "n": 18,
+          "lo": 82.4,
+          "hi": 100.0
+        },
+        "tools_acc": {
+          "k": 18,
+          "n": 18,
+          "lo": 82.4,
+          "hi": 100.0
+        },
+        "pending_action_acc": {
+          "k": 18,
+          "n": 18,
+          "lo": 82.4,
+          "hi": 100.0
+        },
+        "numbers_acc": {
+          "k": 18,
+          "n": 18,
+          "lo": 82.4,
+          "hi": 100.0
+        },
+        "claims_acc": {
+          "k": 18,
+          "n": 18,
+          "lo": 82.4,
+          "hi": 100.0
+        }
+      }
+    },
+    "ALL": {
+      "cases": 18,
+      "intent_acc": 100.0,
+      "handoff_acc": 100.0,
+      "handoff_outcome_acc": 100.0,
+      "blocked_acc": null,
+      "language_acc": 100.0,
+      "tools_acc": 100.0,
+      "pending_action_acc": 100.0,
+      "replanned_acc": null,
+      "completed_acc": null,
+      "no_leak_acc": null,
+      "numbers_acc": 100.0,
+      "memory_acc": null,
+      "claims_acc": 100.0,
+      "language_undetected": 0,
+      "recall@3": null,
+      "mrr": null,
+      "p50_ms": 6157.5,
+      "p95_ms": 11655.0,
+      "cost_usd": 0.27375,
+      "crashes": 0,
+      "ci": {
+        "intent_acc": {
+          "k": 18,
+          "n": 18,
+          "lo": 82.4,
+          "hi": 100.0
+        },
+        "handoff_acc": {
+          "k": 18,
+          "n": 18,
+          "lo": 82.4,
+          "hi": 100.0
+        },
+        "handoff_outcome_acc": {
+          "k": 18,
+          "n": 18,
+          "lo": 82.4,
+          "hi": 100.0
+        },
+        "language_acc": {
+          "k": 18,
+          "n": 18,
+          "lo": 82.4,
+          "hi": 100.0
+        },
+        "tools_acc": {
+          "k": 18,
+          "n": 18,
+          "lo": 82.4,
+          "hi": 100.0
+        },
+        "pending_action_acc": {
+          "k": 18,
+          "n": 18,
+          "lo": 82.4,
+          "hi": 100.0
+        },
+        "numbers_acc": {
+          "k": 18,
+          "n": 18,
+          "lo": 82.4,
+          "hi": 100.0
+        },
+        "claims_acc": {
+          "k": 18,
+          "n": 18,
+          "lo": 82.4,
+          "hi": 100.0
+        }
+      }
+    }
+  },
+  "rows": [
+    {
+      "id": "approval-01",
+      "split": "approval",
+      "message": "Quero contestar a venda TX1006, não reconheço",
+      "ms": 7589.5,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true,
+        "claims": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "table",
+      "answer": "Encontrei a venda TX1006: crédito, R$ 900,00, aprovada hoje na maquininha T1988A.\n\nA contestação está **proposta, aguardando sua confirmação** (ação A-a2c85140). Ainda não foi executada. É uma ação de risco alto. Ela exige a sua confirmação e, depois, a aprovação de um atendente humano antes de ser executada. A proposta expira em 15 minutos se não for confirmada.\n\nVocê confirma a contestação da TX1006?",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_transactions",
+          "args": {
+            "transaction_id": "TX1006"
+          },
+          "ok": true
+        },
+        {
+          "name": "open_dispute",
+          "args": {
+            "transaction_id": "TX1006"
+          },
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"period\": \"all\", \"transactions\": [{\"transaction_id\": \"TX1006\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"credito\", \"amount\": \"900.00\", \"amount_brl\": \"R$ 900,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}], \"count\": 1, \"approved_total\": \"900.00\", \"approved_total_brl\": \"R$ 900,00\", \"declined\": []}, \"calculado_em_codigo\": [{\"lista\": \"transactions\", \"itens\": 1}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}",
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-a2c85140\", \"risk\": \"high\", \"args\": {\"transaction_id\": \"TX1006\"}}",
+        "[policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema."
+      ],
+      "context": "- {\"ok\": true, \"data\": {\"period\": \"all\", \"transactions\": [{\"transaction_id\": \"TX1006\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"credito\", \"amount\": \"900.00\", \"amount_brl\": \"R$ 900,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}], \"count\": 1, \"approved_total\": \"900.00\", \"approved_total_brl\": \"R$ 900,00\", \"declined\": []}, \"calculado_em_codigo\": [{\"lista\": \"transactions\", \"itens\": 1}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}\n- {\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-a2c85140\", \"risk\": \"high\", \"args\": {\"transaction_id\": \"TX1006\"}}\n- [policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": "A-a2c85140",
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.02047,
+      "run": 0
+    },
+    {
+      "id": "approval-02",
+      "split": "approval",
+      "message": "I want to dispute sale TX1006",
+      "ms": 11655.0,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true,
+        "claims": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "table",
+      "answer": "I've prepared the dispute for TX1006 (900.00). It is **proposed and waiting for your confirmation** (action ID: A-036808c4). It hasn't been submitted.\n\nAfter you confirm, a human agent still has to approve it. The agent decides the outcome. The proposal expires after 15 minutes if you don't confirm.\n\nPlease confirm if you want to go ahead.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_transactions",
+          "args": {
+            "transaction_id": "TX1006"
+          },
+          "ok": true
+        },
+        {
+          "name": "open_dispute",
+          "args": {
+            "transaction_id": "TX1006"
+          },
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"period\": \"all\", \"transactions\": [{\"transaction_id\": \"TX1006\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"credito\", \"amount\": \"900.00\", \"amount_brl\": \"R$ 900,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}], \"count\": 1, \"approved_total\": \"900.00\", \"approved_total_brl\": \"R$ 900,00\", \"declined\": []}, \"calculado_em_codigo\": [{\"lista\": \"transactions\", \"itens\": 1}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}",
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-036808c4\", \"risk\": \"high\", \"args\": {\"transaction_id\": \"TX1006\"}}",
+        "[policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system."
+      ],
+      "context": "- {\"ok\": true, \"data\": {\"period\": \"all\", \"transactions\": [{\"transaction_id\": \"TX1006\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"credito\", \"amount\": \"900.00\", \"amount_brl\": \"R$ 900,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}], \"count\": 1, \"approved_total\": \"900.00\", \"approved_total_brl\": \"R$ 900,00\", \"declined\": []}, \"calculado_em_codigo\": [{\"lista\": \"transactions\", \"itens\": 1}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}\n- {\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-036808c4\", \"risk\": \"high\", \"args\": {\"transaction_id\": \"TX1006\"}}\n- [policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": "A-036808c4",
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.021092,
+      "run": 0
+    },
+    {
+      "id": "approval-03",
+      "split": "approval",
+      "message": "Quero antecipar meus recebíveis do crédito",
+      "ms": 7181.2,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true,
+        "claims": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "table",
+      "answer": "Preparei o pedido de antecipação de recebíveis do crédito. Ele está **proposto, aguardando sua confirmação** (ação A-e8513393).\n\nEsta é uma ação de risco alto. Ela precisa da sua confirmação e, depois, da aprovação de um atendente humano antes de ser executada. Se você não confirmar, a proposta expira em 15 minutos.\n\nVocê confirma o pedido?",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "request_anticipation",
+          "args": {
+            "method": "credito"
+          },
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-e8513393\", \"risk\": \"high\", \"args\": {\"method\": \"credito\"}}",
+        "[policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema."
+      ],
+      "context": "- {\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-e8513393\", \"risk\": \"high\", \"args\": {\"method\": \"credito\"}}\n- [policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": "A-e8513393",
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.012977,
+      "run": 0
+    },
+    {
+      "id": "approval-04",
+      "split": "approval",
+      "message": "Please advance my credit card receivables",
+      "ms": 6157.5,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true,
+        "claims": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "table",
+      "answer": "I've proposed the receivables advance (credit method), and it's waiting for your confirmation. The action ID is A-0703e7b9. Nothing has run yet.\n\nUnder, this is a high-risk action. You confirm it first, and then a human agent has to approve it before it runs. If you don't confirm within 15 minutes, the proposal expires.\n\nDo you confirm the request?",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "request_anticipation",
+          "args": {
+            "method": "credito"
+          },
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-0703e7b9\", \"risk\": \"high\", \"args\": {\"method\": \"credito\"}}",
+        "[policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system."
+      ],
+      "context": "- {\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-0703e7b9\", \"risk\": \"high\", \"args\": {\"method\": \"credito\"}}\n- [policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": "A-0703e7b9",
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.012397,
+      "run": 0
+    },
+    {
+      "id": "approval-05",
+      "split": "approval",
+      "message": "Abra um chamado técnico para a maquininha T1988B",
+      "ms": 5126.5,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true,
+        "claims": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "table",
+      "answer": "Propus o chamado técnico para a maquininha **T1988B**. Ele está **aguardando sua confirmação** (ação A-30f630a7) e ainda não foi aberto.\n\nVocê confirma a abertura? Uma proposta não confirmada expira em 15 minutos.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "request_terminal_support",
+          "args": {
+            "terminal_id": "T1988B"
+          },
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-30f630a7\", \"risk\": \"normal\", \"args\": {\"terminal_id\": \"T1988B\"}}",
+        "[policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema."
+      ],
+      "context": "- {\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-30f630a7\", \"risk\": \"normal\", \"args\": {\"terminal_id\": \"T1988B\"}}\n- [policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": "A-30f630a7",
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.012558,
+      "run": 0
+    },
+    {
+      "id": "approval-06",
+      "split": "approval",
+      "message": "Open a technical support ticket for terminal T1988B",
+      "ms": 5704.0,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true,
+        "claims": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "table",
+      "answer": "I've drafted a technical support ticket for terminal T1988B, but it hasn't been opened yet. It's waiting for your confirmation (action ID: A-df2b60be).\n\nPlease confirm if you want me to go ahead. A proposal that isn't confirmed expires after 15 minutes.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "request_terminal_support",
+          "args": {
+            "terminal_id": "T1988B"
+          },
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-df2b60be\", \"risk\": \"normal\", \"args\": {\"terminal_id\": \"T1988B\"}}",
+        "[policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system."
+      ],
+      "context": "- {\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-df2b60be\", \"risk\": \"normal\", \"args\": {\"terminal_id\": \"T1988B\"}}\n- [policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": "A-df2b60be",
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.012244,
+      "run": 0
+    },
+    {
+      "id": "approval-01",
+      "split": "approval",
+      "message": "Quero contestar a venda TX1006, não reconheço",
+      "ms": 7190.3,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true,
+        "claims": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "table",
+      "answer": "Encontrei a venda TX1006:\n- Valor: R$ 900,00, no crédito\n- Data: hoje\n- Maquininha: T1988A\n- Status: aprovada\n\nDeixei a contestação **proposta, aguardando sua confirmação** (ação A-0fca0133). Ela ainda não foi executada.\n\nÉ uma ação de risco alto. Ela exige a sua confirmação e, depois, a aprovação de um atendente humano. A proposta não confirmada expira em 15 minutos.\n\nVocê confirma a contestação da TX1006?",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_transactions",
+          "args": {
+            "transaction_id": "TX1006"
+          },
+          "ok": true
+        },
+        {
+          "name": "open_dispute",
+          "args": {
+            "transaction_id": "TX1006"
+          },
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"period\": \"all\", \"transactions\": [{\"transaction_id\": \"TX1006\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"credito\", \"amount\": \"900.00\", \"amount_brl\": \"R$ 900,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}], \"count\": 1, \"approved_total\": \"900.00\", \"approved_total_brl\": \"R$ 900,00\", \"declined\": []}, \"calculado_em_codigo\": [{\"lista\": \"transactions\", \"itens\": 1}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}",
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-0fca0133\", \"risk\": \"high\", \"args\": {\"transaction_id\": \"TX1006\"}}",
+        "[policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema."
+      ],
+      "context": "- {\"ok\": true, \"data\": {\"period\": \"all\", \"transactions\": [{\"transaction_id\": \"TX1006\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"credito\", \"amount\": \"900.00\", \"amount_brl\": \"R$ 900,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}], \"count\": 1, \"approved_total\": \"900.00\", \"approved_total_brl\": \"R$ 900,00\", \"declined\": []}, \"calculado_em_codigo\": [{\"lista\": \"transactions\", \"itens\": 1}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}\n- {\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-0fca0133\", \"risk\": \"high\", \"args\": {\"transaction_id\": \"TX1006\"}}\n- [policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": "A-0fca0133",
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.020785,
+      "run": 1
+    },
+    {
+      "id": "approval-02",
+      "split": "approval",
+      "message": "I want to dispute sale TX1006",
+      "ms": 7189.5,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true,
+        "claims": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "table",
+      "answer": "I found TX1006. It's an approved credit sale of 900.00 from today, made on terminal T1988A.\n\nI've proposed a dispute for TX1006 (action A-98d7cd43). It is **proposed and awaiting your confirmation**, and I haven't opened it yet. A dispute needs your confirmation first. A human agent then has to approve it before it runs. The proposal expires after 15 minutes if you don't confirm.\n\nDo you confirm the dispute for TX1006?",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_transactions",
+          "args": {
+            "transaction_id": "TX1006"
+          },
+          "ok": true
+        },
+        {
+          "name": "open_dispute",
+          "args": {
+            "transaction_id": "TX1006"
+          },
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"period\": \"all\", \"transactions\": [{\"transaction_id\": \"TX1006\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"credito\", \"amount\": \"900.00\", \"amount_brl\": \"R$ 900,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}], \"count\": 1, \"approved_total\": \"900.00\", \"approved_total_brl\": \"R$ 900,00\", \"declined\": []}, \"calculado_em_codigo\": [{\"lista\": \"transactions\", \"itens\": 1}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}",
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-98d7cd43\", \"risk\": \"high\", \"args\": {\"transaction_id\": \"TX1006\"}}",
+        "[policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system."
+      ],
+      "context": "- {\"ok\": true, \"data\": {\"period\": \"all\", \"transactions\": [{\"transaction_id\": \"TX1006\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"credito\", \"amount\": \"900.00\", \"amount_brl\": \"R$ 900,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}], \"count\": 1, \"approved_total\": \"900.00\", \"approved_total_brl\": \"R$ 900,00\", \"declined\": []}, \"calculado_em_codigo\": [{\"lista\": \"transactions\", \"itens\": 1}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}\n- {\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-98d7cd43\", \"risk\": \"high\", \"args\": {\"transaction_id\": \"TX1006\"}}\n- [policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": "A-98d7cd43",
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.019888,
+      "run": 1
+    },
+    {
+      "id": "approval-03",
+      "split": "approval",
+      "message": "Quero antecipar meus recebíveis do crédito",
+      "ms": 4957.0,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true,
+        "claims": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "table",
+      "answer": "Preparei o pedido de antecipação de recebíveis do crédito. Ele está **proposto, aguardando sua confirmação** (ação A-668f6eaf).\n\nEsse tipo de ação é de risco alto. Primeiro você confirma. Depois, um atendente humano precisa aprovar antes de ela ser executada. A proposta não confirmada expira em 15 minutos.\n\nVocê confirma o pedido?",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "request_anticipation",
+          "args": {
+            "method": "credito"
+          },
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-668f6eaf\", \"risk\": \"high\", \"args\": {\"method\": \"credito\"}}",
+        "[policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema."
+      ],
+      "context": "- {\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-668f6eaf\", \"risk\": \"high\", \"args\": {\"method\": \"credito\"}}\n- [policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": "A-668f6eaf",
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.012923,
+      "run": 1
+    },
+    {
+      "id": "approval-04",
+      "split": "approval",
+      "message": "Please advance my credit card receivables",
+      "ms": 5408.7,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true,
+        "claims": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "table",
+      "answer": "The receivables advance is proposed, but it hasn't been requested yet. It's waiting for your confirmation (action ID: A-0052f427).\n\nIt's a high-risk action. First you confirm, then a human agent has to approve it before it runs. If you don't confirm within 15 minutes, the proposal expires.\n\nDo you confirm the request?",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "request_anticipation",
+          "args": {
+            "method": "credito"
+          },
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-0052f427\", \"risk\": \"high\", \"args\": {\"method\": \"credito\"}}",
+        "[policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system."
+      ],
+      "context": "- {\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-0052f427\", \"risk\": \"high\", \"args\": {\"method\": \"credito\"}}\n- [policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": "A-0052f427",
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.012313,
+      "run": 1
+    },
+    {
+      "id": "approval-05",
+      "split": "approval",
+      "message": "Abra um chamado técnico para a maquininha T1988B",
+      "ms": 7002.1,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true,
+        "claims": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "table",
+      "answer": "Proposta registrada: abrir um chamado técnico para a maquininha **T1988B** (ação A-717d84ac).\n\nEla está **aguardando sua confirmação**. O chamado ainda não foi aberto. Se quiser seguir, confirme. Uma proposta não confirmada expira em 15 minutos.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "request_terminal_support",
+          "args": {
+            "terminal_id": "T1988B"
+          },
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-717d84ac\", \"risk\": \"normal\", \"args\": {\"terminal_id\": \"T1988B\"}}",
+        "[policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema."
+      ],
+      "context": "- {\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-717d84ac\", \"risk\": \"normal\", \"args\": {\"terminal_id\": \"T1988B\"}}\n- [policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": "A-717d84ac",
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.012727,
+      "run": 1
+    },
+    {
+      "id": "approval-06",
+      "split": "approval",
+      "message": "Open a technical support ticket for terminal T1988B",
+      "ms": 5483.0,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true,
+        "claims": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "table",
+      "answer": "I've proposed a technical support ticket for terminal T1988B. It's waiting for your confirmation, and I haven't opened it yet (action ID: A-91e61587).\n\nPlease confirm if you want me to go ahead. A proposal that isn't confirmed expires after 15 minutes.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "request_terminal_support",
+          "args": {
+            "terminal_id": "T1988B"
+          },
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-91e61587\", \"risk\": \"normal\", \"args\": {\"terminal_id\": \"T1988B\"}}",
+        "[policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system."
+      ],
+      "context": "- {\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-91e61587\", \"risk\": \"normal\", \"args\": {\"terminal_id\": \"T1988B\"}}\n- [policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": "A-91e61587",
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.012219,
+      "run": 1
+    },
+    {
+      "id": "approval-01",
+      "split": "approval",
+      "message": "Quero contestar a venda TX1006, não reconheço",
+      "ms": 5844.3,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true,
+        "claims": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "table",
+      "answer": "Encontrei a venda **TX1006**: crédito, R$ 900,00, aprovada hoje na maquininha T1988A.\n\nDeixei a contestação **proposta, aguardando sua confirmação** (código A-b8c34b04). Ela é uma ação de risco alto. Ela exige a sua confirmação e, depois, a aprovação de um atendente humano antes de ser executada. Uma proposta não confirmada expira em 15 minutos.\n\nVocê confirma a contestação da TX1006?",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_transactions",
+          "args": {
+            "transaction_id": "TX1006"
+          },
+          "ok": true
+        },
+        {
+          "name": "open_dispute",
+          "args": {
+            "transaction_id": "TX1006"
+          },
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"period\": \"all\", \"transactions\": [{\"transaction_id\": \"TX1006\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"credito\", \"amount\": \"900.00\", \"amount_brl\": \"R$ 900,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}], \"count\": 1, \"approved_total\": \"900.00\", \"approved_total_brl\": \"R$ 900,00\", \"declined\": []}, \"calculado_em_codigo\": [{\"lista\": \"transactions\", \"itens\": 1}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}",
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-b8c34b04\", \"risk\": \"high\", \"args\": {\"transaction_id\": \"TX1006\"}}",
+        "[policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema."
+      ],
+      "context": "- {\"ok\": true, \"data\": {\"period\": \"all\", \"transactions\": [{\"transaction_id\": \"TX1006\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"credito\", \"amount\": \"900.00\", \"amount_brl\": \"R$ 900,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}], \"count\": 1, \"approved_total\": \"900.00\", \"approved_total_brl\": \"R$ 900,00\", \"declined\": []}, \"calculado_em_codigo\": [{\"lista\": \"transactions\", \"itens\": 1}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}\n- {\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-b8c34b04\", \"risk\": \"high\", \"args\": {\"transaction_id\": \"TX1006\"}}\n- [policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": "A-b8c34b04",
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.020692,
+      "run": 2
+    },
+    {
+      "id": "approval-02",
+      "split": "approval",
+      "message": "I want to dispute sale TX1006",
+      "ms": 8435.5,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true,
+        "claims": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "table",
+      "answer": "I found sale TX1006. It's approved, for 900.00, paid by credit card on terminal T1988A, and dated today.\n\nI've proposed a dispute for TX1006 (action A-b391b1c7). It's waiting for your confirmation, and nothing has been submitted yet. A dispute needs your confirmation and then approval from a human agent before it runs. The agent decides the outcome. An unconfirmed proposal expires after 15 minutes.\n\nDo you confirm that you want to dispute TX1006?",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "get_transactions",
+          "args": {
+            "transaction_id": "TX1006"
+          },
+          "ok": true
+        },
+        {
+          "name": "open_dispute",
+          "args": {
+            "transaction_id": "TX1006"
+          },
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": true, \"data\": {\"period\": \"all\", \"transactions\": [{\"transaction_id\": \"TX1006\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"credito\", \"amount\": \"900.00\", \"amount_brl\": \"R$ 900,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}], \"count\": 1, \"approved_total\": \"900.00\", \"approved_total_brl\": \"R$ 900,00\", \"declined\": []}, \"calculado_em_codigo\": [{\"lista\": \"transactions\", \"itens\": 1}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}",
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-b391b1c7\", \"risk\": \"high\", \"args\": {\"transaction_id\": \"TX1006\"}}",
+        "[policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system."
+      ],
+      "context": "- {\"ok\": true, \"data\": {\"period\": \"all\", \"transactions\": [{\"transaction_id\": \"TX1006\", \"date\": \"2026-11-02\", \"when\": \"hoje\", \"method\": \"credito\", \"amount\": \"900.00\", \"amount_brl\": \"R$ 900,00\", \"status\": \"aprovada\", \"terminal\": \"T1988A\"}], \"count\": 1, \"approved_total\": \"900.00\", \"approved_total_brl\": \"R$ 900,00\", \"declined\": []}, \"calculado_em_codigo\": [{\"lista\": \"transactions\", \"itens\": 1}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}\n- {\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-b391b1c7\", \"risk\": \"high\", \"args\": {\"transaction_id\": \"TX1006\"}}\n- [policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": "A-b391b1c7",
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.020145,
+      "run": 2
+    },
+    {
+      "id": "approval-03",
+      "split": "approval",
+      "message": "Quero antecipar meus recebíveis do crédito",
+      "ms": 5457.4,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true,
+        "claims": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "table",
+      "answer": "Proposta de antecipação de recebíveis do crédito criada (código A-c4acbea3). Ela está **proposta, aguardando sua confirmação**. Nada foi executado.\n\nEsta é uma ação de risco alto. Ela exige:\n1. a sua confirmação;\n2. depois, a aprovação de um atendente humano antes de ser executada.\n\nSe você não confirmar, a proposta expira em 15 minutos.\n\nVocê confirma a proposta?",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "request_anticipation",
+          "args": {
+            "method": "credito"
+          },
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-c4acbea3\", \"risk\": \"high\", \"args\": {\"method\": \"credito\"}}",
+        "[policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema."
+      ],
+      "context": "- {\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-c4acbea3\", \"risk\": \"high\", \"args\": {\"method\": \"credito\"}}\n- [policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": "A-c4acbea3",
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.013057,
+      "run": 2
+    },
+    {
+      "id": "approval-04",
+      "split": "approval",
+      "message": "Please advance my credit card receivables",
+      "ms": 5359.1,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true,
+        "claims": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "table",
+      "answer": "I've proposed the credit receivables advance. It's waiting for your confirmation, and nothing has been requested yet. Its action ID is A-2a8b6da1.\n\nThis is a high-risk action. After you confirm, a human agent still has to approve it before it runs. The proposal expires after 15 minutes if you don't confirm.\n\nDo you confirm the request?",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "request_anticipation",
+          "args": {
+            "method": "credito"
+          },
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-2a8b6da1\", \"risk\": \"high\", \"args\": {\"method\": \"credito\"}}",
+        "[policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system."
+      ],
+      "context": "- {\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-2a8b6da1\", \"risk\": \"high\", \"args\": {\"method\": \"credito\"}}\n- [policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": "A-2a8b6da1",
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.012341,
+      "run": 2
+    },
+    {
+      "id": "approval-05",
+      "split": "approval",
+      "message": "Abra um chamado técnico para a maquininha T1988B",
+      "ms": 4899.3,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true,
+        "claims": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "table",
+      "answer": "Propus abrir um chamado técnico para a maquininha **T1988B**. Ele está **aguardando sua confirmação** (action_id: A-19019d97), e eu ainda não abri nada.\n\nSe quiser seguir, confirme a proposta. Uma proposta não confirmada expira em 15 minutos.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "request_terminal_support",
+          "args": {
+            "terminal_id": "T1988B"
+          },
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-19019d97\", \"risk\": \"normal\", \"args\": {\"terminal_id\": \"T1988B\"}}",
+        "[policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema."
+      ],
+      "context": "- {\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-19019d97\", \"risk\": \"normal\", \"args\": {\"terminal_id\": \"T1988B\"}}\n- [policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "pt",
+      "language_declared": "pt",
+      "language_detected": "pt",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": "A-19019d97",
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.012678,
+      "run": 2
+    },
+    {
+      "id": "approval-06",
+      "split": "approval",
+      "message": "Open a technical support ticket for terminal T1988B",
+      "ms": 6304.7,
+      "expected_intent": "support",
+      "checks": {
+        "intent": true,
+        "handoff": true,
+        "handoff_outcome": true,
+        "language": true,
+        "tools": true,
+        "pending_action": true,
+        "numbers": true,
+        "claims": true
+      },
+      "crash": null,
+      "got_intent": "support",
+      "route": [
+        "router",
+        "records"
+      ],
+      "replans": [],
+      "engine": "table",
+      "answer": "I've proposed a technical support ticket for terminal T1988B (action ID: A-f14fc7b7). It's waiting for your confirmation, and I haven't opened it yet. Please confirm if you want me to go ahead. A proposal that isn't confirmed expires after 15 minutes.",
+      "source_ids": [],
+      "sources": [],
+      "tool_calls": [
+        {
+          "name": "request_terminal_support",
+          "args": {
+            "terminal_id": "T1988B"
+          },
+          "ok": false
+        }
+      ],
+      "evidence": [
+        "{\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-f14fc7b7\", \"risk\": \"normal\", \"args\": {\"terminal_id\": \"T1988B\"}}",
+        "[policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system."
+      ],
+      "context": "- {\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-f14fc7b7\", \"risk\": \"normal\", \"args\": {\"terminal_id\": \"T1988B\"}}\n- [policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system.",
+      "unsupported_claims": [],
+      "claims_action": "none",
+      "expected_language": "en",
+      "language_declared": "en",
+      "language_detected": "en",
+      "unsupported_numbers": [],
+      "user_id": "cliente1988",
+      "handoff_required": false,
+      "handoff_reason": null,
+      "pending_action": "A-f14fc7b7",
+      "blocked": false,
+      "risk_flags": [],
+      "cost_usd": 0.012244,
+      "run": 2
+    }
+  ],
+  "failures": [],
+  "stability": {
+    "runs": 3,
+    "pass_at_1": 1.0,
+    "pass_hat_k": 1.0,
+    "ci": {
+      "pass_at_1": {
+        "k": 18,
+        "n": 18,
+        "lo": 82.4,
+        "hi": 100.0
+      },
+      "pass_hat_k": {
+        "k": 6,
+        "n": 6,
+        "lo": 61.0,
+        "hi": 100.0
+      }
+    },
+    "unstable": [],
+    "by_case": {
+      "approval-01": {
+        "passes": 3,
+        "runs": 3
+      },
+      "approval-02": {
+        "passes": 3,
+        "runs": 3
+      },
+      "approval-03": {
+        "passes": 3,
+        "runs": 3
+      },
+      "approval-04": {
+        "passes": 3,
+        "runs": 3
+      },
+      "approval-05": {
+        "passes": 3,
+        "runs": 3
+      },
+      "approval-06": {
+        "passes": 3,
+        "runs": 3
+      }
+    }
+  },
+  "failure_matrix": {
+    "by_check": {},
+    "intent_confusion": {},
+    "intent_matrix": {
+      "support": {
+        "support": 18
+      }
+    }
+  },
+  "memory_routing": {},
+  "gate_calibration": {
+    "positives": 38,
+    "negatives": 17,
+    "excluded_negatives": [
+      "Qual o horário de abertura da agência mais próxima?"
+    ],
+    "criterion": "max pos_answered com neg_refused >= 0.85; empate → menor limiar",
+    "neg_refusal_min": 0.85,
+    "current": 12.433,
+    "current_source": "MIN_SCORE",
+    "at_current": {
+      "threshold": 12.433,
+      "pos_answered": 0.158,
+      "neg_refused": 0.941,
+      "balanced_acc": 0.55,
+      "meets_floor": true,
+      "pos_ci": {
+        "k": 6,
+        "n": 38,
+        "lo": 7.4,
+        "hi": 30.4
+      },
+      "neg_ci": {
+        "k": 16,
+        "n": 17,
+        "lo": 73.0,
+        "hi": 99.0
+      }
+    },
+    "best": {
+      "threshold": 12.433,
+      "pos_answered": 0.158,
+      "neg_refused": 0.941,
+      "balanced_acc": 0.55,
+      "meets_floor": true,
+      "pos_ci": {
+        "k": 6,
+        "n": 38,
+        "lo": 7.4,
+        "hi": 30.4
+      },
+      "neg_ci": {
+        "k": 16,
+        "n": 17,
+        "lo": 73.0,
+        "hi": 99.0
+      }
+    },
+    "table": [
+      {
+        "threshold": 0.0,
+        "pos_answered": 0.579,
+        "neg_refused": 0.118,
+        "balanced_acc": 0.348,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 2,
+          "n": 17,
+          "lo": 3.3,
+          "hi": 34.3
+        }
+      },
+      {
+        "threshold": 0.003,
+        "pos_answered": 0.579,
+        "neg_refused": 0.118,
+        "balanced_acc": 0.348,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 2,
+          "n": 17,
+          "lo": 3.3,
+          "hi": 34.3
+        }
+      },
+      {
+        "threshold": 0.004,
+        "pos_answered": 0.579,
+        "neg_refused": 0.176,
+        "balanced_acc": 0.378,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 3,
+          "n": 17,
+          "lo": 6.2,
+          "hi": 41.0
+        }
+      },
+      {
+        "threshold": 1.852,
+        "pos_answered": 0.579,
+        "neg_refused": 0.176,
+        "balanced_acc": 0.378,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 3,
+          "n": 17,
+          "lo": 6.2,
+          "hi": 41.0
+        }
+      },
+      {
+        "threshold": 1.87,
+        "pos_answered": 0.579,
+        "neg_refused": 0.176,
+        "balanced_acc": 0.378,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 3,
+          "n": 17,
+          "lo": 6.2,
+          "hi": 41.0
+        }
+      },
+      {
+        "threshold": 1.967,
+        "pos_answered": 0.579,
+        "neg_refused": 0.176,
+        "balanced_acc": 0.378,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 3,
+          "n": 17,
+          "lo": 6.2,
+          "hi": 41.0
+        }
+      },
+      {
+        "threshold": 3.655,
+        "pos_answered": 0.579,
+        "neg_refused": 0.235,
+        "balanced_acc": 0.407,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 4,
+          "n": 17,
+          "lo": 9.6,
+          "hi": 47.3
+        }
+      },
+      {
+        "threshold": 3.698,
+        "pos_answered": 0.579,
+        "neg_refused": 0.235,
+        "balanced_acc": 0.407,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 4,
+          "n": 17,
+          "lo": 9.6,
+          "hi": 47.3
+        }
+      },
+      {
+        "threshold": 3.763,
+        "pos_answered": 0.579,
+        "neg_refused": 0.235,
+        "balanced_acc": 0.407,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 4,
+          "n": 17,
+          "lo": 9.6,
+          "hi": 47.3
+        }
+      },
+      {
+        "threshold": 3.774,
+        "pos_answered": 0.579,
+        "neg_refused": 0.294,
+        "balanced_acc": 0.437,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 5,
+          "n": 17,
+          "lo": 13.3,
+          "hi": 53.1
+        }
+      },
+      {
+        "threshold": 3.777,
+        "pos_answered": 0.579,
+        "neg_refused": 0.294,
+        "balanced_acc": 0.437,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 5,
+          "n": 17,
+          "lo": 13.3,
+          "hi": 53.1
+        }
+      },
+      {
+        "threshold": 3.932,
+        "pos_answered": 0.579,
+        "neg_refused": 0.294,
+        "balanced_acc": 0.437,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 5,
+          "n": 17,
+          "lo": 13.3,
+          "hi": 53.1
+        }
+      },
+      {
+        "threshold": 4.062,
+        "pos_answered": 0.579,
+        "neg_refused": 0.294,
+        "balanced_acc": 0.437,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 5,
+          "n": 17,
+          "lo": 13.3,
+          "hi": 53.1
+        }
+      },
+      {
+        "threshold": 4.072,
+        "pos_answered": 0.579,
+        "neg_refused": 0.294,
+        "balanced_acc": 0.437,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 5,
+          "n": 17,
+          "lo": 13.3,
+          "hi": 53.1
+        }
+      },
+      {
+        "threshold": 4.107,
+        "pos_answered": 0.579,
+        "neg_refused": 0.294,
+        "balanced_acc": 0.437,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 5,
+          "n": 17,
+          "lo": 13.3,
+          "hi": 53.1
+        }
+      },
+      {
+        "threshold": 4.161,
+        "pos_answered": 0.579,
+        "neg_refused": 0.294,
+        "balanced_acc": 0.437,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 5,
+          "n": 17,
+          "lo": 13.3,
+          "hi": 53.1
+        }
+      },
+      {
+        "threshold": 4.172,
+        "pos_answered": 0.579,
+        "neg_refused": 0.294,
+        "balanced_acc": 0.437,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 5,
+          "n": 17,
+          "lo": 13.3,
+          "hi": 53.1
+        }
+      },
+      {
+        "threshold": 4.174,
+        "pos_answered": 0.579,
+        "neg_refused": 0.294,
+        "balanced_acc": 0.437,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 5,
+          "n": 17,
+          "lo": 13.3,
+          "hi": 53.1
+        }
+      },
+      {
+        "threshold": 4.286,
+        "pos_answered": 0.579,
+        "neg_refused": 0.294,
+        "balanced_acc": 0.437,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 5,
+          "n": 17,
+          "lo": 13.3,
+          "hi": 53.1
+        }
+      },
+      {
+        "threshold": 4.292,
+        "pos_answered": 0.579,
+        "neg_refused": 0.294,
+        "balanced_acc": 0.437,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 5,
+          "n": 17,
+          "lo": 13.3,
+          "hi": 53.1
+        }
+      },
+      {
+        "threshold": 4.381,
+        "pos_answered": 0.579,
+        "neg_refused": 0.412,
+        "balanced_acc": 0.495,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 7,
+          "n": 17,
+          "lo": 21.6,
+          "hi": 64.0
+        }
+      },
+      {
+        "threshold": 4.632,
+        "pos_answered": 0.579,
+        "neg_refused": 0.412,
+        "balanced_acc": 0.495,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 7,
+          "n": 17,
+          "lo": 21.6,
+          "hi": 64.0
+        }
+      },
+      {
+        "threshold": 4.672,
+        "pos_answered": 0.579,
+        "neg_refused": 0.471,
+        "balanced_acc": 0.525,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 8,
+          "n": 17,
+          "lo": 26.2,
+          "hi": 69.0
+        }
+      },
+      {
+        "threshold": 4.748,
+        "pos_answered": 0.579,
+        "neg_refused": 0.471,
+        "balanced_acc": 0.525,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 8,
+          "n": 17,
+          "lo": 26.2,
+          "hi": 69.0
+        }
+      },
+      {
+        "threshold": 4.869,
+        "pos_answered": 0.579,
+        "neg_refused": 0.471,
+        "balanced_acc": 0.525,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 8,
+          "n": 17,
+          "lo": 26.2,
+          "hi": 69.0
+        }
+      },
+      {
+        "threshold": 4.902,
+        "pos_answered": 0.579,
+        "neg_refused": 0.471,
+        "balanced_acc": 0.525,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 8,
+          "n": 17,
+          "lo": 26.2,
+          "hi": 69.0
+        }
+      },
+      {
+        "threshold": 4.963,
+        "pos_answered": 0.579,
+        "neg_refused": 0.471,
+        "balanced_acc": 0.525,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 8,
+          "n": 17,
+          "lo": 26.2,
+          "hi": 69.0
+        }
+      },
+      {
+        "threshold": 5.108,
+        "pos_answered": 0.579,
+        "neg_refused": 0.471,
+        "balanced_acc": 0.525,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 8,
+          "n": 17,
+          "lo": 26.2,
+          "hi": 69.0
+        }
+      },
+      {
+        "threshold": 5.131,
+        "pos_answered": 0.579,
+        "neg_refused": 0.471,
+        "balanced_acc": 0.525,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 8,
+          "n": 17,
+          "lo": 26.2,
+          "hi": 69.0
+        }
+      },
+      {
+        "threshold": 5.167,
+        "pos_answered": 0.579,
+        "neg_refused": 0.471,
+        "balanced_acc": 0.525,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 8,
+          "n": 17,
+          "lo": 26.2,
+          "hi": 69.0
+        }
+      },
+      {
+        "threshold": 5.206,
+        "pos_answered": 0.579,
+        "neg_refused": 0.471,
+        "balanced_acc": 0.525,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 8,
+          "n": 17,
+          "lo": 26.2,
+          "hi": 69.0
+        }
+      },
+      {
+        "threshold": 5.219,
+        "pos_answered": 0.579,
+        "neg_refused": 0.471,
+        "balanced_acc": 0.525,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 8,
+          "n": 17,
+          "lo": 26.2,
+          "hi": 69.0
+        }
+      },
+      {
+        "threshold": 5.226,
+        "pos_answered": 0.579,
+        "neg_refused": 0.471,
+        "balanced_acc": 0.525,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 8,
+          "n": 17,
+          "lo": 26.2,
+          "hi": 69.0
+        }
+      },
+      {
+        "threshold": 5.236,
+        "pos_answered": 0.579,
+        "neg_refused": 0.529,
+        "balanced_acc": 0.554,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 9,
+          "n": 17,
+          "lo": 31.0,
+          "hi": 73.8
+        }
+      },
+      {
+        "threshold": 5.239,
+        "pos_answered": 0.579,
+        "neg_refused": 0.529,
+        "balanced_acc": 0.554,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 9,
+          "n": 17,
+          "lo": 31.0,
+          "hi": 73.8
+        }
+      },
+      {
+        "threshold": 5.243,
+        "pos_answered": 0.579,
+        "neg_refused": 0.529,
+        "balanced_acc": 0.554,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 9,
+          "n": 17,
+          "lo": 31.0,
+          "hi": 73.8
+        }
+      },
+      {
+        "threshold": 5.266,
+        "pos_answered": 0.579,
+        "neg_refused": 0.529,
+        "balanced_acc": 0.554,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 22,
+          "n": 38,
+          "lo": 42.2,
+          "hi": 72.1
+        },
+        "neg_ci": {
+          "k": 9,
+          "n": 17,
+          "lo": 31.0,
+          "hi": 73.8
+        }
+      },
+      {
+        "threshold": 5.303,
+        "pos_answered": 0.526,
+        "neg_refused": 0.529,
+        "balanced_acc": 0.528,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 20,
+          "n": 38,
+          "lo": 37.3,
+          "hi": 67.5
+        },
+        "neg_ci": {
+          "k": 9,
+          "n": 17,
+          "lo": 31.0,
+          "hi": 73.8
+        }
+      },
+      {
+        "threshold": 5.376,
+        "pos_answered": 0.526,
+        "neg_refused": 0.529,
+        "balanced_acc": 0.528,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 20,
+          "n": 38,
+          "lo": 37.3,
+          "hi": 67.5
+        },
+        "neg_ci": {
+          "k": 9,
+          "n": 17,
+          "lo": 31.0,
+          "hi": 73.8
+        }
+      },
+      {
+        "threshold": 5.521,
+        "pos_answered": 0.526,
+        "neg_refused": 0.588,
+        "balanced_acc": 0.557,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 20,
+          "n": 38,
+          "lo": 37.3,
+          "hi": 67.5
+        },
+        "neg_ci": {
+          "k": 10,
+          "n": 17,
+          "lo": 36.0,
+          "hi": 78.4
+        }
+      },
+      {
+        "threshold": 5.576,
+        "pos_answered": 0.526,
+        "neg_refused": 0.588,
+        "balanced_acc": 0.557,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 20,
+          "n": 38,
+          "lo": 37.3,
+          "hi": 67.5
+        },
+        "neg_ci": {
+          "k": 10,
+          "n": 17,
+          "lo": 36.0,
+          "hi": 78.4
+        }
+      },
+      {
+        "threshold": 5.598,
+        "pos_answered": 0.5,
+        "neg_refused": 0.588,
+        "balanced_acc": 0.544,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 19,
+          "n": 38,
+          "lo": 34.8,
+          "hi": 65.2
+        },
+        "neg_ci": {
+          "k": 10,
+          "n": 17,
+          "lo": 36.0,
+          "hi": 78.4
+        }
+      },
+      {
+        "threshold": 5.69,
+        "pos_answered": 0.5,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.574,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 19,
+          "n": 38,
+          "lo": 34.8,
+          "hi": 65.2
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 5.742,
+        "pos_answered": 0.5,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.574,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 19,
+          "n": 38,
+          "lo": 34.8,
+          "hi": 65.2
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 5.863,
+        "pos_answered": 0.5,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.574,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 19,
+          "n": 38,
+          "lo": 34.8,
+          "hi": 65.2
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 5.954,
+        "pos_answered": 0.5,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.574,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 19,
+          "n": 38,
+          "lo": 34.8,
+          "hi": 65.2
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 6.002,
+        "pos_answered": 0.5,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.574,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 19,
+          "n": 38,
+          "lo": 34.8,
+          "hi": 65.2
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 6.048,
+        "pos_answered": 0.5,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.574,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 19,
+          "n": 38,
+          "lo": 34.8,
+          "hi": 65.2
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 6.053,
+        "pos_answered": 0.5,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.574,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 19,
+          "n": 38,
+          "lo": 34.8,
+          "hi": 65.2
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 6.092,
+        "pos_answered": 0.5,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.574,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 19,
+          "n": 38,
+          "lo": 34.8,
+          "hi": 65.2
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 6.095,
+        "pos_answered": 0.5,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.574,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 19,
+          "n": 38,
+          "lo": 34.8,
+          "hi": 65.2
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 6.215,
+        "pos_answered": 0.5,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.574,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 19,
+          "n": 38,
+          "lo": 34.8,
+          "hi": 65.2
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 6.288,
+        "pos_answered": 0.5,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.574,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 19,
+          "n": 38,
+          "lo": 34.8,
+          "hi": 65.2
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 6.312,
+        "pos_answered": 0.5,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.574,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 19,
+          "n": 38,
+          "lo": 34.8,
+          "hi": 65.2
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 6.405,
+        "pos_answered": 0.474,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.56,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 18,
+          "n": 38,
+          "lo": 32.5,
+          "hi": 62.7
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 6.495,
+        "pos_answered": 0.474,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.56,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 18,
+          "n": 38,
+          "lo": 32.5,
+          "hi": 62.7
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 6.518,
+        "pos_answered": 0.474,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.56,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 18,
+          "n": 38,
+          "lo": 32.5,
+          "hi": 62.7
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 6.663,
+        "pos_answered": 0.474,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.56,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 18,
+          "n": 38,
+          "lo": 32.5,
+          "hi": 62.7
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 6.726,
+        "pos_answered": 0.474,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.56,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 18,
+          "n": 38,
+          "lo": 32.5,
+          "hi": 62.7
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 6.774,
+        "pos_answered": 0.474,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.56,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 18,
+          "n": 38,
+          "lo": 32.5,
+          "hi": 62.7
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 6.865,
+        "pos_answered": 0.474,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.56,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 18,
+          "n": 38,
+          "lo": 32.5,
+          "hi": 62.7
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 6.923,
+        "pos_answered": 0.474,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.56,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 18,
+          "n": 38,
+          "lo": 32.5,
+          "hi": 62.7
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 6.947,
+        "pos_answered": 0.447,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.547,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 17,
+          "n": 38,
+          "lo": 30.1,
+          "hi": 60.3
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 6.972,
+        "pos_answered": 0.421,
+        "neg_refused": 0.647,
+        "balanced_acc": 0.534,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 16,
+          "n": 38,
+          "lo": 27.9,
+          "hi": 57.8
+        },
+        "neg_ci": {
+          "k": 11,
+          "n": 17,
+          "lo": 41.3,
+          "hi": 82.7
+        }
+      },
+      {
+        "threshold": 7.009,
+        "pos_answered": 0.421,
+        "neg_refused": 0.706,
+        "balanced_acc": 0.563,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 16,
+          "n": 38,
+          "lo": 27.9,
+          "hi": 57.8
+        },
+        "neg_ci": {
+          "k": 12,
+          "n": 17,
+          "lo": 46.9,
+          "hi": 86.7
+        }
+      },
+      {
+        "threshold": 7.195,
+        "pos_answered": 0.421,
+        "neg_refused": 0.706,
+        "balanced_acc": 0.563,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 16,
+          "n": 38,
+          "lo": 27.9,
+          "hi": 57.8
+        },
+        "neg_ci": {
+          "k": 12,
+          "n": 17,
+          "lo": 46.9,
+          "hi": 86.7
+        }
+      },
+      {
+        "threshold": 7.198,
+        "pos_answered": 0.421,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.622,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 16,
+          "n": 38,
+          "lo": 27.9,
+          "hi": 57.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 7.237,
+        "pos_answered": 0.421,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.622,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 16,
+          "n": 38,
+          "lo": 27.9,
+          "hi": 57.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 7.414,
+        "pos_answered": 0.421,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.622,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 16,
+          "n": 38,
+          "lo": 27.9,
+          "hi": 57.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 7.497,
+        "pos_answered": 0.421,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.622,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 16,
+          "n": 38,
+          "lo": 27.9,
+          "hi": 57.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 7.505,
+        "pos_answered": 0.421,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.622,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 16,
+          "n": 38,
+          "lo": 27.9,
+          "hi": 57.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 7.885,
+        "pos_answered": 0.395,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.609,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 15,
+          "n": 38,
+          "lo": 25.6,
+          "hi": 55.3
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 7.887,
+        "pos_answered": 0.395,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.609,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 15,
+          "n": 38,
+          "lo": 25.6,
+          "hi": 55.3
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 7.905,
+        "pos_answered": 0.395,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.609,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 15,
+          "n": 38,
+          "lo": 25.6,
+          "hi": 55.3
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 7.925,
+        "pos_answered": 0.395,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.609,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 15,
+          "n": 38,
+          "lo": 25.6,
+          "hi": 55.3
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 8.033,
+        "pos_answered": 0.395,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.609,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 15,
+          "n": 38,
+          "lo": 25.6,
+          "hi": 55.3
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 8.116,
+        "pos_answered": 0.368,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.596,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 14,
+          "n": 38,
+          "lo": 23.4,
+          "hi": 52.7
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 8.137,
+        "pos_answered": 0.368,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.596,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 14,
+          "n": 38,
+          "lo": 23.4,
+          "hi": 52.7
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 8.149,
+        "pos_answered": 0.368,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.596,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 14,
+          "n": 38,
+          "lo": 23.4,
+          "hi": 52.7
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 8.172,
+        "pos_answered": 0.342,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.583,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 13,
+          "n": 38,
+          "lo": 21.2,
+          "hi": 50.1
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 8.206,
+        "pos_answered": 0.342,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.583,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 13,
+          "n": 38,
+          "lo": 21.2,
+          "hi": 50.1
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 8.248,
+        "pos_answered": 0.289,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.557,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 11,
+          "n": 38,
+          "lo": 17.0,
+          "hi": 44.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 8.25,
+        "pos_answered": 0.289,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.557,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 11,
+          "n": 38,
+          "lo": 17.0,
+          "hi": 44.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 8.314,
+        "pos_answered": 0.289,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.557,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 11,
+          "n": 38,
+          "lo": 17.0,
+          "hi": 44.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 8.418,
+        "pos_answered": 0.289,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.557,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 11,
+          "n": 38,
+          "lo": 17.0,
+          "hi": 44.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 8.571,
+        "pos_answered": 0.289,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.557,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 11,
+          "n": 38,
+          "lo": 17.0,
+          "hi": 44.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 8.658,
+        "pos_answered": 0.289,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.557,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 11,
+          "n": 38,
+          "lo": 17.0,
+          "hi": 44.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 8.817,
+        "pos_answered": 0.289,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.557,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 11,
+          "n": 38,
+          "lo": 17.0,
+          "hi": 44.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 9.044,
+        "pos_answered": 0.289,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.557,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 11,
+          "n": 38,
+          "lo": 17.0,
+          "hi": 44.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 9.552,
+        "pos_answered": 0.289,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.557,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 11,
+          "n": 38,
+          "lo": 17.0,
+          "hi": 44.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 9.809,
+        "pos_answered": 0.289,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.557,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 11,
+          "n": 38,
+          "lo": 17.0,
+          "hi": 44.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 9.978,
+        "pos_answered": 0.289,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.557,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 11,
+          "n": 38,
+          "lo": 17.0,
+          "hi": 44.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 9.987,
+        "pos_answered": 0.289,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.557,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 11,
+          "n": 38,
+          "lo": 17.0,
+          "hi": 44.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 10.055,
+        "pos_answered": 0.289,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.557,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 11,
+          "n": 38,
+          "lo": 17.0,
+          "hi": 44.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 10.097,
+        "pos_answered": 0.289,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.557,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 11,
+          "n": 38,
+          "lo": 17.0,
+          "hi": 44.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 10.378,
+        "pos_answered": 0.289,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.557,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 11,
+          "n": 38,
+          "lo": 17.0,
+          "hi": 44.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 10.421,
+        "pos_answered": 0.289,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.557,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 11,
+          "n": 38,
+          "lo": 17.0,
+          "hi": 44.8
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 10.443,
+        "pos_answered": 0.263,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.543,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 10,
+          "n": 38,
+          "lo": 15.0,
+          "hi": 42.0
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 10.462,
+        "pos_answered": 0.237,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.53,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 9,
+          "n": 38,
+          "lo": 13.0,
+          "hi": 39.2
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 10.531,
+        "pos_answered": 0.237,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.53,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 9,
+          "n": 38,
+          "lo": 13.0,
+          "hi": 39.2
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 10.608,
+        "pos_answered": 0.237,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.53,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 9,
+          "n": 38,
+          "lo": 13.0,
+          "hi": 39.2
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 10.643,
+        "pos_answered": 0.237,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.53,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 9,
+          "n": 38,
+          "lo": 13.0,
+          "hi": 39.2
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 10.648,
+        "pos_answered": 0.237,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.53,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 9,
+          "n": 38,
+          "lo": 13.0,
+          "hi": 39.2
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 10.66,
+        "pos_answered": 0.237,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.53,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 9,
+          "n": 38,
+          "lo": 13.0,
+          "hi": 39.2
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 10.735,
+        "pos_answered": 0.184,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.504,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 7,
+          "n": 38,
+          "lo": 9.2,
+          "hi": 33.4
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 10.753,
+        "pos_answered": 0.158,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.491,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 6,
+          "n": 38,
+          "lo": 7.4,
+          "hi": 30.4
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 11.032,
+        "pos_answered": 0.158,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.491,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 6,
+          "n": 38,
+          "lo": 7.4,
+          "hi": 30.4
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 11.099,
+        "pos_answered": 0.158,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.491,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 6,
+          "n": 38,
+          "lo": 7.4,
+          "hi": 30.4
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 11.119,
+        "pos_answered": 0.158,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.491,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 6,
+          "n": 38,
+          "lo": 7.4,
+          "hi": 30.4
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 11.385,
+        "pos_answered": 0.158,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.491,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 6,
+          "n": 38,
+          "lo": 7.4,
+          "hi": 30.4
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 11.74,
+        "pos_answered": 0.158,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.491,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 6,
+          "n": 38,
+          "lo": 7.4,
+          "hi": 30.4
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 12.0,
+        "pos_answered": 0.158,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.491,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 6,
+          "n": 38,
+          "lo": 7.4,
+          "hi": 30.4
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 12.248,
+        "pos_answered": 0.158,
+        "neg_refused": 0.824,
+        "balanced_acc": 0.491,
+        "meets_floor": false,
+        "pos_ci": {
+          "k": 6,
+          "n": 38,
+          "lo": 7.4,
+          "hi": 30.4
+        },
+        "neg_ci": {
+          "k": 14,
+          "n": 17,
+          "lo": 59.0,
+          "hi": 93.8
+        }
+      },
+      {
+        "threshold": 12.433,
+        "pos_answered": 0.158,
+        "neg_refused": 0.941,
+        "balanced_acc": 0.55,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 6,
+          "n": 38,
+          "lo": 7.4,
+          "hi": 30.4
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 17,
+          "lo": 73.0,
+          "hi": 99.0
+        }
+      },
+      {
+        "threshold": 12.457,
+        "pos_answered": 0.158,
+        "neg_refused": 0.941,
+        "balanced_acc": 0.55,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 6,
+          "n": 38,
+          "lo": 7.4,
+          "hi": 30.4
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 17,
+          "lo": 73.0,
+          "hi": 99.0
+        }
+      },
+      {
+        "threshold": 12.835,
+        "pos_answered": 0.158,
+        "neg_refused": 0.941,
+        "balanced_acc": 0.55,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 6,
+          "n": 38,
+          "lo": 7.4,
+          "hi": 30.4
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 17,
+          "lo": 73.0,
+          "hi": 99.0
+        }
+      },
+      {
+        "threshold": 13.441,
+        "pos_answered": 0.158,
+        "neg_refused": 0.941,
+        "balanced_acc": 0.55,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 6,
+          "n": 38,
+          "lo": 7.4,
+          "hi": 30.4
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 17,
+          "lo": 73.0,
+          "hi": 99.0
+        }
+      },
+      {
+        "threshold": 13.836,
+        "pos_answered": 0.158,
+        "neg_refused": 0.941,
+        "balanced_acc": 0.55,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 6,
+          "n": 38,
+          "lo": 7.4,
+          "hi": 30.4
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 17,
+          "lo": 73.0,
+          "hi": 99.0
+        }
+      },
+      {
+        "threshold": 13.904,
+        "pos_answered": 0.105,
+        "neg_refused": 0.941,
+        "balanced_acc": 0.523,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 4,
+          "n": 38,
+          "lo": 4.2,
+          "hi": 24.1
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 17,
+          "lo": 73.0,
+          "hi": 99.0
+        }
+      },
+      {
+        "threshold": 14.31,
+        "pos_answered": 0.079,
+        "neg_refused": 0.941,
+        "balanced_acc": 0.51,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 3,
+          "n": 38,
+          "lo": 2.7,
+          "hi": 20.8
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 17,
+          "lo": 73.0,
+          "hi": 99.0
+        }
+      },
+      {
+        "threshold": 15.136,
+        "pos_answered": 0.053,
+        "neg_refused": 0.941,
+        "balanced_acc": 0.497,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 2,
+          "n": 38,
+          "lo": 1.5,
+          "hi": 17.3
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 17,
+          "lo": 73.0,
+          "hi": 99.0
+        }
+      },
+      {
+        "threshold": 15.478,
+        "pos_answered": 0.053,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.526,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 2,
+          "n": 38,
+          "lo": 1.5,
+          "hi": 17.3
+        },
+        "neg_ci": {
+          "k": 17,
+          "n": 17,
+          "lo": 81.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 16.27,
+        "pos_answered": 0.053,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.526,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 2,
+          "n": 38,
+          "lo": 1.5,
+          "hi": 17.3
+        },
+        "neg_ci": {
+          "k": 17,
+          "n": 17,
+          "lo": 81.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 19.223,
+        "pos_answered": 0.053,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.526,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 2,
+          "n": 38,
+          "lo": 1.5,
+          "hi": 17.3
+        },
+        "neg_ci": {
+          "k": 17,
+          "n": 17,
+          "lo": 81.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 19.392,
+        "pos_answered": 0.026,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.513,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 1,
+          "n": 38,
+          "lo": 0.5,
+          "hi": 13.5
+        },
+        "neg_ci": {
+          "k": 17,
+          "n": 17,
+          "lo": 81.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 20.794,
+        "pos_answered": 0.026,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.513,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 1,
+          "n": 38,
+          "lo": 0.5,
+          "hi": 13.5
+        },
+        "neg_ci": {
+          "k": 17,
+          "n": 17,
+          "lo": 81.6,
+          "hi": 100.0
+        }
+      },
+      {
+        "threshold": 26.606,
+        "pos_answered": 0.026,
+        "neg_refused": 1.0,
+        "balanced_acc": 0.513,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 1,
+          "n": 38,
+          "lo": 0.5,
+          "hi": 13.5
+        },
+        "neg_ci": {
+          "k": 17,
+          "n": 17,
+          "lo": 81.6,
+          "hi": 100.0
+        }
+      }
+    ],
+    "retriever": "bm25"
+  },
+  "retrieval": {
+    "cases": 38,
+    "positives": 38,
+    "negatives": 18,
+    "recall@3": 0.842,
+    "mrr": 0.715,
+    "hit@3": 0.842,
+    "hit@3_ci": {
+      "k": 32,
+      "n": 38,
+      "lo": 69.6,
+      "hi": 92.6
+    },
+    "ndcg@3": 0.748,
+    "page": {
+      "recall@3": 0.726,
+      "mrr": 0.86,
+      "hit@3": 0.921,
+      "hit@3_ci": {
+        "k": 35,
+        "n": 38,
+        "lo": 79.2,
+        "hi": 97.3
+      }
+    },
+    "latency_ms": {
+      "p50": 87.1,
+      "p95": 289.0,
+      "mean": 101.8
+    },
+    "gate": {
+      "min_score": 12.433,
+      "min_cosine": 0.88,
+      "pos_answered": 0.421,
+      "neg_refused": 0.941,
+      "meets_floor": true,
+      "pos_ci": {
+        "k": 16,
+        "n": 38,
+        "lo": 27.9,
+        "hi": 57.8
+      },
+      "neg_ci": {
+        "k": 16,
+        "n": 17,
+        "lo": 73.0,
+        "hi": 99.0
+      },
+      "positives": 38,
+      "negatives": 17,
+      "neg_refusal_min": 0.85
+    },
+    "essential": 38,
+    "gold_unresolved": [],
+    "dedupe_aliases": 39,
+    "retriever": "dense",
+    "fallback": "",
+    "requested": "dense"
+  },
+  "cassette": {
+    "file": "evals/cassettes/approval.jsonl",
+    "requests": 95,
+    "errors": 0,
+    "repeat": 3,
+    "floors": {
+      "intent_acc": 100.0,
+      "handoff_acc": 100.0,
+      "handoff_outcome_acc": 100.0,
+      "language_acc": 100.0,
+      "tools_acc": 100.0,
+      "pending_action_acc": 100.0,
+      "numbers_acc": 100.0,
+      "claims_acc": 100.0,
+      "pass_at_1": 100.0,
+      "max_crashes": 0
+    }
+  }
+}
