@@ -38,12 +38,14 @@ _HUMAN = re.compile(r"\b(atendente|humano|pessoa real|falar com algu[eé]m|human
 # Desempate 1: sintoma de maquininha/transação.
 _SYMPTOM = re.compile(r"(n[ãa]o conect\w*|sem sinal|sem conex[ãa]o|off-?line|won'?t connect|not connect\w*"
                       r"|no connection|no signal|can'?t connect|\berr(o|or)\b|recusad\w*|declin\w*|negad\w*"
-                      r"|n[ãa]o passa|\bfix\b|como resolvo|o que significa)", re.IGNORECASE)
+                      r"|n[ãa]o passa|\bfix\b|como resolvo|o que significa"
+                      r"|parou de conectar|lost (its |the )?(internet )?connection|recusaram|refused|\bfailed\b"
+                      r"|c[óo]digo \d+|(c[óo]digo|code)\b.{0,25}(signific|mean))", re.IGNORECASE)
 # Lista de vendas recusadas é DADO (support), não sintoma: "quais vendas foram recusadas hoje?".
 _LISTING = re.compile(r"\b(quais vendas|which sales|list\w* (my )?sales)\b", re.IGNORECASE)
 # Desempate 2: dado/ação sobre o próprio cliente.
 _SUPPORT = re.compile(r"(\bTX\d+|\bT\d{4}[A-Z]?\b|\bontem\b|\byesterday|quanto vendi|did i sell|quando cai"
-                      r"|deposited|\b(meu|minha|meus|minhas|my)\s+(\w+\s+)?(vendas?|sales?|dinheiro|money"
+                      r"|deposited|quando entra|\b(meu|minha|meus|minhas|my)\s+(\w+\s+)?(vendas?|sales?|dinheiro|money"
                       r"|maquininhas?|terminal|terminais|recebíveis|receivables|extrato)"
                       r"|contest\w*|disput\w*|antecipar|advance my|chamado|support ticket|n[ãa]o reconhe\w*"
                       r"|\bterminal\b)", re.IGNORECASE)
@@ -53,7 +55,7 @@ _GENERAL = re.compile(r"\b(weather|forecast|clima|previs[ãa]o do tempo|temperat
 # Desempate 3: "preciso de / posso / funciona" sobre produto ou regra.
 _NEED = re.compile(r"\b(do i need|preciso (de|ter)|é preciso|is it necessary)\b", re.IGNORECASE)
 _KNOWLEDGE = re.compile(r"\b(como funciona|how does|how do\w*|what is|what's|o que é|quantas parcelas|how many"
-                        r"|posso|can i|difference|diferença|qual a taxa|tem maquininha)\b", re.IGNORECASE)
+                        r"|posso|can i|difference|diferença|qual a taxa|tem maquininha|quanto custa|how much does \w+ cost)\b", re.IGNORECASE)
 _FOLLOWUP = re.compile(r"\b(ele|ela|isso|esse|essa|dela|dele|it|that|this one|a outra|the other|what about"
                        r"|e a de|e quando|and when|por qu[eê]|why)\b", re.IGNORECASE)
 _DECLINE_CTX = re.compile(r"recusad\w*|declin\w*|negad\w*", re.IGNORECASE)
