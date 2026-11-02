@@ -25,9 +25,9 @@ def test_offline_intent_matches_spec(domain_data, split):
 
 
 def test_plans_follow_spec(domain_data):
-    assert flow.PLANS["troubleshoot"] == ["records"]  # faq entra pelo needs da tool (ablação no_needs)
+    from app.domain.challenge import flow
 
-    assert flow.PLANS["troubleshoot"] == ["records", "faq"]
+    assert flow.PLANS["troubleshoot"] == ["records"]  # faq entra pelo needs da tool (ablação no_needs)
     assert flow.PLANS["general"] == ["faq"]
     assert flow.PLANS["multi"] == ["faq", "records"]
     assert flow.NO_ESCALATION == {"general"}
