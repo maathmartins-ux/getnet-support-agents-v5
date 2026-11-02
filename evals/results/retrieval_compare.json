@@ -1,5 +1,5 @@
 {
-  "recorded_at": "2026-11-02T18:22:30+00:00",
+  "recorded_at": "2026-11-02T18:44:01+00:00",
   "gold": "retrieval.jsonl",
   "k": 3,
   "results": {
@@ -30,14 +30,14 @@
       },
       "latency_ms": {
         "p50": 0.8,
-        "p95": 2.0,
-        "mean": 1.0
+        "p95": 1.3,
+        "mean": 0.9
       },
       "gate": {
         "min_score": 12.433,
         "min_cosine": 2.0,
         "pos_answered": 0.158,
-        "neg_refused": 0.944,
+        "neg_refused": 0.941,
         "meets_floor": true,
         "pos_ci": {
           "k": 6,
@@ -46,13 +46,13 @@
           "hi": 30.4
         },
         "neg_ci": {
-          "k": 17,
-          "n": 18,
-          "lo": 74.2,
+          "k": 16,
+          "n": 17,
+          "lo": 73.0,
           "hi": 99.0
         },
         "positives": 38,
-        "negatives": 18,
+        "negatives": 17,
         "neg_refusal_min": 0.85
       },
       "essential": 38,
@@ -69,7 +69,7 @@
             "prod-home-08",
             "prod-todas-maquininhas-02"
           ],
-          "latency_ms": 1.5,
+          "latency_ms": 0.9,
           "recall": 0.0,
           "rr": 0.0,
           "hit": false,
@@ -86,7 +86,7 @@
             "prod-en-online-06",
             "sup-get-smart-16"
           ],
-          "latency_ms": 1.4,
+          "latency_ms": 0.8,
           "recall": 0.0,
           "rr": 0.0,
           "hit": false,
@@ -103,7 +103,7 @@
             "sup-pix-mais-respostas-28",
             "sup-pix-mais-respostas-29"
           ],
-          "latency_ms": 2.0,
+          "latency_ms": 1.2,
           "recall": 0.0,
           "rr": 0.0,
           "hit": false,
@@ -120,7 +120,7 @@
             "prod-en-online-05",
             "sup-pix-mais-respostas-07"
           ],
-          "latency_ms": 1.3,
+          "latency_ms": 0.7,
           "recall": 0.0,
           "rr": 0.0,
           "hit": false,
@@ -137,7 +137,7 @@
             "sup-antecipacao-de-vendas-01",
             "sup-duvidas-46"
           ],
-          "latency_ms": 2.0,
+          "latency_ms": 1.0,
           "recall": 1.0,
           "rr": 0.5,
           "hit": true,
@@ -154,7 +154,7 @@
             "sup-duvidas-21",
             "sup-duvidas-22"
           ],
-          "latency_ms": 1.8,
+          "latency_ms": 0.8,
           "recall": 0.0,
           "rr": 0.0,
           "hit": false,
@@ -171,7 +171,7 @@
             "sup-crediario-02",
             "sup-operacional-08"
           ],
-          "latency_ms": 1.8,
+          "latency_ms": 0.8,
           "recall": 0.0,
           "rr": 0.0,
           "hit": false,
@@ -188,7 +188,7 @@
             "sup-duvidas-97",
             "sup-get-smart-07"
           ],
-          "latency_ms": 1.3,
+          "latency_ms": 0.7,
           "recall": 0.0,
           "rr": 0.0,
           "hit": false,
@@ -205,7 +205,7 @@
             "sup-link-de-pagamento-12",
             "prod-link-pagamento-05"
           ],
-          "latency_ms": 2.0,
+          "latency_ms": 1.5,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -222,7 +222,7 @@
             "prod-en-online-01",
             "sup-link-de-pagamento-12"
           ],
-          "latency_ms": 1.2,
+          "latency_ms": 0.9,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -290,7 +290,7 @@
             "sup-cancelamento-descredenciamento-02",
             "sup-cancelamento-descredenciamento-03"
           ],
-          "latency_ms": 0.8,
+          "latency_ms": 0.9,
           "recall": 0.0,
           "rr": 0.0,
           "hit": false,
@@ -307,7 +307,7 @@
             "sup-bandeiras-04",
             "sup-get-tap-07"
           ],
-          "latency_ms": 1.0,
+          "latency_ms": 1.1,
           "recall": 1.0,
           "rr": 0.333,
           "hit": true,
@@ -324,7 +324,7 @@
             "prod-en-online-04",
             "sup-split-de-pagamento-01"
           ],
-          "latency_ms": 0.9,
+          "latency_ms": 1.0,
           "recall": 0.0,
           "rr": 0.0,
           "hit": false,
@@ -341,7 +341,7 @@
             "sup-get-conta-03",
             "sup-pix-mais-respostas-03"
           ],
-          "latency_ms": 0.6,
+          "latency_ms": 0.8,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -358,7 +358,7 @@
             "sup-get-conta-03",
             "sup-pix-mais-respostas-03"
           ],
-          "latency_ms": 0.5,
+          "latency_ms": 1.2,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -375,7 +375,7 @@
             "prod-todas-maquininhas-04",
             "prod-todas-maquininhas-02"
           ],
-          "latency_ms": 0.5,
+          "latency_ms": 0.8,
           "recall": 1.0,
           "rr": 0.333,
           "hit": true,
@@ -391,7 +391,7 @@
             "prod-en-online-03",
             "prod-en-online-06"
           ],
-          "latency_ms": 0.4,
+          "latency_ms": 0.6,
           "recall": 0.0,
           "rr": 0.0,
           "hit": false,
@@ -408,7 +408,7 @@
             "prod-crediario-02",
             "sup-cancelamento-descredenciamento-02"
           ],
-          "latency_ms": 1.0,
+          "latency_ms": 1.1,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -425,7 +425,7 @@
             "prod-crediario-04",
             "prod-crediario-01"
           ],
-          "latency_ms": 0.6,
+          "latency_ms": 0.8,
           "recall": 0.0,
           "rr": 0.0,
           "hit": false,
@@ -442,7 +442,7 @@
             "sup-duvidas-01",
             "sup-get-conta-07"
           ],
-          "latency_ms": 0.9,
+          "latency_ms": 1.1,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -459,7 +459,7 @@
             "sup-link-de-pagamento-10",
             "sup-app-getnet-02"
           ],
-          "latency_ms": 0.9,
+          "latency_ms": 1.2,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -476,7 +476,7 @@
             "sup-get-tap-12",
             "sup-duvidas-46"
           ],
-          "latency_ms": 0.5,
+          "latency_ms": 0.7,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -493,7 +493,7 @@
             "sup-get-tap-12",
             "sup-duvidas-46"
           ],
-          "latency_ms": 0.4,
+          "latency_ms": 0.7,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -510,7 +510,7 @@
             "prod-todas-maquininhas-05",
             "sup-taxas-13"
           ],
-          "latency_ms": 1.1,
+          "latency_ms": 1.3,
           "recall": 0.0,
           "rr": 0.0,
           "hit": false,
@@ -527,7 +527,7 @@
             "prod-en-online-06",
             "sup-split-de-pagamento-01"
           ],
-          "latency_ms": 0.9,
+          "latency_ms": 1.2,
           "recall": 0.0,
           "rr": 0.0,
           "hit": false,
@@ -544,7 +544,7 @@
             "sup-split-de-pagamento-04",
             "sup-duvidas-97"
           ],
-          "latency_ms": 0.7,
+          "latency_ms": 0.8,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -561,7 +561,7 @@
             "sup-split-de-pagamento-01",
             "prod-en-online-01"
           ],
-          "latency_ms": 0.5,
+          "latency_ms": 0.7,
           "recall": 1.0,
           "rr": 0.5,
           "hit": true,
@@ -578,7 +578,7 @@
             "sup-duvidas-46",
             "sup-get-tap-01"
           ],
-          "latency_ms": 0.7,
+          "latency_ms": 1.0,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -595,7 +595,7 @@
             "prod-en-online-03",
             "prod-en-online-02"
           ],
-          "latency_ms": 2.6,
+          "latency_ms": 0.6,
           "recall": 0.0,
           "rr": 0.0,
           "hit": false,
@@ -612,7 +612,7 @@
             "sup-plano-light-02",
             "sup-plano-light-03"
           ],
-          "latency_ms": 0.7,
+          "latency_ms": 0.6,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -629,7 +629,7 @@
             "sup-plano-light-02",
             "sup-plano-light-03"
           ],
-          "latency_ms": 0.4,
+          "latency_ms": 0.5,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -646,7 +646,7 @@
             "sup-tef-captura-pinpad-02",
             "sup-duvidas-112"
           ],
-          "latency_ms": 0.5,
+          "latency_ms": 0.6,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -663,7 +663,7 @@
             "sup-tef-captura-pinpad-02",
             "sup-duvidas-112"
           ],
-          "latency_ms": 0.5,
+          "latency_ms": 0.7,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -680,7 +680,7 @@
             "sup-get-smart-16",
             "sup-duvidas-05"
           ],
-          "latency_ms": 0.6,
+          "latency_ms": 0.8,
           "recall": 1.0,
           "rr": 0.5,
           "hit": true,
@@ -697,7 +697,7 @@
             "sup-get-smart-01",
             "sup-duvidas-05"
           ],
-          "latency_ms": 0.5,
+          "latency_ms": 0.6,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -707,9 +707,720 @@
           "page_hit": true
         }
       ],
-      "memory_mb": 40.5,
+      "memory_mb": 40.1,
       "config": {
         "retriever": "bm25"
+      }
+    },
+    "hybrid": {
+      "cases": 38,
+      "positives": 38,
+      "negatives": 18,
+      "recall@3": 0.789,
+      "mrr": 0.653,
+      "hit@3": 0.789,
+      "hit@3_ci": {
+        "k": 30,
+        "n": 38,
+        "lo": 63.7,
+        "hi": 88.9
+      },
+      "ndcg@3": 0.689,
+      "page": {
+        "recall@3": 0.68,
+        "mrr": 0.803,
+        "hit@3": 0.842,
+        "hit@3_ci": {
+          "k": 32,
+          "n": 38,
+          "lo": 69.6,
+          "hi": 92.6
+        }
+      },
+      "latency_ms": {
+        "p50": 83.3,
+        "p95": 119.9,
+        "mean": 86.9
+      },
+      "gate": {
+        "min_score": 12.433,
+        "min_cosine": 0.877,
+        "pos_answered": 0.447,
+        "neg_refused": 0.882,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 17,
+          "n": 38,
+          "lo": 30.1,
+          "hi": 60.3
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 17,
+          "lo": 65.7,
+          "hi": 96.7
+        },
+        "positives": 38,
+        "negatives": 17,
+        "neg_refusal_min": 0.85
+      },
+      "essential": 38,
+      "gold_unresolved": [],
+      "dedupe_aliases": 39,
+      "retriever": "hybrid",
+      "fallback": "",
+      "questions": [
+        {
+          "question": "Qual a diferença entre a Get Clássica e a Get Smart?",
+          "passages": 1,
+          "top3": [
+            "sup-get-smart-16",
+            "sup-get-smart-10",
+            "prod-home-08"
+          ],
+          "latency_ms": 88.6,
+          "recall": 1.0,
+          "rr": 0.5,
+          "hit": true,
+          "ndcg": 0.631,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "What's the difference between the Get Clássica and the Get Smart?",
+          "passages": 1,
+          "top3": [
+            "sup-get-smart-16",
+            "prod-todas-maquininhas-02",
+            "sup-get-smart-10"
+          ],
+          "latency_ms": 100.1,
+          "recall": 1.0,
+          "rr": 0.333,
+          "hit": true,
+          "ndcg": 0.5,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "Preciso ter conta bancária para receber vendas pelo Pix?",
+          "passages": 1,
+          "top3": [
+            "sup-pix-mais-respostas-17",
+            "sup-pix-mais-respostas-01",
+            "sup-pix-04"
+          ],
+          "latency_ms": 91.1,
+          "recall": 1.0,
+          "rr": 0.5,
+          "hit": true,
+          "ndcg": 0.631,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "Do I need a bank account to receive my sales via Pix?",
+          "passages": 1,
+          "top3": [
+            "prod-pix-02",
+            "sup-pix-mais-respostas-18",
+            "sup-pix-mais-respostas-17"
+          ],
+          "latency_ms": 85.5,
+          "recall": 0.0,
+          "rr": 0.0,
+          "hit": false,
+          "ndcg": 0.0,
+          "page_recall": 1.0,
+          "page_rr": 0.5,
+          "page_hit": true
+        },
+        {
+          "question": "Como funciona a antecipação de vendas da Getnet?",
+          "passages": 1,
+          "top3": [
+            "sup-antecipacao-de-vendas-15",
+            "sup-antecipacao-de-vendas-01",
+            "sup-app-getnet-05"
+          ],
+          "latency_ms": 92.7,
+          "recall": 1.0,
+          "rr": 0.5,
+          "hit": true,
+          "ndcg": 0.631,
+          "page_recall": 0.333,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "How does receivables advance work with Getnet?",
+          "passages": 1,
+          "top3": [
+            "sup-antecipacao-de-vendas-15",
+            "prod-en-online-04",
+            "sup-split-de-pagamento-01"
+          ],
+          "latency_ms": 90.4,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 0.5,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "Em quantas vezes posso parcelar uma venda no crediário?",
+          "passages": 1,
+          "top3": [
+            "sup-crediario-03",
+            "prod-crediario-01",
+            "prod-crediario-03"
+          ],
+          "latency_ms": 101.5,
+          "recall": 1.0,
+          "rr": 0.5,
+          "hit": true,
+          "ndcg": 0.631,
+          "page_recall": 1.0,
+          "page_rr": 0.5,
+          "page_hit": true
+        },
+        {
+          "question": "How many installments can I split a sale into with the crediário?",
+          "passages": 1,
+          "top3": [
+            "prod-crediario-03",
+            "prod-crediario-01",
+            "sup-crediario-04"
+          ],
+          "latency_ms": 126.7,
+          "recall": 1.0,
+          "rr": 0.5,
+          "hit": true,
+          "ndcg": 0.631,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "Posso vender pelo WhatsApp usando o Link de Pagamento?",
+          "passages": 1,
+          "top3": [
+            "sup-link-de-pagamento-12",
+            "prod-link-pagamento-01",
+            "prod-link-pagamento-02"
+          ],
+          "latency_ms": 96.7,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 0.667,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "Can I sell through WhatsApp using the Payment Link?",
+          "passages": 1,
+          "top3": [
+            "prod-en-online-02",
+            "prod-en-online-01",
+            "prod-link-pagamento-01"
+          ],
+          "latency_ms": 102.8,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 0.5,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "O que é o Pix e quais as vantagens?",
+          "passages": 1,
+          "top3": [
+            "sup-pix-mais-respostas-01",
+            "sup-pix-mais-respostas-13",
+            "prod-pix-01"
+          ],
+          "latency_ms": 81.6,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "What is Pix and what are its advantages?",
+          "passages": 1,
+          "top3": [
+            "sup-pix-mais-respostas-13",
+            "sup-pix-mais-respostas-01",
+            "prod-pix-01"
+          ],
+          "latency_ms": 85.7,
+          "recall": 1.0,
+          "rr": 0.5,
+          "hit": true,
+          "ndcg": 0.631,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "Como cancelar minha maquininha Getnet?",
+          "passages": 1,
+          "top3": [
+            "sup-get-conta-13",
+            "sup-cancelamento-descredenciamento-02",
+            "sup-cancelamento-descredenciamento-03"
+          ],
+          "latency_ms": 77.2,
+          "recall": 0.0,
+          "rr": 0.0,
+          "hit": false,
+          "ndcg": 0.0,
+          "page_recall": 0.0,
+          "page_rr": 0.0,
+          "page_hit": false
+        },
+        {
+          "question": "How do I cancel my Getnet card machine?",
+          "passages": 1,
+          "top3": [
+            "sup-get-conta-13",
+            "sup-cancelamento-descredenciamento-02",
+            "sup-cancelamento-descredenciamento-03"
+          ],
+          "latency_ms": 75.6,
+          "recall": 0.0,
+          "rr": 0.0,
+          "hit": false,
+          "ndcg": 0.0,
+          "page_recall": 0.0,
+          "page_rr": 0.0,
+          "page_hit": false
+        },
+        {
+          "question": "Quais bandeiras de cartão a Getnet aceita?",
+          "passages": 1,
+          "top3": [
+            "sup-bandeiras-06",
+            "sup-get-tap-07",
+            "sup-bandeiras-04"
+          ],
+          "latency_ms": 111.5,
+          "recall": 1.0,
+          "rr": 0.5,
+          "hit": true,
+          "ndcg": 0.631,
+          "page_recall": 0.2,
+          "page_rr": 0.5,
+          "page_hit": true
+        },
+        {
+          "question": "Which card brands does Getnet accept?",
+          "passages": 1,
+          "top3": [
+            "prod-en-online-03",
+            "prod-en-online-06",
+            "sup-get-smart-07"
+          ],
+          "latency_ms": 88.1,
+          "recall": 0.0,
+          "rr": 0.0,
+          "hit": false,
+          "ndcg": 0.0,
+          "page_recall": 0.0,
+          "page_rr": 0.0,
+          "page_hit": false
+        },
+        {
+          "question": "O que é a Get Conta?",
+          "passages": 1,
+          "top3": [
+            "sup-get-conta-06",
+            "sup-get-conta-02",
+            "sup-get-smart-14"
+          ],
+          "latency_ms": 72.1,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "What is the Get Conta account?",
+          "passages": 1,
+          "top3": [
+            "sup-get-conta-06",
+            "sup-get-conta-03",
+            "sup-get-smart-14"
+          ],
+          "latency_ms": 74.6,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "Como funciona o aluguel da maquininha?",
+          "passages": 1,
+          "top3": [
+            "sup-duvidas-96",
+            "prod-todas-maquininhas-04",
+            "sup-aluguel-07"
+          ],
+          "latency_ms": 83.3,
+          "recall": 0.0,
+          "rr": 0.0,
+          "hit": false,
+          "ndcg": 0.0,
+          "page_recall": 0.667,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "How does the card machine rental work?",
+          "passages": 1,
+          "top3": [
+            "prod-en-online-03",
+            "sup-duvidas-96",
+            "prod-en-online-06"
+          ],
+          "latency_ms": 78.5,
+          "recall": 0.0,
+          "rr": 0.0,
+          "hit": false,
+          "ndcg": 0.0,
+          "page_recall": 0.0,
+          "page_rr": 0.0,
+          "page_hit": false
+        },
+        {
+          "question": "Quanto tempo leva para receber o valor das vendas no crediário?",
+          "passages": 1,
+          "top3": [
+            "sup-crediario-04",
+            "prod-crediario-02",
+            "prod-crediario-01"
+          ],
+          "latency_ms": 119.9,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 0.667,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "How long does it take to receive crediário sales?",
+          "passages": 1,
+          "top3": [
+            "sup-crediario-04",
+            "prod-crediario-04",
+            "prod-crediario-01"
+          ],
+          "latency_ms": 114.3,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 0.667,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "Como baixar o app Getnet?",
+          "passages": 1,
+          "top3": [
+            "sup-app-getnet-02",
+            "sup-duvidas-01",
+            "sup-get-conta-07"
+          ],
+          "latency_ms": 81.9,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "How do I download the Getnet app?",
+          "passages": 1,
+          "top3": [
+            "sup-get-smart-11",
+            "sup-app-getnet-02",
+            "sup-app-getnet-04"
+          ],
+          "latency_ms": 79.3,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 0.4,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "O que é o Get Tap?",
+          "passages": 1,
+          "top3": [
+            "sup-get-tap-01",
+            "sup-get-tap-10",
+            "sup-duvidas-45"
+          ],
+          "latency_ms": 67.4,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "What is Get Tap?",
+          "passages": 1,
+          "top3": [
+            "sup-get-tap-01",
+            "sup-get-tap-10",
+            "sup-duvidas-45"
+          ],
+          "latency_ms": 73.0,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "Quais são as taxas da maquininha Getnet?",
+          "passages": 1,
+          "top3": [
+            "prod-todas-maquininhas-06",
+            "prod-todas-maquininhas-04",
+            "sup-taxas-19"
+          ],
+          "latency_ms": 97.3,
+          "recall": 1.0,
+          "rr": 0.5,
+          "hit": true,
+          "ndcg": 0.631,
+          "page_recall": 0.25,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "What are the Getnet card machine fees?",
+          "passages": 1,
+          "top3": [
+            "prod-en-online-03",
+            "prod-en-online-06",
+            "sup-taxas-02"
+          ],
+          "latency_ms": 87.2,
+          "recall": 0.0,
+          "rr": 0.0,
+          "hit": false,
+          "ndcg": 0.0,
+          "page_recall": 0.0,
+          "page_rr": 0.0,
+          "page_hit": false
+        },
+        {
+          "question": "O que é o split de pagamento?",
+          "passages": 1,
+          "top3": [
+            "sup-split-de-pagamento-01",
+            "sup-split-de-pagamento-04",
+            "sup-duvidas-97"
+          ],
+          "latency_ms": 75.3,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "What is payment split?",
+          "passages": 1,
+          "top3": [
+            "sup-split-de-pagamento-01",
+            "prod-en-online-04",
+            "sup-duvidas-97"
+          ],
+          "latency_ms": 71.0,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "Como funciona a venda parcelada?",
+          "passages": 1,
+          "top3": [
+            "sup-parcelado-01",
+            "sup-duvidas-77",
+            "sup-split-de-pagamento-04"
+          ],
+          "latency_ms": 76.0,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 0.667,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "How does an installment sale work?",
+          "passages": 1,
+          "top3": [
+            "prod-en-online-02",
+            "prod-en-online-03",
+            "sup-pagamento-carne-01"
+          ],
+          "latency_ms": 75.3,
+          "recall": 0.0,
+          "rr": 0.0,
+          "hit": false,
+          "ndcg": 0.0,
+          "page_recall": 0.0,
+          "page_rr": 0.0,
+          "page_hit": false
+        },
+        {
+          "question": "O que é o Plano Light?",
+          "passages": 1,
+          "top3": [
+            "sup-duvidas-85",
+            "sup-plano-light-02",
+            "sup-plano-light-04"
+          ],
+          "latency_ms": 72.9,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "What is the Plano Light plan?",
+          "passages": 1,
+          "top3": [
+            "sup-duvidas-85",
+            "sup-plano-light-02",
+            "sup-plano-light-03"
+          ],
+          "latency_ms": 74.8,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "Como funciona o TEF e o pinpad?",
+          "passages": 1,
+          "top3": [
+            "sup-tef-captura-pinpad-01",
+            "sup-tef-captura-pinpad-02",
+            "sup-duvidas-112"
+          ],
+          "latency_ms": 87.9,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 0.667,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "How do TEF and the pinpad work?",
+          "passages": 1,
+          "top3": [
+            "sup-tef-captura-pinpad-01",
+            "sup-tef-captura-pinpad-02",
+            "sup-duvidas-112"
+          ],
+          "latency_ms": 79.0,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 0.667,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "A Get Smart emite nota fiscal?",
+          "passages": 1,
+          "top3": [
+            "sup-get-smart-10",
+            "sup-get-smart-16",
+            "sup-duvidas-05"
+          ],
+          "latency_ms": 75.7,
+          "recall": 1.0,
+          "rr": 0.5,
+          "hit": true,
+          "ndcg": 0.631,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "Can the Get Smart issue invoices?",
+          "passages": 1,
+          "top3": [
+            "sup-get-smart-16",
+            "sup-get-smart-10",
+            "sup-duvidas-05"
+          ],
+          "latency_ms": 89.5,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        }
+      ],
+      "memory_mb": 1541.3,
+      "config": {
+        "retriever": "hybrid",
+        "embed_model": "intfloat/multilingual-e5-large"
       }
     },
     "dense": {
@@ -738,15 +1449,15 @@
         }
       },
       "latency_ms": {
-        "p50": 82.4,
-        "p95": 234.8,
-        "mean": 92.7
+        "p50": 81.0,
+        "p95": 120.1,
+        "mean": 86.1
       },
       "gate": {
         "min_score": 12.433,
         "min_cosine": 0.88,
         "pos_answered": 0.421,
-        "neg_refused": 0.944,
+        "neg_refused": 0.941,
         "meets_floor": true,
         "pos_ci": {
           "k": 16,
@@ -755,13 +1466,13 @@
           "hi": 57.8
         },
         "neg_ci": {
-          "k": 17,
-          "n": 18,
-          "lo": 74.2,
+          "k": 16,
+          "n": 17,
+          "lo": 73.0,
           "hi": 99.0
         },
         "positives": 38,
-        "negatives": 18,
+        "negatives": 17,
         "neg_refusal_min": 0.85
       },
       "essential": 38,
@@ -778,7 +1489,7 @@
             "sup-get-smart-10",
             "prod-todas-maquininhas-04"
           ],
-          "latency_ms": 120.0,
+          "latency_ms": 136.7,
           "recall": 1.0,
           "rr": 0.5,
           "hit": true,
@@ -795,7 +1506,7 @@
             "sup-get-smart-08",
             "prod-todas-maquininhas-04"
           ],
-          "latency_ms": 105.3,
+          "latency_ms": 120.1,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -812,7 +1523,7 @@
             "sup-pix-mais-respostas-01",
             "prod-pix-01"
           ],
-          "latency_ms": 107.6,
+          "latency_ms": 100.9,
           "recall": 1.0,
           "rr": 0.5,
           "hit": true,
@@ -829,7 +1540,7 @@
             "sup-pix-mais-respostas-18",
             "prod-pix-02"
           ],
-          "latency_ms": 74.2,
+          "latency_ms": 97.8,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -846,7 +1557,7 @@
             "sup-antecipacao-de-vendas-10",
             "sup-duvidas-17"
           ],
-          "latency_ms": 74.1,
+          "latency_ms": 87.2,
           "recall": 0.0,
           "rr": 0.0,
           "hit": false,
@@ -863,7 +1574,7 @@
             "prod-en-online-02",
             "sup-antecipacao-de-vendas-05"
           ],
-          "latency_ms": 75.9,
+          "latency_ms": 89.1,
           "recall": 0.0,
           "rr": 0.0,
           "hit": false,
@@ -880,7 +1591,7 @@
             "prod-crediario-02",
             "sup-crediario-03"
           ],
-          "latency_ms": 91.0,
+          "latency_ms": 97.4,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -897,7 +1608,7 @@
             "prod-crediario-01",
             "sup-crediario-03"
           ],
-          "latency_ms": 88.1,
+          "latency_ms": 119.6,
           "recall": 1.0,
           "rr": 0.5,
           "hit": true,
@@ -914,7 +1625,7 @@
             "prod-link-pagamento-02",
             "prod-link-pagamento-01"
           ],
-          "latency_ms": 86.2,
+          "latency_ms": 102.0,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -931,7 +1642,7 @@
             "prod-link-pagamento-01",
             "prod-link-pagamento-02"
           ],
-          "latency_ms": 80.5,
+          "latency_ms": 78.7,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -948,7 +1659,7 @@
             "sup-pix-mais-respostas-18",
             "sup-pix-01"
           ],
-          "latency_ms": 69.7,
+          "latency_ms": 86.9,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -965,7 +1676,7 @@
             "sup-pix-mais-respostas-18",
             "sup-pix-01"
           ],
-          "latency_ms": 87.7,
+          "latency_ms": 83.4,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -982,7 +1693,7 @@
             "sup-cancelamento-descredenciamento-03",
             "sup-cancelamento-descredenciamento-02"
           ],
-          "latency_ms": 92.0,
+          "latency_ms": 79.0,
           "recall": 0.0,
           "rr": 0.0,
           "hit": false,
@@ -999,7 +1710,7 @@
             "sup-get-conta-13",
             "sup-duvidas-26"
           ],
-          "latency_ms": 85.8,
+          "latency_ms": 101.0,
           "recall": 1.0,
           "rr": 0.333,
           "hit": true,
@@ -1016,7 +1727,7 @@
             "sup-get-tap-07",
             "sup-bandeiras-06"
           ],
-          "latency_ms": 102.3,
+          "latency_ms": 101.7,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -1033,7 +1744,7 @@
             "prod-en-online-06",
             "sup-get-smart-07"
           ],
-          "latency_ms": 100.9,
+          "latency_ms": 74.9,
           "recall": 0.0,
           "rr": 0.0,
           "hit": false,
@@ -1050,7 +1761,7 @@
             "sup-get-conta-06",
             "sup-get-smart-10"
           ],
-          "latency_ms": 99.1,
+          "latency_ms": 65.0,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -1067,7 +1778,7 @@
             "sup-get-conta-06",
             "sup-get-smart-10"
           ],
-          "latency_ms": 82.4,
+          "latency_ms": 67.0,
           "recall": 1.0,
           "rr": 0.5,
           "hit": true,
@@ -1084,7 +1795,7 @@
             "sup-aluguel-06",
             "sup-aluguel-07"
           ],
-          "latency_ms": 85.2,
+          "latency_ms": 77.4,
           "recall": 0.0,
           "rr": 0.0,
           "hit": false,
@@ -1101,7 +1812,7 @@
             "prod-todas-maquininhas-05",
             "sup-cancelamento-descredenciamento-01"
           ],
-          "latency_ms": 150.4,
+          "latency_ms": 81.0,
           "recall": 1.0,
           "rr": 0.333,
           "hit": true,
@@ -1118,7 +1829,7 @@
             "prod-crediario-02",
             "sup-duvidas-116"
           ],
-          "latency_ms": 234.8,
+          "latency_ms": 107.0,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -1135,7 +1846,7 @@
             "prod-crediario-02",
             "sup-duvidas-116"
           ],
-          "latency_ms": 89.4,
+          "latency_ms": 81.4,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -1152,7 +1863,7 @@
             "sup-duvidas-01",
             "sup-get-smart-11"
           ],
-          "latency_ms": 72.8,
+          "latency_ms": 64.6,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -1169,7 +1880,7 @@
             "sup-get-smart-11",
             "sup-duvidas-01"
           ],
-          "latency_ms": 78.2,
+          "latency_ms": 77.3,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -1186,7 +1897,7 @@
             "sup-duvidas-45",
             "sup-get-tap-10"
           ],
-          "latency_ms": 65.3,
+          "latency_ms": 63.9,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -1203,7 +1914,7 @@
             "sup-duvidas-45",
             "sup-get-tap-10"
           ],
-          "latency_ms": 67.6,
+          "latency_ms": 66.3,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -1220,7 +1931,7 @@
             "prod-todas-maquininhas-04",
             "prod-home-02"
           ],
-          "latency_ms": 74.3,
+          "latency_ms": 88.0,
           "recall": 1.0,
           "rr": 0.5,
           "hit": true,
@@ -1237,7 +1948,7 @@
             "prod-todas-maquininhas-04",
             "prod-home-01"
           ],
-          "latency_ms": 74.3,
+          "latency_ms": 74.0,
           "recall": 1.0,
           "rr": 0.5,
           "hit": true,
@@ -1254,7 +1965,7 @@
             "sup-duvidas-97",
             "sup-split-de-pagamento-04"
           ],
-          "latency_ms": 71.2,
+          "latency_ms": 70.7,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -1271,7 +1982,7 @@
             "sup-duvidas-97",
             "sup-split-de-pagamento-04"
           ],
-          "latency_ms": 62.9,
+          "latency_ms": 65.1,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -1288,7 +1999,7 @@
             "sup-duvidas-78",
             "sup-parcelado-01"
           ],
-          "latency_ms": 91.0,
+          "latency_ms": 71.5,
           "recall": 1.0,
           "rr": 0.5,
           "hit": true,
@@ -1305,7 +2016,7 @@
             "prod-en-online-02",
             "sup-pagamento-carne-01"
           ],
-          "latency_ms": 238.5,
+          "latency_ms": 79.6,
           "recall": 0.0,
           "rr": 0.0,
           "hit": false,
@@ -1322,7 +2033,7 @@
             "sup-plano-light-04",
             "sup-plano-light-02"
           ],
-          "latency_ms": 77.7,
+          "latency_ms": 86.3,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -1339,7 +2050,7 @@
             "sup-plano-light-02",
             "sup-plano-light-04"
           ],
-          "latency_ms": 85.4,
+          "latency_ms": 76.9,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -1356,7 +2067,7 @@
             "sup-tef-captura-pinpad-02",
             "sup-duvidas-112"
           ],
-          "latency_ms": 67.1,
+          "latency_ms": 80.6,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -1373,7 +2084,7 @@
             "sup-tef-captura-pinpad-02",
             "sup-duvidas-112"
           ],
-          "latency_ms": 71.6,
+          "latency_ms": 80.5,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -1390,7 +2101,7 @@
             "sup-get-smart-10",
             "sup-taxas-19"
           ],
-          "latency_ms": 71.5,
+          "latency_ms": 105.6,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -1407,7 +2118,7 @@
             "sup-get-smart-10",
             "sup-duvidas-05"
           ],
-          "latency_ms": 70.4,
+          "latency_ms": 87.5,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -1417,83 +2128,83 @@
           "page_hit": true
         }
       ],
-      "memory_mb": 1541.0,
+      "memory_mb": 1541.3,
       "config": {
         "retriever": "dense",
         "embed_model": "intfloat/multilingual-e5-large"
       }
     },
-    "dense+cross": {
+    "bm25+cross": {
       "cases": 38,
       "positives": 38,
       "negatives": 18,
-      "recall@3": 0.947,
-      "mrr": 0.807,
-      "hit@3": 0.947,
+      "recall@3": 0.684,
+      "mrr": 0.671,
+      "hit@3": 0.684,
       "hit@3_ci": {
-        "k": 36,
+        "k": 26,
         "n": 38,
-        "lo": 82.7,
-        "hi": 98.5
+        "lo": 52.5,
+        "hi": 80.9
       },
-      "ndcg@3": 0.843,
+      "ndcg@3": 0.674,
       "page": {
-        "recall@3": 0.821,
-        "mrr": 0.93,
-        "hit@3": 0.974,
+        "recall@3": 0.736,
+        "mrr": 0.789,
+        "hit@3": 0.842,
         "hit@3_ci": {
-          "k": 37,
+          "k": 32,
           "n": 38,
-          "lo": 86.5,
-          "hi": 99.5
+          "lo": 69.6,
+          "hi": 92.6
         }
       },
       "latency_ms": {
-        "p50": 1933.9,
-        "p95": 2862.0,
-        "mean": 2036.5
+        "p50": 2405.0,
+        "p95": 3531.3,
+        "mean": 2379.0
       },
       "gate": {
         "min_score": 12.433,
-        "min_cosine": 0.877,
-        "pos_answered": 0.421,
-        "neg_refused": 0.889,
+        "min_cosine": 2.0,
+        "pos_answered": 0.158,
+        "neg_refused": 0.941,
         "meets_floor": true,
         "pos_ci": {
-          "k": 16,
+          "k": 6,
           "n": 38,
-          "lo": 27.9,
-          "hi": 57.8
+          "lo": 7.4,
+          "hi": 30.4
         },
         "neg_ci": {
           "k": 16,
-          "n": 18,
-          "lo": 67.2,
-          "hi": 96.9
+          "n": 17,
+          "lo": 73.0,
+          "hi": 99.0
         },
         "positives": 38,
-        "negatives": 18,
+        "negatives": 17,
         "neg_refusal_min": 0.85
       },
       "essential": 38,
       "gold_unresolved": [],
       "dedupe_aliases": 39,
-      "retriever": "dense+cross",
+      "retriever": "bm25+cross",
       "fallback": "",
       "questions": [
         {
           "question": "Qual a diferença entre a Get Clássica e a Get Smart?",
           "passages": 1,
           "top3": [
-            "sup-get-smart-08",
-            "sup-get-smart-10",
-            "prod-home-08"
+            "sup-get-smart-16",
+            "prod-home-08",
+            "prod-todas-maquininhas-02"
           ],
-          "latency_ms": 2393.2,
-          "recall": 1.0,
-          "rr": 0.5,
-          "hit": true,
-          "ndcg": 0.631,
+          "latency_ms": 5347.0,
+          "recall": 0.0,
+          "rr": 0.0,
+          "hit": false,
+          "ndcg": 0.0,
           "page_recall": 1.0,
           "page_rr": 1.0,
           "page_hit": true
@@ -1502,32 +2213,32 @@
           "question": "What's the difference between the Get Clássica and the Get Smart?",
           "passages": 1,
           "top3": [
-            "sup-get-smart-08",
-            "sup-get-smart-10",
-            "prod-home-08"
+            "prod-home-08",
+            "sup-get-smart-16",
+            "prod-todas-maquininhas-02"
           ],
-          "latency_ms": 2215.7,
-          "recall": 1.0,
-          "rr": 0.5,
-          "hit": true,
-          "ndcg": 0.631,
+          "latency_ms": 2968.4,
+          "recall": 0.0,
+          "rr": 0.0,
+          "hit": false,
+          "ndcg": 0.0,
           "page_recall": 1.0,
-          "page_rr": 1.0,
+          "page_rr": 0.5,
           "page_hit": true
         },
         {
           "question": "Preciso ter conta bancária para receber vendas pelo Pix?",
           "passages": 1,
           "top3": [
-            "sup-pix-mais-respostas-01",
-            "sup-get-conta-02",
-            "sup-pix-mais-respostas-17"
+            "sup-pix-mais-respostas-29",
+            "prod-todas-maquininhas-02",
+            "sup-pix-04"
           ],
-          "latency_ms": 1675.3,
-          "recall": 1.0,
-          "rr": 1.0,
-          "hit": true,
-          "ndcg": 1.0,
+          "latency_ms": 2914.6,
+          "recall": 0.0,
+          "rr": 0.0,
+          "hit": false,
+          "ndcg": 0.0,
           "page_recall": 1.0,
           "page_rr": 1.0,
           "page_hit": true
@@ -1536,32 +2247,32 @@
           "question": "Do I need a bank account to receive my sales via Pix?",
           "passages": 1,
           "top3": [
-            "sup-pix-mais-respostas-01",
-            "sup-duvidas-62",
-            "prod-todas-maquininhas-02"
+            "sup-pix-07",
+            "sup-pix-mais-respostas-17",
+            "sup-duvidas-62"
           ],
-          "latency_ms": 1957.7,
-          "recall": 1.0,
-          "rr": 1.0,
-          "hit": true,
-          "ndcg": 1.0,
+          "latency_ms": 1964.2,
+          "recall": 0.0,
+          "rr": 0.0,
+          "hit": false,
+          "ndcg": 0.0,
           "page_recall": 1.0,
-          "page_rr": 1.0,
+          "page_rr": 0.5,
           "page_hit": true
         },
         {
           "question": "Como funciona a antecipação de vendas da Getnet?",
           "passages": 1,
           "top3": [
-            "sup-antecipacao-de-vendas-15",
+            "sup-antecipacao-de-vendas-01",
             "sup-app-getnet-05",
             "sup-taxas-03"
           ],
-          "latency_ms": 1672.3,
+          "latency_ms": 2235.4,
           "recall": 1.0,
-          "rr": 0.333,
+          "rr": 1.0,
           "hit": true,
-          "ndcg": 0.5,
+          "ndcg": 1.0,
           "page_recall": 0.667,
           "page_rr": 1.0,
           "page_hit": true
@@ -1570,16 +2281,16 @@
           "question": "How does receivables advance work with Getnet?",
           "passages": 1,
           "top3": [
-            "sup-antecipacao-de-vendas-05",
-            "sup-taxas-03",
-            "prod-crediario-01"
+            "sup-antecipacao-de-vendas-15",
+            "sup-app-getnet-04",
+            "sup-pix-03"
           ],
-          "latency_ms": 1768.3,
+          "latency_ms": 3056.5,
           "recall": 1.0,
-          "rr": 0.5,
+          "rr": 1.0,
           "hit": true,
-          "ndcg": 0.631,
-          "page_recall": 1.0,
+          "ndcg": 1.0,
+          "page_recall": 0.5,
           "page_rr": 1.0,
           "page_hit": true
         },
@@ -1588,10 +2299,10 @@
           "passages": 1,
           "top3": [
             "prod-crediario-03",
-            "prod-crediario-02",
+            "prod-crediario-01",
             "sup-crediario-03"
           ],
-          "latency_ms": 1736.8,
+          "latency_ms": 2776.0,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -1604,15 +2315,15 @@
           "question": "How many installments can I split a sale into with the crediário?",
           "passages": 1,
           "top3": [
-            "prod-crediario-03",
             "prod-crediario-01",
-            "sup-crediario-03"
+            "prod-crediario-04",
+            "sup-split-de-pagamento-04"
           ],
-          "latency_ms": 1877.9,
+          "latency_ms": 1987.2,
           "recall": 1.0,
-          "rr": 0.5,
+          "rr": 1.0,
           "hit": true,
-          "ndcg": 0.631,
+          "ndcg": 1.0,
           "page_recall": 1.0,
           "page_rr": 1.0,
           "page_hit": true
@@ -1621,11 +2332,11 @@
           "question": "Posso vender pelo WhatsApp usando o Link de Pagamento?",
           "passages": 1,
           "top3": [
+            "prod-link-pagamento-01",
             "sup-link-de-pagamento-12",
-            "prod-en-online-02",
-            "prod-link-pagamento-02"
+            "prod-en-online-02"
           ],
-          "latency_ms": 1785.9,
+          "latency_ms": 2551.5,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -1639,10 +2350,10 @@
           "passages": 1,
           "top3": [
             "prod-en-online-02",
-            "sup-link-de-pagamento-12",
-            "prod-link-pagamento-02"
+            "prod-link-pagamento-01",
+            "sup-link-de-pagamento-12"
           ],
-          "latency_ms": 1921.3,
+          "latency_ms": 2658.1,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -1656,10 +2367,722 @@
           "passages": 1,
           "top3": [
             "sup-pix-mais-respostas-01",
-            "sup-pix-mais-respostas-18",
-            "sup-pix-01"
+            "prod-pix-01",
+            "sup-duvidas-62"
           ],
-          "latency_ms": 1570.3,
+          "latency_ms": 2241.0,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "What is Pix and what are its advantages?",
+          "passages": 1,
+          "top3": [
+            "prod-pix-01",
+            "sup-pix-mais-respostas-13",
+            "sup-duvidas-62"
+          ],
+          "latency_ms": 1751.8,
+          "recall": 0.0,
+          "rr": 0.0,
+          "hit": false,
+          "ndcg": 0.0,
+          "page_recall": 1.0,
+          "page_rr": 0.5,
+          "page_hit": true
+        },
+        {
+          "question": "Como cancelar minha maquininha Getnet?",
+          "passages": 1,
+          "top3": [
+            "sup-get-conta-13",
+            "sup-pix-mais-respostas-21",
+            "sup-cancelamento-descredenciamento-03"
+          ],
+          "latency_ms": 2196.5,
+          "recall": 0.0,
+          "rr": 0.0,
+          "hit": false,
+          "ndcg": 0.0,
+          "page_recall": 0.0,
+          "page_rr": 0.0,
+          "page_hit": false
+        },
+        {
+          "question": "How do I cancel my Getnet card machine?",
+          "passages": 1,
+          "top3": [
+            "sup-get-conta-13",
+            "sup-pix-mais-respostas-21",
+            "prod-crediario-06"
+          ],
+          "latency_ms": 1705.8,
+          "recall": 0.0,
+          "rr": 0.0,
+          "hit": false,
+          "ndcg": 0.0,
+          "page_recall": 0.0,
+          "page_rr": 0.0,
+          "page_hit": false
+        },
+        {
+          "question": "Quais bandeiras de cartão a Getnet aceita?",
+          "passages": 1,
+          "top3": [
+            "sup-get-smart-07",
+            "sup-get-tap-07",
+            "prod-home-06"
+          ],
+          "latency_ms": 2405.0,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 0.6,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "Which card brands does Getnet accept?",
+          "passages": 1,
+          "top3": [
+            "prod-en-online-03",
+            "sup-antecipacao-de-vendas-15",
+            "prod-en-online-04"
+          ],
+          "latency_ms": 1345.3,
+          "recall": 0.0,
+          "rr": 0.0,
+          "hit": false,
+          "ndcg": 0.0,
+          "page_recall": 0.0,
+          "page_rr": 0.0,
+          "page_hit": false
+        },
+        {
+          "question": "O que é a Get Conta?",
+          "passages": 1,
+          "top3": [
+            "sup-get-conta-06",
+            "sup-get-conta-03",
+            "sup-duvidas-62"
+          ],
+          "latency_ms": 3468.6,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "What is the Get Conta account?",
+          "passages": 1,
+          "top3": [
+            "sup-get-conta-06",
+            "sup-get-conta-03",
+            "prod-home-02"
+          ],
+          "latency_ms": 3531.3,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "Como funciona o aluguel da maquininha?",
+          "passages": 1,
+          "top3": [
+            "sup-cancelamento-descredenciamento-01",
+            "sup-duvidas-96",
+            "prod-todas-maquininhas-04"
+          ],
+          "latency_ms": 2995.6,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "How does the card machine rental work?",
+          "passages": 1,
+          "top3": [
+            "prod-en-online-03",
+            "prod-en-online-06"
+          ],
+          "latency_ms": 488.2,
+          "recall": 0.0,
+          "rr": 0.0,
+          "hit": false,
+          "ndcg": 0.0,
+          "page_recall": 0.0,
+          "page_rr": 0.0,
+          "page_hit": false
+        },
+        {
+          "question": "Quanto tempo leva para receber o valor das vendas no crediário?",
+          "passages": 1,
+          "top3": [
+            "prod-crediario-02",
+            "sup-crediario-04",
+            "prod-todas-maquininhas-02"
+          ],
+          "latency_ms": 2830.8,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "How long does it take to receive crediário sales?",
+          "passages": 1,
+          "top3": [
+            "prod-crediario-04",
+            "sup-duvidas-35",
+            "sup-crediario-02"
+          ],
+          "latency_ms": 2153.3,
+          "recall": 0.0,
+          "rr": 0.0,
+          "hit": false,
+          "ndcg": 0.0,
+          "page_recall": 0.667,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "Como baixar o app Getnet?",
+          "passages": 1,
+          "top3": [
+            "sup-app-getnet-02",
+            "sup-duvidas-34",
+            "sup-get-conta-07"
+          ],
+          "latency_ms": 2538.8,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "How do I download the Getnet app?",
+          "passages": 1,
+          "top3": [
+            "sup-app-getnet-02",
+            "sup-get-smart-11",
+            "sup-get-conta-07"
+          ],
+          "latency_ms": 2678.1,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 0.6,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "O que é o Get Tap?",
+          "passages": 1,
+          "top3": [
+            "sup-get-tap-01",
+            "sup-duvidas-45",
+            "sup-duvidas-46"
+          ],
+          "latency_ms": 1695.0,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "What is Get Tap?",
+          "passages": 1,
+          "top3": [
+            "sup-get-tap-01",
+            "sup-duvidas-45",
+            "sup-duvidas-46"
+          ],
+          "latency_ms": 1782.3,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "Quais são as taxas da maquininha Getnet?",
+          "passages": 1,
+          "top3": [
+            "sup-taxas-19",
+            "sup-loja-digital-17",
+            "prod-todas-maquininhas-09"
+          ],
+          "latency_ms": 2425.5,
+          "recall": 1.0,
+          "rr": 0.5,
+          "hit": true,
+          "ndcg": 0.631,
+          "page_recall": 0.5,
+          "page_rr": 0.5,
+          "page_hit": true
+        },
+        {
+          "question": "What are the Getnet card machine fees?",
+          "passages": 1,
+          "top3": [
+            "prod-en-online-03",
+            "prod-en-online-06",
+            "sup-antecipacao-de-vendas-15"
+          ],
+          "latency_ms": 1636.3,
+          "recall": 0.0,
+          "rr": 0.0,
+          "hit": false,
+          "ndcg": 0.0,
+          "page_recall": 0.0,
+          "page_rr": 0.0,
+          "page_hit": false
+        },
+        {
+          "question": "O que é o split de pagamento?",
+          "passages": 1,
+          "top3": [
+            "sup-split-de-pagamento-01",
+            "sup-split-de-pagamento-04",
+            "sup-duvidas-97"
+          ],
+          "latency_ms": 2106.0,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "What is payment split?",
+          "passages": 1,
+          "top3": [
+            "sup-split-de-pagamento-01",
+            "sup-split-de-pagamento-04",
+            "sup-duvidas-96"
+          ],
+          "latency_ms": 1998.2,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "Como funciona a venda parcelada?",
+          "passages": 1,
+          "top3": [
+            "sup-parcelado-01",
+            "sup-operacional-12",
+            "sup-antecipacao-de-vendas-01"
+          ],
+          "latency_ms": 2512.2,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 0.333,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "How does an installment sale work?",
+          "passages": 1,
+          "top3": [
+            "prod-en-online-03",
+            "prod-en-online-02",
+            "prod-en-online-01"
+          ],
+          "latency_ms": 409.5,
+          "recall": 0.0,
+          "rr": 0.0,
+          "hit": false,
+          "ndcg": 0.0,
+          "page_recall": 0.0,
+          "page_rr": 0.0,
+          "page_hit": false
+        },
+        {
+          "question": "O que é o Plano Light?",
+          "passages": 1,
+          "top3": [
+            "sup-duvidas-85",
+            "sup-plano-light-02",
+            "sup-plano-light-03"
+          ],
+          "latency_ms": 2770.2,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "What is the Plano Light plan?",
+          "passages": 1,
+          "top3": [
+            "sup-duvidas-85",
+            "sup-plano-light-02",
+            "sup-plano-light-03"
+          ],
+          "latency_ms": 2628.0,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "Como funciona o TEF e o pinpad?",
+          "passages": 1,
+          "top3": [
+            "sup-tef-captura-pinpad-01",
+            "sup-tef-captura-pinpad-02",
+            "sup-duvidas-112"
+          ],
+          "latency_ms": 1703.3,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 0.667,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "How do TEF and the pinpad work?",
+          "passages": 1,
+          "top3": [
+            "sup-tef-captura-pinpad-01",
+            "sup-tef-captura-pinpad-02",
+            "sup-duvidas-112"
+          ],
+          "latency_ms": 1712.4,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 0.667,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "A Get Smart emite nota fiscal?",
+          "passages": 1,
+          "top3": [
+            "sup-get-smart-16",
+            "sup-get-smart-10",
+            "sup-taxas-19"
+          ],
+          "latency_ms": 3119.3,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "Can the Get Smart issue invoices?",
+          "passages": 1,
+          "top3": [
+            "sup-get-smart-16",
+            "sup-duvidas-05",
+            "sup-taxas-19"
+          ],
+          "latency_ms": 3112.9,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        }
+      ],
+      "memory_mb": 874.8,
+      "config": {
+        "retriever": "bm25",
+        "rerank": "cross",
+        "rerank_model": "BAAI/bge-reranker-v2-m3-int8",
+        "rerank_pool": 10
+      }
+    },
+    "hybrid+cross": {
+      "cases": 38,
+      "positives": 38,
+      "negatives": 18,
+      "recall@3": 0.895,
+      "mrr": 0.811,
+      "hit@3": 0.895,
+      "hit@3_ci": {
+        "k": 34,
+        "n": 38,
+        "lo": 75.9,
+        "hi": 95.8
+      },
+      "ndcg@3": 0.833,
+      "page": {
+        "recall@3": 0.776,
+        "mrr": 0.89,
+        "hit@3": 0.947,
+        "hit@3_ci": {
+          "k": 36,
+          "n": 38,
+          "lo": 82.7,
+          "hi": 98.5
+        }
+      },
+      "latency_ms": {
+        "p50": 2521.1,
+        "p95": 3125.9,
+        "mean": 2461.1
+      },
+      "gate": {
+        "min_score": 12.433,
+        "min_cosine": 0.877,
+        "pos_answered": 0.447,
+        "neg_refused": 0.882,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 17,
+          "n": 38,
+          "lo": 30.1,
+          "hi": 60.3
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 17,
+          "lo": 65.7,
+          "hi": 96.7
+        },
+        "positives": 38,
+        "negatives": 17,
+        "neg_refusal_min": 0.85
+      },
+      "essential": 38,
+      "gold_unresolved": [],
+      "dedupe_aliases": 39,
+      "retriever": "hybrid+cross",
+      "fallback": "",
+      "questions": [
+        {
+          "question": "Qual a diferença entre a Get Clássica e a Get Smart?",
+          "passages": 1,
+          "top3": [
+            "sup-get-smart-16",
+            "sup-get-smart-10",
+            "prod-home-08"
+          ],
+          "latency_ms": 2931.2,
+          "recall": 1.0,
+          "rr": 0.5,
+          "hit": true,
+          "ndcg": 0.631,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "What's the difference between the Get Clássica and the Get Smart?",
+          "passages": 1,
+          "top3": [
+            "prod-todas-maquininhas-02",
+            "sup-get-smart-16",
+            "sup-get-smart-10"
+          ],
+          "latency_ms": 3020.8,
+          "recall": 1.0,
+          "rr": 0.333,
+          "hit": true,
+          "ndcg": 0.5,
+          "page_recall": 1.0,
+          "page_rr": 0.5,
+          "page_hit": true
+        },
+        {
+          "question": "Preciso ter conta bancária para receber vendas pelo Pix?",
+          "passages": 1,
+          "top3": [
+            "sup-pix-mais-respostas-01",
+            "sup-pix-03",
+            "sup-pix-mais-respostas-17"
+          ],
+          "latency_ms": 2336.7,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "Do I need a bank account to receive my sales via Pix?",
+          "passages": 1,
+          "top3": [
+            "sup-pix-mais-respostas-17",
+            "sup-duvidas-62",
+            "sup-pix-mais-respostas-18"
+          ],
+          "latency_ms": 2809.8,
+          "recall": 0.0,
+          "rr": 0.0,
+          "hit": false,
+          "ndcg": 0.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "Como funciona a antecipação de vendas da Getnet?",
+          "passages": 1,
+          "top3": [
+            "sup-antecipacao-de-vendas-01",
+            "sup-antecipacao-de-vendas-15",
+            "sup-app-getnet-05"
+          ],
+          "latency_ms": 2498.6,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 0.333,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "How does receivables advance work with Getnet?",
+          "passages": 1,
+          "top3": [
+            "sup-antecipacao-de-vendas-15",
+            "sup-antecipacao-de-vendas-05",
+            "sup-app-getnet-04"
+          ],
+          "latency_ms": 2783.4,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 0.5,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "Em quantas vezes posso parcelar uma venda no crediário?",
+          "passages": 1,
+          "top3": [
+            "prod-crediario-03",
+            "prod-crediario-01",
+            "sup-crediario-03"
+          ],
+          "latency_ms": 2651.0,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "How many installments can I split a sale into with the crediário?",
+          "passages": 1,
+          "top3": [
+            "prod-crediario-01",
+            "prod-crediario-03",
+            "sup-crediario-04"
+          ],
+          "latency_ms": 2521.1,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "Posso vender pelo WhatsApp usando o Link de Pagamento?",
+          "passages": 1,
+          "top3": [
+            "prod-link-pagamento-01",
+            "sup-link-de-pagamento-12",
+            "prod-en-online-02"
+          ],
+          "latency_ms": 2773.6,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "Can I sell through WhatsApp using the Payment Link?",
+          "passages": 1,
+          "top3": [
+            "prod-en-online-02",
+            "prod-link-pagamento-01",
+            "sup-link-de-pagamento-12"
+          ],
+          "latency_ms": 2705.6,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 0.75,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "O que é o Pix e quais as vantagens?",
+          "passages": 1,
+          "top3": [
+            "sup-pix-mais-respostas-01",
+            "sup-pix-mais-respostas-13",
+            "prod-pix-01"
+          ],
+          "latency_ms": 1759.0,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -1674,9 +3097,9 @@
           "top3": [
             "sup-pix-mais-respostas-01",
             "prod-pix-01",
-            "sup-pix-mais-respostas-18"
+            "sup-pix-mais-respostas-13"
           ],
-          "latency_ms": 1688.7,
+          "latency_ms": 3125.9,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -1690,61 +3113,10 @@
           "passages": 1,
           "top3": [
             "sup-get-conta-13",
-            "sup-duvidas-26",
-            "sup-operacional-01"
+            "sup-pix-mais-respostas-21",
+            "prod-crediario-06"
           ],
-          "latency_ms": 2168.9,
-          "recall": 1.0,
-          "rr": 0.5,
-          "hit": true,
-          "ndcg": 0.631,
-          "page_recall": 0.5,
-          "page_rr": 0.5,
-          "page_hit": true
-        },
-        {
-          "question": "How do I cancel my Getnet card machine?",
-          "passages": 1,
-          "top3": [
-            "sup-get-conta-13",
-            "sup-duvidas-26",
-            "sup-cancelamento-descredenciamento-02"
-          ],
-          "latency_ms": 2188.9,
-          "recall": 1.0,
-          "rr": 0.5,
-          "hit": true,
-          "ndcg": 0.631,
-          "page_recall": 0.5,
-          "page_rr": 0.5,
-          "page_hit": true
-        },
-        {
-          "question": "Quais bandeiras de cartão a Getnet aceita?",
-          "passages": 1,
-          "top3": [
-            "sup-get-smart-07",
-            "sup-get-tap-07",
-            "prod-home-06"
-          ],
-          "latency_ms": 1967.8,
-          "recall": 1.0,
-          "rr": 1.0,
-          "hit": true,
-          "ndcg": 1.0,
-          "page_recall": 0.6,
-          "page_rr": 1.0,
-          "page_hit": true
-        },
-        {
-          "question": "Which card brands does Getnet accept?",
-          "passages": 1,
-          "top3": [
-            "sup-get-smart-07",
-            "sup-pre-autorizacao-01",
-            "sup-get-tap-07"
-          ],
-          "latency_ms": 1564.8,
+          "latency_ms": 2760.1,
           "recall": 0.0,
           "rr": 0.0,
           "hit": false,
@@ -1754,6 +3126,57 @@
           "page_hit": false
         },
         {
+          "question": "How do I cancel my Getnet card machine?",
+          "passages": 1,
+          "top3": [
+            "sup-get-conta-13",
+            "sup-pix-mais-respostas-21",
+            "prod-crediario-06"
+          ],
+          "latency_ms": 2578.3,
+          "recall": 0.0,
+          "rr": 0.0,
+          "hit": false,
+          "ndcg": 0.0,
+          "page_recall": 0.0,
+          "page_rr": 0.0,
+          "page_hit": false
+        },
+        {
+          "question": "Quais bandeiras de cartão a Getnet aceita?",
+          "passages": 1,
+          "top3": [
+            "sup-get-smart-07",
+            "sup-get-tap-07",
+            "sup-bandeiras-06"
+          ],
+          "latency_ms": 2081.7,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 0.4,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "Which card brands does Getnet accept?",
+          "passages": 1,
+          "top3": [
+            "sup-get-smart-07",
+            "prod-en-online-06",
+            "prod-home-04"
+          ],
+          "latency_ms": 1594.7,
+          "recall": 0.0,
+          "rr": 0.0,
+          "hit": false,
+          "ndcg": 0.0,
+          "page_recall": 1.0,
+          "page_rr": 0.333,
+          "page_hit": true
+        },
+        {
           "question": "O que é a Get Conta?",
           "passages": 1,
           "top3": [
@@ -1761,7 +3184,7 @@
             "sup-get-conta-06",
             "sup-duvidas-41"
           ],
-          "latency_ms": 1489.0,
+          "latency_ms": 1949.8,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -1776,9 +3199,9 @@
           "top3": [
             "sup-get-conta-02",
             "sup-get-conta-06",
-            "sup-pix-mais-respostas-09"
+            "sup-pix-mais-respostas-04"
           ],
-          "latency_ms": 1554.0,
+          "latency_ms": 2183.6,
           "recall": 1.0,
           "rr": 0.5,
           "hit": true,
@@ -1793,14 +3216,14 @@
           "top3": [
             "sup-cancelamento-descredenciamento-01",
             "sup-duvidas-96",
-            "prod-todas-maquininhas-04"
+            "sup-aluguel-06"
           ],
-          "latency_ms": 2015.9,
+          "latency_ms": 3084.5,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
           "ndcg": 1.0,
-          "page_recall": 1.0,
+          "page_recall": 0.667,
           "page_rr": 1.0,
           "page_hit": true
         },
@@ -1812,7 +3235,7 @@
             "sup-duvidas-96",
             "prod-todas-maquininhas-02"
           ],
-          "latency_ms": 1933.9,
+          "latency_ms": 2762.1,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -1829,7 +3252,7 @@
             "sup-crediario-04",
             "sup-antecipacao-de-vendas-13"
           ],
-          "latency_ms": 1751.8,
+          "latency_ms": 2182.1,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -1842,16 +3265,16 @@
           "question": "How long does it take to receive crediário sales?",
           "passages": 1,
           "top3": [
-            "prod-crediario-02",
             "sup-crediario-04",
-            "sup-antecipacao-de-vendas-13"
+            "sup-antecipacao-de-vendas-13",
+            "sup-duvidas-116"
           ],
-          "latency_ms": 1841.6,
+          "latency_ms": 2031.8,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
           "ndcg": 1.0,
-          "page_recall": 0.667,
+          "page_recall": 0.333,
           "page_rr": 1.0,
           "page_hit": true
         },
@@ -1863,7 +3286,7 @@
             "sup-get-conta-07",
             "sup-duvidas-01"
           ],
-          "latency_ms": 1579.0,
+          "latency_ms": 1458.5,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -1878,9 +3301,9 @@
           "top3": [
             "sup-app-getnet-02",
             "sup-get-smart-11",
-            "sup-duvidas-01"
+            "sup-get-conta-07"
           ],
-          "latency_ms": 1539.1,
+          "latency_ms": 1572.2,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -1895,9 +3318,9 @@
           "top3": [
             "sup-get-tap-01",
             "sup-duvidas-45",
-            "sup-duvidas-48"
+            "sup-get-tap-05"
           ],
-          "latency_ms": 1818.1,
+          "latency_ms": 2143.6,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -1912,9 +3335,9 @@
           "top3": [
             "sup-get-tap-01",
             "sup-duvidas-45",
-            "sup-duvidas-48"
+            "sup-get-tap-05"
           ],
-          "latency_ms": 1815.3,
+          "latency_ms": 2009.1,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -1928,14 +3351,14 @@
           "passages": 1,
           "top3": [
             "prod-todas-maquininhas-06",
-            "sup-taxas-02",
+            "prod-todas-maquininhas-04",
             "prod-home-02"
           ],
-          "latency_ms": 2783.6,
-          "recall": 0.0,
-          "rr": 0.0,
-          "hit": false,
-          "ndcg": 0.0,
+          "latency_ms": 3694.3,
+          "recall": 1.0,
+          "rr": 0.5,
+          "hit": true,
+          "ndcg": 0.631,
           "page_recall": 0.25,
           "page_rr": 1.0,
           "page_hit": true
@@ -1945,10 +3368,10 @@
           "passages": 1,
           "top3": [
             "prod-todas-maquininhas-04",
-            "prod-home-03",
-            "sup-taxas-02"
+            "sup-taxas-02",
+            "prod-todas-maquininhas-05"
           ],
-          "latency_ms": 2235.0,
+          "latency_ms": 2919.7,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -1965,7 +3388,7 @@
             "sup-split-de-pagamento-04",
             "sup-duvidas-97"
           ],
-          "latency_ms": 2109.1,
+          "latency_ms": 2145.7,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -1980,9 +3403,9 @@
           "top3": [
             "sup-split-de-pagamento-01",
             "sup-split-de-pagamento-04",
-            "sup-duvidas-97"
+            "sup-duvidas-96"
           ],
-          "latency_ms": 2077.8,
+          "latency_ms": 1891.4,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -1995,17 +3418,17 @@
           "question": "Como funciona a venda parcelada?",
           "passages": 1,
           "top3": [
-            "sup-duvidas-78",
+            "sup-operacional-09",
             "sup-parcelado-01",
-            "sup-operacional-12"
+            "sup-duvidas-78"
           ],
-          "latency_ms": 2453.0,
+          "latency_ms": 2191.3,
           "recall": 1.0,
-          "rr": 1.0,
+          "rr": 0.5,
           "hit": true,
-          "ndcg": 1.0,
+          "ndcg": 0.631,
           "page_recall": 0.667,
-          "page_rr": 1.0,
+          "page_rr": 0.5,
           "page_hit": true
         },
         {
@@ -2013,16 +3436,16 @@
           "passages": 1,
           "top3": [
             "sup-antecipacao-de-vendas-02",
-            "sup-operacional-12",
-            "sup-duvidas-78"
+            "sup-duvidas-78",
+            "sup-split-de-pagamento-04"
           ],
-          "latency_ms": 2089.7,
+          "latency_ms": 2132.0,
           "recall": 1.0,
-          "rr": 0.333,
+          "rr": 0.5,
           "hit": true,
-          "ndcg": 0.5,
+          "ndcg": 0.631,
           "page_recall": 0.5,
-          "page_rr": 0.333,
+          "page_rr": 0.5,
           "page_hit": true
         },
         {
@@ -2033,7 +3456,7 @@
             "sup-plano-light-02",
             "sup-plano-light-04"
           ],
-          "latency_ms": 2862.0,
+          "latency_ms": 2964.0,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -2048,9 +3471,9 @@
           "top3": [
             "sup-duvidas-85",
             "sup-plano-light-02",
-            "sup-plano-light-04"
+            "sup-plano-light-03"
           ],
-          "latency_ms": 2621.0,
+          "latency_ms": 2881.0,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -2067,7 +3490,7 @@
             "sup-tef-captura-pinpad-02",
             "sup-duvidas-112"
           ],
-          "latency_ms": 2472.5,
+          "latency_ms": 2083.2,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -2084,7 +3507,7 @@
             "sup-tef-captura-pinpad-02",
             "sup-duvidas-112"
           ],
-          "latency_ms": 3085.8,
+          "latency_ms": 2614.9,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -2097,15 +3520,15 @@
           "question": "A Get Smart emite nota fiscal?",
           "passages": 1,
           "top3": [
-            "sup-get-smart-10",
             "sup-get-smart-16",
+            "sup-get-smart-10",
             "sup-taxas-19"
           ],
-          "latency_ms": 2568.7,
+          "latency_ms": 2930.7,
           "recall": 1.0,
-          "rr": 0.5,
+          "rr": 1.0,
           "hit": true,
-          "ndcg": 0.631,
+          "ndcg": 1.0,
           "page_recall": 1.0,
           "page_rr": 1.0,
           "page_hit": true
@@ -2118,7 +3541,7 @@
             "sup-get-smart-10",
             "sup-duvidas-05"
           ],
-          "latency_ms": 2536.0,
+          "latency_ms": 2763.9,
           "recall": 1.0,
           "rr": 1.0,
           "hit": true,
@@ -2128,18 +3551,870 @@
           "page_hit": true
         }
       ],
-      "memory_mb": 2367.7,
+      "memory_mb": 2376.0,
+      "config": {
+        "retriever": "hybrid",
+        "embed_model": "intfloat/multilingual-e5-large",
+        "rerank": "cross",
+        "rerank_model": "BAAI/bge-reranker-v2-m3-int8",
+        "rerank_pool": 10
+      }
+    },
+    "dense+cross": {
+      "cases": 38,
+      "positives": 38,
+      "negatives": 18,
+      "recall@3": 0.895,
+      "mrr": 0.794,
+      "hit@3": 0.895,
+      "hit@3_ci": {
+        "k": 34,
+        "n": 38,
+        "lo": 75.9,
+        "hi": 95.8
+      },
+      "ndcg@3": 0.82,
+      "page": {
+        "recall@3": 0.804,
+        "mrr": 0.93,
+        "hit@3": 0.974,
+        "hit@3_ci": {
+          "k": 37,
+          "n": 38,
+          "lo": 86.5,
+          "hi": 99.5
+        }
+      },
+      "latency_ms": {
+        "p50": 2551.7,
+        "p95": 3483.6,
+        "mean": 2611.2
+      },
+      "gate": {
+        "min_score": 12.433,
+        "min_cosine": 0.877,
+        "pos_answered": 0.421,
+        "neg_refused": 0.882,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 16,
+          "n": 38,
+          "lo": 27.9,
+          "hi": 57.8
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 17,
+          "lo": 65.7,
+          "hi": 96.7
+        },
+        "positives": 38,
+        "negatives": 17,
+        "neg_refusal_min": 0.85
+      },
+      "essential": 38,
+      "gold_unresolved": [],
+      "dedupe_aliases": 39,
+      "retriever": "dense+cross",
+      "fallback": "",
+      "questions": [
+        {
+          "question": "Qual a diferença entre a Get Clássica e a Get Smart?",
+          "passages": 1,
+          "top3": [
+            "sup-get-smart-08",
+            "sup-get-smart-10",
+            "prod-home-08"
+          ],
+          "latency_ms": 3291.4,
+          "recall": 1.0,
+          "rr": 0.5,
+          "hit": true,
+          "ndcg": 0.631,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "What's the difference between the Get Clássica and the Get Smart?",
+          "passages": 1,
+          "top3": [
+            "sup-get-smart-08",
+            "prod-home-08",
+            "prod-todas-maquininhas-02"
+          ],
+          "latency_ms": 3340.1,
+          "recall": 0.0,
+          "rr": 0.0,
+          "hit": false,
+          "ndcg": 0.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "Preciso ter conta bancária para receber vendas pelo Pix?",
+          "passages": 1,
+          "top3": [
+            "sup-pix-mais-respostas-01",
+            "sup-pix-mais-respostas-17",
+            "prod-todas-maquininhas-02"
+          ],
+          "latency_ms": 3204.9,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "Do I need a bank account to receive my sales via Pix?",
+          "passages": 1,
+          "top3": [
+            "sup-pix-mais-respostas-01",
+            "sup-duvidas-62",
+            "sup-pix-mais-respostas-18"
+          ],
+          "latency_ms": 3165.2,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "Como funciona a antecipação de vendas da Getnet?",
+          "passages": 1,
+          "top3": [
+            "sup-antecipacao-de-vendas-15",
+            "sup-app-getnet-05",
+            "sup-antecipacao-de-vendas-10"
+          ],
+          "latency_ms": 2465.8,
+          "recall": 0.0,
+          "rr": 0.0,
+          "hit": false,
+          "ndcg": 0.0,
+          "page_recall": 0.333,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "How does receivables advance work with Getnet?",
+          "passages": 1,
+          "top3": [
+            "sup-antecipacao-de-vendas-05",
+            "prod-crediario-01",
+            "sup-taxas-03"
+          ],
+          "latency_ms": 2708.7,
+          "recall": 1.0,
+          "rr": 0.333,
+          "hit": true,
+          "ndcg": 0.5,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "Em quantas vezes posso parcelar uma venda no crediário?",
+          "passages": 1,
+          "top3": [
+            "prod-crediario-03",
+            "prod-crediario-02",
+            "sup-crediario-03"
+          ],
+          "latency_ms": 2299.3,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "How many installments can I split a sale into with the crediário?",
+          "passages": 1,
+          "top3": [
+            "prod-crediario-03",
+            "prod-crediario-01",
+            "sup-crediario-03"
+          ],
+          "latency_ms": 2128.1,
+          "recall": 1.0,
+          "rr": 0.5,
+          "hit": true,
+          "ndcg": 0.631,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "Posso vender pelo WhatsApp usando o Link de Pagamento?",
+          "passages": 1,
+          "top3": [
+            "prod-link-pagamento-01",
+            "sup-link-de-pagamento-12",
+            "prod-en-online-02"
+          ],
+          "latency_ms": 2542.9,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "Can I sell through WhatsApp using the Payment Link?",
+          "passages": 1,
+          "top3": [
+            "prod-en-online-02",
+            "prod-link-pagamento-01",
+            "sup-link-de-pagamento-12"
+          ],
+          "latency_ms": 2722.4,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 0.75,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "O que é o Pix e quais as vantagens?",
+          "passages": 1,
+          "top3": [
+            "sup-pix-mais-respostas-01",
+            "sup-pix-mais-respostas-18",
+            "sup-pix-01"
+          ],
+          "latency_ms": 3224.9,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "What is Pix and what are its advantages?",
+          "passages": 1,
+          "top3": [
+            "sup-pix-mais-respostas-01",
+            "prod-pix-01",
+            "sup-pix-mais-respostas-18"
+          ],
+          "latency_ms": 3420.7,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "Como cancelar minha maquininha Getnet?",
+          "passages": 1,
+          "top3": [
+            "sup-get-conta-13",
+            "sup-duvidas-26",
+            "sup-operacional-01"
+          ],
+          "latency_ms": 2576.4,
+          "recall": 1.0,
+          "rr": 0.5,
+          "hit": true,
+          "ndcg": 0.631,
+          "page_recall": 0.5,
+          "page_rr": 0.5,
+          "page_hit": true
+        },
+        {
+          "question": "How do I cancel my Getnet card machine?",
+          "passages": 1,
+          "top3": [
+            "sup-get-conta-13",
+            "sup-duvidas-26",
+            "sup-cancelamento-descredenciamento-02"
+          ],
+          "latency_ms": 2551.7,
+          "recall": 1.0,
+          "rr": 0.5,
+          "hit": true,
+          "ndcg": 0.631,
+          "page_recall": 0.5,
+          "page_rr": 0.5,
+          "page_hit": true
+        },
+        {
+          "question": "Quais bandeiras de cartão a Getnet aceita?",
+          "passages": 1,
+          "top3": [
+            "sup-get-smart-07",
+            "sup-get-tap-07",
+            "prod-home-06"
+          ],
+          "latency_ms": 3827.4,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 0.6,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "Which card brands does Getnet accept?",
+          "passages": 1,
+          "top3": [
+            "sup-get-smart-07",
+            "sup-pre-autorizacao-01",
+            "sup-get-tap-07"
+          ],
+          "latency_ms": 3196.0,
+          "recall": 0.0,
+          "rr": 0.0,
+          "hit": false,
+          "ndcg": 0.0,
+          "page_recall": 0.0,
+          "page_rr": 0.0,
+          "page_hit": false
+        },
+        {
+          "question": "O que é a Get Conta?",
+          "passages": 1,
+          "top3": [
+            "sup-get-conta-02",
+            "sup-get-conta-06",
+            "sup-duvidas-41"
+          ],
+          "latency_ms": 2372.4,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "What is the Get Conta account?",
+          "passages": 1,
+          "top3": [
+            "sup-get-conta-02",
+            "sup-get-conta-06",
+            "sup-pix-mais-respostas-09"
+          ],
+          "latency_ms": 2305.1,
+          "recall": 1.0,
+          "rr": 0.5,
+          "hit": true,
+          "ndcg": 0.631,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "Como funciona o aluguel da maquininha?",
+          "passages": 1,
+          "top3": [
+            "sup-cancelamento-descredenciamento-01",
+            "sup-aluguel-06",
+            "sup-duvidas-96"
+          ],
+          "latency_ms": 2716.7,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 0.667,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "How does the card machine rental work?",
+          "passages": 1,
+          "top3": [
+            "sup-cancelamento-descredenciamento-01",
+            "sup-duvidas-96",
+            "prod-todas-maquininhas-02"
+          ],
+          "latency_ms": 3242.8,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "Quanto tempo leva para receber o valor das vendas no crediário?",
+          "passages": 1,
+          "top3": [
+            "prod-crediario-02",
+            "sup-crediario-04",
+            "sup-antecipacao-de-vendas-13"
+          ],
+          "latency_ms": 1862.9,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 0.667,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "How long does it take to receive crediário sales?",
+          "passages": 1,
+          "top3": [
+            "prod-crediario-02",
+            "sup-crediario-04",
+            "sup-antecipacao-de-vendas-13"
+          ],
+          "latency_ms": 1846.7,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 0.667,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "Como baixar o app Getnet?",
+          "passages": 1,
+          "top3": [
+            "sup-app-getnet-02",
+            "sup-get-conta-07",
+            "sup-duvidas-01"
+          ],
+          "latency_ms": 1729.7,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "How do I download the Getnet app?",
+          "passages": 1,
+          "top3": [
+            "sup-app-getnet-02",
+            "sup-get-smart-11",
+            "sup-duvidas-01"
+          ],
+          "latency_ms": 1339.1,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 0.6,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "O que é o Get Tap?",
+          "passages": 1,
+          "top3": [
+            "sup-get-tap-01",
+            "sup-duvidas-45",
+            "sup-duvidas-48"
+          ],
+          "latency_ms": 1943.9,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "What is Get Tap?",
+          "passages": 1,
+          "top3": [
+            "sup-get-tap-01",
+            "sup-duvidas-45",
+            "sup-duvidas-48"
+          ],
+          "latency_ms": 2140.7,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "Quais são as taxas da maquininha Getnet?",
+          "passages": 1,
+          "top3": [
+            "prod-todas-maquininhas-06",
+            "sup-taxas-02",
+            "prod-home-02"
+          ],
+          "latency_ms": 3483.6,
+          "recall": 0.0,
+          "rr": 0.0,
+          "hit": false,
+          "ndcg": 0.0,
+          "page_recall": 0.25,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "What are the Getnet card machine fees?",
+          "passages": 1,
+          "top3": [
+            "prod-todas-maquininhas-04",
+            "prod-home-03",
+            "sup-taxas-02"
+          ],
+          "latency_ms": 2820.8,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 0.5,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "O que é o split de pagamento?",
+          "passages": 1,
+          "top3": [
+            "sup-split-de-pagamento-01",
+            "sup-split-de-pagamento-04",
+            "sup-duvidas-97"
+          ],
+          "latency_ms": 2254.9,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "What is payment split?",
+          "passages": 1,
+          "top3": [
+            "sup-split-de-pagamento-01",
+            "sup-split-de-pagamento-04",
+            "sup-duvidas-96"
+          ],
+          "latency_ms": 2249.3,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "Como funciona a venda parcelada?",
+          "passages": 1,
+          "top3": [
+            "sup-parcelado-01",
+            "sup-duvidas-78",
+            "sup-operacional-12"
+          ],
+          "latency_ms": 1982.6,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 0.667,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "How does an installment sale work?",
+          "passages": 1,
+          "top3": [
+            "sup-antecipacao-de-vendas-02",
+            "sup-operacional-12",
+            "sup-duvidas-78"
+          ],
+          "latency_ms": 2213.3,
+          "recall": 1.0,
+          "rr": 0.333,
+          "hit": true,
+          "ndcg": 0.5,
+          "page_recall": 0.5,
+          "page_rr": 0.333,
+          "page_hit": true
+        },
+        {
+          "question": "O que é o Plano Light?",
+          "passages": 1,
+          "top3": [
+            "sup-duvidas-85",
+            "sup-plano-light-02",
+            "sup-plano-light-04"
+          ],
+          "latency_ms": 2761.0,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "What is the Plano Light plan?",
+          "passages": 1,
+          "top3": [
+            "sup-duvidas-85",
+            "sup-plano-light-02",
+            "sup-plano-light-04"
+          ],
+          "latency_ms": 2811.5,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "Como funciona o TEF e o pinpad?",
+          "passages": 1,
+          "top3": [
+            "sup-tef-captura-pinpad-01",
+            "sup-tef-captura-pinpad-02",
+            "sup-duvidas-112"
+          ],
+          "latency_ms": 2181.0,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 0.667,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "How do TEF and the pinpad work?",
+          "passages": 1,
+          "top3": [
+            "sup-tef-captura-pinpad-01",
+            "sup-tef-captura-pinpad-02",
+            "sup-duvidas-112"
+          ],
+          "latency_ms": 1999.7,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 0.667,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "A Get Smart emite nota fiscal?",
+          "passages": 1,
+          "top3": [
+            "sup-get-smart-16",
+            "sup-get-smart-10",
+            "sup-taxas-19"
+          ],
+          "latency_ms": 3235.6,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        },
+        {
+          "question": "Can the Get Smart issue invoices?",
+          "passages": 1,
+          "top3": [
+            "sup-get-smart-16",
+            "sup-get-smart-10",
+            "sup-duvidas-05"
+          ],
+          "latency_ms": 3065.2,
+          "recall": 1.0,
+          "rr": 1.0,
+          "hit": true,
+          "ndcg": 1.0,
+          "page_recall": 1.0,
+          "page_rr": 1.0,
+          "page_hit": true
+        }
+      ],
+      "memory_mb": 2376.0,
       "config": {
         "retriever": "dense",
         "embed_model": "intfloat/multilingual-e5-large",
         "rerank": "cross",
         "rerank_model": "BAAI/bge-reranker-v2-m3-int8",
-        "rerank_pool": 10,
-        "rerank_chars": 600
+        "rerank_pool": 10
       }
     }
   },
   "diff_vs_baseline": {
+    "hybrid": {
+      "improved": [
+        {
+          "question": "Qual a diferença entre a Get Clássica e a Get Smart?",
+          "recall": [
+            0.0,
+            1.0
+          ],
+          "rr": [
+            0.0,
+            0.5
+          ]
+        },
+        {
+          "question": "What's the difference between the Get Clássica and the Get Smart?",
+          "recall": [
+            0.0,
+            1.0
+          ],
+          "rr": [
+            0.0,
+            0.333
+          ]
+        },
+        {
+          "question": "Preciso ter conta bancária para receber vendas pelo Pix?",
+          "recall": [
+            0.0,
+            1.0
+          ],
+          "rr": [
+            0.0,
+            0.5
+          ]
+        },
+        {
+          "question": "How does receivables advance work with Getnet?",
+          "recall": [
+            0.0,
+            1.0
+          ],
+          "rr": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "question": "Em quantas vezes posso parcelar uma venda no crediário?",
+          "recall": [
+            0.0,
+            1.0
+          ],
+          "rr": [
+            0.0,
+            0.5
+          ]
+        },
+        {
+          "question": "How many installments can I split a sale into with the crediário?",
+          "recall": [
+            0.0,
+            1.0
+          ],
+          "rr": [
+            0.0,
+            0.5
+          ]
+        },
+        {
+          "question": "What is Pix and what are its advantages?",
+          "recall": [
+            0.0,
+            1.0
+          ],
+          "rr": [
+            0.0,
+            0.5
+          ]
+        },
+        {
+          "question": "Quais bandeiras de cartão a Getnet aceita?",
+          "recall": [
+            1.0,
+            1.0
+          ],
+          "rr": [
+            0.333,
+            0.5
+          ]
+        },
+        {
+          "question": "How long does it take to receive crediário sales?",
+          "recall": [
+            0.0,
+            1.0
+          ],
+          "rr": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "question": "Quais são as taxas da maquininha Getnet?",
+          "recall": [
+            0.0,
+            1.0
+          ],
+          "rr": [
+            0.0,
+            0.5
+          ]
+        },
+        {
+          "question": "What is payment split?",
+          "recall": [
+            1.0,
+            1.0
+          ],
+          "rr": [
+            0.5,
+            1.0
+          ]
+        }
+      ],
+      "regressed": [
+        {
+          "question": "Como funciona o aluguel da maquininha?",
+          "recall": [
+            1.0,
+            0.0
+          ],
+          "rr": [
+            0.333,
+            0.0
+          ]
+        }
+      ],
+      "same": 26
+    },
     "dense": {
       "improved": [
         {
@@ -2356,7 +4631,112 @@
       ],
       "same": 19
     },
-    "dense+cross": {
+    "bm25+cross": {
+      "improved": [
+        {
+          "question": "Como funciona a antecipação de vendas da Getnet?",
+          "recall": [
+            1.0,
+            1.0
+          ],
+          "rr": [
+            0.5,
+            1.0
+          ]
+        },
+        {
+          "question": "How does receivables advance work with Getnet?",
+          "recall": [
+            0.0,
+            1.0
+          ],
+          "rr": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "question": "Em quantas vezes posso parcelar uma venda no crediário?",
+          "recall": [
+            0.0,
+            1.0
+          ],
+          "rr": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "question": "How many installments can I split a sale into with the crediário?",
+          "recall": [
+            0.0,
+            1.0
+          ],
+          "rr": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "question": "Quais bandeiras de cartão a Getnet aceita?",
+          "recall": [
+            1.0,
+            1.0
+          ],
+          "rr": [
+            0.333,
+            1.0
+          ]
+        },
+        {
+          "question": "Como funciona o aluguel da maquininha?",
+          "recall": [
+            1.0,
+            1.0
+          ],
+          "rr": [
+            0.333,
+            1.0
+          ]
+        },
+        {
+          "question": "Quais são as taxas da maquininha Getnet?",
+          "recall": [
+            0.0,
+            1.0
+          ],
+          "rr": [
+            0.0,
+            0.5
+          ]
+        },
+        {
+          "question": "What is payment split?",
+          "recall": [
+            1.0,
+            1.0
+          ],
+          "rr": [
+            0.5,
+            1.0
+          ]
+        },
+        {
+          "question": "A Get Smart emite nota fiscal?",
+          "recall": [
+            1.0,
+            1.0
+          ],
+          "rr": [
+            0.5,
+            1.0
+          ]
+        }
+      ],
+      "regressed": [],
+      "same": 29
+    },
+    "hybrid+cross": {
       "improved": [
         {
           "question": "Qual a diferença entre a Get Clássica e a Get Smart?",
@@ -2371,6 +4751,211 @@
         },
         {
           "question": "What's the difference between the Get Clássica and the Get Smart?",
+          "recall": [
+            0.0,
+            1.0
+          ],
+          "rr": [
+            0.0,
+            0.333
+          ]
+        },
+        {
+          "question": "Preciso ter conta bancária para receber vendas pelo Pix?",
+          "recall": [
+            0.0,
+            1.0
+          ],
+          "rr": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "question": "Como funciona a antecipação de vendas da Getnet?",
+          "recall": [
+            1.0,
+            1.0
+          ],
+          "rr": [
+            0.5,
+            1.0
+          ]
+        },
+        {
+          "question": "How does receivables advance work with Getnet?",
+          "recall": [
+            0.0,
+            1.0
+          ],
+          "rr": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "question": "Em quantas vezes posso parcelar uma venda no crediário?",
+          "recall": [
+            0.0,
+            1.0
+          ],
+          "rr": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "question": "How many installments can I split a sale into with the crediário?",
+          "recall": [
+            0.0,
+            1.0
+          ],
+          "rr": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "question": "What is Pix and what are its advantages?",
+          "recall": [
+            0.0,
+            1.0
+          ],
+          "rr": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "question": "Quais bandeiras de cartão a Getnet aceita?",
+          "recall": [
+            1.0,
+            1.0
+          ],
+          "rr": [
+            0.333,
+            1.0
+          ]
+        },
+        {
+          "question": "Como funciona o aluguel da maquininha?",
+          "recall": [
+            1.0,
+            1.0
+          ],
+          "rr": [
+            0.333,
+            1.0
+          ]
+        },
+        {
+          "question": "How does the card machine rental work?",
+          "recall": [
+            0.0,
+            1.0
+          ],
+          "rr": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "question": "How long does it take to receive crediário sales?",
+          "recall": [
+            0.0,
+            1.0
+          ],
+          "rr": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "question": "Quais são as taxas da maquininha Getnet?",
+          "recall": [
+            0.0,
+            1.0
+          ],
+          "rr": [
+            0.0,
+            0.5
+          ]
+        },
+        {
+          "question": "What are the Getnet card machine fees?",
+          "recall": [
+            0.0,
+            1.0
+          ],
+          "rr": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "question": "What is payment split?",
+          "recall": [
+            1.0,
+            1.0
+          ],
+          "rr": [
+            0.5,
+            1.0
+          ]
+        },
+        {
+          "question": "How does an installment sale work?",
+          "recall": [
+            0.0,
+            1.0
+          ],
+          "rr": [
+            0.0,
+            0.5
+          ]
+        },
+        {
+          "question": "A Get Smart emite nota fiscal?",
+          "recall": [
+            1.0,
+            1.0
+          ],
+          "rr": [
+            0.5,
+            1.0
+          ]
+        }
+      ],
+      "regressed": [
+        {
+          "question": "What is the Get Conta account?",
+          "recall": [
+            1.0,
+            1.0
+          ],
+          "rr": [
+            1.0,
+            0.5
+          ]
+        },
+        {
+          "question": "Como funciona a venda parcelada?",
+          "recall": [
+            1.0,
+            1.0
+          ],
+          "rr": [
+            1.0,
+            0.5
+          ]
+        }
+      ],
+      "same": 19
+    },
+    "dense+cross": {
+      "improved": [
+        {
+          "question": "Qual a diferença entre a Get Clássica e a Get Smart?",
           "recall": [
             0.0,
             1.0
@@ -2410,7 +4995,7 @@
           ],
           "rr": [
             0.0,
-            0.5
+            0.333
           ]
         },
         {
@@ -2544,6 +5129,17 @@
             0.0,
             0.333
           ]
+        },
+        {
+          "question": "A Get Smart emite nota fiscal?",
+          "recall": [
+            1.0,
+            1.0
+          ],
+          "rr": [
+            0.5,
+            1.0
+          ]
         }
       ],
       "regressed": [
@@ -2551,11 +5147,11 @@
           "question": "Como funciona a antecipação de vendas da Getnet?",
           "recall": [
             1.0,
-            1.0
+            0.0
           ],
           "rr": [
             0.5,
-            0.333
+            0.0
           ]
         },
         {

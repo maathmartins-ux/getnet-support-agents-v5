@@ -59,6 +59,47 @@ Linhas do kit no commit de scaffold × linhas escritas no relógio, por pasta (g
 arquivos gerados, como `evals/results/`, ficam fora da conta):
 
 <!-- kit:begin -->
+| pasta | linhas do kit | + no relógio | − no relógio | arquivos do kit alterados |
+|---|---:|---:|---:|---:|
+| `.claude` | 121 | 0 | 0 | 0 |
+| `.dockerignore` | 14 | 0 | 0 | 0 |
+| `.env.example` | 38 | 0 | 0 | 0 |
+| `.github` | 136 | 0 | 0 | 0 |
+| `.gitignore` | 7 | 0 | 0 | 0 |
+| `.gitleaks.toml` | 14 | 0 | 0 | 0 |
+| `.trivyignore` | 8 | 0 | 0 | 0 |
+| `Dockerfile` | 57 | 0 | 0 | 0 |
+| `Makefile` | 33 | 0 | 0 | 0 |
+| `OWNERSHIP.json` | 88 | 0 | 0 | 0 |
+| `README.md` | 129 | 0 | 0 | 0 |
+| `data` | 34 | 453 | 33 | 4 |
+| `data/crm` | 0 | 23 | 0 | 0 |
+| `data/intent_examples.d` | 0 | 12 | 0 | 0 |
+| `data/knowledge` | 0 | 341 | 0 | 0 |
+| `docker-compose.demo.yml` | 10 | 0 | 0 | 0 |
+| `docker-compose.hardened.yml` | 37 | 0 | 0 | 0 |
+| `docker-compose.scale.yml` | 28 | 0 | 0 | 0 |
+| `docker-compose.yml` | 91 | 0 | 0 | 0 |
+| `docs` | 411 | 875 | 21 | 2 |
+| `docs/adr` | 142 | 76 | 1 | 1 |
+| `docs/changelog.d` | 558 | 0 | 0 | 0 |
+| `evals` | 3272 | 322 | 27 | 3 |
+| `evals/cases.d` | 0 | 85 | 0 | 0 |
+| `evals/cassettes` | 0 | 2208 | 0 | 0 |
+| `evals/judge_calibration.d` | 0 | 48 | 0 | 0 |
+| `evals/proxy` | 286 | 0 | 0 | 0 |
+| `evals/retrieval.d` | 0 | 116 | 0 | 0 |
+| `ops` | 651 | 0 | 0 | 0 |
+| `pyproject.toml` | 51 | 0 | 0 | 0 |
+| `requirements-dev.lock` | 252 | 0 | 0 | 0 |
+| `requirements-hybrid.lock` | 282 | 0 | 0 | 0 |
+| `requirements.lock` | 149 | 0 | 0 | 0 |
+| `scripts` | 3563 | 0 | 0 | 0 |
+| `src/app` | 9047 | 642 | 0 | 0 |
+| `tests` | 8666 | 256 | 0 | 0 |
+| `tests/fixtures` | 70 | 0 | 0 | 0 |
+
+Total: **28245** linhas do kit (commit `5f28b22`) e **5457** escritas no relógio (16% do total). Arquivos do kit alterados no relógio: 10. Fora da conta, por serem gerados: 72236 linhas em `evals/results/`.
 <!-- kit:end -->
 
 Linha do tempo commit a commit, com as tags `clock-start` e `clock-end`: [TIMESHEET.md](TIMESHEET.md).
