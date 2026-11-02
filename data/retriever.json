@@ -1,10 +1,10 @@
 {
   "_doc": "gerado por `python -m evals.run_evals --choose-retriever --apply`; não edite à mão",
-  "chosen_at": "2026-11-02T18:22:30+00:00",
-  "git_sha": "28913d4",
+  "chosen_at": "2026-11-02T18:44:01+00:00",
+  "git_sha": "c081632",
   "gold": "retrieval.jsonl",
-  "criterion": "maior MRR com p95 <= 1500 ms e RAM <= 4096 MB (empate: Recall@3, depois p95)",
-  "latency_budget_ms": 1500.0,
+  "criterion": "maior MRR com p95 <= 3000 ms e RAM <= 4096 MB (empate: Recall@3, depois p95)",
+  "latency_budget_ms": 3000.0,
   "ram_budget_mb": 4096.0,
   "chosen": "dense",
   "choice": {
@@ -12,11 +12,13 @@
     "embed_model": "intfloat/multilingual-e5-large",
     "gate": {
       "min_score": 12.433,
-      "min_cosine": 0.88
+      "min_cosine": 0.82
     }
   },
   "rejected": {
-    "dense+cross": "p95 2862.0 ms > orçamento 1500 ms"
+    "bm25+cross": "p95 3531.3 ms > orçamento 3000 ms",
+    "hybrid+cross": "p95 3125.9 ms > orçamento 3000 ms",
+    "dense+cross": "p95 3483.6 ms > orçamento 3000 ms"
   },
   "measured": {
     "bm25": {
@@ -44,10 +46,10 @@
       },
       "latency_ms": {
         "p50": 0.8,
-        "p95": 2.0,
-        "mean": 1.0
+        "p95": 1.3,
+        "mean": 0.9
       },
-      "memory_mb": 40.5,
+      "memory_mb": 40.1,
       "dedupe_aliases": 39,
       "fallback": "",
       "config": {
@@ -57,7 +59,7 @@
         "min_score": 12.433,
         "min_cosine": 2.0,
         "pos_answered": 0.158,
-        "neg_refused": 0.944,
+        "neg_refused": 0.941,
         "meets_floor": true,
         "pos_ci": {
           "k": 6,
@@ -66,13 +68,71 @@
           "hi": 30.4
         },
         "neg_ci": {
-          "k": 17,
-          "n": 18,
-          "lo": 74.2,
+          "k": 16,
+          "n": 17,
+          "lo": 73.0,
           "hi": 99.0
         },
         "positives": 38,
-        "negatives": 18,
+        "negatives": 17,
+        "neg_refusal_min": 0.85
+      }
+    },
+    "hybrid": {
+      "cases": 38,
+      "recall@3": 0.789,
+      "mrr": 0.653,
+      "hit@3": 0.789,
+      "hit@3_ci": {
+        "k": 30,
+        "n": 38,
+        "lo": 63.7,
+        "hi": 88.9
+      },
+      "ndcg@3": 0.689,
+      "page": {
+        "recall@3": 0.68,
+        "mrr": 0.803,
+        "hit@3": 0.842,
+        "hit@3_ci": {
+          "k": 32,
+          "n": 38,
+          "lo": 69.6,
+          "hi": 92.6
+        }
+      },
+      "latency_ms": {
+        "p50": 83.3,
+        "p95": 119.9,
+        "mean": 86.9
+      },
+      "memory_mb": 1541.3,
+      "dedupe_aliases": 39,
+      "fallback": "",
+      "config": {
+        "retriever": "hybrid",
+        "embed_model": "intfloat/multilingual-e5-large"
+      },
+      "gate": {
+        "min_score": 12.433,
+        "min_cosine": 0.877,
+        "pos_answered": 0.447,
+        "neg_refused": 0.882,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 17,
+          "n": 38,
+          "lo": 30.1,
+          "hi": 60.3
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 17,
+          "lo": 65.7,
+          "hi": 96.7
+        },
+        "positives": 38,
+        "negatives": 17,
         "neg_refusal_min": 0.85
       }
     },
@@ -100,11 +160,11 @@
         }
       },
       "latency_ms": {
-        "p50": 82.4,
-        "p95": 234.8,
-        "mean": 92.7
+        "p50": 81.0,
+        "p95": 120.1,
+        "mean": 86.1
       },
-      "memory_mb": 1541.0,
+      "memory_mb": 1541.3,
       "dedupe_aliases": 39,
       "fallback": "",
       "config": {
@@ -115,7 +175,7 @@
         "min_score": 12.433,
         "min_cosine": 0.88,
         "pos_answered": 0.421,
-        "neg_refused": 0.944,
+        "neg_refused": 0.941,
         "meets_floor": true,
         "pos_ci": {
           "k": 16,
@@ -124,30 +184,151 @@
           "hi": 57.8
         },
         "neg_ci": {
-          "k": 17,
-          "n": 18,
-          "lo": 74.2,
+          "k": 16,
+          "n": 17,
+          "lo": 73.0,
           "hi": 99.0
         },
         "positives": 38,
-        "negatives": 18,
+        "negatives": 17,
+        "neg_refusal_min": 0.85
+      }
+    },
+    "bm25+cross": {
+      "cases": 38,
+      "recall@3": 0.684,
+      "mrr": 0.671,
+      "hit@3": 0.684,
+      "hit@3_ci": {
+        "k": 26,
+        "n": 38,
+        "lo": 52.5,
+        "hi": 80.9
+      },
+      "ndcg@3": 0.674,
+      "page": {
+        "recall@3": 0.736,
+        "mrr": 0.789,
+        "hit@3": 0.842,
+        "hit@3_ci": {
+          "k": 32,
+          "n": 38,
+          "lo": 69.6,
+          "hi": 92.6
+        }
+      },
+      "latency_ms": {
+        "p50": 2405.0,
+        "p95": 3531.3,
+        "mean": 2379.0
+      },
+      "memory_mb": 874.8,
+      "dedupe_aliases": 39,
+      "fallback": "",
+      "config": {
+        "retriever": "bm25",
+        "rerank": "cross",
+        "rerank_model": "BAAI/bge-reranker-v2-m3-int8",
+        "rerank_pool": 10
+      },
+      "gate": {
+        "min_score": 12.433,
+        "min_cosine": 2.0,
+        "pos_answered": 0.158,
+        "neg_refused": 0.941,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 6,
+          "n": 38,
+          "lo": 7.4,
+          "hi": 30.4
+        },
+        "neg_ci": {
+          "k": 16,
+          "n": 17,
+          "lo": 73.0,
+          "hi": 99.0
+        },
+        "positives": 38,
+        "negatives": 17,
+        "neg_refusal_min": 0.85
+      }
+    },
+    "hybrid+cross": {
+      "cases": 38,
+      "recall@3": 0.895,
+      "mrr": 0.811,
+      "hit@3": 0.895,
+      "hit@3_ci": {
+        "k": 34,
+        "n": 38,
+        "lo": 75.9,
+        "hi": 95.8
+      },
+      "ndcg@3": 0.833,
+      "page": {
+        "recall@3": 0.776,
+        "mrr": 0.89,
+        "hit@3": 0.947,
+        "hit@3_ci": {
+          "k": 36,
+          "n": 38,
+          "lo": 82.7,
+          "hi": 98.5
+        }
+      },
+      "latency_ms": {
+        "p50": 2521.1,
+        "p95": 3125.9,
+        "mean": 2461.1
+      },
+      "memory_mb": 2376.0,
+      "dedupe_aliases": 39,
+      "fallback": "",
+      "config": {
+        "retriever": "hybrid",
+        "embed_model": "intfloat/multilingual-e5-large",
+        "rerank": "cross",
+        "rerank_model": "BAAI/bge-reranker-v2-m3-int8",
+        "rerank_pool": 10
+      },
+      "gate": {
+        "min_score": 12.433,
+        "min_cosine": 0.877,
+        "pos_answered": 0.447,
+        "neg_refused": 0.882,
+        "meets_floor": true,
+        "pos_ci": {
+          "k": 17,
+          "n": 38,
+          "lo": 30.1,
+          "hi": 60.3
+        },
+        "neg_ci": {
+          "k": 15,
+          "n": 17,
+          "lo": 65.7,
+          "hi": 96.7
+        },
+        "positives": 38,
+        "negatives": 17,
         "neg_refusal_min": 0.85
       }
     },
     "dense+cross": {
       "cases": 38,
-      "recall@3": 0.947,
-      "mrr": 0.807,
-      "hit@3": 0.947,
+      "recall@3": 0.895,
+      "mrr": 0.794,
+      "hit@3": 0.895,
       "hit@3_ci": {
-        "k": 36,
+        "k": 34,
         "n": 38,
-        "lo": 82.7,
-        "hi": 98.5
+        "lo": 75.9,
+        "hi": 95.8
       },
-      "ndcg@3": 0.843,
+      "ndcg@3": 0.82,
       "page": {
-        "recall@3": 0.821,
+        "recall@3": 0.804,
         "mrr": 0.93,
         "hit@3": 0.974,
         "hit@3_ci": {
@@ -158,11 +339,11 @@
         }
       },
       "latency_ms": {
-        "p50": 1933.9,
-        "p95": 2862.0,
-        "mean": 2036.5
+        "p50": 2551.7,
+        "p95": 3483.6,
+        "mean": 2611.2
       },
-      "memory_mb": 2367.7,
+      "memory_mb": 2376.0,
       "dedupe_aliases": 39,
       "fallback": "",
       "config": {
@@ -170,14 +351,13 @@
         "embed_model": "intfloat/multilingual-e5-large",
         "rerank": "cross",
         "rerank_model": "BAAI/bge-reranker-v2-m3-int8",
-        "rerank_pool": 10,
-        "rerank_chars": 600
+        "rerank_pool": 10
       },
       "gate": {
         "min_score": 12.433,
         "min_cosine": 0.877,
         "pos_answered": 0.421,
-        "neg_refused": 0.889,
+        "neg_refused": 0.882,
         "meets_floor": true,
         "pos_ci": {
           "k": 16,
@@ -186,15 +366,16 @@
           "hi": 57.8
         },
         "neg_ci": {
-          "k": 16,
-          "n": 18,
-          "lo": 67.2,
-          "hi": 96.9
+          "k": 15,
+          "n": 17,
+          "lo": 65.7,
+          "hi": 96.7
         },
         "positives": 38,
-        "negatives": 18,
+        "negatives": 17,
         "neg_refusal_min": 0.85
       }
     }
-  }
+  },
+  "gate_note": "min_cosine 0.88 -> 0.82 pela M (rodada 1: official-01/04/06/09 recusados por faq_no_source; cosseno medido 0,82-0,88 com e sem fonte, o portao nao separa; a recusa sem fonte fica com o Knowledge LLM, not_in_sources)"
 }
