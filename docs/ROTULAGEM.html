@@ -1,0 +1,483 @@
+<title>Conferência de respostas</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:opsz,wght@9..144,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: uma situação por tela, coluna de leitura (~44rem), conversa em balões, "em mãos" em tabelas, 3 perguntas
+   de sim/não e o resultado calculado; barra de progresso fixa no topo. */
+:root {
+  --bg: #f5f6f2;
+  --surface: #ffffff;
+  --fg: #1c231f;
+  --muted: #5b6660;
+  --line: #d7ddd7;
+  --accent: #1d5875;
+  --client: #e3eee7;
+  --bot: #ffffff;
+  --ok: #1b7546;
+  --ok-soft: #dff1e6;
+  --bad: #b2352a;
+  --bad-soft: #f8e2df;
+  --quote: #edf0eb;
+  --on-strong: #ffffff;
+  --f-body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --f-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --f-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #131816; --surface: #1b221f; --fg: #e5eae6; --muted: #9ba79f; --line: #2e3732; --accent: #82bcd9;
+    --client: #20322a; --bot: #1b221f; --ok: #72d39b; --ok-soft: #1b3226; --bad: #f2897c; --bad-soft: #3b2220;
+    --quote: #212925; --on-strong: #10150f; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #131816; --surface: #1b221f; --fg: #e5eae6; --muted: #9ba79f; --line: #2e3732; --accent: #82bcd9;
+  --client: #20322a; --bot: #1b221f; --ok: #72d39b; --ok-soft: #1b3226; --bad: #f2897c; --bad-soft: #3b2220;
+  --quote: #212925; --on-strong: #10150f; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { background: var(--bg); color: var(--fg); font: 17px/1.55 var(--f-body); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface); }
+.wrap { max-width: 44rem; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 0 3rem; }
+header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--surface); border-bottom: 1px solid var(--line); }
+header.top .wrap { padding-block: .6rem; display: flex; flex-wrap: wrap; gap: .35rem 1rem; align-items: center; }
+.brand { font-family: var(--f-display); font-size: 1.1rem; margin: 0; flex: 1 1 auto; }
+.status { font-size: .85rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.status.err { color: var(--bad); }
+.bar { flex: 1 1 100%; height: 6px; border-radius: 3px; background: var(--line); overflow: hidden; }
+.bar span { display: block; height: 100%; width: 0; background: var(--accent); transition: width .25s; }
+h2 { font-family: var(--f-display); font-size: 1.55rem; line-height: 1.2; margin: 1.5rem 0 .5rem; text-wrap: balance; }
+p { margin: .45rem 0; max-width: 65ch; }
+.kicker { font: 600 .74rem var(--f-mono); text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 1.25rem 0 .4rem; }
+ol.steps { padding-left: 1.3rem; margin: .5rem 0; display: grid; gap: .4rem; }
+.examples { display: grid; gap: 1rem; margin: .75rem 0; }
+.example { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: .85rem 1rem; min-width: 0; }
+.example .tag { font-weight: 700; }
+.example.good .tag { color: var(--ok); }
+.example.badex .tag { color: var(--bad); }
+.picker { display: flex; flex-wrap: wrap; gap: .6rem; margin: .5rem 0 1rem; }
+.btn { font: 700 1rem var(--f-body); padding: .75rem 1.2rem; border-radius: 10px; border: 2px solid var(--accent); background: transparent; color: var(--accent); cursor: pointer; min-height: 48px; }
+.btn.primary { background: var(--accent); color: var(--surface); }
+.picker .btn[aria-pressed="true"] { background: var(--accent); color: var(--surface); }
+.btn:disabled { opacity: .45; cursor: not-allowed; }
+.notice { border: 1px solid var(--bad); background: var(--bad-soft); border-radius: 8px; padding: .7rem 1rem; margin: 1rem 0; }
+.chat { display: grid; gap: .6rem; margin: .5rem 0 1rem; }
+.bubble { max-width: 92%; border-radius: 14px; padding: .65rem .9rem; min-width: 0; overflow-wrap: anywhere; }
+.bubble .who { font: 600 .72rem var(--f-mono); text-transform: uppercase; letter-spacing: .07em; color: var(--muted); display: block; margin-bottom: .2rem; }
+.bubble.client { justify-self: end; background: var(--client); border-bottom-right-radius: 4px; }
+.bubble.client.prev { opacity: .8; }
+.bubble.bot { justify-self: start; background: var(--bot); border: 1px solid var(--line); border-bottom-left-radius: 4px; }
+.bubble p { margin: .3rem 0; }
+.bubble ul { margin: .3rem 0; padding-left: 1.2rem; }
+.tr { margin-top: .5rem; padding-top: .5rem; border-top: 1px dashed var(--line); font-size: .93rem; color: var(--muted); white-space: pre-wrap; }
+.lang { font-size: .92rem; color: var(--muted); }
+.linkbtn { font: 700 .95rem var(--f-body); color: var(--accent); background: none; border: 0; padding: .25rem 0; cursor: pointer; text-decoration: underline; }
+a.src { display: inline-block; font: 600 .7rem var(--f-mono); letter-spacing: .04em; text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent); border-radius: 4px; padding: 0 .3rem; margin: 0 .1rem; text-decoration: none; vertical-align: .1em; }
+details.hands { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: .75rem 1rem; }
+details.hands > summary { cursor: pointer; font-weight: 700; color: var(--accent); }
+.hint { font-size: .9rem; color: var(--muted); }
+.block { border-top: 1px solid var(--line); padding-top: .65rem; margin-top: .65rem; min-width: 0; }
+.block h4 { margin: 0 0 .35rem; font-size: .95rem; }
+dl.fields { display: grid; grid-template-columns: auto 1fr; gap: .2rem .9rem; margin: .3rem 0; font-size: .92rem; }
+dl.fields dt { color: var(--muted); }
+dl.fields dd { margin: 0; font-variant-numeric: tabular-nums; }
+.tablebox { overflow-x: auto; margin: .4rem 0; border: 1px solid var(--line); border-radius: 6px; }
+table { border-collapse: collapse; font-size: .86rem; font-variant-numeric: tabular-nums; min-width: 100%; }
+caption { text-align: left; font-weight: 700; padding: .35rem .55rem; }
+th, td { text-align: left; padding: .35rem .55rem; border-top: 1px solid var(--line); white-space: nowrap; }
+th { color: var(--muted); font-weight: 600; background: var(--quote); }
+.excerpt { background: var(--quote); border-radius: 6px; padding: .55rem .75rem; font-size: .92rem; white-space: pre-wrap; overflow-wrap: anywhere; }
+.excerpt-link { font-size: .88rem; }
+.hands-list { display: grid; gap: .35rem; margin-top: .5rem; }
+details.hand { border: 1px solid var(--line); border-radius: 8px; padding: .45rem .7rem; min-width: 0; }
+details.hand > summary { cursor: pointer; list-style: none; display: flex; gap: .55rem; align-items: baseline; flex-wrap: wrap; }
+details.hand > summary::-webkit-details-marker { display: none; }
+details.hand > summary::after { content: "▸"; margin-left: auto; color: var(--accent); }
+details.hand[open] > summary::after { content: "▾"; }
+details.hand .tag { font: 600 .68rem var(--f-mono); text-transform: uppercase; letter-spacing: .06em; color: var(--accent); border: 1px solid var(--accent); border-radius: 4px; padding: 0 .3rem; white-space: nowrap; }
+details.hand .ht { font-size: .93rem; min-width: 0; overflow-wrap: anywhere; }
+.hbody { margin-top: .5rem; }
+details.src-item > summary { cursor: pointer; list-style: none; display: grid; gap: .1rem; }
+details.src-item > summary::-webkit-details-marker { display: none; }
+details.src-item > summary strong::after { content: " ▸"; color: var(--accent); }
+details.src-item[open] > summary strong::after { content: " ▾"; }
+.preview { font-size: .88rem; color: var(--muted); }
+details.src-item[open] .preview { display: none; }
+.excerpt-link a { color: var(--accent); }
+.q { border: 1px solid var(--line); border-radius: 10px; padding: .8rem 1rem; margin: .75rem 0; background: var(--surface); min-width: 0; }
+.q .qtitle { font-weight: 700; margin: 0 0 .25rem; }
+.q.answered { border-color: var(--muted); }
+.choices { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .5rem; }
+.choices .btn { flex: 1 1 6rem; border-color: var(--line); color: var(--fg); }
+.choices .btn[aria-pressed="true"] { color: var(--on-strong); }
+.choices .btn.yes[aria-pressed="true"] { background: var(--ok); border-color: var(--ok); }
+.choices .btn.no[aria-pressed="true"] { background: var(--bad); border-color: var(--bad); }
+.choices .btn.dk[aria-pressed="true"] { background: var(--muted); border-color: var(--muted); }
+.dots { display: flex; flex-wrap: wrap; gap: .4rem; margin: .25rem 0 .75rem; }
+.dots button { width: 2.1rem; height: 2.1rem; border-radius: 50%; font: 700 .85rem var(--f-body); cursor: pointer; border: 2px solid var(--muted); background: transparent; color: var(--fg); font-variant-numeric: tabular-nums; }
+.dots button.done { background: var(--accent); border-color: var(--accent); color: var(--on-strong); }
+.dots button[aria-current="step"] { outline: 3px solid var(--accent); outline-offset: 2px; }
+.legend { font-size: .85rem; color: var(--muted); margin: 0 0 .25rem; }
+.result { border-radius: 10px; padding: .85rem 1rem; margin: 1rem 0; font-weight: 700; border: 2px solid var(--line); background: var(--surface); }
+.result.pass { border-color: var(--ok); background: var(--ok-soft); color: var(--ok); }
+.result.fail { border-color: var(--bad); background: var(--bad-soft); color: var(--bad); }
+.result small { display: block; font-weight: 400; color: var(--fg); margin-top: .2rem; }
+.note input { font: 1rem var(--f-body); padding: .6rem .7rem; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--fg); width: 100%; }
+.nav { display: flex; gap: .6rem; justify-content: space-between; margin-top: 1.25rem; }
+.nav .btn { flex: 1 1 0; }
+button:focus-visible, input:focus-visible, summary:focus-visible, a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { .bar span { transition: none; } }
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <h1 class="brand">Conferência de respostas</h1>
+    <span class="status" id="who"></span>
+    <span class="status" id="count"></span>
+    <span class="status" id="save" aria-live="polite"></span>
+    <div class="bar" aria-hidden="true"><span id="bar"></span></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="start">
+    <h2>Você vai conferir as respostas de um assistente virtual</h2>
+    <p>O assistente atende <strong>donos de loja que usam a maquininha de cartão da Getnet</strong>. Ele tira dúvidas
+      usando o site oficial da Getnet e consulta os dados da loja do cliente, como vendas e maquininhas. Os clientes e os
+      dados daqui são fictícios.</p>
+    <p>Seu papel é dizer se cada resposta está <strong>certa</strong> ou <strong>errada</strong>. Não precisa entender
+      de maquininha nem de tecnologia: tudo o que você precisa para decidir aparece na tela.</p>
+
+    <p class="kicker">Como funciona, em cada situação</p>
+    <ol class="steps">
+      <li>Leia a conversa: o que o cliente escreveu (balão verde, à direita) e o que o assistente respondeu (balão branco).</li>
+      <li>Olhe "O que o assistente tinha em mãos": os dados da loja e os trechos do site que ele consultou.</li>
+      <li>Responda 3 perguntas de sim ou não. A página mostra o resultado: certa ou errada.</li>
+    </ol>
+
+    <p class="kicker">Três exemplos</p>
+    <div class="examples">
+      <div class="example good">
+        <p><span class="tag">Certa.</span> O cliente pergunta "Quanto vendi ontem no débito?". Nos dados da loja aparece
+          "vendas de ontem no débito: 3 vendas, total R$ 150,00". O assistente responde "Ontem você vendeu R$ 150,00 no
+          débito, em 3 vendas".</p>
+        <p class="hint">Responde ao que foi pedido, o número confere com os dados e está em português.</p>
+      </div>
+      <div class="example badex">
+        <p><span class="tag">Errada.</span> Mesma pergunta e mesmos dados, mas o assistente responde "Ontem você vendeu
+          R$ 180,00 no débito".</p>
+        <p class="hint">R$ 180,00 não aparece em lugar nenhum do que ele tinha em mãos: o número foi inventado.</p>
+      </div>
+      <div class="example good">
+        <p><span class="tag">Também é certa.</span> O cliente pergunta algo que o site da Getnet não explica, e o
+          assistente diz "Não encontrei essa informação; passei sua pergunta para um atendente (protocolo T-…)".</p>
+        <p class="hint">Admitir que não sabe e chamar uma pessoa é melhor do que inventar.</p>
+      </div>
+    </div>
+
+    <p class="kicker">Quem é você?</p>
+    <div class="picker" id="picker"></div>
+    <div class="notice" id="notice" hidden></div>
+    <button type="button" class="btn primary" id="go" disabled>Começar</button>
+  </section>
+
+  <section id="item" hidden></section>
+
+  <section id="end" hidden>
+    <h2>Pronto, obrigado!</h2>
+    <p id="endtext"></p>
+    <p id="savedline">As marcações já estão salvas. Pode fechar a página.</p>
+    <div id="copybox" hidden>
+      <p><strong>Suas marcações não chegaram ao responsável</strong> (você não entrou com uma conta do claude.ai). Toque em
+        "Copiar minhas respostas" e cole o texto numa mensagem para quem te mandou o link.</p>
+      <button type="button" class="btn primary" id="copy">Copiar minhas respostas</button>
+      <textarea id="copytext" readonly rows="6" style="width:100%;margin-top:.6rem;font:.85rem var(--f-mono);background:var(--surface);color:var(--fg);border:1px solid var(--line);border-radius:8px;padding:.5rem"></textarea>
+    </div>
+    <div class="nav"><button type="button" class="btn" id="review">Revisar alguma situação</button></div>
+  </section>
+</main>
+
+<script id="data" type="application/json">{"items": [{"id": "official-05", "question": "My card machine won't connect to the internet, what should I do?", "answer": "Of your two machines, one is online and one is offline:\n- **T1988A** (Get Smart) is online over Wi-Fi.\n- **T1988B** (Get Clássica) is **offline**. It has been offline for 190 minutes. It connects by chip and shows no signal.\n\nFor T1988B, the sources only cover setting up the SIM chip [sup-duvidas-06]:\n1. With the machine off, open the back cover.\n2. Put the chip in the slot marked SIM1 or SIM2, with the metal part facing down.\n3. Close the cover, turn the machine on and wait for the data network to connect.\n4. When it shows a connected network (2G or 3G), the machine is ready to use.\n5. Run a communication test to check the chip's connectivity. The source cuts off before it lists the test steps.\n\nIf that doesn't fix it, I can propose a technical support ticket for T1988B. The ticket would be proposed and awaiting your confirmation. Nothing is opened until you confirm. Do you want me to propose it?", "before": [], "source_urls": {"sup-duvidas-06": "https://site.getnet.com.br/duvidas/", "prod-todas-maquininhas-05": "https://site.getnet.com.br/todas-as-maquininhas/", "prod-todas-maquininhas-09": "https://site.getnet.com.br/todas-as-maquininhas/"}, "evidence": "- {\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"Wi-Fi\", \"status\": \"online\"}, {\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"status\": \"offline\", \"offline_minutes\": 190, \"signal\": \"sem sinal\"}], \"count\": 2, \"offline\": [\"T1988B\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"maquininha offline: os passos vêm do manual de conexão\", \"hint\": \"maquininha não conecta internet chip Wi-Fi\"}], \"calculado_em_codigo\": [{\"lista\": \"terminals\", \"itens\": 2, \"por_status\": {\"offline\": {\"itens\": 1}, \"online\": {\"itens\": 1}}}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}\n- Dúvidas e Perguntas Frequentes | Getnet: – Com a máquina desligada, abra a tampa na parte de trás – Insira o chip no local destinado, sinalizado com SIM1 ou SIM2, com a parte metálica voltada para baixo – Feche a tampa, ligue a máquina e aguarde a conexão de rede de dados – Com a indicação de rede conectada (2G ou 3G), a máquina está pronta para uso – Faça um teste de comunicação para verificar a conectividade do seu chip, seguindo os passos:\n- Getnet | Maquininha de cartão: Melhores taxas e opções grátisMaquininha de cartão: Melhores taxas e opções grátis: Escolha a melhor forma para finalizar sua contratação Falar com Especialista Continuar no site * Horario de funcionamento: Seg à sex das 7h as 23h Sábado das 9h as 15h Recebeu sua maquininha de outra pessoa? Cadastre-se aqui para ativá-la em seu nome Se você já adquiriu sua maquininha em nosso site, não precisa realizar este cadastro QUERO ME CADASTRAR Impulsione suas vendas de onde estiver Leve sua maquininha e ganhe os serviços abaixo para acelerar suas vendas Comece a vender agora e pague apenas a taxa de transação Simule suas vendas Aqui, você encontra taxas especiais para todas as bandeiras de cartões.\n- Getnet | Maquininha de cartão: Melhores taxas e opções grátisMaquininha de cartão: Melhores taxas e opções grátis: Deeper Confecções Cliente Get Clássica, Get Pay, Antecipação de Vendas e Plataforma Digital As taxas são excelentes e o atendimento ao cliente é muito bom. Virgínia Arruda Loja Virgínia Arruda​ Cliente Get Pay Taxa competitiva, bom relacionamento com o cliente, transações rápidas e com segurança. Raimundo Santos Cliente Get Smart e Plataforma Digital Com atendimento personalizado, soluções diversificadas e uma plataforma robusta, conseguimos oferecer a melhor experiência aos nossos clientes. Hayala Okamoto · Leroy Merlin Maquininhas e Plataforma Digital Dúvidas sobre as maquininhas?\n- [policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system.", "blocks": [{"kind": "data", "title": "Dados da loja do cliente (get_terminal_status)", "fields": [["quantidade", "2"], ["offline", "[\"T1988B\"]"]], "tables": [{"caption": "maquininhas", "columns": ["maquininha", "modelo", "conexão", "situação", "offline minutes", "sinal"], "rows": [["T1988A", "Get Smart", "Wi-Fi", "online", "—", "—"], ["T1988B", "Get Clássica", "chip", "offline", "190", "sem sinal"]]}]}, {"kind": "text", "title": "Dúvidas e Perguntas Frequentes | Getnet", "text": "– Com a máquina desligada, abra a tampa na parte de trás – Insira o chip no local destinado, sinalizado com SIM1 ou SIM2, com a parte metálica voltada para baixo – Feche a tampa, ligue a máquina e aguarde a conexão de rede de dados – Com a indicação de rede conectada (2G ou 3G), a máquina está pronta para uso – Faça um teste de comunicação para verificar a conectividade do seu chip, seguindo os passos:", "url": "https://site.getnet.com.br/duvidas/"}, {"kind": "text", "title": "Getnet | Maquininha de cartão", "text": "Melhores taxas e opções grátisMaquininha de cartão: Melhores taxas e opções grátis: Escolha a melhor forma para finalizar sua contratação Falar com Especialista Continuar no site * Horario de funcionamento: Seg à sex das 7h as 23h Sábado das 9h as 15h Recebeu sua maquininha de outra pessoa? Cadastre-se aqui para ativá-la em seu nome Se você já adquiriu sua maquininha em nosso site, não precisa realizar este cadastro QUERO ME CADASTRAR Impulsione suas vendas de onde estiver Leve sua maquininha e ganhe os serviços abaixo para acelerar suas vendas Comece a vender agora e pague apenas a taxa de transação Simule suas vendas Aqui, você encontra taxas especiais para todas as bandeiras de cartões.", "url": ""}, {"kind": "text", "title": "Getnet | Maquininha de cartão", "text": "Melhores taxas e opções grátisMaquininha de cartão: Melhores taxas e opções grátis: Deeper Confecções Cliente Get Clássica, Get Pay, Antecipação de Vendas e Plataforma Digital As taxas são excelentes e o atendimento ao cliente é muito bom. Virgínia Arruda Loja Virgínia Arruda​ Cliente Get Pay Taxa competitiva, bom relacionamento com o cliente, transações rápidas e com segurança. Raimundo Santos Cliente Get Smart e Plataforma Digital Com atendimento personalizado, soluções diversificadas e uma plataforma robusta, conseguimos oferecer a melhor experiência aos nossos clientes. Hayala Okamoto · Leroy Merlin Maquininhas e Plataforma Digital Dúvidas sobre as maquininhas?", "url": ""}, {"kind": "rules", "text": "Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).)."}, {"kind": "rules", "text": "Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.)."}, {"kind": "rules", "text": "High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.)."}, {"kind": "rules", "text": "An action proposal that is not confirmed expires after 15 minutes."}, {"kind": "rules", "text": "Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation."}, {"kind": "rules", "text": "Apart from these tools, the assistant does not carry out any action in the system."}], "sources": [{"title": "Dúvidas e Perguntas Frequentes | Getnet", "url": "https://site.getnet.com.br/duvidas/"}, {"title": "Getnet | Maquininha de cartão: Melhores taxas e opções grátisMaquininha de cartão: Melhores taxas e opções grátis", "url": "https://site.getnet.com.br/todas-as-maquininhas/"}], "lang": "en"}, {"id": "memory-13", "question": "Abre a contestação dela", "answer": "A contestação da TX1006 (R$ 900,00, aprovada hoje, no crédito, maquininha T1988A) está **proposta, aguardando sua confirmação**. O código da ação é A-429b88f2. Ainda não foi aberta.\n\nO processo tem duas etapas:\n1. Você confirma a proposta.\n2. Um atendente humano aprova a contestação antes de ela ser executada.\n\nA proposta não confirmada expira em 15 minutos. A decisão sobre o caso é do atendente.\n\nVocê confirma a contestação da TX1006?", "before": ["Vendi R$ 900,00 na TX1006 e não fui eu."], "source_urls": {}, "evidence": "- {\"ok\": false, \"needs_confirmation\": true, \"action_id\": \"A-429b88f2\", \"risk\": \"high\", \"args\": {\"transaction_id\": \"TX1006\"}}\n- [memória da conversa] Fatos da conversa (extraídos por código das falas do cliente e dos resultados de ferramentas; valem mesmo que o resumo os omita):\n- Assunto atual: Vendi R$ 900,00 na TX1006 e não fui eu. (intenção: support)\n- IDs citados pelo cliente: TX1006\n- Valores citados pelo cliente: R$ 900,00\n- Registros vistos nas ferramentas (referência; consulte de novo o que muda): TX1006 {date=2026-11-02, when=hoje, method=credito, amount=900.00, amount_brl=R$ 900,00, status=aprovada, terminal=T1988A}; resumo:approved_total,approved_total_brl,count,period {period=all, count=1, approved_total=900.00, approved_total_brl=R$ 900,00}\n- [policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema.", "blocks": [{"kind": "data", "title": "Dados da loja do cliente (open_dispute)", "fields": [["resultado", "a consulta falhou"], ["needs confirmation", "sim"], ["action id", "A-429b88f2"], ["risk", "high"], ["args · transação", "TX1006"]], "tables": []}, {"kind": "text", "title": "Valores citados pelo cliente", "text": "R$ 900,00", "url": ""}, {"kind": "memory", "text": "Fatos da conversa (extraídos por código das falas do cliente e dos resultados de ferramentas; valem mesmo que o resumo os omita):"}, {"kind": "memory", "text": "Assunto atual: Vendi R$ 900,00 na TX1006 e não fui eu. (intenção: support)"}, {"kind": "memory", "text": "IDs citados pelo cliente: TX1006"}, {"kind": "memory", "text": "Registros vistos nas ferramentas (referência; consulte de novo o que muda): TX1006 {date=2026-11-02, when=hoje, method=credito, amount=900.00, amount_brl=R$ 900,00, status=aprovada, terminal=T1988A}; resumo:approved_total,approved_total_brl,count,period {period=all, count=1, approved_total=900.00, approved_total_brl=R$ 900,00}"}, {"kind": "rules", "text": "Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).)."}, {"kind": "rules", "text": "Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.)."}, {"kind": "rules", "text": "Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.)."}, {"kind": "rules", "text": "Proposta de ação não confirmada expira em 15 minutos."}, {"kind": "rules", "text": "Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa."}, {"kind": "rules", "text": "Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema."}], "sources": [], "lang": "pt"}, {"id": "official-04", "question": "Do I need a bank account to receive my sales via Pix?", "answer": "I've handed this to a human agent (ticket T-fded7dcd). The reply will show up in this conversation.", "before": [], "source_urls": {}, "evidence": "- I've handed this to a human agent (ticket T-fded7dcd). The reply will show up in this conversation.\n- [policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system.", "blocks": [{"kind": "text", "title": "Informação", "text": "I've handed this to a human agent (ticket T-fded7dcd). The reply will show up in this conversation.", "url": ""}, {"kind": "rules", "text": "Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).)."}, {"kind": "rules", "text": "Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.)."}, {"kind": "rules", "text": "High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.)."}, {"kind": "rules", "text": "An action proposal that is not confirmed expires after 15 minutes."}, {"kind": "rules", "text": "Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation."}, {"kind": "rules", "text": "Apart from these tools, the assistant does not carry out any action in the system."}], "sources": [], "lang": "en"}, {"id": "official-01", "question": "What's the difference between the Get Clássica and the Get Smart?", "answer": "I've handed this to a human agent (ticket T-3694e231). The reply will show up in this conversation.", "before": [], "source_urls": {}, "evidence": "- I've handed this to a human agent (ticket T-3694e231). The reply will show up in this conversation.\n- [policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system.", "blocks": [{"kind": "text", "title": "Informação", "text": "I've handed this to a human agent (ticket T-3694e231). The reply will show up in this conversation.", "url": ""}, {"kind": "rules", "text": "Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).)."}, {"kind": "rules", "text": "Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.)."}, {"kind": "rules", "text": "High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.)."}, {"kind": "rules", "text": "An action proposal that is not confirmed expires after 15 minutes."}, {"kind": "rules", "text": "Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation."}, {"kind": "rules", "text": "Apart from these tools, the assistant does not carry out any action in the system."}], "sources": [], "lang": "en"}, {"id": "official-10", "question": "Can I sell through WhatsApp using the Payment Link?", "answer": "Yes. According to the source, you can make sales using WhatsApp, SMS or your preferred social network with payment links [prod-en-online-02]. The link is customizable with product details, and you choose the payment method, debit or credit [prod-en-online-02]. It also includes security and anti-fraud tools [prod-en-online-02].", "before": [], "source_urls": {"prod-en-online-02": "https://www.getnet.net/en/our-solutions/online-payments"}, "evidence": "- Getnet - Online Payments: Make sales using WhatsApp, SMS or your preferred social network. With security and anti-fraud tolos. Customizable link with product details. Choose the payment method: debit or credit. Create payment links and sell anywhere. Online payment solutions for your eCommerce store. Modular: Include a seamless and easy to plug-in payment module on your ecommerce.\n- [policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system.", "blocks": [{"kind": "text", "title": "Getnet - Online Payments", "text": "Make sales using WhatsApp, SMS or your preferred social network. With security and anti-fraud tolos. Customizable link with product details. Choose the payment method: debit or credit. Create payment links and sell anywhere. Online payment solutions for your eCommerce store. Modular: Include a seamless and easy to plug-in payment module on your ecommerce.", "url": "https://www.getnet.net/en/our-solutions/online-payments"}, {"kind": "rules", "text": "Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).)."}, {"kind": "rules", "text": "Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.)."}, {"kind": "rules", "text": "High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.)."}, {"kind": "rules", "text": "An action proposal that is not confirmed expires after 15 minutes."}, {"kind": "rules", "text": "Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation."}, {"kind": "rules", "text": "Apart from these tools, the assistant does not carry out any action in the system."}], "sources": [{"title": "Getnet - Online Payments", "url": "https://www.getnet.net/en/our-solutions/online-payments"}], "lang": "en"}, {"id": "q-memory-16", "question": "E dá pra parcelar em quantas vezes?", "answer": "No Crediário Getnet, o cliente pode parcelar em até 48 vezes no cartão de crédito [prod-crediario-03][prod-crediario-01]. As taxas de juros podem variar de acordo com o emissor do cartão [prod-crediario-03]. Para consultar a taxa de desconto (MDR), veja o Aplicativo Getnet Brasil ou o Portal do cliente [prod-crediario-03].\n\nNão confunda com o Parcelado Emissor, que admite até 24 parcelas [sup-duvidas-77].", "before": ["O que é o crediário Getnet?"], "source_urls": {"prod-crediario-03": "https://site.getnet.com.br/crediario/", "prod-crediario-01": "https://site.getnet.com.br/crediario/", "sup-duvidas-77": "https://site.getnet.com.br/duvidas/"}, "evidence": "- Crediário - Getnet: para o seu cliente para o seu cliente Com o Crediário, ele pode parcelar em até 48 vezes² no cartão de crédito com taxas que cabem no bolso. Você oferece mais comodidade e poder de compra. ¹ Consulte a taxa de desconto (MDR) no Aplicativo Getnet Brasil ou no Portal do cliente ²As taxas de juros podem variar de acordo com o emissor do cartão.\n- Crediário - Getnet: AVANÇAR · Crediário Uma opção de pagamento diferenciado com possibilidade de parcelamento em até 48x* para seus clientes. Faça uma Simulação: com o valor de todas as parcelas e encargos antes da venda para oferecer transparência ao seu cliente Aumente o Movimento: no seu estabelecimento oferecendo mais opções de pagamento aos seus clientes Maior poder de compra:\n- Dúvidas e Perguntas Frequentes | Getnet: ver mais · Parcelado Quais modalidades de Crédito Parcelado estão disponíveis na Getnet? Quais modalidades de Crédito Parcelado estão disponíveis na Getnet? Na Getnet, estão disponíveis as modalidades Parcelado Emissor e Parcelado Lojista. No Parcelado Emissor, o seu cliente parcela as compras e assume as despesas relacionadas aos juros do parcelamento, pois o financiamento é feito diretamente com o banco emissor ou pela administradora do cartão. A modalidade admite até 24 parcelas, recebidas de uma vez dentro de 2 a 31 dias conforme seu plano de recebimento; sendo a taxa aplicada somente uma vez.\n- [memória da conversa] Fatos da conversa (extraídos por código das falas do cliente e dos resultados de ferramentas; valem mesmo que o resumo os omita):\n- Assunto atual: O que é o crediário Getnet? (intenção: knowledge)\n- [policy:capabilities] Capacidades e política de ações deste assistente (gerado do registro de ferramentas do sistema):\n- Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- Proposta de ação não confirmada expira em 15 minutos.\n- Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa.\n- Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema.", "blocks": [{"kind": "text", "title": "Crediário - Getnet", "text": "para o seu cliente para o seu cliente Com o Crediário, ele pode parcelar em até 48 vezes² no cartão de crédito com taxas que cabem no bolso. Você oferece mais comodidade e poder de compra. ¹ Consulte a taxa de desconto (MDR) no Aplicativo Getnet Brasil ou no Portal do cliente ²As taxas de juros podem variar de acordo com o emissor do cartão.", "url": "https://site.getnet.com.br/crediario/"}, {"kind": "text", "title": "Crediário - Getnet", "text": "AVANÇAR · Crediário Uma opção de pagamento diferenciado com possibilidade de parcelamento em até 48x* para seus clientes. Faça uma Simulação: com o valor de todas as parcelas e encargos antes da venda para oferecer transparência ao seu cliente Aumente o Movimento: no seu estabelecimento oferecendo mais opções de pagamento aos seus clientes Maior poder de compra:", "url": "https://site.getnet.com.br/crediario/"}, {"kind": "text", "title": "Dúvidas e Perguntas Frequentes | Getnet", "text": "ver mais · Parcelado Quais modalidades de Crédito Parcelado estão disponíveis na Getnet? Quais modalidades de Crédito Parcelado estão disponíveis na Getnet? Na Getnet, estão disponíveis as modalidades Parcelado Emissor e Parcelado Lojista. No Parcelado Emissor, o seu cliente parcela as compras e assume as despesas relacionadas aos juros do parcelamento, pois o financiamento é feito diretamente com o banco emissor ou pela administradora do cartão. A modalidade admite até 24 parcelas, recebidas de uma vez dentro de 2 a 31 dias conforme seu plano de recebimento; sendo a taxa aplicada somente uma vez.", "url": "https://site.getnet.com.br/duvidas/"}, {"kind": "memory", "text": "Fatos da conversa (extraídos por código das falas do cliente e dos resultados de ferramentas; valem mesmo que o resumo os omita):"}, {"kind": "memory", "text": "Assunto atual: O que é o crediário Getnet? (intenção: knowledge)"}, {"kind": "rules", "text": "Consultas que o assistente executa na hora, só com dados do cliente autenticado: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).)."}, {"kind": "rules", "text": "Ações que o assistente pode PROPOR; nada é executado antes de o cliente confirmar a proposta: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.)."}, {"kind": "rules", "text": "Ações de risco alto: exigem a confirmação do cliente E, depois, a aprovação de um atendente humano (operador) antes de executar: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.)."}, {"kind": "rules", "text": "Proposta de ação não confirmada expira em 15 minutos."}, {"kind": "rules", "text": "Encaminhar para um atendente humano: abre um caso com protocolo; a resposta do atendente aparece nesta mesma conversa."}, {"kind": "rules", "text": "Fora dessas ferramentas, o assistente não executa nenhuma ação no sistema."}], "sources": [{"title": "Crediário - Getnet", "url": "https://site.getnet.com.br/crediario/"}, {"title": "Dúvidas e Perguntas Frequentes | Getnet", "url": "https://site.getnet.com.br/duvidas/"}], "lang": "pt"}, {"id": "q-memory-05", "question": "And the other terminal?", "answer": "The other terminal is T1988B (Get Clássica), and it's offline. It connects by chip and shows no signal. It has been offline for 190 minutes.\n\nI can propose a technical support ticket for T1988B. Nothing runs until you confirm, and a proposal that isn't confirmed expires after 15 minutes. Do you want me to propose it?\n\nI don't have the status of your other terminal in this conversation, only T1988A, which shows online over Wi-Fi. If the other terminal uses a chip, check that it's seated correctly. With the terminal off, open the back cover and insert the chip in the SIM1 or SIM2 slot with the metal side facing down [sup-duvidas-06]. Then close the cover, turn it on and wait for the data network connection. When it shows connected (2G or 3G), it's ready to use, and you can run a communication test to check the chip [sup-duvidas-06]. If it still won't connect, I can propose opening a technical support ticket for that terminal, pending your confirmation.\n\nIf you'd like, I can hand this question to a human agent.", "before": ["Is T1988A online right now?"], "source_urls": {"sup-duvidas-06": "https://site.getnet.com.br/duvidas/", "prod-home-10": "https://site.getnet.com.br/", "sup-duvidas-96": "https://site.getnet.com.br/duvidas/"}, "evidence": "- {\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"Wi-Fi\", \"status\": \"online\"}, {\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"status\": \"offline\", \"offline_minutes\": 190, \"signal\": \"sem sinal\"}], \"count\": 2, \"offline\": [\"T1988B\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"maquininha offline: os passos vêm do manual de conexão\", \"hint\": \"maquininha não conecta internet chip Wi-Fi\"}], \"calculado_em_codigo\": [{\"lista\": \"terminals\", \"itens\": 2, \"por_status\": {\"offline\": {\"itens\": 1}, \"online\": {\"itens\": 1}}}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}\n- Dúvidas e Perguntas Frequentes | Getnet: – Com a máquina desligada, abra a tampa na parte de trás – Insira o chip no local destinado, sinalizado com SIM1 ou SIM2, com a parte metálica voltada para baixo – Feche a tampa, ligue a máquina e aguarde a conexão de rede de dados – Com a indicação de rede conectada (2G ou 3G), a máquina está pronta para uso – Faça um teste de comunicação para verificar a conectividade do seu chip, seguindo os passos:\n- Getnet | Máquinas de cartão e soluções financeiras para o seu negócioGetnet - Soluções de Pagamentos | 4002-4000: Hayala Okamoto · Leroy Merlin Maquininhas e Plataforma Digital Confira conteúdos que geram resultados Com a Getnet, dá negócio IA para Pequenos Empreendedores Você já pensou em usar Inteligência Artificial (IA) para facilitar a rotina do seu negócio? A tecnologia que antes parecia distante das pequenas empresas agora está mais acessível do que nunca.\n- Dúvidas e Perguntas Frequentes | Getnet: Segue classificação de cada serviço que você poderá encontrar: Aluguel: Quando sua maquininha não aceita Visa e MasterCard; Aluguel ADQ: Quando sua maquininha aceita Visa e MasterCard, além de outros cartões; Recarga: Quando você realiza vendas de recargas de celular; Serasa: Quando você realiza consultas de pendências financeiras através da maquininha Split de Pagamento O que é o Split Getnet?\n- If you'd like, I can hand this question to a human agent.\n- [memória da conversa] Fatos da conversa (extraídos por código das falas do cliente e dos resultados de ferramentas; valem mesmo que o resumo os omita):\n- Assunto atual: Is T1988A online right now? (intenção: support)\n- IDs citados pelo cliente: T1988A\n- Registros vistos nas ferramentas (referência; consulte de novo o que muda): T1988A {model=Get Smart, connection=Wi-Fi, status=online}; resumo:count {count=1}\n- [policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system.", "blocks": [{"kind": "data", "title": "Dados da loja do cliente (get_terminal_status)", "fields": [["quantidade", "2"], ["offline", "[\"T1988B\"]"]], "tables": [{"caption": "maquininhas", "columns": ["maquininha", "modelo", "conexão", "situação", "offline minutes", "sinal"], "rows": [["T1988A", "Get Smart", "Wi-Fi", "online", "—", "—"], ["T1988B", "Get Clássica", "chip", "offline", "190", "sem sinal"]]}]}, {"kind": "text", "title": "Dúvidas e Perguntas Frequentes | Getnet", "text": "– Com a máquina desligada, abra a tampa na parte de trás – Insira o chip no local destinado, sinalizado com SIM1 ou SIM2, com a parte metálica voltada para baixo – Feche a tampa, ligue a máquina e aguarde a conexão de rede de dados – Com a indicação de rede conectada (2G ou 3G), a máquina está pronta para uso – Faça um teste de comunicação para verificar a conectividade do seu chip, seguindo os passos:", "url": "https://site.getnet.com.br/duvidas/"}, {"kind": "text", "title": "Getnet | Máquinas de cartão e soluções financeiras para o seu negócioGetnet - Soluções de Pagamentos | 4002-4000", "text": "Hayala Okamoto · Leroy Merlin Maquininhas e Plataforma Digital Confira conteúdos que geram resultados Com a Getnet, dá negócio IA para Pequenos Empreendedores Você já pensou em usar Inteligência Artificial (IA) para facilitar a rotina do seu negócio? A tecnologia que antes parecia distante das pequenas empresas agora está mais acessível do que nunca.", "url": "https://site.getnet.com.br/"}, {"kind": "text", "title": "Dúvidas e Perguntas Frequentes | Getnet", "text": "Segue classificação de cada serviço que você poderá encontrar: Aluguel: Quando sua maquininha não aceita Visa e MasterCard; Aluguel ADQ: Quando sua maquininha aceita Visa e MasterCard, além de outros cartões; Recarga: Quando você realiza vendas de recargas de celular; Serasa: Quando você realiza consultas de pendências financeiras através da maquininha Split de Pagamento O que é o Split Getnet?", "url": "https://site.getnet.com.br/duvidas/"}, {"kind": "memory", "text": "If you'd like, I can hand this question to a human agent."}, {"kind": "memory", "text": "Fatos da conversa (extraídos por código das falas do cliente e dos resultados de ferramentas; valem mesmo que o resumo os omita):"}, {"kind": "memory", "text": "Assunto atual: Is T1988A online right now? (intenção: support)"}, {"kind": "memory", "text": "IDs citados pelo cliente: T1988A"}, {"kind": "memory", "text": "Registros vistos nas ferramentas (referência; consulte de novo o que muda): T1988A {model=Get Smart, connection=Wi-Fi, status=online}; resumo:count {count=1}"}, {"kind": "rules", "text": "Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).)."}, {"kind": "rules", "text": "Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.)."}, {"kind": "rules", "text": "High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.)."}, {"kind": "rules", "text": "An action proposal that is not confirmed expires after 15 minutes."}, {"kind": "rules", "text": "Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation."}, {"kind": "rules", "text": "Apart from these tools, the assistant does not carry out any action in the system."}], "sources": [{"title": "Dúvidas e Perguntas Frequentes | Getnet", "url": "https://site.getnet.com.br/duvidas/"}, {"title": "Getnet | Máquinas de cartão e soluções financeiras para o seu negócioGetnet - Soluções de Pagamentos | 4002-4000", "url": "https://site.getnet.com.br/"}], "lang": "en"}, {"id": "q-memory-15", "question": "And how long has it been down?", "answer": "Terminal T1988B (Get Clássica) has been offline for 190 minutes. The tool shows it on a chip connection with no signal.\n\nI can propose a technical support ticket for T1988B. It is only a proposal, and nothing is opened until you confirm it. A proposal that isn't confirmed expires after 15 minutes. Would you like me to propose it?\n\nI've handed this to a human agent (ticket T-7d2cd405). The reply will show up in this conversation.", "before": ["Which of my terminals is offline?"], "source_urls": {"sup-get-tap-15": "https://site.getnet.com.br/duvidas/get-tap/", "sup-operacional-01": "https://site.getnet.com.br/duvidas/operacional/", "sup-plano-light-04": "https://site.getnet.com.br/duvidas/plano-light/"}, "evidence": "- {\"ok\": true, \"data\": {\"terminals\": [{\"terminal_id\": \"T1988A\", \"model\": \"Get Smart\", \"connection\": \"Wi-Fi\", \"status\": \"online\"}, {\"terminal_id\": \"T1988B\", \"model\": \"Get Clássica\", \"connection\": \"chip\", \"status\": \"offline\", \"offline_minutes\": 190, \"signal\": \"sem sinal\"}], \"count\": 2, \"offline\": [\"T1988B\"]}, \"needs\": [{\"agent\": \"faq\", \"why\": \"maquininha offline: os passos vêm do manual de conexão\", \"hint\": \"maquininha não conecta internet chip Wi-Fi\"}], \"calculado_em_codigo\": [{\"lista\": \"terminals\", \"itens\": 2, \"por_status\": {\"offline\": {\"itens\": 1}, \"online\": {\"itens\": 1}}}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}\n- Arquivos Get Tap - Getnet: Em quanto tempo posso usar meu Get Tap? Em quanto tempo posso usar meu Get Tap? Após efetuar o cadastro e passar pela análise do periférico, você está adapto para usar a funcionalidade. Como saber qual é a versão do Android no meu celular? Como saber qual é a versão do Android no meu celular? Para encontrar a versão do seu Android acesse as “configurações” do seu celular, selecione a opção “Sobre o dispositivo/telefone”, localize a seção “Detalhes do dispositivo” e veja a versão do Android indicada. Como saber se meu celular possui NFC? Como saber se meu celular possui NFC? Para saber se o seu celular possui NFC consulte a ficha técnica ou as especificações do seu aparelho.\n- Arquivos operacional - Getnet: AVANÇAR · operacional Como ligo ou desligo minha máquina? Como ligo ou desligo minha máquina? Confira o modelo da sua maquininha e siga as instruções como mostra abaixo: LIGAR: Pressione a tecla verde DESLIGAR: Pressione a tecla “ . ” (ponto) e a tecla amarela ao mesmo tempo, durante 2 segundos LIGAR: Pressione a tecla “ ” (seta para cima) DESLIGAR: Pressione a tecla “ . ” (ponto) e a tecla amarela ao mesmo tempo, durante 2 segundos LIGAR E DESLIGAR: Conecte na tomada para ligar e retire da tomada para desligar LIGAR: Pressione a tecla verde durante 5 segundos DESLIGAR: Pressione a tecla vermelha durante 5 segundos O que é Chargeback?\n- Arquivos Plano Light - Getnet: O que acontece se eu não faturar ou não atingir as outras contrapartidas da oferta? O que acontece se eu não faturar ou não atingir as outras contrapartidas da oferta? Até que finalize o pagamento das 12 parcelas, nos meses que não atingir as contrapartidas, você pagará o valor sem desconto (Getnet R$29,90 ou POS móvel R$79,90); Após o término do pagamento das 12 parcelas, caso fique sem transacionar por mais de 90 dias, faremos a retirada da sua máquina. Durante os primeiros meses a máquina só será retirada, caso você fique sem transacionar e, também tiver mais de 2 títulos em aberto.\n- I've handed this to a human agent (ticket T-7d2cd405). The reply will show up in this conversation.\n- [memória da conversa] Fatos da conversa (extraídos por código das falas do cliente e dos resultados de ferramentas; valem mesmo que o resumo os omita):\n- Assunto atual: Which of my terminals is offline? (intenção: support)\n- Registros vistos nas ferramentas (referência; consulte de novo o que muda): T1988A {model=Get Smart, connection=Wi-Fi, status=online}; T1988B {model=Get Clássica, connection=chip, status=offline, offline_minutes=190, signal=sem sinal}; resumo:count {count=2}\n- [policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need t", "blocks": [{"kind": "data", "title": "Dados da loja do cliente (get_terminal_status)", "fields": [["quantidade", "2"], ["offline", "[\"T1988B\"]"]], "tables": [{"caption": "maquininhas", "columns": ["maquininha", "modelo", "conexão", "situação", "offline minutes", "sinal"], "rows": [["T1988A", "Get Smart", "Wi-Fi", "online", "—", "—"], ["T1988B", "Get Clássica", "chip", "offline", "190", "sem sinal"]]}]}, {"kind": "text", "title": "Arquivos Get Tap - Getnet", "text": "Em quanto tempo posso usar meu Get Tap? Em quanto tempo posso usar meu Get Tap? Após efetuar o cadastro e passar pela análise do periférico, você está adapto para usar a funcionalidade. Como saber qual é a versão do Android no meu celular? Como saber qual é a versão do Android no meu celular? Para encontrar a versão do seu Android acesse as “configurações” do seu celular, selecione a opção “Sobre o dispositivo/telefone”, localize a seção “Detalhes do dispositivo” e veja a versão do Android indicada. Como saber se meu celular possui NFC? Como saber se meu celular possui NFC? Para saber se o seu celular possui NFC consulte a ficha técnica ou as especificações do seu aparelho.", "url": "https://site.getnet.com.br/duvidas/get-tap/"}, {"kind": "text", "title": "Arquivos operacional - Getnet", "text": "AVANÇAR · operacional Como ligo ou desligo minha máquina? Como ligo ou desligo minha máquina? Confira o modelo da sua maquininha e siga as instruções como mostra abaixo: LIGAR: Pressione a tecla verde DESLIGAR: Pressione a tecla “ . ” (ponto) e a tecla amarela ao mesmo tempo, durante 2 segundos LIGAR: Pressione a tecla “ ” (seta para cima) DESLIGAR: Pressione a tecla “ . ” (ponto) e a tecla amarela ao mesmo tempo, durante 2 segundos LIGAR E DESLIGAR: Conecte na tomada para ligar e retire da tomada para desligar LIGAR: Pressione a tecla verde durante 5 segundos DESLIGAR: Pressione a tecla vermelha durante 5 segundos O que é Chargeback?", "url": "https://site.getnet.com.br/duvidas/operacional/"}, {"kind": "text", "title": "Arquivos Plano Light - Getnet", "text": "O que acontece se eu não faturar ou não atingir as outras contrapartidas da oferta? O que acontece se eu não faturar ou não atingir as outras contrapartidas da oferta? Até que finalize o pagamento das 12 parcelas, nos meses que não atingir as contrapartidas, você pagará o valor sem desconto (Getnet R$29,90 ou POS móvel R$79,90); Após o término do pagamento das 12 parcelas, caso fique sem transacionar por mais de 90 dias, faremos a retirada da sua máquina. Durante os primeiros meses a máquina só será retirada, caso você fique sem transacionar e, também tiver mais de 2 títulos em aberto.", "url": "https://site.getnet.com.br/duvidas/plano-light/"}, {"kind": "text", "title": "Informação", "text": "I've handed this to a human agent (ticket T-7d2cd405). The reply will show up in this conversation.", "url": ""}, {"kind": "memory", "text": "Fatos da conversa (extraídos por código das falas do cliente e dos resultados de ferramentas; valem mesmo que o resumo os omita):"}, {"kind": "memory", "text": "Assunto atual: Which of my terminals is offline? (intenção: support)"}, {"kind": "memory", "text": "Registros vistos nas ferramentas (referência; consulte de novo o que muda): T1988A {model=Get Smart, connection=Wi-Fi, status=online}; T1988B {model=Get Clássica, connection=chip, status=offline, offline_minutes=190, signal=sem sinal}; resumo:count {count=2}"}, {"kind": "rules", "text": "Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).)."}, {"kind": "rules", "text": "Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.)."}, {"kind": "rules", "text": "High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.)."}, {"kind": "rules", "text": "An action proposal that is not confirmed expires after 15 minutes."}, {"kind": "rules", "text": "Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation."}, {"kind": "rules", "text": "Apart from these tools, the assistant does not carry out any action in the system."}], "sources": [{"title": "Arquivos Get Tap - Getnet", "url": "https://site.getnet.com.br/duvidas/get-tap/"}, {"title": "Arquivos operacional - Getnet", "url": "https://site.getnet.com.br/duvidas/operacional/"}, {"title": "Arquivos Plano Light - Getnet", "url": "https://site.getnet.com.br/duvidas/plano-light/"}], "lang": "en"}, {"id": "memory-05", "question": "And when will it be deposited?", "answer": "Yesterday's 745.50 in sales settles on three dates:\n\n- **2026-11-01 (yesterday):** TX1005 (pix), 60.00. The rule is D+0.\n- **2026-11-02 (today):** TX1001 (debit, 120.00) and TX1003 (debit, 85.50). The rule is D+1 business day.\n- **2026-12-01 (in 29 days):** TX1002 (credit), 480.00. The rule is D+30.\n\nThe by-date total for 2026-11-02 is R$ 205,50.", "before": ["How much did I sell yesterday?"], "source_urls": {}, "evidence": "- {\"ok\": true, \"data\": {\"period\": \"yesterday\", \"settlements\": [{\"transaction_id\": \"TX1001\", \"method\": \"debito\", \"amount\": \"120.00\", \"amount_brl\": \"R$ 120,00\", \"rule\": \"D+1 útil\", \"settlement_date\": \"2026-11-02\", \"settlement_when\": \"hoje\"}, {\"transaction_id\": \"TX1002\", \"method\": \"credito\", \"amount\": \"480.00\", \"amount_brl\": \"R$ 480,00\", \"rule\": \"D+30\", \"settlement_date\": \"2026-12-01\", \"settlement_when\": \"em 29 dias\"}, {\"transaction_id\": \"TX1003\", \"method\": \"debito\", \"amount\": \"85.50\", \"amount_brl\": \"R$ 85,50\", \"rule\": \"D+1 útil\", \"settlement_date\": \"2026-11-02\", \"settlement_when\": \"hoje\"}, {\"transaction_id\": \"TX1005\", \"method\": \"pix\", \"amount\": \"60.00\", \"amount_brl\": \"R$ 60,00\", \"rule\": \"D+0\", \"settlement_date\": \"2026-11-01\", \"settlement_when\": \"ontem\"}], \"count\": 4, \"total\": \"745.50\", \"total_brl\": \"R$ 745,50\", \"by_date\": {\"2026-11-01\": \"R$ 60,00\", \"2026-11-02\": \"R$ 205,50\", \"2026-12-01\": \"R$ 480,00\"}}, \"calculado_em_codigo\": [{\"lista\": \"settlements\", \"itens\": 4, \"por_method\": {\"credito\": {\"itens\": 1}, \"debito\": {\"itens\": 2}, \"pix\": {\"itens\": 1}}, \"por_settlement_date\": {\"2026-11-01\": {\"itens\": 1}, \"2026-11-02\": {\"itens\": 2}, \"2026-12-01\": {\"itens\": 1}}}], \"nota_calculo\": \"Totais e contagens acima foram calculados em código: use-os, não some nem conte.\"}\n- [memória da conversa] Fatos da conversa (extraídos por código das falas do cliente e dos resultados de ferramentas; valem mesmo que o resumo os omita):\n- Assunto atual: How much did I sell yesterday? (intenção: support)\n- Registros vistos nas ferramentas (referência; consulte de novo o que muda): TX1001 {date=2026-11-01, when=ontem, method=debito, amount=120.00, amount_brl=R$ 120,00, status=aprovada, terminal=T1988A}; TX1002 {date=2026-11-01, when=ontem, method=credito, amount=480.00, amount_brl=R$ 480,00, status=aprovada, terminal=T1988A}; TX1003 {date=2026-11-01, when=ontem, method=debito, amount=85.50, amount_brl=R$ 85,50, status=aprovada, terminal=T1988B}; TX1005 {date=2026-11-01, when=ontem, method=pix, amount=60.00, amount_brl=R$ 60,00, status=aprovada, terminal=T1988A}; resumo:approved_total,approved_total_brl,count,period {period=yesterday, count=4, approved_total=745.50, approved_total_brl=R$ 745,50}\n- [policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system.", "blocks": [{"kind": "data", "title": "Dados da loja do cliente (get_settlements)", "fields": [["period", "yesterday"], ["quantidade", "4"], ["total (R$)", "745.50"], ["total brl", "R$ 745,50"], ["by date · 2026-11-01", "R$ 60,00"], ["by date · 2026-11-02", "R$ 205,50"], ["by date · 2026-12-01", "R$ 480,00"]], "tables": [{"caption": "recebimentos", "columns": ["transação", "forma de pagamento", "valor (R$)", "amount brl", "rule", "settlement date", "settlement when"], "rows": [["TX1001", "debito", "120.00", "R$ 120,00", "D+1 útil", "02/11/2026", "hoje"], ["TX1002", "credito", "480.00", "R$ 480,00", "D+30", "01/12/2026", "em 29 dias"], ["TX1003", "debito", "85.50", "R$ 85,50", "D+1 útil", "02/11/2026", "hoje"], ["TX1005", "pix", "60.00", "R$ 60,00", "D+0", "01/11/2026", "ontem"]]}]}, {"kind": "memory", "text": "Fatos da conversa (extraídos por código das falas do cliente e dos resultados de ferramentas; valem mesmo que o resumo os omita):"}, {"kind": "memory", "text": "Assunto atual: How much did I sell yesterday? (intenção: support)"}, {"kind": "memory", "text": "Registros vistos nas ferramentas (referência; consulte de novo o que muda): TX1001 {date=2026-11-01, when=ontem, method=debito, amount=120.00, amount_brl=R$ 120,00, status=aprovada, terminal=T1988A}; TX1002 {date=2026-11-01, when=ontem, method=credito, amount=480.00, amount_brl=R$ 480,00, status=aprovada, terminal=T1988A}; TX1003 {date=2026-11-01, when=ontem, method=debito, amount=85.50, amount_brl=R$ 85,50, status=aprovada, terminal=T1988B}; TX1005 {date=2026-11-01, when=ontem, method=pix, amount=60.00, amount_brl=R$ 60,00, status=aprovada, terminal=T1988A}; resumo:approved_total,approved_total_brl,count,period {period=yesterday, count=4, approved_total=745.50, approved_total_brl=R$ 745,50}"}, {"kind": "rules", "text": "Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).)."}, {"kind": "rules", "text": "Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.)."}, {"kind": "rules", "text": "High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.)."}, {"kind": "rules", "text": "An action proposal that is not confirmed expires after 15 minutes."}, {"kind": "rules", "text": "Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation."}, {"kind": "rules", "text": "Apart from these tools, the assistant does not carry out any action in the system."}], "sources": [], "lang": "en"}, {"id": "official-02", "question": "What's the weather forecast in Porto Alegre tomorrow?", "answer": "I couldn't find a reliable basis to answer. I can hand this to a human agent.", "before": [], "source_urls": {}, "evidence": "- [policy:capabilities] Capabilities and action policy of this assistant (generated from the system's tool registry):\n- Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).).\n- Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.).\n- High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.).\n- An action proposal that is not confirmed expires after 15 minutes.\n- Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation.\n- Apart from these tools, the assistant does not carry out any action in the system.", "blocks": [{"kind": "rules", "text": "Lookups the assistant runs immediately, only on the authenticated customer's data: get_transactions (Vendas do cliente autenticado com total aprovado, data relativa e significado do código de recusa.); get_settlements (Quando cai o dinheiro das vendas aprovadas: data de cada venda e total.); get_terminal_status (Status das maquininhas do cliente (online/offline, conexão, sinal).)."}, {"kind": "rules", "text": "Actions the assistant can PROPOSE; nothing runs until the customer confirms the proposal: request_terminal_support (Abre chamado técnico para a maquininha. Exige confirmação.)."}, {"kind": "rules", "text": "High-risk actions: they need the customer's confirmation AND then the approval of a human agent (operator) before they run: open_dispute (Contesta uma venda aprovada. Exige confirmação e aprovação de um atendente.); request_anticipation (Pede antecipação de recebíveis. Exige confirmação e aprovação.)."}, {"kind": "rules", "text": "An action proposal that is not confirmed expires after 15 minutes."}, {"kind": "rules", "text": "Hand the case to a human agent: opens a case with a ticket number; the agent's reply shows up in this same conversation."}, {"kind": "rules", "text": "Apart from these tools, the assistant does not carry out any action in the system."}], "sources": [], "lang": "en"}], "raters": ["Matheus", "Bianca"], "sample": "025be61ab758"}</script>
+<script>
+(() => {
+  "use strict";  // erro de escrita aparece, em vez de sumir em silêncio
+  const DATA = JSON.parse(document.getElementById("data").textContent);
+  const ITEMS = DATA.items, RATERS = DATA.raters;
+  const LANG = { pt: "português", en: "inglês", es: "espanhol" };
+  const QUESTIONS = [
+    { key: "c1", title: "A resposta trata do que o cliente pediu?",
+      hint: "Se o assistente disse que não encontrou a informação e passou para um atendente humano, conte como sim. Se ele fugiu do assunto ou respondeu outra coisa, é não." },
+    { key: "c2", title: "Tudo o que a resposta afirma confere com o que o assistente tinha em mãos?",
+      hint: "Confira números, datas, valores e regras na caixa \"O que o assistente tinha em mãos\". Se ele afirma algo que não aparece lá, é não. Pedir confirmação antes de fazer algo (\"confirme a ação A-…\") é o comportamento certo." },
+    { key: "c3", title: null, hint: "Olhe só o idioma, não o conteúdo." },
+  ];
+  const FAIL_TYPE = { c1: ["wrong_route", "não trata do que o cliente pediu"],
+                      c2: ["unsupported_claim", "afirma algo que não estava no que ele tinha em mãos"],
+                      c3: ["wrong_language", "está em outro idioma"] };
+  const state = { rater: "", marks: {}, i: 0, view: "start" };
+  const tr = {};
+  const diag = [];  // diagnóstico (teste do dono, desktop): o que a página recebe de cada toque, gravado na ficha
+  const note = (kind, e, extra) => {
+    const el = e && e.target && e.target.closest ? e.target.closest("button") : null;
+    diag.push({ t: new Date().toISOString().slice(11, 23), kind, el: el ? el.id || el.className : (e && e.target && e.target.tagName) || "", ...extra });
+    if (diag.length > 12) diag.shift();
+  };
+  document.addEventListener("pointerdown", (e) => note("down", e), true);
+  document.addEventListener("click", (e) => note("click", e), true);
+  let ref = null, sample = null, writing = false, pending = false, saveTimer = null;
+  const $ = (id) => document.getElementById(id);
+
+  function esc(s) { return String(s ?? "").replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+  function chips(line, urls) {  // código de fonte ("[sup-pix-09]", "(fontes: a, b)") vira o link "fonte"
+    const link = (id) => urls[id] ? `<a class="src" href="${esc(urls[id])}" target="_blank" rel="noopener" title="${esc(id)}">fonte</a>` : null;
+    const group = (ids) => { const l = ids.split(/\s*,\s*/).map(link); return l.every(Boolean) ? l.join("") : null; };
+    return line
+      .replace(/\[([\w.-]+(?:\s*,\s*[\w.-]+)*)\]/g, (m, ids) => group(ids) ?? m)
+      .replace(/\((?:fontes?|sources?)\s*:?\s*([\w.-]+(?:\s*,\s*[\w.-]+)*)\)/gi, (m, ids) => group(ids) ?? m)
+      .replace(/\(([\w.-]+(?:\s*,\s*[\w.-]+)*)\)/g, (m, ids) => group(ids) ?? m);
+  }
+  function md(text, urls = {}) {  // **negrito**, listas, parágrafos e fontes; todo o resto escapado
+    const out = []; let list = null;
+    for (const raw of String(text || "").split(/\n/)) {
+      const line = chips(esc(raw), urls).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+      const m = line.match(/^\s*(?:[-*•]|\d+[.)])\s+(.*)$/);
+      if (m) { (list ||= []).push(`<li>${m[1]}</li>`); continue; }
+      if (list) { out.push(`<ul>${list.join("")}</ul>`); list = null; }
+      if (line.trim()) out.push(`<p>${line}</p>`);
+    }
+    if (list) out.push(`<ul>${list.join("")}</ul>`);
+    return out.join("");
+  }
+
+  function verdict(m) {  // 3 respostas → certa / errada (com o motivo) / fora da conta
+    const no = QUESTIONS.find((q) => m[q.key] === "nao");
+    if (no) return { v: "fail", tipo: FAIL_TYPE[no.key][0], why: FAIL_TYPE[no.key][1] };
+    const answered = QUESTIONS.map((q) => m[q.key]);
+    if (answered.every((a) => a === "sim")) return { v: "pass" };
+    if (answered.every(Boolean)) return { v: "skip" };
+    return { v: "" };
+  }
+  const done = () => ITEMS.filter((it) => state.marks[it.id]?.v).length;
+
+  function renderHeader() {
+    $("who").textContent = state.rater ? `Conferindo: ${state.rater}` : "";
+    $("count").textContent = `${done()} de ${ITEMS.length} respondidas`;
+    $("bar").style.width = `${ITEMS.length ? (100 * done()) / ITEMS.length : 0}%`;
+  }
+
+  function renderStart() {
+    $("picker").innerHTML = RATERS.map((r, k) =>
+      `<button type="button" class="btn" id="rater-${k}" data-rater="${k}" aria-pressed="${state.rater === r}">${esc(r)}</button>`).join("");
+    $("go").disabled = !state.rater;
+    $("go").textContent = done() ? "Continuar de onde parei" : "Começar";
+  }
+
+  function blocksHtml(it) {
+    // Lista curta: um título por item, fechado; o conteúdo só abre no toque (pedido do dono: "simples e sucinto").
+    const all = it.blocks || [];
+    const item = (tag, title, body) => `<details class="hand"><summary><span class="tag">${tag}</span><span class="ht">${esc(title)}</span></summary><div class="hbody">${body}</div></details>`;
+    const rows = all.map((b) => {
+      if (b.kind === "data") {
+        const fields = (b.fields || []).length ? `<dl class="fields">${b.fields.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("")}</dl>` : "";
+        const tables = (b.tables || []).map((t) => `<div class="tablebox"><table>
+          <thead><tr>${t.columns.map((c) => `<th scope="col">${esc(c)}</th>`).join("")}</tr></thead>
+          <tbody>${t.rows.map((r) => `<tr>${r.map((c) => `<td>${esc(c)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`).join("");
+        const caps = (b.tables || []).map((t) => `${t.caption} (${t.rows.length})`);
+        return item("Dados da loja", caps.length ? caps.join(", ") : "resumo", fields + tables);
+      }
+      if (b.kind === "text") {
+        const link = b.url ? `<p class="excerpt-link"><a href="${esc(b.url)}" target="_blank" rel="noopener">Abrir a página</a></p>` : "";
+        return item("Fonte", b.title, `<div class="excerpt">${esc(b.text)}</div>${link}`);
+      }
+      return "";
+    }).join("");
+    const notes = all.filter((b) => b.kind === "memory" || b.kind === "rules");
+    const extra = notes.length ? item("Sistema", "anotações e regras do assistente",
+      `<p class="hint">Data de hoje, o que já foi dito e o que o assistente pode fazer. Só precisa olhar se a resposta oferece fazer algo.</p><ul>${notes.map((b) => `<li>${esc(b.text)}</li>`).join("")}</ul>`) : "";
+    if (!rows) return `<p class="hint">Nada: o assistente respondeu sem consultar dados nem o site.</p>${extra}`;
+    return `<div class="hands-list">${rows}${extra}</div>`;
+  }
+
+  function renderItem() {
+    const it = ITEMS[state.i], m = state.marks[it.id] || {}, res = verdict(m);
+    const lang = LANG[it.lang] || "o mesmo idioma";
+    const foreign = it.lang && it.lang !== "pt";
+    const t = tr[it.id];
+    const before = (it.before || []).map((b) => `<div class="bubble client prev"><span class="who">Cliente, antes</span>${esc(b)}</div>`).join("");
+    const qs = QUESTIONS.map((q, k) => {
+      const title = q.key === "c3" ? `A pergunta foi em ${lang}. A resposta também está em ${lang}?` : q.title;
+      const b = (val, cls, label) => `<button type="button" class="btn ${cls}" id="${q.key}-${val}" data-q="${q.key}" data-v="${val}" aria-pressed="${m[q.key] === val}">${m[q.key] === val ? "✓ " : ""}${label}</button>`;
+      return `<div class="q${m[q.key] ? " answered" : ""}" role="group" aria-labelledby="qt-${q.key}">
+        <p class="qtitle" id="qt-${q.key}">${k + 1}. ${esc(title)}</p><p class="hint">${esc(q.hint)}</p>
+        <div class="choices">${b("sim", "yes", "Sim")}${b("nao", "no", "Não")}${b("naosei", "dk", "Não sei")}</div></div>`;
+    }).join("");
+    const result = res.v === "pass" ? `<div class="result pass">Resultado: resposta CERTA</div>`
+      : res.v === "fail" ? `<div class="result fail">Resultado: resposta ERRADA<small>Motivo: ${esc(res.why)}.</small></div>`
+      : res.v === "skip" ? `<div class="result">Resultado: sem avaliação<small>Você marcou "não sei"; esta situação fica fora da conta.</small></div>`
+      : `<div class="result">Responda as 3 perguntas para ver o resultado.</div>`;
+    $("item").innerHTML = `
+      <p class="kicker">Situação ${state.i + 1} de ${ITEMS.length}</p>
+      <nav class="dots" aria-label="Ir para a situação">${ITEMS.map((x, k) => `<button type="button" id="dot-${k}" data-go="${k}" class="${state.marks[x.id]?.v ? "done" : ""}" ${k === state.i ? 'aria-current="step"' : ""} aria-label="Situação ${k + 1}${state.marks[x.id]?.v ? ", respondida" : ", falta responder"}">${k + 1}</button>`).join("")}</nav>
+      <p class="legend">Bolinha cheia = já respondida. Toque num número para ir até a situação.</p>
+      <div class="chat">
+        ${before}
+        <div class="bubble client"><span class="who">Cliente</span>${esc(it.question)}${t ? `<div class="tr">Tradução: ${esc(t.q)}</div>` : ""}</div>
+        <div class="bubble bot"><span class="who">Assistente</span>${md(it.answer, it.source_urls || {})}${t ? `<div class="tr">Tradução: ${esc(t.a)}</div>` : ""}</div>
+      </div>
+      ${foreign ? `<p class="lang">Conversa em ${esc(lang)}. ${sample ? (t ? "A tradução automática aparece embaixo de cada balão, só para ajudar a ler." : `<button type="button" class="linkbtn" id="translate">Traduzir para português</button>`) : "Se não conseguir ler, responda \"Não sei\"."}</p>` : ""}
+      <details class="hands" open><summary>O que o assistente tinha em mãos</summary>
+        <p class="hint">Toque num item para ver o conteúdo. Use para conferir a pergunta 2.</p>${blocksHtml(it)}</details>
+      ${qs}
+      ${result}
+      <div class="note"><input id="nota" type="text" maxlength="200" placeholder="Quer comentar algo? (opcional)" value="${esc(m.nota || "")}"></div>
+      <div class="nav">
+        <button type="button" class="btn" id="prev" ${state.i === 0 ? "disabled" : ""}>← Anterior</button>
+        <button type="button" class="btn primary" id="next">${state.i === ITEMS.length - 1 ? "Concluir" : res.v ? "Próxima →" : "Pular por agora →"}</button>
+      </div>`;
+  }
+
+  function setMark(patch) {
+    const it = ITEMS[state.i];
+    const cur = { ...(state.marks[it.id] || {}), ...patch };
+    const r = verdict(cur);
+    state.marks[it.id] = { ...cur, v: r.v, tipo: r.tipo || "", at: new Date().toISOString() };
+    queueSave();
+  }
+  // Um só ouvinte para a tela da situação: o HTML é refeito a cada clique e, no visualizador do desktop, pode ser
+  // trocado por uma versão nova da página; botão com data-* nunca perde o clique (teste do dono, 02/11/2026).
+  function answer(el, how) {
+    const it = ITEMS[state.i];
+    if ((state.marks[it.id] || {})[el.dataset.q] === el.dataset.v) return;  // já marcado (pointerup + click)
+    try {
+      setMark({ [el.dataset.q]: el.dataset.v }); renderItem(); renderHeader();
+      document.getElementById(el.id)?.focus({ preventScroll: true });
+      note("answered", null, { how, q: el.dataset.q, v: el.dataset.v, i: state.i });
+    } catch (err) {
+      note("error", null, { how, msg: String(err && err.message || err).slice(0, 120) });
+      queueSave();
+    }
+  }
+  $("item").addEventListener("pointerup", (e) => {
+    const el = e.target.closest("button[data-q]");
+    if (el && !el.disabled) answer(el, "pointerup");
+  });
+  $("item").addEventListener("click", (e) => {
+    const el = e.target.closest("button");
+    if (!el || el.disabled) return;
+    if (el.dataset.q) answer(el, "click");
+    else if (el.dataset.go !== undefined) go(Number(el.dataset.go));
+    else if (el.id === "prev") go(state.i - 1);
+    else if (el.id === "next") (state.i === ITEMS.length - 1 ? show("end") : go(state.i + 1));
+    else if (el.id === "translate") translate(ITEMS[state.i]);
+  });
+  $("item").addEventListener("change", (e) => {
+    if (e.target.id === "nota") setMark({ nota: e.target.value.slice(0, 200) });
+  });
+
+  async function translate(it) {
+    if (!sample || tr[it.id]) return;
+    $("translate").textContent = "Traduzindo…"; $("translate").disabled = true;
+    try {
+      const ask = (text) => sample(`Traduza para português do Brasil, mantendo números, valores, datas, códigos e nomes exatamente como estão. Responda só com a tradução.\n\n${text}`, { modelTier: "quick" });
+      const [q, a] = await Promise.all([ask(it.question), ask(it.answer)]);
+      tr[it.id] = { q: q.text.trim(), a: a.text.trim() };
+    } catch (e) {
+      delete tr[it.id];
+      if ($("translate")) { $("translate").textContent = "Tradução indisponível agora"; }
+      return;
+    }
+    renderItem();
+  }
+
+  function go(i) { state.i = Math.max(0, Math.min(ITEMS.length - 1, i)); show("item"); window.scrollTo(0, 0); }
+  function show(view) {
+    state.view = view;
+    $("start").hidden = view !== "start"; $("item").hidden = view !== "item"; $("end").hidden = view !== "end";
+    if (view === "start") renderStart();
+    if (view === "item") renderItem();
+    if (view === "end") {
+      $("copybox").hidden = !!ref; $("savedline").hidden = !ref;
+      $("copytext").value = exportText();
+      const n = done(), skip = ITEMS.filter((it) => state.marks[it.id]?.v === "skip").length, missing = ITEMS.length - n;
+      $("endtext").textContent = `Você conferiu ${n} de ${ITEMS.length} situações` + (skip ? ` (${skip} com "não sei")` : "") + "." +
+        (missing ? ` Ainda faltam ${missing}: toque em "Revisar" para voltar a elas.` : "");
+      window.scrollTo(0, 0);
+    }
+    renderHeader();
+  }
+  const firstOpen = () => { const k = ITEMS.findIndex((it) => !state.marks[it.id]?.v); return k < 0 ? 0 : k; };
+  document.addEventListener("click", (e) => {
+    const el = e.target.closest("#start button, #end button");
+    if (!el || el.disabled) return;
+    if (el.dataset.rater !== undefined) { state.rater = RATERS[Number(el.dataset.rater)]; queueSave(); renderStart(); renderHeader(); }
+    else if (el.id === "go" || el.id === "review") go(firstOpen());
+    else if (el.id === "copy") {
+      const text = exportText(), box = $("copytext");
+      box.value = text;
+      const ok = () => { el.textContent = "Copiado! Cole numa mensagem"; };
+      const manual = () => { box.focus(); box.select(); el.textContent = "Selecionei o texto: copie e cole numa mensagem"; };
+      try { navigator.clipboard.writeText(text).then(ok, manual); } catch (err) { manual(); }
+    }
+  });
+
+  function exportText() {
+    const lines = ITEMS.map((it) => { const m = state.marks[it.id]; return m?.v ? `${it.id}=${m.v}${m.tipo ? ":" + m.tipo : ""}` : null; }).filter(Boolean);
+    return [`CONFERENCIA ${DATA.sample} ${state.rater || "?"}`, ...lines].join("\n");
+  }
+  function keepLocal() { try { localStorage.setItem("rot-" + DATA.sample, JSON.stringify({ rater: state.rater, marks: state.marks })); } catch (e) {} }
+  function notice(text) { $("notice").textContent = text; $("notice").hidden = !text; }
+  function saveLabel(text, err) { $("save").textContent = text; $("save").classList.toggle("err", !!err); }
+  function queueSave() {
+    if (!ref) { keepLocal(); saveLabel("só neste aparelho", true); return; }
+    clearTimeout(saveTimer); saveTimer = setTimeout(flush, 400); saveLabel("salvando…");
+  }
+  async function flush() {
+    if (writing) { pending = true; return; }
+    writing = true;
+    try {
+      await ref.set({ rater: state.rater, marks: state.marks, sample: DATA.sample, updated_at: new Date().toISOString(),
+                      diag: diag.slice() });
+      saveLabel("salvo");
+    } catch (e) {
+      if (e?.code === "unavailable") { setTimeout(flush, 800 + Math.random() * 800); saveLabel("tentando de novo…"); }
+      else { saveLabel("não salvo", true); notice("Não consegui salvar (" + (e?.code || "erro") + "). Avise quem te mandou o link antes de continuar."); }
+    } finally { writing = false; if (pending) { pending = false; flush(); } }
+  }
+
+  async function connect() {
+    const timer = setTimeout(() => notice("A página ainda não conseguiu se conectar para salvar. Confira se você entrou com sua conta do claude.ai."), 10000);
+    try {
+      if (!window.claude?.use) { clearTimeout(timer); notice("Esta visualização não salva as marcações. Abra o link no claude.ai, entrando com sua conta."); return; }
+      const [d, u, s] = await Promise.all([window.claude.use("db"), window.claude.use("user"), window.claude.use("sample")]);
+      clearTimeout(timer);
+      sample = s;
+      if (!d || !u) { notice("Você não entrou com uma conta do claude.ai: suas marcações ficam só neste aparelho. Entre com sua conta (é grátis) e abra o link de novo; ou marque assim mesmo e, no fim, toque em \"Copiar minhas respostas\"."); return; }
+      const uid = await u.id();
+      if (!uid) { notice("Você não entrou com uma conta do claude.ai: suas marcações ficam só neste aparelho. Entre com sua conta (é grátis) e abra o link de novo; ou marque assim mesmo e, no fim, toque em \"Copiar minhas respostas\"."); return; }
+      ref = d.doc("rotulos/" + uid);
+      const snap = await ref.get();
+      if (snap.exists) {
+        const saved = snap.data() || {};
+        // data() vem CONGELADO: gravar em cima dele falhava em silêncio (teste do dono, 02/11/2026: quem reabria a
+        // página com marcações salvas não conseguia marcar mais nada). A página trabalha numa cópia.
+        if (saved.sample === DATA.sample) { state.rater = saved.rater || ""; state.marks = JSON.parse(JSON.stringify(saved.marks || {})); }
+      }
+      notice("");
+      saveLabel(done() ? "salvo" : "");
+      show(state.view);
+    } catch (e) {
+      clearTimeout(timer);
+      notice("Não consegui me conectar para salvar (" + (e?.code || "erro") + "). Avise quem te mandou o link.");
+    }
+  }
+
+  try {
+    const local = JSON.parse(localStorage.getItem("rot-" + DATA.sample) || "null");
+    if (local) { state.rater = local.rater || ""; state.marks = local.marks || {}; }
+  } catch (e) {}
+  show("start");
+  connect();
+})();
+</script>
