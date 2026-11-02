@@ -23,7 +23,9 @@ configuração que não cabe na memória.
 - `--choose-retriever --fast` mede só 3 configurações (bm25, dense[e5-large], dense[e5-large] + bge-m3-int8 com
   pool 10 e 600 caracteres por trecho), e `scripts/fetch_models.py --fast` baixa os dois modelos no T+0.
 
-**Prova** (bancada da v4, CPU de 4 vCPU compartilhada; arquivos em `docs/kit/ensaio/r2/`).
+**Prova** (bancada da v4, CPU de 4 vCPU compartilhada; medidas do ensaio do kit, resumidas em
+[`docs/ENSAIO_V51.md`](../ENSAIO_V51.md) e em [`docs/changelog.d/r2.md`](../changelog.d/r2.md); os arquivos brutos ficam no
+repositório do kit). Medida deste corpus: ADR 0008.
 
 | configuração | Recall@3 | MRR | p95 ms | RAM estimada MB |
 |---|---:|---:|---:|---:|
